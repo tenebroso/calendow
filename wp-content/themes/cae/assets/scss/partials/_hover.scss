@@ -1,0 +1,13 @@
+.show-on-hover {
+	opacity:0;
+	transition:opacity .35s;
+}
+
+.hover-trigger {
+	&:hover {
+		.show-on-hover {
+			opacity:1;
+			transition:opacity .25s;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+* {
+  @include box-sizing(border-box);
+}
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+body {
+	background: $offWhite;
+}

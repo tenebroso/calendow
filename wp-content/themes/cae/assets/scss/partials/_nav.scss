@@ -1,0 +1,15 @@
+.nav {
+	li a {
+		text-transform:uppercase;
+		font-family:$headings-font-family;
+	}
+	li {
+		display:inline-block;
+	}
+}
+
+.nav-collapse {
+	background:url(../img/svg/hamburger.svg) no-repeat;
+	width:25px;
+	height:15px;
+}

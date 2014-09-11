@@ -1,0 +1,22 @@
+{
+  "name": "bln-framework",
+  "version": "1.0.0",
+  "homepage": "http://bluelikeneon.com",
+  "authors": [
+    "Jon Bukiewicz <jonathan@tenebroso.net>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "assets/vendor"
+  ],
+  "dependencies": {
+    "modernizr": "2.8.2",
+    "jquery": "1.11.1",
+    "respond": "1.4.2",
+  },
+  "resolutions": {
+    "jquery": "1.11.1"
+  }
+}
