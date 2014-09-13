@@ -1,43 +1,29 @@
-var GP = window.GP || {};
+var CE = window.CE || {};
 
-GP.Site = {
+CE.Site = {
   common: {
     init: function() {
-      GP.fullHeight();
-     
-      GP.searchReveal();
-      GP.svgCheck();
-      GP.modal();
-      //GP.pageFade();
-      GP.bottomNav();
-      $(window).on('resize', function() {
-          GP.fullHeight();
-          GP.bottomNav();
-      });
+      CE.searchExpand();
     }
   },
   blog: {
     init: function() {
-      //GP.fitText();
-      GP.categoryExpand();
+     
     }
   },
   single: {
     init: function() {
-       //GP.fitText();
-       GP.categoryExpand();
-       GP.sharing();
+      
     }
   },
   archive: {
     init: function() {
-      //GP.fitText();
-      GP.categoryExpand();
+      
     }
   },
   home: {
     init: function() {
-      GP.homeRollover();
+     
     }
   },
   about_us: {
@@ -49,7 +35,7 @@ GP.Site = {
 
 var UTIL = {
   fire: function(func, funcname, args) {
-    var namespace = GP.Site;
+    var namespace = CE.Site;
     funcname = (funcname === undefined) ? 'init' : funcname;
     if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
       namespace[func][funcname](args);
