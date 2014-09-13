@@ -1,0 +1,25 @@
+.brand {
+	margin:10px 0 0;
+	display: inline-block;
+	width:122px;
+}
+
+.banner {
+	background:$white;
+	background:rgba(255,255,255,.902);
+	padding:20px 0 30px;
+	height:99px;
+}
+
+#fixed {
+	position:fixed;
+	width:100%;
+	left:0;
+	top:0;
+	.logged-in & {
+		top:46px;
+		@media (min-width:783px) {
+			top:32px;
+		}
+	}
+}

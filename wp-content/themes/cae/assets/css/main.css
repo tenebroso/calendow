@@ -2203,6 +2203,41 @@ button, .btn, input[type="submit"] {
 .img-circle, .avatar {
   border-radius: 50%; }
 
+.brand {
+  margin: 10px 0 0;
+  display: inline-block;
+  width: 122px; }
+
+.banner {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.902);
+  padding: 20px 0 30px;
+  height: 99px; }
+
+#fixed {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0; }
+  .logged-in #fixed {
+    top: 46px; }
+    @media (min-width: 783px) {
+      .logged-in #fixed {
+        top: 32px; } }
+
+.search-submit {
+  background: url(../img/svg/magnifier.svg) no-repeat;
+  width: 16px;
+  height: 16px;
+  font-size: 0;
+  line-height: 0; }
+
+.search-field {
+  border-radius: 0;
+  border: none;
+  height: 54px;
+  padding: 1em; }
+
 .nav li a {
   text-transform: uppercase;
   font-family: inherit; }
@@ -2223,6 +2258,9 @@ button, .btn, input[type="submit"] {
   opacity: 1;
   -webkit-transition: opacity 0.25s;
           transition: opacity 0.25s; }
+
+.home {
+  background: url(../img/home-billboard-bg.jpg) no-repeat center top; }
 
 article[class*="entry-single"] {
   padding: 3em 0; }
