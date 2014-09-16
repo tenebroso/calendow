@@ -25,7 +25,7 @@ function places() {
 		'label'               => 'place',
 		'description'         => 'CAE Places',
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', ),
+		'supports'            => array( 'title', 'editor', 'thumbnail'),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
