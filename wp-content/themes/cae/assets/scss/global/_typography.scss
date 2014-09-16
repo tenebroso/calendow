@@ -5,11 +5,20 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6, .heading-font {
-	text-transform:uppercase;
   font-feature-settings:"kern";
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   font-family:$headings-font-family;
+  font-weight:700;
+  .footer & {
+    margin:0;
+  }
+}
+
+p {
+  .footer & {
+    margin:0;
+  }
 }
 
 .lead {

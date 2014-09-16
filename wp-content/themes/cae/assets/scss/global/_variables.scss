@@ -9,6 +9,7 @@ $action: #416386;
 
 // Accent Colors
 
+$accentDarker: #1f2233;
 $accentDark: #272A3F;
 $accentLight: #3A406D;
 
@@ -21,6 +22,11 @@ $grey2: #bdbdbd;
 $grey3: #7f7f7f;
 $grey4: #acacac;
 $offWhite: #f9f9f9;
+
+// Typography
+
+$font-family-base: "source-sans-pro", sans-serif;
+$headings-font-family: "azo-sans-web", sans-serif;
 
 $linkColor: $grey3;
 $linkHover: $grey1;
