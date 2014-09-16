@@ -1,29 +1,29 @@
 <?php 
 
 /* =============================================================================
-   Jobs CPT
+   Places CPT
    ========================================================================== */
 
-function jobs() {
+function places() {
 
 	$labels = array(
-		'name'                => 'Jobs',
-		'singular_name'       => 'Job',
-		'menu_name'           => 'Jobs',
-		'parent_item_colon'   => 'Parent Job:',
-		'all_items'           => 'All Jobs',
-		'view_item'           => 'View Job',
-		'add_new_item'        => 'Add New Job',
+		'name'                => 'Places',
+		'singular_name'       => 'Place',
+		'menu_name'           => 'Places',
+		'parent_item_colon'   => 'Parent Place:',
+		'all_items'           => 'All Places',
+		'view_item'           => 'View Place',
+		'add_new_item'        => 'Add New Place',
 		'add_new'             => 'Add New',
-		'edit_item'           => 'Edit Job',
-		'update_item'         => 'Update Job',
-		'search_items'        => 'Search Job',
+		'edit_item'           => 'Edit Place',
+		'update_item'         => 'Update Place',
+		'search_items'        => 'Search Place',
 		'not_found'           => 'Not found',
 		'not_found_in_trash'  => 'Not found in Trash',
 	);
 	$args = array(
-		'label'               => 'jobs',
-		'description'         => 'Jobs for BLN',
+		'label'               => 'place',
+		'description'         => 'CAE Places',
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', ),
 		'hierarchical'        => false,
@@ -39,36 +39,36 @@ function jobs() {
 		'publicly_queryable'  => true,
 		'capability_type'     => 'page',
 	);
-	register_post_type( 'jobs', $args );
+	register_post_type( 'place', $args );
 
 }
 
-//add_action( 'init', 'jobs', 0 );
+add_action( 'init', 'places', 0 );
 
 /* =============================================================================
-   Work CPT
+   Reports CPT
    ========================================================================== */
 
-function work() {
+function reports() {
 
 	$labels = array(
-		'name'                => 'Work',
-		'singular_name'       => 'Project',
-		'menu_name'           => 'Projects',
-		'parent_item_colon'   => 'Parent Project:',
-		'all_items'           => 'All Projects',
-		'view_item'           => 'View Project',
-		'add_new_item'        => 'Add New Project',
+		'name'                => 'Reports',
+		'singular_name'       => 'Report',
+		'menu_name'           => 'Reports',
+		'parent_item_colon'   => 'Parent Report:',
+		'all_items'           => 'All Reports',
+		'view_item'           => 'View Report',
+		'add_new_item'        => 'Add New Report',
 		'add_new'             => 'Add New',
-		'edit_item'           => 'Edit Project',
-		'update_item'         => 'Update Project',
-		'search_items'        => 'Search Projects',
+		'edit_item'           => 'Edit Report',
+		'update_item'         => 'Update Report',
+		'search_items'        => 'Search Reports',
 		'not_found'           => 'Not found',
 		'not_found_in_trash'  => 'Not found in Trash',
 	);
 	$args = array(
-		'label'               => 'work',
-		'description'         => 'Projects for BLN',
+		'label'               => 'report',
+		'description'         => 'CAE Reports',
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail'),
 		'hierarchical'        => false,
@@ -88,36 +88,36 @@ function work() {
 
 }
 
-//add_action( 'init', 'work', 0 );
+add_action( 'init', 'reports', 0 );
 
 /* =============================================================================
-   Team CPT
+   Newsletters CPT
    ========================================================================== */
 
-function team() {
+function newsletters() {
 
 	$labels = array(
-		'name'                => 'Team',
-		'singular_name'       => 'Team Member',
-		'menu_name'           => 'Team Members',
-		'parent_item_colon'   => 'Parent Team Member:',
-		'all_items'           => 'All Team Members',
-		'view_item'           => 'View Team Member',
-		'add_new_item'        => 'Add New Team Member',
+		'name'                => 'Newsletters',
+		'singular_name'       => 'Newsletter',
+		'menu_name'           => 'Newsletters',
+		'parent_item_colon'   => 'Parent Newsletter:',
+		'all_items'           => 'All Newsletters',
+		'view_item'           => 'View Newsletter',
+		'add_new_item'        => 'Add New Newsletter',
 		'add_new'             => 'Add New',
-		'edit_item'           => 'Edit Team Member',
-		'update_item'         => 'Update Team Member',
-		'search_items'        => 'Search Team Members',
+		'edit_item'           => 'Edit Newsletter',
+		'update_item'         => 'Update Newsletter',
+		'search_items'        => 'Search Newsletters',
 		'not_found'           => 'Not found',
 		'not_found_in_trash'  => 'Not found in Trash',
 	);
 	$args = array(
-		'label'               => 'team',
-		'description'         => 'BLN Team Members',
+		'label'               => 'newsletter',
+		'description'         => 'CAE Newsletters',
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail','page-attributes'),
+		'supports'            => array( 'title', 'editor', 'thumbnail'),
 		'hierarchical'        => false,
-		'public'              => false,
+		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
@@ -125,12 +125,12 @@ function team() {
 		'menu_position'       => 5,
 		'can_export'          => true,
 		'has_archive'         => false,
-		'exclude_from_search' => true,
-		'publicly_queryable'  => false,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
 		'capability_type'     => 'page',
 	);
-	register_post_type( 'team', $args );
+	register_post_type( 'newsletter', $args );
 
 }
 
-//add_action( 'init', 'team', 0 );
+add_action( 'init', 'newsletters', 0 );
