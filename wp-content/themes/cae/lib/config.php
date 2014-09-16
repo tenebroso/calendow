@@ -12,7 +12,7 @@ add_theme_support('jquery-cdn');
    ========================================================================== */
 
 function img_dir(){
-      return "/wp-content/themes/cae/assets/img/";
+      return "/wp-content/themes/cae/assets/img";
 }
 
 /* =============================================================================
@@ -25,7 +25,7 @@ define('GOOGLE_ANALYTICS_ID', '');
    Typekit ID
    ========================================================================== */
 
-define('TYPEKIT_ID', '');
+define('TYPEKIT_ID', 'ibb1lji');
 
 /* =============================================================================
    Define pages that do not have a sidebar
