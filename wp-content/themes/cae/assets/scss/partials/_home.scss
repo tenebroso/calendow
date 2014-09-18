@@ -1,3 +1,140 @@
 .home {
 	background:url(../img/home-billboard-bg.jpg) no-repeat center top;
 }
+
+.hero-container {
+	color:$accentDark;
+	padding-top:$headerHeight;
+	max-width:1000px;
+	@media (min-width:$screen-sm-min) {
+		height:600px;
+	}
+}
+
+.hero-lead {
+	font-size:60px;
+	font-weight:900;
+
+	text-transform: uppercase;
+	margin:.1em 0 .15em;
+	line-height: 1;
+}
+
+.hero-subtitle {
+	font-size:28px;
+	line-height:1.2;
+}
+
+.hero-nav {
+	text-align: right;
+	float:right;
+}
+
+.hero-subtitle-text,
+.hero-subtitle-arrow {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.hero-subtitle-arrow {
+	width:24px;
+	height:46px;
+	margin:0 0 0 22px;
+}
+
+.hero-nav {
+	font-size:21px;
+	font-weight:bold;
+	position: relative;
+	z-index:20;
+	li {
+		line-height: 1;
+		&.hero-nav-intro {
+			margin:40px 0 21px;
+		}
+	}
+	li a {
+		padding:13px 20px 13px 0;
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+	}
+	.hero-nav-color-block {
+		position: absolute;
+		top:2px;
+		right:0;
+		left:calc(100% - 7px);
+
+		padding:0 13px;
+		line-height:47px;
+
+		color:$white;
+
+		transition:all .5s ease;
+	}
+	li a:hover {
+		.hero-nav-color-block {
+			left:-100%;
+			right:0;
+			transition:all .35s ease;
+		}
+	}
+	li {
+		&.neighborhoods {
+			a {
+				color:$neighborhoods;
+			}
+			.hero-nav-color-block {
+				background: $neighborhoods;
+			}
+		}
+		&.prevention {
+			a {
+				color:$prevention;
+			}
+			.hero-nav-color-block {
+				background: $prevention;
+			}
+		}
+		&.schools {
+			a {
+				color:$schools;
+			}
+			.hero-nav-color-block {
+				background: $schools;
+			}
+		}
+		&.places {
+			a {
+				color:$places;
+			}
+			.hero-nav-color-block {
+				background: $places;
+			}
+		}
+		&.grants {
+			a {
+				color:$grants;
+			}
+			.hero-nav-color-block {
+				background: $grants;
+			}
+		}
+		&.action {
+			a {
+				color:$action;
+			}
+			.hero-nav-color-block {
+				background: $action;
+			}
+		}
+	}
+}
+
+@media (min-width:$screen-sm-min) {
+	.hero-container-text, .hero-nav {
+		top:50%;
+		transform:translate3d(0,-50%,0);
+		position: relative;
+	}
+}

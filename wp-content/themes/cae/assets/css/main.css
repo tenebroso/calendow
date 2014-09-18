@@ -2271,6 +2271,99 @@ button, .btn, input[type="submit"] {
 .home {
   background: url(../img/home-billboard-bg.jpg) no-repeat center top; }
 
+.hero-container {
+  color: #272A3F;
+  padding-top: 99px;
+  max-width: 1000px; }
+  @media (min-width: 768px) {
+    .hero-container {
+      height: 600px; } }
+
+.hero-lead {
+  font-size: 60px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0.1em 0 0.15em;
+  line-height: 1; }
+
+.hero-subtitle {
+  font-size: 28px;
+  line-height: 1.2; }
+
+.hero-nav {
+  text-align: right;
+  float: right; }
+
+.hero-subtitle-text, .hero-subtitle-arrow {
+  display: inline-block;
+  vertical-align: middle; }
+
+.hero-subtitle-arrow {
+  width: 24px;
+  height: 46px;
+  margin: 0 0 0 22px; }
+
+.hero-nav {
+  font-size: 21px;
+  font-weight: bold;
+  position: relative;
+  z-index: 20; }
+  .hero-nav li {
+    line-height: 1; }
+    .hero-nav li.hero-nav-intro {
+      margin: 40px 0 21px; }
+  .hero-nav li a {
+    padding: 13px 20px 13px 0;
+    display: inline-block;
+    position: relative;
+    overflow: hidden; }
+  .hero-nav .hero-nav-color-block {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    left: calc(100% - 7px);
+    padding: 0 13px;
+    line-height: 47px;
+    color: #fff;
+    -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease; }
+  .hero-nav li a:hover .hero-nav-color-block {
+    left: -100%;
+    right: 0;
+    -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease; }
+  .hero-nav li.neighborhoods a {
+    color: #D8673D; }
+  .hero-nav li.neighborhoods .hero-nav-color-block {
+    background: #D8673D; }
+  .hero-nav li.prevention a {
+    color: #3FBCA3; }
+  .hero-nav li.prevention .hero-nav-color-block {
+    background: #3FBCA3; }
+  .hero-nav li.schools a {
+    color: #12A8C5; }
+  .hero-nav li.schools .hero-nav-color-block {
+    background: #12A8C5; }
+  .hero-nav li.places a {
+    color: #C10512; }
+  .hero-nav li.places .hero-nav-color-block {
+    background: #C10512; }
+  .hero-nav li.grants a {
+    color: #5C256E; }
+  .hero-nav li.grants .hero-nav-color-block {
+    background: #5C256E; }
+  .hero-nav li.action a {
+    color: #416386; }
+  .hero-nav li.action .hero-nav-color-block {
+    background: #416386; }
+
+@media (min-width: 768px) {
+  .hero-container-text, .hero-nav {
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+    position: relative; } }
+
 article[class*="entry-single"] {
   padding: 3em 0; }
 
