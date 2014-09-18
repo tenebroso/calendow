@@ -4,6 +4,9 @@
 
 .hero-container {
 	color:$accentDark;
+	a {
+		color:$accentDark;
+	}
 	padding-top:$headerHeight;
 	max-width:1000px;
 	@media (min-width:$screen-sm-min) {
@@ -40,6 +43,16 @@
 	width:24px;
 	height:46px;
 	margin:0 0 0 22px;
+	transition:margin .25s;
+}
+
+.hero-container-text {
+	&:hover {
+		.hero-subtitle-arrow {
+			margin:0 0 0 30px;
+			transition:margin .35s;
+		}
+	}
 }
 
 .hero-nav {
@@ -70,7 +83,7 @@
 
 		color:$white;
 
-		transition:all .5s ease;
+		transition:all .75s ease;
 	}
 	li a:hover {
 		.hero-nav-color-block {

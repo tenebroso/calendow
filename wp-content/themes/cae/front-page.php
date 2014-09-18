@@ -15,8 +15,12 @@
 
 		<div class="hero-container-text">
 
-			<h2 class="hero-lead">Health and <br />Justice for All.</h2>
-			<p class="hero-subtitle"><span class="hero-subtitle-text">Donec luctur vitae libero sit amet <br />finibus. Lorem ipsum dolor sit amet.</span> <span class="hero-subtitle-arrow icon-lg-arrow"></span></p>
+			<a href="#">
+
+				<h2 class="hero-lead">Health and <br />Justice for All.</h2>
+				<p class="hero-subtitle"><span class="hero-subtitle-text">Donec luctur vitae libero sit amet <br />finibus. Lorem ipsum dolor sit amet.</span> <span class="hero-subtitle-arrow icon-lg-arrow"></span></p>
+
+			</a>
 
 		</div>
 

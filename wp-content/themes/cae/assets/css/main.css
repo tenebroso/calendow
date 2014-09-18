@@ -2275,6 +2275,8 @@ button, .btn, input[type="submit"] {
   color: #272A3F;
   padding-top: 99px;
   max-width: 1000px; }
+  .hero-container a {
+    color: #272A3F; }
   @media (min-width: 768px) {
     .hero-container {
       height: 600px; } }
@@ -2301,7 +2303,14 @@ button, .btn, input[type="submit"] {
 .hero-subtitle-arrow {
   width: 24px;
   height: 46px;
-  margin: 0 0 0 22px; }
+  margin: 0 0 0 22px;
+  -webkit-transition: margin 0.25s;
+          transition: margin 0.25s; }
+
+.hero-container-text:hover .hero-subtitle-arrow {
+  margin: 0 0 0 30px;
+  -webkit-transition: margin 0.35s;
+          transition: margin 0.35s; }
 
 .hero-nav {
   font-size: 21px;
@@ -2325,8 +2334,8 @@ button, .btn, input[type="submit"] {
     padding: 0 13px;
     line-height: 47px;
     color: #fff;
-    -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease; }
+    -webkit-transition: all 0.75s ease;
+            transition: all 0.75s ease; }
   .hero-nav li a:hover .hero-nav-color-block {
     left: -100%;
     right: 0;
