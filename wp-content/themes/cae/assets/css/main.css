@@ -2313,7 +2313,7 @@ button, .btn, input[type="submit"] {
     .hero-nav li.hero-nav-intro {
       margin: 40px 0 21px; }
   .hero-nav li a {
-    padding: 13px 20px 13px 0;
+    padding: 13px 20px 13px 7px;
     display: inline-block;
     position: relative;
     overflow: hidden; }
