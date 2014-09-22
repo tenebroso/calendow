@@ -7,9 +7,10 @@ function roots_scripts() {
     $get_assets = file_get_contents(get_stylesheet_directory() . '/assets/rev-manifest.json');
     $assets     = json_decode($get_assets, true);
     $assets     = array(
+      'scripts'       => '/assets/js/scripts.js',
       'js'       => '/assets/js/site.js',
       'css'       => '/assets/css/main.css',
-      'modernizr' => '/assets/js/vendor/modernizr.min.js',
+      'modernizr' => '/assets/vendor/modernizr.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
     );
 
@@ -28,7 +29,7 @@ function roots_scripts() {
 
   wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
   wp_enqueue_script('jquery');
-  //wp_enqueue_script('vendor_js', get_template_directory_uri() . $assets['scripts'], array(), null, true);
+  wp_enqueue_script('vendor_js', get_template_directory_uri() . $assets['scripts'], array(), null, true);
   wp_enqueue_script('site_js', get_stylesheet_directory_uri() . $assets['js'], array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);

@@ -15,7 +15,7 @@ var gulp = require( 'gulp' ),
 
 // Sets assets folders.
 var input = {
-  scripts: ['assets/vendor/*/jquery.*.js'],
+  scripts: ['assets/js/vendor/*.js'],
   js: ['assets/js/views/*/*', 'assets/js/_main.js'],
   sass: ['assets/scss/main.scss'],
   images: 'assets/img'
@@ -31,8 +31,8 @@ var output = {
 gulp.task( 'scripts', function () {
 
   gulp.src(input.scripts)
-    .pipe(concat('scripts.min.js'))
-    .pipe(uglify())
+    .pipe(concat('scripts.js'))
+    //.pipe(uglify())
     .pipe(gulp.dest(output.js));
 
   gulp.src(input.js)
