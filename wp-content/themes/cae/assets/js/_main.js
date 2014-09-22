@@ -23,7 +23,8 @@ CE.Site = {
   },
   home: {
     init: function() {
-     
+      CE.desktopFilter();
+      //$('#container').magnet();
     }
   },
   about_us: {
