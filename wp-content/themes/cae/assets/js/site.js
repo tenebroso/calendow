@@ -2,6 +2,34 @@ var CE = CE || {};
 
 ;(function() {
 
+  CE.navTrigger = function() {
+
+  	var $openTrigger = $('.js-nav-open-trigger'),
+  		$closeTrigger = $('.js-nav-close-trigger'),
+  		$menu = $('.nav-full-screen'),
+  		$body = $('body:after');
+
+    $openTrigger.click(function(){
+    	$menu.addClass('opened');
+    	$body.addClass('faded');
+    	$closeTrigger.addClass('active');
+    });
+
+    $closeTrigger.click(function(){
+    	$(this).removeClass('active');
+    	$menu.removeClass('opened');
+    	$body.removeClass('faded');
+    });
+
+
+  };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
   CE.searchExpand = function() {
 
     $('.js-expand-on-click').click(function(){
@@ -73,6 +101,7 @@ CE.Site = {
   common: {
     init: function() {
       CE.searchExpand();
+      CE.navTrigger();
     }
   },
   blog: {

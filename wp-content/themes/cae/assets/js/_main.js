@@ -4,6 +4,7 @@ CE.Site = {
   common: {
     init: function() {
       CE.searchExpand();
+      CE.navTrigger();
     }
   },
   blog: {

@@ -10,6 +10,10 @@
 	padding:20px 0 30px;
 	height:$headerHeight;
 	z-index:999;
+	.search-form,
+	.nav-collapse {
+		display: inline-block;
+	}
 }
 
 #fixed {
