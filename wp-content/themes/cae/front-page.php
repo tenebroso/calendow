@@ -122,3 +122,9 @@
 
 
 <?php endwhile; ?>
+
+
+<?php echo do_shortcode( '[facetwp facet="campaigns"]' ); ?>
+<?php echo do_shortcode( '[facetwp facet="places"]' ); ?>
+
+<?php echo do_shortcode( '[facetwp template="default"]' ); ?>
