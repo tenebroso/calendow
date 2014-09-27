@@ -28,3 +28,17 @@
 		}
 	}
 }
+
+.page-header {
+	background-size: cover;
+	background-position:bottom center;
+	height:415px;
+	text-align:center;
+	margin:0;
+	padding:105px 0 0;
+	.page-title {
+		top:50%;
+		transform:translate3d(0,-50%,0);
+		position: relative;
+	}
+}

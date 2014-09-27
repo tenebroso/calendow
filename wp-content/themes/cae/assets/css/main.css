@@ -2175,6 +2175,14 @@ h1, h2, h3, h4, h5, h6, .heading-font {
     .lead {
       font-size: 21px; } }
 
+.page-title {
+  font-size: 50px;
+  line-height: 48px;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 800; }
+
 a {
   text-decoration: none;
   color: #7f7f7f;
@@ -2236,6 +2244,19 @@ button, .btn, input[type="submit"] {
     @media (min-width: 783px) {
       .logged-in #fixed {
         top: 32px; } }
+
+.page-header {
+  background-size: cover;
+  background-position: bottom center;
+  height: 415px;
+  text-align: center;
+  margin: 0;
+  padding: 105px 0 0; }
+  .page-header .page-title {
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+    position: relative; }
 
 .search-submit {
   background: url(../img/svg/magnifier.svg) no-repeat;
