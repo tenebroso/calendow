@@ -5,7 +5,7 @@
 </div>
 
 <ul class="newsletters nav">
-	<li class="pull-left"><a href="#">Previous</a></li>
+	<li class="pull-left"><a href="#" class="icon-lg-arrow text-hide">Previous</a></li>
 	<?php if ( false === ( $newsletters = get_transient( 'newsletters' ) ) ) {
 		$args = array(
 			'post_type' => 'newsletter',
@@ -20,5 +20,5 @@
 				<img src="<?php the_field('thumbnail_image'); ?>">
 			</a>
 		</li><?php endwhile; endif; wp_reset_postdata(); ?>
-	<li class="pull-right"><a href="#">Next</a></li>
+	<li class="pull-right"><a href="#" class="icon-lg-arrow text-hide">Next</a></li>
 </ul>

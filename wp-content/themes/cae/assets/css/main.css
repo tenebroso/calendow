@@ -2284,6 +2284,8 @@ button, .btn, input[type="submit"] {
 .nav.newsletters {
   text-align: center;
   margin: 5px 0 0; }
+  .nav.newsletters .pull-left, .nav.newsletters .pull-right {
+    margin-top: 18px; }
 
 .inactive {
   opacity: 0.6;
@@ -2307,6 +2309,18 @@ button, .btn, input[type="submit"] {
     left: 0;
     content: "";
     display: block; }
+
+.icon-lg-arrow {
+  height: 45px;
+  width: 25px;
+  display: block; }
+  .pull-right .icon-lg-arrow {
+    margin-right: 18px; }
+  .pull-left .icon-lg-arrow {
+    margin-left: 18px;
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg); }
 
 .nav-collapse {
   background: url(../img/svg/hamburger.svg) no-repeat;
