@@ -6,6 +6,36 @@
 	li {
 		display:inline-block;
 	}
+	&.newsletters {
+		text-align:center;
+		margin:5px 0 0;
+	}
+}
+
+.inactive {
+	opacity:.6;
+	transition:opacity .25s;
+	&:hover {
+		opacity:1;
+	}
+}
+
+.active {
+	opacity:1;
+	position: relative;
+	display: block;
+	padding-bottom:16px;
+	margin:0 1px;
+	&:after {
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAVCAYAAACOleY7AAABzElEQVRo3u3XO08CQRQFYEiwgA7pFFuQXvgBQq9o66P3Uas/wEftqxW1VbFXWyPaI62indJpQ4KeSU4xmQRCloWdnZnis1HZ5d5T3BN5nMgkYQmu4Af+HKN9QQXmIB7BD1mcvzjjH7qBmeEdjmAWYvLO1QDIYvyHQ3hzQwydOuzBDES77blXAGRRftAuP9gNWD8dqMEWZPvca98BUGX5oCc+2C0gGG24g3WY9LJLrwGQiQev8UXabilDJw71G1jmAT/Q/vwIgCzJF7t2jcJX33AO85Dwc2d+B0CW4AtXXKPwpAnHUFQv97AEQG0URVaRpltuV6+wD/lel3sYA6A2ijwrSt1d7pln2IHpAHYRSABU4otvcxAdSy73e17u6aDnr0MAZGkOxrRGIQ7iKqzCuE4z1y0AMjGoFQ4ujI2iBRdQ9vtytyUAaqMoswq1NF76B5xAaZiXu40BUBtFiRVJh0bRgAMojOpytz0AaqMosDo1Rni5v/Byz4V8fqEPgCrHxfjdKMRB+gCbMGXSzEwLgEwsaoOL89IofuGWl3vK1DmZHABZiouscrG9LvdLWNT5cncBGLxRLLCiiYV/wikPyzHb5mFjANRGEbV5Bv9NY7eQGFUpBgAAAABJRU5ErkJggg==) no-repeat center bottom;
+		width:127px;
+		height:20px;
+		position: absolute;
+		bottom:0;
+		left:0;
+		content:"";
+		display: block;
+	}
 }
 
 .nav-collapse {

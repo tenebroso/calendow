@@ -19,6 +19,8 @@
             <?php include roots_template_path(); ?>
           </div>
         </main>
+        <?php if(is_front_page()): get_template_part('templates/footer','cta'); endif; ?>
+        <?php if(is_single()): get_template_part('templates/footer','newsletter-nav'); endif; ?>
         <?php get_template_part('templates/footer'); ?>
     </div>
 
