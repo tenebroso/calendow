@@ -2141,7 +2141,8 @@ body {
   background: #f9f9f9; }
 
 .entry-content {
-  max-width: 811px; }
+  max-width: 811px;
+  padding: 0 0 75px 0; }
 
 .v-centered {
   top: 50%;
@@ -2190,8 +2191,20 @@ b, strong {
   text-transform: uppercase;
   margin: 0; }
 
+.page-subtext {
+  display: block;
+  font-size: 27px;
+  padding: 0.5em 0 0;
+  text-transform: none;
+  font-weight: normal; }
+
 .white-text {
   color: #fff; }
+
+.entry-content ul, .entry-content ol {
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 1em 80px; }
 
 a {
   text-decoration: none;
@@ -2264,14 +2277,19 @@ button, .btn, input[type="submit"] {
         top: 32px; } }
 
 .page-header {
-  background-size: cover;
+  background-color: #d9673e;
   background-position: bottom center;
+  background-image: url(../img/svg/pattern.svg);
+  background-repeat: repeat;
   height: 415px;
   text-align: center;
   margin: 0;
   padding: 105px 0 0; }
+  .page-header.has-image {
+    background-size: cover;
+    background-repeat: no-repeat; }
   .page-header .page-title {
-    max-width: 760px;
+    max-width: 780px;
     margin: 0 auto; }
 
 .search-submit {

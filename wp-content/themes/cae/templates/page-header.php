@@ -1,7 +1,11 @@
-<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );  ?>
+<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' ); $subtext = get_field('subtext'); ?>
 
-<div class="page-header" style="background-image:url(<?php echo $large_image_url[0]; ?>);">
-	<h1 class="page-title v-centered"><strong><?php the_title();?></strong></h1>
-</div>
+<?php if($large_image_url): // If a Featured Image was Uploaded ?>
+	<div class="page-header has-image" style="background-image:url(<?php echo $large_image_url[0]; ?>);background-repeat:no-repeat;">
+<?php else: // Otherwise a CSS background color should be applied, along with the pattern overlay ?>
+	<div class="page-header">
+<?php endif; ?>
+		<h1 class="page-title v-centered"><strong><?php the_title();?></strong><?php if($subtext): ?><span class="page-subtext"><?php echo $subtext; ?></span><?php endif; ?></h1>
+	</div>
 
 <?php if(is_singular('newsletter')): get_template_part('templates/newsletter/header-nav'); endif; ?>
