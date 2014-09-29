@@ -1,4 +1,4 @@
-<footer class="content-info footer" role="contentinfo">
+<footer class="footer" role="contentinfo">
 
   <div class="container">
     <div class="col-md-4 footer-logo">

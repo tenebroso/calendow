@@ -1,0 +1,39 @@
+.newsletter-wrapper {
+	max-width:998px;
+	margin:0 auto;
+}
+
+.newsletter-archives {
+	li {
+		@media (min-width:$screen-sm-min) {
+			width:33%;
+			max-width:329px;
+			margin:0 5px 5px 0;
+			display: inline-block;
+			vertical-align: top;
+			height:360px;
+			background: $blueLight;
+			border-top:11px solid lighten($blueLight, 10%);
+			&:nth-child(3n+3) {
+				margin-right:0;
+			}
+		}
+	}
+	.center-block {
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		padding:20px 30px;
+		position: relative;
+		color:$black;
+		p, h2, h3 {
+			margin:0;
+		}
+		.breadcrumbs {
+			position:absolute;
+			top:31px;
+			left:0;
+			width:100%;
+		}
+	}
+}

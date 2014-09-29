@@ -33,6 +33,7 @@ define('TYPEKIT_ID', 'ibb1lji');
 
 function delete_transients() {
      delete_transient( 'newsletters' );
+     delete_transient( 'newsletter-archive' );
 }
 
 add_action( 'edit_post', 'delete_transients' );

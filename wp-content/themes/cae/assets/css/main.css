@@ -2140,12 +2140,14 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, select
 body {
   background: #f9f9f9; }
 
-.main {
-  /* temporary! */
-  min-height: 2941px; }
-
 .entry-content {
   max-width: 811px; }
+
+.v-centered {
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  position: relative; }
 
 body {
   font-family: "source-sans-pro", sans-serif;
@@ -2170,6 +2172,9 @@ h1, h2, h3, h4, h5, h6, .heading-font {
 .footer p {
   margin: 0; }
 
+b, strong {
+  font-weight: 800; }
+
 .lead {
   font-size: 21px;
   font-weight: 500;
@@ -2183,8 +2188,10 @@ h1, h2, h3, h4, h5, h6, .heading-font {
   line-height: 48px;
   color: #fff;
   text-transform: uppercase;
-  margin: 0;
-  font-weight: 800; }
+  margin: 0; }
+
+.white-text {
+  color: #fff; }
 
 a {
   text-decoration: none;
@@ -2207,6 +2214,14 @@ button, .btn, input[type="submit"] {
   color: #fff;
   padding: 15px 50px;
   line-height: 20px; }
+
+.btn-load-more {
+  margin: 40px auto;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 3px;
+  text-transform: uppercase; }
 
 .alignleft {
   float: left;
@@ -2256,10 +2271,6 @@ button, .btn, input[type="submit"] {
   margin: 0;
   padding: 105px 0 0; }
   .page-header .page-title {
-    top: 50%;
-    -webkit-transform: translate3d(0, -50%, 0);
-            transform: translate3d(0, -50%, 0);
-    position: relative;
     max-width: 760px;
     margin: 0 auto; }
 
@@ -2294,13 +2305,13 @@ button, .btn, input[type="submit"] {
   .inactive:hover {
     opacity: 1; }
 
-.active {
+.newsletters.nav .active {
   opacity: 1;
   position: relative;
   display: block;
   padding-bottom: 16px;
   margin: 0 1px; }
-  .active:after {
+  .newsletters.nav .active:after {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAVCAYAAACOleY7AAABzElEQVRo3u3XO08CQRQFYEiwgA7pFFuQXvgBQq9o66P3Uas/wEftqxW1VbFXWyPaI62indJpQ4KeSU4xmQRCloWdnZnis1HZ5d5T3BN5nMgkYQmu4Af+HKN9QQXmIB7BD1mcvzjjH7qBmeEdjmAWYvLO1QDIYvyHQ3hzQwydOuzBDES77blXAGRRftAuP9gNWD8dqMEWZPvca98BUGX5oCc+2C0gGG24g3WY9LJLrwGQiQev8UXabilDJw71G1jmAT/Q/vwIgCzJF7t2jcJX33AO85Dwc2d+B0CW4AtXXKPwpAnHUFQv97AEQG0URVaRpltuV6+wD/lel3sYA6A2ijwrSt1d7pln2IHpAHYRSABU4otvcxAdSy73e17u6aDnr0MAZGkOxrRGIQ7iKqzCuE4z1y0AMjGoFQ4ujI2iBRdQ9vtytyUAaqMoswq1NF76B5xAaZiXu40BUBtFiRVJh0bRgAMojOpytz0AaqMosDo1Rni5v/Byz4V8fqEPgCrHxfjdKMRB+gCbMGXSzEwLgEwsaoOL89IofuGWl3vK1DmZHABZiouscrG9LvdLWNT5cncBGLxRLLCiiYV/wikPyzHb5mFjANRGEbV5Bv9NY7eQGFUpBgAAAABJRU5ErkJggg==) no-repeat center bottom;
     width: 127px;
     height: 20px;
@@ -2780,10 +2791,41 @@ button, .btn, input[type="submit"] {
 article[class*="entry-single"] {
   padding: 3em 0; }
 
+.newsletter-wrapper {
+  max-width: 998px;
+  margin: 0 auto; }
+
+@media (min-width: 768px) {
+  .newsletter-archives li {
+    width: 33%;
+    max-width: 329px;
+    margin: 0 5px 5px 0;
+    display: inline-block;
+    vertical-align: top;
+    height: 360px;
+    background: #07a8c6;
+    border-top: 11px solid #0ad3f6; }
+    .newsletter-archives li:nth-child(3n+3) {
+      margin-right: 0; } }
+.newsletter-archives .center-block {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding: 20px 30px;
+  position: relative;
+  color: #000; }
+  .newsletter-archives .center-block p, .newsletter-archives .center-block h2, .newsletter-archives .center-block h3 {
+    margin: 0; }
+  .newsletter-archives .center-block .breadcrumbs {
+    position: absolute;
+    top: 31px;
+    left: 0;
+    width: 100%; }
+
 .footer {
   background: #1f2233;
   color: #fff;
-  padding: 0 0 42px 0; }
+  padding: 35px 0 42px 0; }
   .footer input {
     color: #fff;
     padding: 12px 10px;
@@ -2813,10 +2855,10 @@ article[class*="entry-single"] {
                 transition: background 0.35s;
         -webkit-transition: border 0.45s;
                 transition: border 0.45s; }
+  .footer a {
+    color: #fff; }
 
 .footer-cta-wrap {
-  background: #272A3F;
-  padding: 38px 0 14px;
   margin: 0 0 35px 0; }
   .footer-cta-wrap .nb-cta-text, .footer-cta-wrap input {
     display: inline-block;
@@ -2824,6 +2866,13 @@ article[class*="entry-single"] {
   .footer-cta-wrap .nb-cta-text {
     margin: 0 100px 0 0;
     line-height: 46px; }
+
+.footer-light-blue-wrap {
+  background: #272A3F;
+  padding: 38px 0 14px; }
+
+.post-nav-footer {
+  padding: 0; }
 
 .footer-social-icons {
   text-align: center;

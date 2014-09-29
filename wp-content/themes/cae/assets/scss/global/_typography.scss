@@ -21,6 +21,10 @@ p {
   }
 }
 
+b, strong {
+  font-weight:800;
+}
+
 .lead {
   font-size: floor(($font-size-base * 1.5));
   font-weight: 500;
@@ -37,5 +41,8 @@ p {
   color:$white;
   text-transform: uppercase;
   margin:0;
-  font-weight: 800;
+}
+
+.white-text {
+  color:$white;
 }

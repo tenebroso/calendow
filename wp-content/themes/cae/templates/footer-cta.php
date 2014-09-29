@@ -1,6 +1,6 @@
-<div class="content-info footer">
+<div class="footer">
 
-  <div class="footer-cta-wrap">
+  <div class="footer-cta-wrap footer-light-blue-wrap">
 
     <div class="container">
 

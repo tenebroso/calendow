@@ -12,9 +12,15 @@ body {
 
 .main {
 	/* temporary! */
-	min-height:2941px;
+	//min-height:2941px;
 }
 
 .entry-content {
 	max-width:811px;
+}
+
+.v-centered {
+	top:50%;
+	transform:translate3d(0,-50%,0);
+	position: relative;
 }
