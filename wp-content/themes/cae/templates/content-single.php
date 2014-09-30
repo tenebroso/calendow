@@ -1,9 +1,6 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
-<!--     <header>
-      <h1 class="page-title"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry-meta'); ?>
-    </header> -->
+	<?php get_template_part('templates/breadcrumbs'); ?>
     <div class="entry-content">
       <?php the_content(); ?>
     </div>

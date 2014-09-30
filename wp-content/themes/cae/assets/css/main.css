@@ -716,46 +716,46 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #777777; }
 
 h1, .h1, h2, .h2, h3, .h3 {
-  margin-top: 20px;
-  margin-bottom: 10px; }
+  margin-top: 28px;
+  margin-bottom: 14px; }
   h1 small, h1 .small, .h1 small, .h1 .small, h2 small, h2 .small, .h2 small, .h2 .small, h3 small, h3 .small, .h3 small, .h3 .small {
     font-size: 65%; }
 
 h4, .h4, h5, .h5, h6, .h6 {
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-top: 14px;
+  margin-bottom: 14px; }
   h4 small, h4 .small, .h4 small, .h4 .small, h5 small, h5 .small, .h5 small, .h5 .small, h6 small, h6 .small, .h6 small, .h6 .small {
     font-size: 75%; }
 
 h1, .h1 {
-  font-size: 36px; }
+  font-size: 52px; }
 
 h2, .h2 {
-  font-size: 30px; }
+  font-size: 43px; }
 
 h3, .h3 {
-  font-size: 24px; }
+  font-size: 34px; }
 
 h4, .h4 {
-  font-size: 18px; }
+  font-size: 25px; }
 
 h5, .h5 {
-  font-size: 14px; }
+  font-size: 20px; }
 
 h6, .h6 {
-  font-size: 12px; }
+  font-size: 17px; }
 
 p {
-  margin: 0 0 10px; }
+  margin: 0 0 14px; }
 
 .lead {
-  margin-bottom: 20px;
-  font-size: 16px;
+  margin-bottom: 28px;
+  font-size: 23px;
   font-weight: 300;
   line-height: 1.4; }
   @media (min-width: 768px) {
     .lead {
-      font-size: 21px; } }
+      font-size: 30px; } }
 
 small, .small {
   font-size: 85%; }
@@ -858,12 +858,12 @@ a.bg-danger:hover {
   background-color: #e4b9b9; }
 
 .page-header {
-  padding-bottom: 9px;
-  margin: 40px 0 20px; }
+  padding-bottom: 13px;
+  margin: 56px 0 28px; }
 
 ul, ol {
   margin-top: 0;
-  margin-bottom: 10px; }
+  margin-bottom: 14px; }
   ul ul, ul ol, ol ul, ol ol {
     margin-bottom: 0; }
 
@@ -880,7 +880,7 @@ ul, ol {
 
 dl {
   margin-top: 0;
-  margin-bottom: 20px; }
+  margin-bottom: 28px; }
 
 dt, dd {
   line-height: 1.42857; }
@@ -917,9 +917,9 @@ abbr[title], abbr[data-original-title] {
   text-transform: uppercase; }
 
 blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  font-size: 17.5px;
+  padding: 14px 28px;
+  margin: 0 0 28px;
+  font-size: 25px;
   border-left: 5px solid #eeeeee; }
   blockquote p:last-child, blockquote ul:last-child, blockquote ol:last-child {
     margin-bottom: 0; }
@@ -946,7 +946,7 @@ blockquote:before, blockquote:after {
   content: ""; }
 
 address {
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   font-style: normal;
   line-height: 1.42857; }
 
@@ -974,9 +974,9 @@ kbd {
 
 pre {
   display: block;
-  padding: 9.5px;
-  margin: 0 0 10px;
-  font-size: 13px;
+  padding: 13.5px;
+  margin: 0 0 14px;
+  font-size: 19px;
   line-height: 1.42857;
   word-break: break-all;
   word-wrap: break-word;
@@ -1525,7 +1525,7 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 20px; }
+  margin-bottom: 28px; }
   .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
     padding: 8px;
     line-height: 1.42857;
@@ -1600,7 +1600,7 @@ table td[class*="col-"], table th[class*="col-"] {
 @media screen and (max-width: 767px) {
   .table-responsive {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 21px;
     overflow-y: hidden;
     overflow-x: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -1629,8 +1629,8 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 20px;
-  font-size: 21px;
+  margin-bottom: 28px;
+  font-size: 30px;
   line-height: inherit;
   color: #333333;
   border: 0;
@@ -1669,16 +1669,16 @@ input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focu
 output {
   display: block;
   padding-top: 7px;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.42857;
   color: #555555; }
 
 .form-control {
   display: block;
   width: 100%;
-  height: 34px;
+  height: 42px;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.42857;
   color: #555555;
   background-color: #fff;
@@ -1711,12 +1711,12 @@ input[type="search"] {
   -webkit-appearance: none; }
 
 input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"] {
-  line-height: 34px;
+  line-height: 42px;
   line-height: 1.42857 \0; }
   input[type="date"].input-sm, .form-horizontal .form-group-sm input[type="date"].form-control, input[type="time"].input-sm, .form-horizontal .form-group-sm input[type="time"].form-control, input[type="datetime-local"].input-sm, .form-horizontal .form-group-sm input[type="datetime-local"].form-control, input[type="month"].input-sm, .form-horizontal .form-group-sm input[type="month"].form-control {
-    line-height: 30px; }
+    line-height: 37px; }
   input[type="date"].input-lg, .form-horizontal .form-group-lg input[type="date"].form-control, input[type="time"].input-lg, .form-horizontal .form-group-lg input[type="time"].form-control, input[type="datetime-local"].input-lg, .form-horizontal .form-group-lg input[type="datetime-local"].form-control, input[type="month"].input-lg, .form-horizontal .form-group-lg input[type="month"].form-control {
-    line-height: 46px; }
+    line-height: 56px; }
 
 .form-group {
   margin-bottom: 15px; }
@@ -1724,7 +1724,7 @@ input[type="date"], input[type="time"], input[type="datetime-local"], input[type
 .radio, .checkbox {
   position: relative;
   display: block;
-  min-height: 20px;
+  min-height: 28px;
   margin-top: 10px;
   margin-bottom: 10px; }
   .radio label, .checkbox label {
@@ -1771,29 +1771,29 @@ input[type="radio"][disabled], input[type="radio"].disabled, fieldset[disabled] 
     padding-right: 0; }
 
 .input-sm, .form-horizontal .form-group-sm .form-control {
-  height: 30px;
+  height: 37px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.5;
   border-radius: 3px; }
 
 select.input-sm, .form-horizontal .form-group-sm select.form-control {
-  height: 30px;
-  line-height: 30px; }
+  height: 37px;
+  line-height: 37px; }
 
 textarea.input-sm, .form-horizontal .form-group-sm textarea.form-control, select[multiple].input-sm, .form-horizontal .form-group-sm select[multiple].form-control {
   height: auto; }
 
 .input-lg, .form-horizontal .form-group-lg .form-control {
-  height: 46px;
+  height: 56px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 25px;
   line-height: 1.33;
   border-radius: 6px; }
 
 select.input-lg, .form-horizontal .form-group-lg select.form-control {
-  height: 46px;
-  line-height: 46px; }
+  height: 56px;
+  line-height: 56px; }
 
 textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, select[multiple].input-lg, .form-horizontal .form-group-lg select[multiple].form-control {
   height: auto; }
@@ -1801,28 +1801,28 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, select
 .has-feedback {
   position: relative; }
   .has-feedback .form-control {
-    padding-right: 42.5px; }
+    padding-right: 52.5px; }
 
 .form-control-feedback {
   position: absolute;
-  top: 25px;
+  top: 33px;
   right: 0;
   z-index: 2;
   display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
   text-align: center; }
 
 .input-lg + .form-control-feedback, .input-lg + .form-horizontal .form-group-lg .form-control, .form-horizontal .form-group-lg .input-lg + .form-control {
-  width: 46px;
-  height: 46px;
-  line-height: 46px; }
+  width: 56px;
+  height: 56px;
+  line-height: 56px; }
 
 .input-sm + .form-control-feedback, .input-sm + .form-horizontal .form-group-sm .form-control, .form-horizontal .form-group-sm .input-sm + .form-control {
-  width: 30px;
-  height: 30px;
-  line-height: 30px; }
+  width: 37px;
+  height: 37px;
+  line-height: 37px; }
 
 .has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline {
   color: #3c763d; }
@@ -1915,7 +1915,7 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, select
   margin-bottom: 0;
   padding-top: 7px; }
 .form-horizontal .radio, .form-horizontal .checkbox {
-  min-height: 27px; }
+  min-height: 35px; }
 .form-horizontal .form-group {
   margin-left: -15px;
   margin-right: -15px; }
@@ -2140,6 +2140,9 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, select
 body {
   background: #f9f9f9; }
 
+.hentry, .sidebar {
+  padding: 35px 0 0; }
+
 .entry-content {
   max-width: 811px;
   padding: 0 0 75px 0; }
@@ -2152,7 +2155,7 @@ body {
 
 body {
   font-family: "source-sans-pro", sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.8; }
 
 h1, h2, h3, h4, h5, h6, .heading-font {
@@ -2177,12 +2180,12 @@ b, strong {
   font-weight: 800; }
 
 .lead {
-  font-size: 21px;
+  font-size: 30px;
   font-weight: 500;
   line-height: 1.8; }
   @media (min-width: 768px) {
     .lead {
-      font-size: 21px; } }
+      font-size: 30px; } }
 
 .page-title {
   font-size: 50px;
@@ -2215,6 +2218,9 @@ a {
     color: #383838;
     -webkit-transition: color 0.25s;
             transition: color 0.25s; }
+
+.single-post .hentry a {
+  color: #d9673e; }
 
 ul, ol {
   list-style-type: none;

@@ -11,9 +11,7 @@
 
 		<?php if ( $newsletterArchive->have_posts() ) : while ( $newsletterArchive->have_posts() ) : $newsletterArchive->the_post(); ?><li>
 			<a href="<?php the_permalink(); ?>" class="center-block">
-				<div class="breadcrumbs">
-					<span class="white-text">Schools</span> > Sample Filter
-				</div>
+				<?php get_template_part('templates/breadcrumbs'); ?>
 				<div class="v-centered">
 					<p class="white-text">The Date</p>
 					<h3><strong><?php the_title(); ?></strong></h3>

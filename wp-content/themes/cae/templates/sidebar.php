@@ -1,1 +1,3 @@
-Share This.
+<div class="sidebar">
+	share this
+</div>

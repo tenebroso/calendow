@@ -10,9 +10,9 @@ body {
 	background: $offWhite;
 }
 
-.main {
-	/* temporary! */
-	//min-height:2941px;
+.hentry,
+.sidebar {
+	padding:35px 0 0;
 }
 
 .entry-content {
