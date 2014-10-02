@@ -1,0 +1,24 @@
+#accordion {
+	.panel {
+		background: $accentDark;
+		padding:2em 0;
+		border-bottom:1px solid $accentLight;
+		&:last-child {
+			border-color:transparent;
+		}
+	}
+}
+
+.panel-title { 
+	font-size:30px;
+	font-weight:800;
+	text-align: center;
+	margin: 0;
+	a {
+		color:$accentLighter;
+	}
+}
+
+.panel-body {
+	color: $white;
+}

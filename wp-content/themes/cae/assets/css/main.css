@@ -2339,6 +2339,24 @@ button, .btn, input[type="submit"] {
   height: 54px;
   padding: 1em; }
 
+#accordion .panel {
+  background: #272A3F;
+  padding: 2em 0;
+  border-bottom: 1px solid #3A406D; }
+  #accordion .panel:last-child {
+    border-color: transparent; }
+
+.panel-title {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+  margin: 0; }
+  .panel-title a {
+    color: #777987; }
+
+.panel-body {
+  color: #fff; }
+
 .nav li a {
   text-transform: uppercase;
   font-family: "azo-sans-web", sans-serif; }
