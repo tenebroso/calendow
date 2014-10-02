@@ -2,49 +2,6 @@ var CE = CE || {};
 
 ;(function() {
 
-  CE.navTrigger = function() {
-
-  	var $openTrigger = $('.js-nav-open-trigger'),
-  		$closeTrigger = $('.js-nav-close-trigger'),
-  		$menu = $('.nav-full-screen'),
-  		$body = $('body:after');
-
-    $openTrigger.click(function(){
-    	$menu.addClass('opened');
-    	$body.addClass('faded');
-    	$closeTrigger.addClass('active');
-    });
-
-    $closeTrigger.click(function(){
-    	$(this).removeClass('active');
-    	$menu.removeClass('opened');
-    	$body.removeClass('faded');
-    });
-
-
-  };
-
-
-})();
-var CE = CE || {};
-
-;(function() {
-
-  CE.searchExpand = function() {
-
-    $('.js-expand-on-click').click(function(){
-    	$(this).toggleClass('expanded');
-    });
-
-
-  };
-
-
-})();
-var CE = CE || {};
-
-;(function() {
-
   CE.desktopFilter = function() {
 
 
@@ -95,6 +52,61 @@ var CE = CE || {};
 
 
 })();
+var CE = CE || {};
+
+;(function() {
+
+  CE.collapse = function() {
+
+  	$('.collapse').collapse();
+
+  };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
+  CE.navTrigger = function() {
+
+  	var $openTrigger = $('.js-nav-open-trigger'),
+  		$closeTrigger = $('.js-nav-close-trigger'),
+  		$menu = $('.nav-full-screen'),
+  		$body = $('body:after');
+
+    $openTrigger.click(function(){
+    	$menu.addClass('opened');
+    	$body.addClass('faded');
+    	$closeTrigger.addClass('active');
+    });
+
+    $closeTrigger.click(function(){
+    	$(this).removeClass('active');
+    	$menu.removeClass('opened');
+    	$body.removeClass('faded');
+    });
+
+
+  };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
+  CE.searchExpand = function() {
+
+    $('.js-expand-on-click').click(function(){
+    	$(this).toggleClass('expanded');
+    });
+
+
+  };
+
+
+})();
 var CE = window.CE || {};
 
 CE.Site = {
@@ -102,6 +114,7 @@ CE.Site = {
     init: function() {
       CE.searchExpand();
       CE.navTrigger();
+      CE.collapse();
     }
   },
   blog: {

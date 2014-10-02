@@ -5,6 +5,7 @@ CE.Site = {
     init: function() {
       CE.searchExpand();
       CE.navTrigger();
+      CE.collapse();
     }
   },
   blog: {

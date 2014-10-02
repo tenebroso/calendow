@@ -1,2 +1,5 @@
-<?php the_content(); ?>
-<?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
+<?php while (have_posts()) : the_post(); ?>
+  <article class="hentry content-page">
+      <?php the_content(); ?>
+  </article>
+<?php endwhile; ?>
