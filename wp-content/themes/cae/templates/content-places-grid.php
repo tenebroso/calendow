@@ -2,7 +2,14 @@
 
 <ul class="place-grid grid-5-up reset-margins">
 
-	<?php while($x<16) { ?><li>
+	<?php while($x<16) { 
+		if($x == 1): ?><li>
+		<a class="center-block placemarker">
+			<div class="v-centered">
+				<div class="icon-places-placemarker"></div>
+			</div>
+		</a>	
+	</li><?php else: ?><li>
 			<a class="center-block" href="#">
 				<div class="v-centered">
 					<h2><strong>BH</strong></h2>
@@ -10,6 +17,6 @@
 					<p class="temperature light-thin-text">89&deg;</p>
 				</div>
 			</a>
-		</li><?php $x++; } ?>
+		</li><?php endif; $x++; } ?>
 
 </ul>

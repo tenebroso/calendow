@@ -2936,6 +2936,7 @@ article[class*="entry-single"] {
 
 .place-grid li {
   display: inline-block;
+  vertical-align: top;
   text-align: center;
   width: 14.28571%;
   width: calc(100% / 7);
@@ -2975,13 +2976,18 @@ article[class*="entry-single"] {
     left: -15px;
     top: -10px;
     z-index: -1; }
-.place-grid li a:hover {
+.place-grid li a:not(.placemarker):hover {
   background: #d51f2c url(../img/svg/pattern.svg) repeat;
   color: #fff; }
-  .place-grid li a:hover .temperature {
+  .place-grid li a:not(.placemarker):hover .temperature {
     color: #fff; }
-  .place-grid li a:hover .temperature:after {
+  .place-grid li a:not(.placemarker):hover .temperature:after {
     background: #d51f2c; }
+
+.icon-places-placemarker {
+  width: 64px;
+  height: 77px;
+  margin: 0 auto; }
 
 .footer {
   background: #1f2233;
