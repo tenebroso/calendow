@@ -2,8 +2,8 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          Collapsible Group Item #1
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+          <span>Collapsible Group Item #1</span>
         </a>
       </h4>
     </div>
@@ -18,8 +18,8 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          Collapsible Group Item #2
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo">
+          <span>Collapsible Group Item #2</span>
         </a>
       </h4>
     </div>
@@ -34,8 +34,8 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          Collapsible Group Item #3
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">
+          <span>Collapsible Group Item #3</span>
         </a>
       </h4>
     </div>

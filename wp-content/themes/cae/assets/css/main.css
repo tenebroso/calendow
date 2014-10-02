@@ -2169,7 +2169,9 @@ body {
   padding: 35px 0 0; }
 
 .content-page {
-  padding: 50px 0 35px; }
+  padding: 50px 0 35px;
+  max-width: 1000px;
+  margin: 0 auto; }
 
 .entry-content {
   max-width: 811px;
@@ -2350,12 +2352,39 @@ button, .btn, input[type="submit"] {
   font-size: 30px;
   font-weight: 800;
   text-align: center;
-  margin: 0; }
+  margin: 0;
+  cursor: pointer; }
   .panel-title a {
     color: #777987; }
+  .panel-title span:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    right: -15px;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transition: all 0.5s;
+            transition: all 0.5s; }
+  .panel-title .collapsed span:after {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg); }
 
 .panel-body {
-  color: #fff; }
+  color: #fff;
+  padding: 3.3em 0 2em; }
+  .panel-body .container {
+    max-width: 1000px;
+    margin: 0 auto; }
 
 .nav li a {
   text-transform: uppercase;
