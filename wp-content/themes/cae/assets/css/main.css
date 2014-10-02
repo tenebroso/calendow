@@ -1539,7 +1539,7 @@ th {
   .table > tbody + tbody {
     border-top: 2px solid #ddd; }
   .table .table {
-    background-color: #cccccc; }
+    background-color: #f2f2f2; }
 
 .table-condensed > thead > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > tfoot > tr > td {
   padding: 5px; }
@@ -2177,6 +2177,13 @@ body {
   max-width: 811px;
   padding: 0 0 75px 0; }
 
+.main {
+  background: #fff;
+  z-index: 1;
+  position: relative; }
+  .home .main {
+    background: none; }
+
 .v-centered {
   top: 50%;
   -webkit-transform: translate3d(0, -50%, 0);
@@ -2334,11 +2341,23 @@ button, .btn, input[type="submit"] {
   margin: 0;
   padding: 105px 0 0; }
   .page-header.has-image {
-    background-size: cover;
-    background-repeat: no-repeat; }
+    background: none; }
   .page-header .page-title {
     max-width: 780px;
     margin: 0 auto; }
+
+.page-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 447px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  width: 100%;
+  z-index: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
 
 .search-submit {
   background: url(../img/svg/magnifier.svg) no-repeat;
@@ -2409,7 +2428,10 @@ button, .btn, input[type="submit"] {
   display: inline-block; }
 .nav.newsletters {
   text-align: center;
-  margin: 5px 0 0; }
+  padding: 5px 0 0;
+  background: #fff;
+  position: relative;
+  z-index: 2; }
   .nav.newsletters .pull-left, .nav.newsletters .pull-right {
     margin-top: 18px; }
 

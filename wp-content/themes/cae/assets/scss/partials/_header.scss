@@ -39,11 +39,23 @@
 	margin:0;
 	padding:105px 0 0;
 	&.has-image {
-		background-size:cover;
-		background-repeat: no-repeat;
+		background:none;
 	}
 	.page-title {
 		max-width: 780px;
 		margin: 0 auto;
 	}
+}
+
+.page-header-fixed {
+	position:fixed;
+	top:0;
+	left:0;
+	height:447px;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center bottom;
+	width:100%;
+	z-index:0;
+	transform:translate3d(0,0,0);
 }

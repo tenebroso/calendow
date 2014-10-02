@@ -26,6 +26,16 @@ body {
 	padding:0 0 75px 0;
 }
 
+.main {
+	//background: $body-bg;
+	background: $white;
+	z-index:1;
+	position: relative;
+	.home & {
+		background: none;
+	}
+}
+
 .v-centered {
 	top:50%;
 	transform:translate3d(0,-50%,0);

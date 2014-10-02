@@ -8,7 +8,10 @@
 	}
 	&.newsletters {
 		text-align:center;
-		margin:5px 0 0;
+		padding:5px 0 0;
+		background: $white;
+		position: relative;
+		z-index: 2;
 		.pull-left,
 		.pull-right {
 			margin-top:18px;

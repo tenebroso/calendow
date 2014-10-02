@@ -6,6 +6,7 @@ CE.Site = {
       CE.searchExpand();
       CE.navTrigger();
       CE.collapse();
+      CE.headerParallax();
     }
   },
   blog: {

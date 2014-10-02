@@ -3,11 +3,11 @@
 	// The variable below is a check for that general grid
 	$hasNav = get_field('footer-grid-nav'); ?>
 
-<footer class="footer footer-add-padding" role="contentinfo">
+<footer class="footer<?php if($hasNav): echo 'footer-add-padding'; endif; ?>" role="contentinfo">
 
-	<?php //if($hasNav): 
-	get_template_part('templates/footer/footer-post-nav'); 
-	//endif; ?>
+	<?php if($hasNav): 
+	 get_template_part('templates/footer/footer-post-nav'); 
+	endif; ?>
 
   <div class="container">
     <div class="col-md-4 footer-logo">
