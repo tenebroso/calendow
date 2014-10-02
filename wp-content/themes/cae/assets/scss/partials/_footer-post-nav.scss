@@ -1,0 +1,39 @@
+.footer-post-nav {
+	text-align: center;
+	margin:-12em 0 1em 0;
+	li {
+		vertical-align: top;
+		border-top:12px solid $red;
+		background: $white;
+		width:265px;
+		margin:0 5px 0 0;
+		padding:0;
+		h3 {
+			font-size:30px;
+			margin-bottom:18px;
+		}
+	}
+	a {
+		color:$black;
+		padding:25px 35px;
+		height: 100%;
+		transition:all .25s;
+		position: relative;
+		.section-name {
+			color:$red;
+			font-size:18px;
+			font-weight:700;
+			margin-bottom:1em;
+		}
+		.date {
+			color:$grey4;
+		}
+		&:hover {
+			background: $red;
+			color:$white;
+			.section-name, .date {
+				color:$white;
+			}
+		}
+	}
+}

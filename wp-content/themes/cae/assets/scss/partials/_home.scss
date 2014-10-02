@@ -11,6 +11,7 @@
 	}
 	padding-top:$headerHeight;
 	max-width:1000px;
+	margin:0 auto;
 	@media (min-width:$screen-sm-min) {
 		height:600px;
 	}

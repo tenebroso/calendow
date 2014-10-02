@@ -1,1 +1,3 @@
-<?php get_template_part('templates/content', 'page'); ?>
+<?php 
+	// Used by /places, /our-story
+get_template_part('templates/content', 'page'); ?>

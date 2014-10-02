@@ -2,6 +2,9 @@
 	background: $accentDarker;
 	color:$white;
 	padding:35px 0 42px 0;
+	.home & {
+		padding-top:0;
+	}
 	input {
 		color:$white;
 		padding: 12px 10px;
@@ -37,6 +40,10 @@
 	a {
 		color:$white;
 	}
+	.ui-group {
+		vertical-align: middle;
+		line-height:3.5;
+	}
 }
 
 .footer-cta-wrap {
@@ -51,34 +58,35 @@
 	}
 }
 
+.footer-add-padding {
+	margin-top: 9em;
+	padding-top: 3em;
+}
+
 .footer-light-blue-wrap {
 	background: $accentDark;
 	padding:38px 0 14px;
 }
 
-.post-nav-footer {
-	padding:0;
+.footer-nav {
+	font-size:17px;
+	color:$grey3;
+	font-weight:100;
+	a {
+		color:$grey4;
+		font-weight:500;
+		padding:0 .75em 0 0;
+		&:hover {
+			color:$white;
+		}
+	}
+	.social-icons {
+		margin-left:1em;
+	}
 }
 
-.footer-social-icons {
-	text-align: center;
-	padding:1em 0;
-	@media (min-width:$screen-sm-min) {
-		padding:24px 163px 0 0;
-	}
-	li[class*='icon'] {
-		width:40px;
-		height:40px;
-		cursor:pointer;
-		background-position:center;
-		border:1px solid #34395f;
-		border-radius:50%;
-		margin:0 2px;
-	}
-	.text-right & {
-		text-align: right;
-		padding-right:0;
-	}
+.post-nav-footer {
+	padding:0;
 }
 
 .footer-logo {

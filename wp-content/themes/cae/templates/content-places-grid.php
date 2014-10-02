@@ -1,6 +1,6 @@
 <?php $x = 1; ?>
 
-<ul class="place-grid grid-5-up reset-margins">
+<ul class="place-grid list-inline grid-5-up reset-margins">
 
 	<?php while($x<16) { 
 		if($x == 1): ?><li>

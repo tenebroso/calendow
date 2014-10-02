@@ -18,12 +18,7 @@
           <a class="brand" href="<?php echo home_url(); ?>/"><img src="<?php echo img_dir(); ?>/svg/logo-white.svg"></a>
         </div>
         <div class="col-sm-7 text-right">
-          <ul class="nav footer-social-icons">
-            <li class="icon-twitter"> </li>
-            <li class="icon-facebook"> </li>
-            <li class="icon-youtube"> </li>
-            <li class="icon-instagram"> </li>
-          </ul>
+          <?php get_template_part('templates/footer/icons'); ?>
         </div>
         <div class="col-sm-2 text-right">
           <a class="js-nav-close-trigger nav-collapse"></a>
