@@ -13,7 +13,7 @@
 
     <div id="page" class="wrapper" role="document">
       <?php get_template_part('templates/header'); ?>
-      <?php if(is_single() || is_page()): get_template_part('templates/page','header'); endif; ?>
+      <?php if(is_single() || is_page() && !is_front_page()): get_template_part('templates/page','header'); endif; ?>
         <main class="main" role="main">
           <div class="container">
             <?php include roots_template_path(); ?>
