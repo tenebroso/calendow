@@ -1,5 +1,7 @@
 .home {
-	background:url(../img/home-billboard-bg.jpg) no-repeat center top;
+	background-image:url(../img/home-billboard-bg.jpg);
+	background-repeat:no-repeat;
+	background-position:center top;
 }
 
 .hero-container {

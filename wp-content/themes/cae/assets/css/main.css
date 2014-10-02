@@ -1539,7 +1539,7 @@ th {
   .table > tbody + tbody {
     border-top: 2px solid #ddd; }
   .table .table {
-    background-color: #fff; }
+    background-color: #cccccc; }
 
 .table-condensed > thead > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > tfoot > tr > td {
   padding: 5px; }
@@ -2231,8 +2231,15 @@ b, strong {
   text-transform: none;
   font-weight: normal; }
 
+.light-thin-text {
+  color: #808080;
+  font-weight: 100; }
+
 .white-text {
   color: #fff; }
+
+.reset-margins p, .reset-margins h1, .reset-margins h2, .reset-margins h4, .reset-margins h5, .reset-margins h6 {
+  margin: 0; }
 
 .entry-content ul, .entry-content ol {
   font-weight: 800;
@@ -2604,7 +2611,9 @@ button, .btn, input[type="submit"] {
           transition: opacity 0.25s; }
 
 .home {
-  background: url(../img/home-billboard-bg.jpg) no-repeat center top; }
+  background-image: url(../img/home-billboard-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center top; }
 
 .hero-container {
   color: #272A3F;
@@ -2924,6 +2933,55 @@ article[class*="entry-single"] {
     top: 31px;
     left: 0;
     width: 100%; }
+
+.place-grid li {
+  display: inline-block;
+  text-align: center;
+  width: 14.28571%;
+  width: calc(100% / 7);
+  padding: 0 6px 6px 0;
+  font-size: 18px; }
+.place-grid:not(.grid-5-up) li:nth-child(7n+7) {
+  padding-right: 0; }
+.place-grid.grid-5-up {
+  max-width: 700px;
+  margin: 0 auto; }
+  .place-grid.grid-5-up li {
+    width: 20%; }
+    .place-grid.grid-5-up li:nth-child(5n+5) {
+      padding-right: 0; }
+.place-grid a {
+  background: #fff;
+  color: #000;
+  height: 250px;
+  border: 1px solid #e6e6e6;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.25s;
+          transition: all 0.25s; }
+.place-grid .temperature {
+  font-size: 24px;
+  position: relative;
+  display: inline;
+  z-index: 2; }
+  .place-grid .temperature:after {
+    background: #fff;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    position: absolute;
+    content: "";
+    display: block;
+    left: -15px;
+    top: -10px;
+    z-index: -1; }
+.place-grid li a:hover {
+  background: #d51f2c url(../img/svg/pattern.svg) repeat;
+  color: #fff; }
+  .place-grid li a:hover .temperature {
+    color: #fff; }
+  .place-grid li a:hover .temperature:after {
+    background: #d51f2c; }
 
 .footer {
   background: #1f2233;
