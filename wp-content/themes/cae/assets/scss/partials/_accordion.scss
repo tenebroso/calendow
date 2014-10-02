@@ -1,8 +1,9 @@
 #accordion {
 	.panel {
-		background: $accentDark;
+		background: #2d304a;
 		padding:2em 0;
 		border-bottom:1px solid $accentLight;
+		transform:translate3d(0,0,0);
 		&:last-child {
 			border-color:transparent;
 		}
@@ -16,7 +17,7 @@
 	margin: 0;
 	cursor: pointer;
 	a {
-		color:$accentLighter;
+		color:$white;
 	}
 	span:after {
 		content:"";
@@ -34,6 +35,7 @@
 		transition:all .5s;
 	}
 	.collapsed {
+		color:rgba(255,255,255,.5);
 		span:after {
 			transform:rotate(0deg)
 		}
@@ -41,7 +43,7 @@
 }
 
 .panel-body {
-	color: $white;
+	color: darken($white,4%);
 	padding:3.3em 0 2em;
 	.container {
 		max-width:1000px;

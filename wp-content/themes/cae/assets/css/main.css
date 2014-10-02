@@ -2342,9 +2342,11 @@ button, .btn, input[type="submit"] {
   padding: 1em; }
 
 #accordion .panel {
-  background: #272A3F;
+  background: #2d304a;
   padding: 2em 0;
-  border-bottom: 1px solid #3A406D; }
+  border-bottom: 1px solid #3A406D;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
   #accordion .panel:last-child {
     border-color: transparent; }
 
@@ -2355,7 +2357,7 @@ button, .btn, input[type="submit"] {
   margin: 0;
   cursor: pointer; }
   .panel-title a {
-    color: #777987; }
+    color: #fff; }
   .panel-title span:after {
     content: "";
     width: 0;
@@ -2374,13 +2376,15 @@ button, .btn, input[type="submit"] {
             transform: rotate(180deg);
     -webkit-transition: all 0.5s;
             transition: all 0.5s; }
-  .panel-title .collapsed span:after {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg); }
+  .panel-title .collapsed {
+    color: rgba(255, 255, 255, 0.5); }
+    .panel-title .collapsed span:after {
+      -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotate(0deg); }
 
 .panel-body {
-  color: #fff;
+  color: #f5f5f5;
   padding: 3.3em 0 2em; }
   .panel-body .container {
     max-width: 1000px;
