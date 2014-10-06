@@ -3,7 +3,7 @@
 
 <?php // Find variables that are used, per-page ?>
 <?php $accordion = get_field('accordion_content'); ?>
-<?php $builder = get_field('page_builder'); ?>
+<?php $builder = get_field('cae_content_builder'); ?>
 
   <?php do_action('get_header'); ?>
 
@@ -25,7 +25,9 @@
       <?php 
         // If there is a page builder dictating the layout, we need the full-width. No wrapper
       else: ?>
-        <?php include roots_template_path(); ?>
+        <main class="main" role="main">
+          <?php include roots_template_path(); ?>
+        </main>
       <?php endif; ?>
 
         <?php 

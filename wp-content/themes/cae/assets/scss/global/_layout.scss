@@ -41,3 +41,11 @@ body {
 	transform:translate3d(0,-50%,0);
 	position: relative;
 }
+
+.stripe {
+	width: 100%;
+	padding:40px 0;
+	&.bg-image {
+		min-height: 300px;
+	}
+}

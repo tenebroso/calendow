@@ -41,6 +41,12 @@
 	&.has-image {
 		background:none;
 	}
+	&.text-right {
+		text-align: right;
+		.page-title {
+			max-width: 1170px;
+		}
+	}
 	.page-title {
 		max-width: 780px;
 		margin: 0 auto;

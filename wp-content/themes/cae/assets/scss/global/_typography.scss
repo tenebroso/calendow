@@ -82,3 +82,18 @@ ul, ol {
     margin:0 0 .5em 0;
   }
 }
+
+blockquote {
+  font-family:"museo-slab";
+  font-style:italic;
+  font-size:46px;
+  line-height:46px;
+  border: none;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFYAAABdCAMAAAAIT2EGAAAAM1BMVEUAAADdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1Pdd1OiNrMnAAAAEXRSTlMAAwYKDRATFhodICMmKi0wMw1QHCsAAAFpSURBVFjD7djLUsQgFEXRQJOE0BDu/3+tI61qefQ+E9sBjFftRILc0m17t1yIz/zY6CLc7ek2M7PAkojvT/teJIu4i7cZzzLuYjXjWciPV/Uuy7jPZkIW8r2akoX8NFOykCeTspD32TAL+YCNspBHk7KQ7yZlIfdVylKeTcpCfpqUhXz8M5UYnLAFr3xwWGr0ytn6zX2fRTe4XyDvfoAyHEqQhx5LblSlvLdVaXwbQu61KuWdp5dNetked+0hrH4yESE/2qefs5EIeWlYnk1ayL00EzG/tJel/JZelvJHw+5ZlfJ2JB2zLOXth3XaOehy17DnrEr5ru0B5e158drx8myvZpcM583Tr2kW8qBtLeXtvJ/+VUV5eyVP94DyLP3mYl6l2wtzZTRy3n7ZqB2E+JfZqGXjZ7OXlqU8a9n837JJyyboipYt0PVWUPnKruzKruzKruzKruzKruzKruwHs0ck6+dfXZB/AdtZNm7NFo+LAAAAAElFTkSuQmCC) no-repeat left top;
+}
+
+.section-title {
+  font-size:19px;
+  border-top:1px solid $black;
+  padding:5px 0 0;
+}
