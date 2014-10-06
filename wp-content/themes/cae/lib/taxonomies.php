@@ -41,12 +41,12 @@ function our_work() {
 	$args = array(
 		'labels'                     => $labels,
 		'hierarchical'               => true,
-		'public'                     => true,
+		'public'                     => false,
 		'show_ui'                    => true,
 		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => true,
-		'rewrite'                    => $rewrite,
+		'show_in_nav_menus'          => false,
+		'show_tagcloud'              => false,
+		'rewrite'                    => false,
 	);
 	register_taxonomy( 'work', array( 'report', 'newsletter', 'news', 'action', 'event', 'grant', 'video', 'infographic', 'post' ), $args );
 
