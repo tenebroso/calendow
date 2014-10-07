@@ -2965,6 +2965,81 @@ button, .btn, input[type="submit"] {
 article[class*="entry-single"] {
   padding: 3em 0; }
 
+.single-report {
+  background: url(../img/bg-reports-detail.jpg) no-repeat center center;
+  background-size: cover; }
+  .single-report .main {
+    background: none;
+    padding: 150px 0 60px; }
+  .single-report .breadcrumbs {
+    display: none; }
+  .single-report .hentry, .single-report .sidebar {
+    padding: 0; }
+
+.report-sidebar, .report-container {
+  background: #fff;
+  color: #383838;
+  float: left;
+  line-height: 30px; }
+
+.report-content {
+  width: 670px;
+  padding: 0 60px; }
+
+.report-sidebar {
+  width: 300px;
+  margin: 0 35px 0 0;
+  font-size: 18px; }
+
+.report-nav a {
+  display: block;
+  padding: 10px 20px;
+  border-bottom: 1px solid #f9f9f9; }
+  .report-nav a:hover {
+    background: #f9f9f9;
+    color: #15c7a7; }
+.report-nav li:last-child a {
+  border: none; }
+
+.report-sidebar-title {
+  display: block;
+  padding: 20px;
+  color: #fff;
+  background: #15c7a7; }
+
+.report-lr-nav {
+  border-bottom: 2px solid #f9f9f9;
+  height: 47px;
+  line-height: 47px; }
+  .report-lr-nav li {
+    display: inline-block;
+    vertical-align: top;
+    width: 33%; }
+    .report-lr-nav li.report-prev {
+      padding: 10px 0 0 20px; }
+      .report-lr-nav li.report-prev .icon-sm-arrow {
+        -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+                transform: rotate(180deg); }
+    .report-lr-nav li.report-current {
+      text-align: center;
+      font-size: 14px;
+      color: #15c7a7;
+      font-weight: 700; }
+      .report-lr-nav li.report-current span {
+        font-size: 18px;
+        font-weight: 800; }
+    .report-lr-nav li.report-next {
+      padding: 10px 10px 0 0; }
+      .report-lr-nav li.report-next .icon-sm-arrow {
+        float: right; }
+    .report-lr-nav li a {
+      display: block; }
+  .report-lr-nav .icon-sm-arrow {
+    width: 13px;
+    height: 24px;
+    background-size: 13px 24px; }
+
 .newsletter-wrapper {
   max-width: 998px;
   margin: 0 auto; }

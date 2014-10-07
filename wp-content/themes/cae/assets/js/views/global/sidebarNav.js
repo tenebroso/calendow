@@ -4,6 +4,9 @@ var CE = CE || {};
 
   CE.sidebarNav = function() {
 
+
+    // http://callmenick.com/2013/04/22/single-page-site-with-smooth-scrolling-highlighted-link-and-fixed-navigation/
+    
   	/** 
      * This part does the "fixed navigation after scroll" functionality
      * We use the jQuery function scroll() to recalculate our variables as the 

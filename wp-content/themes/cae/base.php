@@ -11,8 +11,8 @@
       <?php get_template_part('templates/header'); ?>
 
       <?php 
-        // Only show the default page header/featured image if it is not the homepage
-      if(!is_front_page()): get_template_part('templates/page','header'); endif; ?>
+        // Only show the default page header/featured image if it is not the homepage or report
+      if(!(is_front_page() || is_singular('report'))): get_template_part('templates/page','header'); endif; ?>
 
       <?php 
         // The default wrapper/content display for most layouts. This should only show if no page builder
