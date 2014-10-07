@@ -14,9 +14,9 @@ CE.Site = {
      
     }
   },
-  single: {
+  page: {
     init: function() {
-      
+      CE.stripeParallax();
     }
   },
   archive: {

@@ -80,6 +80,21 @@ var CE = CE || {};
 
 ;(function() {
 
+  CE.stripeParallax = function() {
+
+
+		var sectionPhoto = ".stripe.bg-image";
+
+		$.stellar();
+
+  };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
   CE.desktopFilter = function() {
 
 
@@ -146,9 +161,9 @@ CE.Site = {
      
     }
   },
-  single: {
+  page: {
     init: function() {
-      
+      CE.stripeParallax();
     }
   },
   archive: {

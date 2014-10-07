@@ -2194,7 +2194,8 @@ body {
   width: 100%;
   padding: 40px 0; }
   .stripe.bg-image {
-    min-height: 300px; }
+    height: 300px;
+    overflow: hidden; }
 
 body {
   font-family: "source-sans-pro", sans-serif;
@@ -2950,6 +2951,11 @@ button, .btn, input[type="submit"] {
 
 .color-shape.tall, .color-shape.big {
   height: 150px; }
+
+.parallax-image {
+  height: 600px;
+  width: 100%;
+  background-size: cover; }
 
 article[class*="entry-single"] {
   padding: 3em 0; }
