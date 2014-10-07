@@ -25,6 +25,14 @@ b, strong {
   font-weight:800;
 }
 
+h3 {
+  strong, b {
+    font-family:$headings-font-family;
+    line-height:34px;
+    text-transform: uppercase;
+  }
+}
+
 .lead {
   font-size: floor(($font-size-base * 1.5));
   font-weight: 500;

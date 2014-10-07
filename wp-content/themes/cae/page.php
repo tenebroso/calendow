@@ -1,3 +1,12 @@
+<div id="nav-anchor"></div>
+<nav class="affix">
+    <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Solution</a></li>
+    </ul>
+</nav>
+
 <?php 
 	// Page.php Used by /places, /our-story
 
@@ -12,13 +21,15 @@
 	        	<div data-stellar-background-ratio="0.5" class="parallax-image" style="background-image:url(<?php the_sub_field('full_width_image'); ?>);"></div>
 	        </div>
 
-	        <?php elseif( get_row_layout() == 'content_anchor_section' ): ?>
+	        <?php elseif( get_row_layout() == 'content_anchor_section' ): 
+	        	$sectionTitle = get_sub_field('section_title'); 
+	        	$htmlSectionTitle = strtolower(str_replace(' ', '-', $sectionTitle)); ?>
 
-		        <div class="stripe">
+		        <div class="stripe" id="<?php echo $htmlSectionTitle; ?>">
 		        	<div class="container">
 		        		<div class="row">
 		        			<div class="col-sm-2">
-		        				<h3 class="section-title"><?php the_sub_field('section_title'); ?></h3>
+		        				<h3 class="section-title"><?php echo $sectionTitle; ?></h3>
 		        			</div>
 		        			<div class="col-sm-10">
 		        				<?php the_sub_field('section_content'); ?>

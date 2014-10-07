@@ -48,7 +48,7 @@ function our_work() {
 		'show_tagcloud'              => false,
 		'rewrite'                    => false,
 	);
-	register_taxonomy( 'work', array( 'report', 'newsletter', 'news', 'action', 'event', 'grant', 'video', 'infographic', 'post' ), $args );
+	register_taxonomy( 'work', array( 'page', 'report', 'newsletter', 'news', 'action', 'event', 'grant', 'video', 'infographic', 'post' ), $args );
 
 }
 
