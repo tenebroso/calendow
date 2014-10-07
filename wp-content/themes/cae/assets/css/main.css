@@ -2537,8 +2537,7 @@ button, .btn, input[type="submit"] {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
-    box-shadow: 0 5px 5px #f1f1f1; }
+    bottom: 0; }
   .nav-full-screen .brand {
     margin: 25px 0 0 -10px; }
   .nav-full-screen .nav-collapse {
