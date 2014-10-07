@@ -2,6 +2,60 @@ var CE = CE || {};
 
 ;(function() {
 
+  CE.desktopFilter = function() {
+
+
+  	var $parentFilters = $('.filters > li > a');
+
+    $parentFilters.click(function(){
+    	$parentFilters.not(this).parent('li').removeClass('active');
+    	$(this).toggleClass('open').parent('li').toggleClass('active');
+    });
+
+	var $container = $('.isotope').isotope({
+		itemSelector: '.color-shape'
+	});
+
+	// store filter for each group
+	var filters = {};
+
+	$('#filters').on( 'click', '.selector', function() {
+		var $this = $(this);
+		
+		// get group key
+		var $buttonGroup = $this.parents('.selector-group');
+		var filterGroup = $buttonGroup.attr('data-filter-group');
+		
+		// set filter for group
+		filters[ filterGroup ] = $this.attr('data-filter');
+		
+		// combine filters
+		var filterValue = '';
+		for ( var prop in filters ) {
+		  filterValue += filters[ prop ];
+		}
+		// set filter for Isotope
+		$container.isotope({ filter: filterValue });
+	});
+
+	// change is-checked class on buttons
+	/*$('.button-group').each( function( i, buttonGroup ) {
+		var $buttonGroup = $( buttonGroup );
+		$buttonGroup.on( 'click', 'button', function() {
+		  $buttonGroup.find('.is-checked').removeClass('is-checked');
+		  $( this ).addClass('is-checked');
+		});
+	});*/
+
+
+	};
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
   CE.collapse = function() {
 
   	$('.collapse').collapse();
@@ -88,7 +142,7 @@ var CE = CE || {};
      * page is scrolled/
      */
     $(window).scroll(function(){
-        var window_top = $(window).scrollTop() + 12; // the "12" should equal the margin-top value for nav.stick
+        var window_top = $(window).scrollTop() + 150; // the "12" should equal the margin-top value for nav.stick
         var div_top = $('#nav-anchor').offset().top;
             if (window_top > div_top) {
                 $('nav').addClass('stick');
@@ -161,60 +215,6 @@ var CE = CE || {};
 		$.stellar();
 
   };
-
-
-})();
-var CE = CE || {};
-
-;(function() {
-
-  CE.desktopFilter = function() {
-
-
-  	var $parentFilters = $('.filters > li > a');
-
-    $parentFilters.click(function(){
-    	$parentFilters.not(this).parent('li').removeClass('active');
-    	$(this).toggleClass('open').parent('li').toggleClass('active');
-    });
-
-	var $container = $('.isotope').isotope({
-		itemSelector: '.color-shape'
-	});
-
-	// store filter for each group
-	var filters = {};
-
-	$('#filters').on( 'click', '.selector', function() {
-		var $this = $(this);
-		
-		// get group key
-		var $buttonGroup = $this.parents('.selector-group');
-		var filterGroup = $buttonGroup.attr('data-filter-group');
-		
-		// set filter for group
-		filters[ filterGroup ] = $this.attr('data-filter');
-		
-		// combine filters
-		var filterValue = '';
-		for ( var prop in filters ) {
-		  filterValue += filters[ prop ];
-		}
-		// set filter for Isotope
-		$container.isotope({ filter: filterValue });
-	});
-
-	// change is-checked class on buttons
-	/*$('.button-group').each( function( i, buttonGroup ) {
-		var $buttonGroup = $( buttonGroup );
-		$buttonGroup.on( 'click', 'button', function() {
-		  $buttonGroup.find('.is-checked').removeClass('is-checked');
-		  $( this ).addClass('is-checked');
-		});
-	});*/
-
-
-	};
 
 
 })();

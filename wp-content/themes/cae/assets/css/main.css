@@ -3054,6 +3054,10 @@ article[class*="entry-single"] {
   height: 77px;
   margin: 0 auto; }
 
+nav.stick {
+  margin-top: 150px;
+  top: 0; }
+
 .social-icons {
   text-align: center;
   padding: 1em 0; }
