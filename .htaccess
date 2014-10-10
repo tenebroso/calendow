@@ -13,4 +13,3 @@ RewriteRule . /index.php [L]
 
 order deny,allow
 deny from all
-allow from localhost
