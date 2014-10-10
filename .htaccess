@@ -13,3 +13,8 @@ RewriteRule . /index.php [L]
 
 order deny,allow
 deny from all
+
+<Files "wp-login.php"> 
+     Order Deny,Allow 
+     Allow from All 
+</Files>
