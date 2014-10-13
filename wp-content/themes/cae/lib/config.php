@@ -56,3 +56,9 @@ function root_display_sidebar() {
 
   return apply_filters('roots/display_sidebar', $sidebar_config->display);
 }
+
+/* =============================================================================
+   Define pages that do not have a sidebar
+   ========================================================================== */
+
+add_image_size( 'homepage-thumb', 351, 329, true ); // (cropped)
