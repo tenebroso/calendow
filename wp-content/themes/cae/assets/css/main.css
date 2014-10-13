@@ -2956,6 +2956,26 @@ button, .btn, input[type="submit"] {
 .color-shape.tall, .color-shape.big {
   height: 150px; }
 
+.grid-container {
+  margin: 0 auto; }
+
+.grid-item {
+  background: #383838;
+  text-align: center;
+  height: 480px;
+  width: 300px;
+  margin: 0 0 5px 0;
+  float: left; }
+  .grid-item img {
+    max-width: 100%;
+    height: auto; }
+
+.grid-video {
+  height: 280px; }
+
+.grid-news {
+  height: 340px; }
+
 .parallax-image {
   height: 600px;
   width: 100%;

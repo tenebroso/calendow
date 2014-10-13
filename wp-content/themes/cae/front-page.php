@@ -13,9 +13,11 @@
 <?php endwhile; ?>
 
 
-<?php //echo do_shortcode( '[facetwp facet="campaigns"]' ); ?>
-<?php //echo do_shortcode( '[facetwp facet="places"]' ); ?>
+<?php echo do_shortcode( '[facetwp facet="campaigns"]' ); ?>
+<?php echo do_shortcode( '[facetwp facet="places"]' ); ?>
 
-<?php //echo do_shortcode( '[facetwp template="default"]' ); ?>
+<div class="isotope">
+<?php echo do_shortcode( '[facetwp template="default"]' ); ?>
+</div>
 
-<?php get_template_part('templates/content','places-grid'); ?>
+<?php //get_template_part('templates/content','places-grid'); ?>

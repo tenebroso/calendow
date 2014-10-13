@@ -12,9 +12,24 @@ var CE = CE || {};
     	$(this).toggleClass('open').parent('li').toggleClass('active');
     });
 
-	var $container = $('.isotope').isotope({
-		itemSelector: '.color-shape'
-	});
+    $(document).on('facetwp-loaded', function() {
+       var $container = $('.isotope').isotope({
+			itemSelector: '.grid-item',
+			masonry: {
+				columnWidth: 300,
+	  			gutter: 5
+			}
+		});
+		var $newItems = $('<div class="item" /><div class="item" /><div class="item" />');
+		$('.isotope').isotope( 'insert', $newItems );
+		//$('body').css('opacity','.7');
+     });
+
+     $(document).on('facetwp-refresh', function() {
+     	$('.isotope').isotope('destroy');
+        $('.isotope').css('max-height','0px');
+     });
+	
 
 	// store filter for each group
 	var filters = {};
