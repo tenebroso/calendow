@@ -2905,7 +2905,12 @@ button, .btn, input[type="submit"] {
 /* ---- isotope ---- */
 .isotope {
   background: #DDD;
-  max-width: 1200px; }
+  max-width: 1200px;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: height 0.5s;
+          transition: height 0.5s; }
 
 /* clear fix */
 .isotope:after {

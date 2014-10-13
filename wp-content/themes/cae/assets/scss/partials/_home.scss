@@ -315,6 +315,9 @@
 .isotope {
   background: #DDD;
   max-width: 1200px;
+  overflow: hidden;
+  transform:translate3d(0,0,0);
+  transition:height .5s;
 }
 
 /* clear fix */

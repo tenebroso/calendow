@@ -21,5 +21,30 @@
   </div>
 
 </footer>
+<script>
+  var isPager = false;
+  var template_html;
 
+function loadMore() {
+      isPager = true;
+      template_html = jQuery('.facetwp-template').html();
+      var next_page = parseInt(jQuery('.pager').attr('data-page'));
+      jQuery('.pager').attr('data-page', next_page + 1);
+      FWP.paged = (next_page + 1);
+      FWP.refresh();
+  }
+
+  (function($) {
+      $(document).on('facetwp-loaded', function() {
+          if ( isPager ) {
+              var new_html = $('.facetwp-template').html();
+              $('.facetwp-template').html(template_html + new_html);
+              isPager = false;
+          }
+          else {
+              $('.pager').attr('data-page', 1);
+          }
+      });
+  })(jQuery);
+  </script>
 <?php wp_footer(); ?>

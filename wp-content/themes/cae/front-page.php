@@ -20,4 +20,6 @@
 <?php echo do_shortcode( '[facetwp template="default"]' ); ?>
 </div>
 
+<button class="pager" data-page="1" onclick="loadMore()">Load more</button>
+
 <?php //get_template_part('templates/content','places-grid'); ?>

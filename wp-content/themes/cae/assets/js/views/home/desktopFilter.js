@@ -20,14 +20,13 @@ var CE = CE || {};
 	  			gutter: 5
 			}
 		});
-		var $newItems = $('<div class="item" /><div class="item" /><div class="item" />');
-		$('.isotope').isotope( 'insert', $newItems );
+		//$('.isotope').css('max-height','');
 		//$('body').css('opacity','.7');
      });
 
      $(document).on('facetwp-refresh', function() {
-     	$('.isotope').isotope('destroy');
-        $('.isotope').css('max-height','0px');
+     	//$('.isotope').isotope('destroy');
+        //$('.isotope').css('max-height','0px');
      });
 	
 
