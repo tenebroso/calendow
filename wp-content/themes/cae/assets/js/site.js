@@ -188,7 +188,7 @@ var CE = CE || {};
        var $container = $('.isotope').isotope({
 			itemSelector: '.grid-item',
 			masonry: {
-				columnWidth: 300,
+				columnWidth: 330,
 	  			gutter: 5
 			}
 		});

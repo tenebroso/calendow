@@ -1,22 +1,29 @@
+<?php 	
+		$className = '';
+		$image_url = '';
+		$work = wp_get_post_terms($post->ID,'work', array("fields" => "names"));
 
-<?php if( get_post_type() == 'video' ): ?>
-	<div class="grid-item grid-video">
-		<?php the_post_thumbnail('homepage-thumb'); ?>
+		if( get_post_type() == 'video' ): 
+		
+			$className = 'grid-video';
+			$image_id = get_post_thumbnail_id();
+			$image_url = wp_get_attachment_image_src($image_id,'homepage-thumb', true);
 
-<?php elseif( get_post_type() == 'news' ): ?>
-	<div class="grid-item grid-news">
-		<div class="v-centered">
-			<h6><?php the_title(); ?></h6>
+		elseif(get_post_type() == 'news'):
+		
+			$className = 'grid-news';
+	
+		endif; ?>
+
+
+<div class="grid-item <?php echo $className; ?>">
+	<a href="<?php the_permalink(); ?>"<?php if($image_url): ?> style="background:url(<?php echo $image_url[0]; ?>) no-repeat left top;"<?php endif; ?>>
+		<?php if($work && $className !== 'grid-video'): ?>
+			<div class="breadcrumbs">
+				<span><?php echo $work[0]; ?></span> > Exercise <strong><?php echo get_post_type( get_the_ID() ); ?></strong>
 			</div>
-
-<?php else: ?>
-
-	<div class="grid-item">
-		<div class="v-centered">
-			<h6><?php the_title(); ?></h6>
-			</div>
-
-<?php endif; ?>
-
-
+		<?php endif; ?>
+			<h2 class="grid-title"><?php the_title(); ?></h2>
+			<p class="date"><?php the_time('F j, Y'); ?></p>
+	</a>
 </div>

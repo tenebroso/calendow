@@ -2283,6 +2283,10 @@ blockquote {
   border-top: 1px solid #000;
   padding: 5px 0 0; }
 
+.grid-title {
+  font-size: 40px;
+  font-weight: 800; }
+
 a {
   text-decoration: none;
   color: #7f7f7f;
@@ -2777,7 +2781,8 @@ button, .btn, input[type="submit"] {
 
 .filters {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  max-width: 998px; }
   .filters li a {
     color: #fff;
     background-color: #272A3F;
@@ -2904,13 +2909,12 @@ button, .btn, input[type="submit"] {
 
 /* ---- isotope ---- */
 .isotope {
-  background: #DDD;
-  max-width: 1200px;
+  max-width: 1000px;
   overflow: hidden;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  -webkit-transition: height 0.5s;
-          transition: height 0.5s; }
+  -webkit-transition: all 0.25s;
+          transition: all 0.25s; }
 
 /* clear fix */
 .isotope:after {
@@ -2965,18 +2969,24 @@ button, .btn, input[type="submit"] {
   margin: 0 auto; }
 
 .grid-item {
-  background: #383838;
-  text-align: center;
-  height: 480px;
-  width: 300px;
+  border-top: 10px solid #D8673D;
+  text-align: left;
+  height: 308px;
+  width: 330px;
   margin: 0 0 5px 0;
   float: left; }
-  .grid-item img {
-    max-width: 100%;
-    height: auto; }
+  .grid-item a {
+    display: block;
+    width: 100%;
+    height: 100%; }
+  .grid-item:not(.grid-video) {
+    padding: 15px 27px; }
 
 .grid-video {
-  height: 280px; }
+  height: 280px;
+  border: none; }
+  .grid-video .grid-title {
+    display: none; }
 
 .grid-news {
   height: 340px; }
