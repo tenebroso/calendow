@@ -108,7 +108,7 @@ class FacetWP_Ajax
      * Resume stalled indexer
      */
     function resume_index() {
-        $touch = (int) get_transient( 'facetwp_touch' );
+        $touch = (int) FWP()->indexer->get_transient( 'touch' );
         if ( 0 < $touch && $_POST['touch'] == $touch ) {
             FWP()->indexer->index();
         }

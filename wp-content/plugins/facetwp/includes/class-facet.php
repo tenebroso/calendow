@@ -2,12 +2,29 @@
 
 class FacetWP_Facet
 {
+
+    /* (array) Data for the currently-selected facets */
     public $facets;
+
+    /* (string) Template name */
     public $template;
+
+    /* (array) WP_Query arguments */
     public $query_args;
+
+    /* (array) AJAX parameters passed in */
+    public $ajax_params;
+
+    /* (array) HTTP parameters from the original page (URI, GET) */
     public $http_params;
+
+    /* (boolean) Whether search is active */
     public $is_search = false;
+
+    /* (array) Data for the sort box dropdown */
     public $sort_options;
+
+    /* (array) The final WP_Query object */
     public $query;
 
 
@@ -41,7 +58,8 @@ class FacetWP_Facet
             }
         }
 
-        // Set the HTTP params
+        // Set the AJAX and HTTP params
+        $this->ajax_params = $params;
         $this->http_params = $params['http_params'];
 
         // Get the template from $helper->settings

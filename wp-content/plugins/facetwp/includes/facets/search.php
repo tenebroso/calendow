@@ -16,7 +16,8 @@ class FacetWP_Facet_Search
         $output = '';
         $value = (array) $params['selected_values'];
         $value = empty( $value ) ? '' : $value[0];
-        $output .= '<input type="text" class="facetwp-search" value="' . esc_attr( $value ) . '" placeholder="' . __( 'Enter keywords', 'fwp' ) . '" />';
+        $placeholder = isset( $params['facet']['placeholder'] ) ? $params['facet']['placeholder'] : __( 'Enter keywords', 'fwp' );
+        $output .= '<input type="text" class="facetwp-search" value="' . esc_attr( $value ) . '" placeholder="' . esc_attr( $placeholder ) . '" />';
         return $output;
     }
 
@@ -80,10 +81,12 @@ class FacetWP_Facet_Search
 (function($) {
     wp.hooks.addAction('facetwp/load/search', function($this, obj) {
         $this.find('.facet-search-engine').val(obj.search_engine);
+        $this.find('.facet-placeholder').val(obj.placeholder);
     });
 
     wp.hooks.addFilter('facetwp/save/search', function($this, obj) {
         obj['search_engine'] = $this.find('.facet-search-engine').val();
+        obj['placeholder'] = $this.find('.facet-placeholder').val();
         return obj;
     });
 
@@ -143,6 +146,10 @@ class FacetWP_Facet_Search
                     <?php endforeach; ?>
                 </select>
             </td>
+        </tr>
+        <tr class="facetwp-conditional type-search">
+            <td><?php _e('Placeholder text', 'fwp'); ?>:</td>
+            <td><input type="text" class="facet-placeholder" value="" /></td>
         </tr>
 <?php
     }

@@ -10,7 +10,7 @@
     margin-left: -20px;
     padding: 0 20px;
     background: #fff;
-    border-bottom:1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
 }
 
 .facetwp-logo {
@@ -53,13 +53,18 @@
 }
 
 .facetwp-content-settings,
-.facetwp-content-migrate {
+.facetwp-content-migrate,
+.facetwp-content-support {
     padding: 20px;
     background: #fff;
 }
 
 .facetwp-content.active {
     display: block;
+}
+
+.facetwp-content h3 {
+    margin-top: 0;
 }
 
 .facetwp-content textarea {
@@ -169,18 +174,35 @@
 
 /* Tooltips */
 
-.ui-tooltip {
-    padding: 10px;
-    background: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0px 0px 3px 0px rgba(25, 25, 25, 0.3);
-    max-width: 300px;
-}
-
 .facetwp-tooltip {
     display: inline;
 }
 
 .facetwp-tooltip-content {
     display: none;
+}
+
+#powerTip {
+    cursor: default;
+    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+    color: #fff;
+    display: none;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    max-width: 400px;
+}
+
+#powerTip:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    margin-top: -5px;
+    border-right: 10px solid #333;
+    border-right: 10px solid rgba(0, 0, 0, 0.8);
 }

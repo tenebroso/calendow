@@ -41,18 +41,6 @@ if ( ! empty( $activation ) ) {
 ?>
 
 <script src="<?php echo FACETWP_URL; ?>/assets/js/event-manager.js"></script>
-<script>
-(function($) {
-    $(function() {
-        $(document).tooltip({
-            items: '.facetwp-tooltip',
-            content: function() {
-                return $(this).find('.facetwp-tooltip-content').html();
-            }
-        });
-    });
-})(jQuery);
-</script>
 <?php
 foreach ( $facet_types as $class ) {
     $class->admin_scripts();
@@ -67,7 +55,7 @@ foreach ( $facet_types as $class ) {
         <a class="facetwp-nav-tab" rel="facets"><?php _e( 'Facets', 'fwp' ); ?></a>
         <a class="facetwp-nav-tab" rel="templates"><?php _e( 'Templates', 'fwp' ); ?></a>
         <a class="facetwp-nav-tab" rel="settings"><?php _e( 'Settings', 'fwp' ); ?></a>
-        <a class="facetwp-nav-tab" rel="migrate"><?php _e( 'Migrate', 'fwp' ); ?></a>
+        <a class="facetwp-nav-tab" rel="support"><?php _e( 'Support', 'fwp' ); ?></a>
     </span>
 </div>
 
@@ -122,9 +110,11 @@ foreach ( $facet_types as $class ) {
                 </td>
             </tr>
         </table>
-    </div>
-    <div class="facetwp-content facetwp-content-migrate">
+
         <?php include( FACETWP_DIR . '/templates/page-migrate.php' ); ?>
+    </div>
+    <div class="facetwp-content facetwp-content-support">
+        <?php include( FACETWP_DIR . '/templates/page-support.php' ); ?>
     </div>
 
     <!-- clone settings -->

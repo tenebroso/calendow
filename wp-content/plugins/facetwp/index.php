@@ -3,7 +3,7 @@
 Plugin Name: FacetWP
 Plugin URI: https://facetwp.com/
 Description: Faceted Search and Filtering for WordPress
-Version: 1.7.6
+Version: 1.8.1
 Author: Matt Gibbs
 Author URI: https://facetwp.com/
 
@@ -40,7 +40,7 @@ class FacetWP
     function __construct() {
 
         // setup variables
-        define( 'FACETWP_VERSION', '1.7.6' );
+        define( 'FACETWP_VERSION', '1.8.1' );
         define( 'FACETWP_DIR', dirname( __FILE__ ) );
         define( 'FACETWP_URL', plugins_url( 'facetwp' ) );
 
@@ -148,7 +148,7 @@ class FacetWP
      */
     function admin_scripts( $hook ) {
         if ( 'settings_page_facetwp' == $hook ) {
-            wp_enqueue_script( 'jquery-ui-tooltip' );
+            wp_enqueue_script( 'jquery-powertip', FACETWP_URL . '/assets/js/jquery-powertip/jquery.powertip.min.js', array( 'jquery' ), '1.2.0' );
         }
     }
 
@@ -171,18 +171,31 @@ class FacetWP
      */
     function plugin_row_meta( $plugin_meta, $plugin_file ) {
         if ( 'facetwp/index.php' == $plugin_file ) {
-            array_pop( $plugin_meta );
-            $message = '<a class="fwp-renew" href="options-general.php?page=facetwp">' . __( 'Activate license', 'fwp' ) . '</a>';
+            $show_expiration = true;
             $activation = get_option( 'facetwp_activation' );
+            $message = '<a class="fwp-renew" href="options-general.php?page=facetwp">' . __( 'Activate license', 'fwp' ) . '</a>';
             if ( ! empty( $activation ) ) {
                 $activation = json_decode( $activation );
                 if ( 'success' == $activation->status ) {
-                    $message = '<a class="fwp-renew" href="https://facetwp.com/buy/" target="_blank">' . __( 'Renew license', 'fwp' ) . '</a> ';
-                    $message .= '(' . __( 'expires', 'fwp' ) . ' ' . date( 'M j, Y', strtotime( $activation->expiration ) ) . ')';
+                    $expires = strtotime( $activation->expiration );
+                    if ( 0 < $expires - strtotime( '+2 months' ) ) {
+                        $show_expiration = false;
+                    }
+                    elseif ( $expires > time() ) {
+                        $expires = floor( ( $expires - time() ) / 86400 ) . ' ' . __( 'days left', 'fwp' );
+                    }
+                    else {
+                        $expires = __( 'expired', 'fwp' );
+                    }
+                    $message = '<a class="fwp-renew" href="https://facetwp.com/documentation/installation/#renewal" target="_blank">' . __( 'Renew license', 'fwp' ) . "</a> ($expires)";
                 }
             }
-            $message .= '<style>.fwp-renew:before { color:#d54e21; content:"\f112"; font-family:dashicons; font-size:16px; margin:0 5px 0 0; vertical-align:top; }</style>';
-            $plugin_meta[] = $message;
+
+            if ( $show_expiration ) {
+                array_pop( $plugin_meta );
+                $message .= '<style>.fwp-renew:before { color:#d54e21; content:"\f112"; font-family:dashicons; font-size:16px; margin:0 5px 0 0; vertical-align:top; }</style>';
+                $plugin_meta[] = $message;
+            }
         }
         return $plugin_meta;
     }

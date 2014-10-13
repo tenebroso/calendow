@@ -35,7 +35,11 @@ class FacetWP_Facet_Autocomplete
         $facet = $params['facet'];
         $selected_values = $params['selected_values'];
         $selected_values = is_array( $selected_values ) ? $selected_values[0] : $selected_values;
-        $selected_values = like_escape( $selected_values );
+
+        // like_escape was deprecated in 4.0
+        $selected_values = method_exists( $wpdb, 'esc_like' ) ?
+            $wpdb->esc_like( $selected_values ) :
+            like_escape( $selected_values );
 
         if ( empty( $selected_values ) ) {
             return 'continue';

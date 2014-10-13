@@ -66,8 +66,8 @@ class FacetWP_Facet_Slider
         );
         $facet = array_merge( $defaults, $facet );
 
-        $min = $wpdb->get_var( "SELECT facet_display_value FROM {$wpdb->prefix}facetwp_index WHERE facet_name = '{$facet['name']}' $where_clause ORDER BY CAST(facet_display_value AS SIGNED) ASC LIMIT 1" );
-        $max = $wpdb->get_var( "SELECT facet_display_value FROM {$wpdb->prefix}facetwp_index WHERE facet_name = '{$facet['name']}' $where_clause ORDER BY CAST(facet_display_value AS SIGNED) DESC LIMIT 1" );
+        $min = $wpdb->get_var( "SELECT facet_display_value FROM {$wpdb->prefix}facetwp_index WHERE facet_name = '{$facet['name']}' $where_clause ORDER BY (facet_display_value + 0) ASC LIMIT 1" );
+        $max = $wpdb->get_var( "SELECT facet_display_value FROM {$wpdb->prefix}facetwp_index WHERE facet_name = '{$facet['name']}' $where_clause ORDER BY (facet_display_value + 0) DESC LIMIT 1" );
 
         $selected_min = isset( $selected_values[0] ) ? $selected_values[0] : $min;
         $selected_max = isset( $selected_values[1] ) ? $selected_values[1] : $max;
@@ -80,8 +80,7 @@ class FacetWP_Facet_Slider
             'start' => array( $min, $max ),
             'format' => $facet['format'],
             'prefix' => $facet['prefix'],
-            'step' => $facet['step'],
-            'resolution' => 1,
+            'step' => $facet['step']
         );
     }
 
@@ -141,12 +140,17 @@ FWP.used_facets = {};
         var min = FWP.settings[facet_name]['lower'];
         var max = FWP.settings[facet_name]['upper'];
         var format = FWP.settings[facet_name]['format'];
-        var label = ''
-            + FWP.settings[facet_name]['prefix']
-            + nummy(min).format(format)
-            + ' &mdash; '
-            + FWP.settings[facet_name]['prefix']
-            + nummy(max).format(format);
+        if ( min === max ) {
+            var label = FWP.settings[facet_name]['prefix']
+                + nummy(min).format(format);
+        }
+        else {
+            var label = FWP.settings[facet_name]['prefix']
+                + nummy(min).format(format)
+                + ' &mdash; '
+                + FWP.settings[facet_name]['prefix']
+                + nummy(max).format(format);
+        }
         $this.find('.facetwp-slider-label').html(label);
     });
 

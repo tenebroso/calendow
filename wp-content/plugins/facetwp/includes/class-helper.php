@@ -51,6 +51,18 @@ final class FacetWP_Helper
 
 
     /**
+     * Get the current page URI
+     */
+    function get_uri() {
+        $uri = $_SERVER['REQUEST_URI'];
+        if ( false !== ( $pos = strpos( $uri, '?' ) ) ) {
+            $uri = substr( $uri, 0, $pos );
+        }
+        return trim( $uri, '/' );
+    }
+
+
+    /**
      * Get settings and allow for developer hooks
      */
     function load_settings() {

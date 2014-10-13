@@ -23,11 +23,13 @@ foreach ( $settings['templates'] as $template ) {
 }
 </style>
 
-<h3 style="margin-top:0"><?php _e( 'Export', 'fwp' ); ?></h3>
-<table style="width:100%">
+<table style="width:100%; margin-top:20px">
     <tr>
+        <td style="width:175px; vertical-align:top">
+            <?php _e( 'Export', 'fwp' ); ?>
+        </td>
         <td valign="top" style="width:260px">
-            <select class="export-items" multiple="multiple" style="width:240px; height:100px">
+            <select class="export-items" multiple="multiple" style="width:250px; height:100px">
                 <?php foreach ( $export as $val => $label ) : ?>
                 <option value="<?php echo $val; ?>"><?php echo $label; ?></option>
                 <?php endforeach; ?>
@@ -39,7 +41,16 @@ foreach ( $settings['templates'] as $template ) {
         </td>
     </tr>
 </table>
-<h3><?php _e( 'Import', 'fwp' ); ?></h3>
-<div><textarea class="import-code" placeholder="<?php _e( 'Paste the import code here', 'fwp' ); ?>"></textarea></div>
-<div><input type="checkbox" class="import-overwrite" /> <?php _e( 'Overwrite existing items?', 'fwp' ); ?></div>
-<div style="margin-top:5px"><a class="button import-submit"><?php _e( 'Import', 'fwp' ); ?></a></div>
+
+<table style="width:100%; margin-top:20px">
+    <tr>
+        <td style="width:175px; vertical-align:top">
+            <?php _e( 'Import', 'fwp' ); ?>
+        </td>
+        <td>
+            <div><textarea class="import-code" placeholder="<?php _e( 'Paste the import code here', 'fwp' ); ?>"></textarea></div>
+            <div><input type="checkbox" class="import-overwrite" /> <?php _e( 'Overwrite existing items?', 'fwp' ); ?></div>
+            <div style="margin-top:5px"><a class="button import-submit"><?php _e( 'Import', 'fwp' ); ?></a></div>
+        </td>
+    </tr>
+</table>

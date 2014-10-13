@@ -64,15 +64,9 @@ class FacetWP_Display
      */
     function ajaxurl() {
 
-        // Accept HTTP parameters
-        $uri = $_SERVER['REQUEST_URI'];
-        if ( false !== ( $pos = strpos( $uri, '?' ) ) ) {
-            $uri = substr( $uri, 0, $pos );
-        }
-
         $http_params = json_encode( array(
             'get' => $_GET,
-            'uri' => trim( $uri, '/' )
+            'uri' => FWP()->helper->get_uri(),
         ) );
 
         $url = admin_url( 'admin-ajax.php' );

@@ -298,5 +298,19 @@ var FWP = {};
                 $('.facetwp-activation-status').html(response.message);
             }, 'json');
         });
+
+
+        // Tooltips
+        $(document).on('mouseover', '.facetwp-tooltip', function() {
+            if ('undefined' == typeof $(this).data('powertip')) {
+                var content = $(this).find('.facetwp-tooltip-content').html();
+                $(this).data('powertip', content);
+                $(this).powerTip({
+                    placement: 'e',
+                    mouseOnToPopup: true
+                });
+                $.powerTip.show(this);
+            }
+        });
     });
 })(jQuery);

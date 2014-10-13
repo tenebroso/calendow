@@ -91,13 +91,20 @@ class FacetWP_Indexer
 
         // Index everything
         if ( empty( $post_id ) ) {
-            $args = array(
-                'post_type'         => 'any',
-                'post_status'       => 'publish',
-                'posts_per_page'    => -1,
-                'fields'            => 'ids',
-                'orderby'           => 'ID',
-            );
+
+            // Prevent multiple indexing processes
+            $touch = (int) $this->get_transient( 'touch' );
+
+            if ( 0 < $touch ) {
+                // Run only if the indexer is inactive or stalled
+                if ( ( time() - $touch ) < 60 ) {
+                    exit;
+                }
+            }
+            else {
+                // Clear table values
+                $wpdb->query( "TRUNCATE TABLE {$wpdb->prefix}facetwp_index" );
+            }
 
             // Bypass the PHP timeout
             ini_set( 'max_execution_time', 0 );
@@ -105,8 +112,13 @@ class FacetWP_Indexer
             // Index all flag
             $this->index_all = true;
 
-            // Clear table values
-            $wpdb->query( "TRUNCATE TABLE {$wpdb->prefix}facetwp_index" );
+            $args = array(
+                'post_type'         => 'any',
+                'post_status'       => 'publish',
+                'posts_per_page'    => -1,
+                'fields'            => 'ids',
+                'orderby'           => 'ID',
+            );
         }
         // Index a single post
         else {
@@ -125,14 +137,6 @@ class FacetWP_Indexer
         // Control which posts to index
         $args = apply_filters( 'facetwp_indexer_query_args', $args );
 
-        // Run only if the indexer is inactive or stalled
-        if ( $this->index_all ) {
-            $touch = (int) get_transient( 'facetwp_touch' );
-            if ( 0 < $touch && 60 < ( time() - $touch ) ) {
-                exit;
-            }
-        }
-
         // Get all facet sources
         $facets = FWP()->helper->get_facets();
 
@@ -150,9 +154,12 @@ class FacetWP_Indexer
                 $offset = (int) $_POST['offset'];
             }
 
-            set_transient( 'facetwp_num_indexed', $offset );
-            set_transient( 'facetwp_num_total', count( $post_ids ) );
-            set_transient( 'facetwp_touch', time() );
+            $transients = array(
+                'num_indexed'   => $offset,
+                'num_total'     => $query->found_posts,
+                'touch'         => time(),
+            );
+            update_option( 'facetwp_transients', json_encode( $transients ) );
         }
 
         foreach ( $post_ids as $counter => $post_id ) {
@@ -281,9 +288,13 @@ class FacetWP_Indexer
 
                 // Update the progress bar
                 if ( $this->index_all ) {
-                    if ( 0 == ( ( $counter + 1 ) % 100 ) ) {
-                        set_transient( 'facetwp_num_indexed', $counter + 1 );
-                        set_transient( 'facetwp_touch', time() );
+                    if ( 0 == ( ( $counter + 1 ) % 10 ) ) {
+                        $transients = array(
+                            'num_indexed'   => $counter + 1,
+                            'num_total'     => $this->get_transient( 'num_total' ),
+                            'touch'         => time(),
+                        );
+                        update_option( 'facetwp_transients', json_encode( $transients ) );
                     }
                 }
             }
@@ -291,9 +302,7 @@ class FacetWP_Indexer
 
         // Indexing complete
         if ( $this->index_all ) {
-            delete_transient( 'facetwp_num_indexed' );
-            delete_transient( 'facetwp_num_total' );
-            delete_transient( 'facetwp_touch' );
+            update_option( 'facetwp_transients', '' );
         }
     }
 
@@ -355,9 +364,9 @@ class FacetWP_Indexer
      */
     function get_progress() {
         $return = -1;
-        $num_indexed = (int) get_transient( 'facetwp_num_indexed' );
-        $num_total = (int) get_transient( 'facetwp_num_total' );
-        $touch = (int) get_transient( 'facetwp_touch' );
+        $num_indexed = (int) $this->get_transient( 'num_indexed' );
+        $num_total = (int) $this->get_transient( 'num_total' );
+        $touch = (int) $this->get_transient( 'touch' );
 
         if ( 0 < $num_total ) {
 
@@ -382,5 +391,25 @@ class FacetWP_Indexer
         }
 
         return $return;
+    }
+
+
+    /**
+     * Get indexer transient variables
+     * @since 1.7.8
+     */
+    function get_transient( $name = false ) {
+        $transients = get_option( 'facetwp_transients' );
+
+        if ( ! empty( $transients ) ) {
+            $transients = json_decode( $transients, true );
+            if ( $name ) {
+                return isset( $transients[ $name ] ) ? $transients[ $name ] : false;
+            }
+
+            return $transients;
+        }
+
+        return false;
     }
 }
