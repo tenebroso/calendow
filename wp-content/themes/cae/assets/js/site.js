@@ -267,7 +267,7 @@ CE.Site = {
   },
   home: {
     init: function() {
-      CE.desktopFilter();
+      //CE.desktopFilter();
       //CE.selectBox();
       //$('#container').magnet();
     }
