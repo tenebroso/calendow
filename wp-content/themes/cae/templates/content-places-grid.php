@@ -14,7 +14,7 @@
 				<div class="v-centered">
 					<h2><strong>BH</strong></h2>
 					<p>Boyle Heights</p>
-					<p class="temperature light-thin-text">89&deg;</p>
+					<p class="temperature light-thin-text" id="weather-boyle-heights"></p>
 				</div>
 			</a>
 		</li><?php endif; $x++; } ?>

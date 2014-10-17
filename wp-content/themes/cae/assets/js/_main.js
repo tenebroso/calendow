@@ -7,6 +7,7 @@ CE.Site = {
       CE.navTrigger();
       CE.collapse();
       CE.headerParallax();
+      CE.temperature();
     }
   },
   blog: {

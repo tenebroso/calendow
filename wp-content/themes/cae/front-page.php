@@ -24,4 +24,4 @@
 	<button class="pager btn" data-page="1" onclick="loadMore()">Load more</button>
 </div>
 
-<?php //get_template_part('templates/content','places-grid'); ?>
+<?php get_template_part('templates/content','places-grid'); ?>
