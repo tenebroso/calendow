@@ -1,6 +1,10 @@
 .place-grid {
 	margin-top:2.61111111111111em;
 	margin-bottom:2.61111111111111em;
+	h2 + p {
+		margin: 0 0 1em 0;
+		line-height: 1.2;
+	}
 	li {
 		vertical-align: top;
 		text-align: center;
@@ -32,6 +36,7 @@
 		border:1px solid darken($white, 10%);
 		transform:translate3d(0,0,0);
 		transition:all .25s;
+		padding:0 5px;
 	}
 	.temperature {
 		font-size:24px;

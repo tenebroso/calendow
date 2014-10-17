@@ -3108,6 +3108,9 @@ article[class*="entry-single"] {
 .place-grid {
   margin-top: 2.61111em;
   margin-bottom: 2.61111em; }
+  .place-grid h2 + p {
+    margin: 0 0 1em 0;
+    line-height: 1.2; }
   .place-grid li {
     vertical-align: top;
     text-align: center;
@@ -3133,7 +3136,8 @@ article[class*="entry-single"] {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     -webkit-transition: all 0.25s;
-            transition: all 0.25s; }
+            transition: all 0.25s;
+    padding: 0 5px; }
   .place-grid .temperature {
     font-size: 24px;
     position: relative;

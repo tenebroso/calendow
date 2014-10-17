@@ -2,21 +2,32 @@
 
 <ul class="place-grid list-inline grid-5-up reset-margins">
 
-	<?php while($x<16) { 
-		if($x == 1): ?><li>
-		<a class="center-block placemarker">
+<li>
+	<a class="center-block placemarker">
+		<div class="v-centered">
+			<div class="icon-places-placemarker"></div>
+		</div>
+	</a>	
+</li>
+
+<?php
+	$args = array('hide_empty' => false);
+	$terms = get_terms('place', $args);
+	 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
+	     foreach ( $terms as $term ) { 
+			$abbr = get_field('name_abbreviation', $term);
+		?>
+    <li>
+		<a class="center-block" href="/place/<?php echo $term->slug; ?>">
 			<div class="v-centered">
-				<div class="icon-places-placemarker"></div>
+				<h2><strong><?php echo $abbr; ?></strong></h2>
+				<p><?php echo $term->name; ?></p>
+				<p class="temperature light-thin-text" id="<?php echo strtolower($abbr); ?>"></p>
 			</div>
-		</a>	
-	</li><?php else: ?><li>
-			<a class="center-block" href="#">
-				<div class="v-centered">
-					<h2><strong>BH</strong></h2>
-					<p>Boyle Heights</p>
-					<p class="temperature light-thin-text" id="weather-boyle-heights"></p>
-				</div>
-			</a>
-		</li><?php endif; $x++; } ?>
+		</a>
+	</li>
+<?php }
+}  
+?>
 
 </ul>
