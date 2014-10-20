@@ -140,8 +140,8 @@ class FacetWP_Facet_Search
             <td>
                 <select class="facet-search-engine">
                     <option value=""><?php _e( 'WP Default', 'fwp' ); ?></option>
-                    <?php foreach ( $engines as $key => $attributes ) : ?>
-                    <?php $label = isset( $attributes['label'] ) ? $attributes['label'] : __( 'Default', 'fwp' ); ?>
+                    <?php foreach ( $engines as $key => $attr ) : ?>
+                    <?php $label = isset( $attr['searchwp_engine_label'] ) ? $attr['searchwp_engine_label'] : __( 'Default', 'fwp' ); ?>
                     <option value="<?php echo $key; ?>">SearchWP - <?php echo $label; ?></option>
                     <?php endforeach; ?>
                 </select>

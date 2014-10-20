@@ -54,7 +54,7 @@ class FacetWP_Facet_Dropdown
         $values = (array) $params['values'];
         $selected_values = (array) $params['selected_values'];
 
-        $label_any = empty( $facet['label_any'] ) ? __( 'Any', 'fwp' ) : $facet['label_any'];
+        $label_any = empty( $facet['label_any'] ) ? __( 'Any', 'fwp' ) : sprintf( __( '%s', 'fwp' ), $facet['label_any'] );
 
         $output .= '<select class="facetwp-dropdown">';
         $output .= '<option value="">' . esc_attr( $label_any ) . '</option>';

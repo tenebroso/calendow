@@ -39,4 +39,18 @@ $sysinfo = str_replace( "\n", '{n}', trim( $sysinfo ) );
 $sysinfo = urlencode( $sysinfo );
 $email = urlencode( get_bloginfo( 'admin_email' ) );
 ?>
-<iframe src="https://facetwp.com/create-ticket/?email=<?php echo $email; ?>&sysinfo=<?php echo $sysinfo; ?>" style="width:100%; height:600px"></iframe>
+
+<script>
+(function($) {
+    $(function() {
+        $(document).on('click', '.facetwp-nav-tab[rel="support"]', function() {
+            if ( 1 > $('.fwp-iframe-wrapper iframe').length) {
+                var iframe = '<iframe src="https://facetwp.com/create-ticket/?email=<?php echo $email; ?>&sysinfo=<?php echo $sysinfo; ?>" style="width:100%; height:600px"></iframe>';
+                $('.fwp-iframe-wrapper').html(iframe);
+            }
+        });
+    });
+})(jQuery);
+</script>
+
+<div class="fwp-iframe-wrapper"></div>

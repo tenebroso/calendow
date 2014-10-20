@@ -15,10 +15,12 @@
 
 .facetwp-logo {
     font-size: 18px;
-    margin-right: 15px;
-    padding-left: 35px;
-    background: url(../images/facetwp.png) no-repeat;
-    background-size: 25px 25px;
+    line-height: 28px;
+    margin-right: 18px;
+    padding-left: 40px;
+    background: url(../images/filter.png) no-repeat;
+    background-size: 28px 28px;
+    display: inline-block;
 }
 
 .facetwp-nav-tab {
@@ -53,7 +55,6 @@
 }
 
 .facetwp-content-settings,
-.facetwp-content-migrate,
 .facetwp-content-support {
     padding: 20px;
     background: #fff;
@@ -135,7 +136,7 @@
     margin-right: -1px;
 }
 
-.icon-question {
+.facetwp-content .icon-question {
     display: inline-block;
     margin-left: 4px;
     background: #fcfcfc;
@@ -146,6 +147,14 @@
     width: 14px;
     height: 14px;
     text-align: center;
+}
+
+.facetwp-content .icon-question:before {
+    content: none;
+}
+
+.facetwp-table td {
+    padding: 0 0 10px 0;
 }
 
 .remove-facet,

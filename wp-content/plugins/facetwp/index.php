@@ -3,7 +3,7 @@
 Plugin Name: FacetWP
 Plugin URI: https://facetwp.com/
 Description: Faceted Search and Filtering for WordPress
-Version: 1.8.1
+Version: 1.8.2
 Author: Matt Gibbs
 Author URI: https://facetwp.com/
 
@@ -40,7 +40,7 @@ class FacetWP
     function __construct() {
 
         // setup variables
-        define( 'FACETWP_VERSION', '1.8.1' );
+        define( 'FACETWP_VERSION', '1.8.2' );
         define( 'FACETWP_DIR', dirname( __FILE__ ) );
         define( 'FACETWP_URL', plugins_url( 'facetwp' ) );
 
@@ -157,12 +157,7 @@ class FacetWP
      * Route to the correct edit screen
      */
     function settings_page() {
-        if ( isset( $_GET['subpage'] ) && 'migrate' == $_GET['subpage'] ) {
-            include( FACETWP_DIR . '/templates/page-migrate.php' );
-        }
-        else {
-            include( FACETWP_DIR . '/templates/page-settings.php' );
-        }
+        include( FACETWP_DIR . '/templates/page-settings.php' );
     }
 
 

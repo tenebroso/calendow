@@ -14,7 +14,7 @@ class FacetWP_Facet_Checkboxes
      * Load the available choices
      */
     function load_values( $params ) {
-        global $wpdb, $facetwp;
+        global $wpdb;
 
         $facet = $params['facet'];
         $where_clause = $params['where_clause'];
@@ -38,19 +38,19 @@ class FacetWP_Facet_Checkboxes
         if ( 'or' == $facet['operator'] ) {
 
             // Apply filtering (ignore the current facet's selections)
-            if ( !empty( $facetwp->or_values ) && ( 1 < count( $facetwp->or_values ) || !isset( $facetwp->or_values[ $facet['name'] ] ) ) ) {
+            if ( !empty( FWP()->or_values ) && ( 1 < count( FWP()->or_values ) || !isset( FWP()->or_values[ $facet['name'] ] ) ) ) {
                 $post_ids = array();
-                $or_values = $facetwp->or_values; // Preserve the original
+                $or_values = FWP()->or_values; // Preserve the original
                 unset( $or_values[ $facet['name'] ] );
                 foreach ( $or_values as $key => $vals ) {
                     $post_ids = ( 0 == $key ) ? $vals : array_intersect( $post_ids, $vals );
                 }
 
                 // Return only applicable results
-                $post_ids = array_intersect( $post_ids, $facetwp->unfiltered_post_ids );
+                $post_ids = array_intersect( $post_ids, FWP()->unfiltered_post_ids );
             }
             else {
-                $post_ids = $facetwp->unfiltered_post_ids;
+                $post_ids = FWP()->unfiltered_post_ids;
             }
 
             $post_ids = empty( $post_ids ) ? array( 0 ) : $post_ids;

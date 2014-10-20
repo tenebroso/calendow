@@ -210,7 +210,7 @@ class FacetWP_Facet
      * @return array An array of post IDs
      */
     function get_filtered_post_ids() {
-        global $wpdb, $facetwp;
+        global $wpdb;
 
         // Only get relevant post IDs
         $args = $this->query_args;
@@ -224,19 +224,19 @@ class FacetWP_Facet
         // Allow hooks to modify the default post IDs
         $post_ids = apply_filters( 'facetwp_pre_filtered_post_ids', $post_ids, $this );
 
-        // Exit stage left
-        if ( empty( $post_ids ) ) {
-            return array( 0 );
-        }
-
         // See if an "OR" checkbox facet exists
-        // If not, then we can save memory by not storing extra post IDs
+        // If not, then we can save memory by not storing post IDs
         $or_exists = FWP()->helper->facet_setting_exists( 'operator', 'or', $this->facets );
         if ( $or_exists ) {
-            $facetwp->unfiltered_post_ids = $post_ids;
+            FWP()->unfiltered_post_ids = $post_ids;
         }
 
         foreach ( $this->facets as $the_facet ) {
+
+            // Stop looping
+            if ( empty( $post_ids ) ) {
+                break;
+            }
 
             $matches = array();
 
@@ -251,8 +251,8 @@ class FacetWP_Facet
             $facet_type = $the_facet['type'];
 
             // Handle each facet
-            if ( isset( $this->facet_types[$facet_type] ) && !empty( $selected_values ) ) {
-                $matches = $this->facet_types[$facet_type]->filter_posts( array(
+            if ( isset( $this->facet_types[ $facet_type ] ) && ! empty( $selected_values ) ) {
+                $matches = $this->facet_types[ $facet_type ]->filter_posts( array(
                     'facet' => $the_facet,
                     'selected_values' => $selected_values,
                 ) );
@@ -265,7 +265,7 @@ class FacetWP_Facet
 
             // If "OR" checkbox facets exist, separate post IDs by facet
             if ( $or_exists ) {
-                $facetwp->or_values[ $the_facet['name'] ] = $matches;
+                FWP()->or_values[ $the_facet['name'] ] = $matches;
             }
 
             // Preserve post ID order for search facets
@@ -282,11 +282,11 @@ class FacetWP_Facet
             else {
                 $post_ids = array_intersect( $post_ids, $matches );
             }
+        }
 
-            // Return a zero array if no matches
-            if ( empty( $post_ids ) ) {
-                return array( 0 );
-            }
+        // Return a zero array if no matches
+        if ( empty( $post_ids ) ) {
+            $post_ids = array( 0 );
         }
 
         // Reset any array keys
