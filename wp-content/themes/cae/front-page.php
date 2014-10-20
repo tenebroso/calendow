@@ -2,21 +2,27 @@
 	
 	<?php get_template_part('templates/home/hero'); ?>
 
-<div id="container">
-			
-	<?php get_template_part('templates/home/filters'); ?>
-
-	<?php //get_template_part('templates/content','isotope'); ?>
-
-</div>
-
 <?php endwhile; ?>
 
 
-<?php echo do_shortcode( '[facetwp facet="campaigns"]' ); ?>
-<?php echo do_shortcode( '[facetwp facet="places"]' ); ?>
+<div id="container">
+			
+	<?php //get_template_part('templates/home/filters'); ?>
 
-<div class="isotope">
+	<?php //get_template_part('templates/content','isotope'); ?>
+
+	<div class="filters">
+
+		<?php echo do_shortcode( '[facetwp facet="campaigns"]' ); ?>
+		<?php echo do_shortcode( '[facetwp facet="places"]' ); ?>
+		<?php echo do_shortcode( '[facetwp facet="places"]' ); ?>
+
+	</div>
+
+</div>
+
+
+<div class="grid-container">
 <?php echo do_shortcode( '[facetwp template="default"]' ); ?>
 </div>
 
