@@ -15,11 +15,17 @@
 }
 
 .report-sidebar,
-.report-container {
+.report-container,
+.report-single {
 	background: $white;
 	color:$grey1;
 	float: left;
 	line-height: 30px;
+}
+
+.report-container {
+	position: relative;
+	background: none;
 }
 
 .report-content {
@@ -31,6 +37,8 @@
 	width: 300px;
 	margin: 0 35px 0 0;
 	font-size:18px;
+	position: relative;
+	z-index:20;
 }
 
 .report-nav {
@@ -38,10 +46,10 @@
 		display: block;
 		padding:10px 20px;
 		border-bottom:1px solid $offWhite;
-		&:hover {
-			background: $offWhite;
-			color:$green;
-		}
+	}
+	li.active a, a:hover {
+		background: $offWhite url(../img/svg/pattern.svg) repeat;
+		color:$green;
 	}
 	li:last-child {
 		a {
@@ -96,4 +104,23 @@
 		height: 24px;
 		background-size:13px 24px;
 	}
+}
+
+.report-container .report-single:first-child {
+	.report-prev a {
+		display: none;
+	}
+}
+
+.report-container .report-single:last-child {
+	.report-next a {
+		display: none;
+	}
+}
+
+.report-single:not(#report-panel-1) {
+	transform: translate3d(1000%,0,0);
+	position: absolute;
+	top: 0;
+	left: 0;
 }

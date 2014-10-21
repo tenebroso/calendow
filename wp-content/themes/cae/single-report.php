@@ -1,25 +1,31 @@
 <div class="report-sidebar">
 	<a href="#" class="report-sidebar-title">
-		<h3>Health Happens with Prevention</h3>
-		<p class="time">May 23, 2014</p>
+		<h3><?php the_title(); ?></h3>
+		<p class="time"><?php the_time('F j, Y'); ?></p>
 	</a>
 	<ul class="report-nav">
-		<li><a href="#">What is Prevention?</a></li>
-		<li><a href="#">Why Should I Care</a></li>
-		<li><a href="#">Getting the Word Out</a></li>
-		<li><a href="#">What is Prevention?</a></li>
-		<li><a href="#">Why Should I Care</a></li>
-		<li><a href="#">What is Prevention?</a></li>
-		<li><a href="#">Why Should I Care</a></li>
+		<?php $i = 1; if( have_rows('section_builder') ): while ( have_rows('section_builder') ) : the_row(); ?>
+
+			<li data-id="<?php echo $i; ?>"><a><?php the_sub_field('section_title'); ?></a></li>
+
+		<?php $i++; endwhile; $total = count( get_field('section_builder') ); else : endif; ?>
+		<li><a hef="<?php the_field('full_report_download'); ?>">Get Full Report</a></li>
 	</ul>
 </div>
 
 <div class="report-container">
-	<ul class="report-lr-nav">
-		<li class="report-prev"><a class="icon-sm-arrow" href="#"></a></li><li class="report-current"><span>3</span> of 7</li><li class="report-next"><a class="icon-sm-arrow" href="#"></a></li>
-	</ul>
-	<div class="report-content">
-		<h2><?php the_title(); ?></h2>
-		<?php get_template_part('templates/content', 'single'); ?>
+
+	<?php $i = 1; if( have_rows('section_builder') ): while ( have_rows('section_builder') ) : the_row(); ?>
+
+	<div class="report-single" id="report-panel-<?php echo $i; ?>" data-id="<?php echo $i; ?>">
+		<ul class="report-lr-nav">
+			<li class="report-prev"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i - 1; ?>"></a></li><li class="report-current"><span><?php echo $i; ?></span> of <?php echo $total; ?></li><li class="report-next"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i + 1; ?>"></a></li>
+		</ul>
+		<div class="report-content">
+			<?php the_sub_field('section_content'); ?>
+		</div>
 	</div>
+
+	<?php $i++; endwhile; else : endif; ?>
+
 </div>

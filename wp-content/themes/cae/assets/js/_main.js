@@ -33,9 +33,10 @@ CE.Site = {
       //$('#container').magnet();
     }
   },
-  about_us: {
+  single_report: {
     init: function() {
-
+      CE.reportPageHeight();
+      CE.reportSectionSwitcher();
     }
   }
 };
