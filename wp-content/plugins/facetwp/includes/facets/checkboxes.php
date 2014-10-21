@@ -42,8 +42,11 @@ class FacetWP_Facet_Checkboxes
                 $post_ids = array();
                 $or_values = FWP()->or_values; // Preserve the original
                 unset( $or_values[ $facet['name'] ] );
-                foreach ( $or_values as $key => $vals ) {
-                    $post_ids = ( 0 == $key ) ? $vals : array_intersect( $post_ids, $vals );
+
+                $counter = 0;
+                foreach ( $or_values as $name => $vals ) {
+                    $post_ids = ( 0 == $counter ) ? $vals : array_intersect( $post_ids, $vals );
+                    $counter++;
                 }
 
                 // Return only applicable results

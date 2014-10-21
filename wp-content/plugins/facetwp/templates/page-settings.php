@@ -178,16 +178,34 @@ foreach ( $facet_types as $class ) {
     <div class="templates-hidden">
         <div class="facetwp-template">
             <div class="table-row">
-                <div class="row-label"><?php _e( 'Label', 'fwp' ); ?>:</div>
+                <div class="row-label">
+                    <?php _e( 'Label', 'fwp' ); ?>:
+                    <div class="facetwp-tooltip">
+                        <span class="icon-question">?</span>
+                        <div class="facetwp-tooltip-content">Use the template name (to the right of the label) when using the template shortcode</div>
+                    </div>
+                </div>
                 <input type="text" class="template-label" value="" />
                 <input type="text" class="template-name" value="" />
             </div>
             <div class="table-row">
-                <div class="row-label"><?php _e( 'Query Arguments', 'fwp' ); ?>:</div>
+                <div class="row-label">
+                    <?php _e( 'Query Arguments', 'fwp' ); ?>:
+                    <div class="facetwp-tooltip">
+                        <span class="icon-question">?</span>
+                        <div class="facetwp-tooltip-content">This box returns an array of <a href="http://codex.wordpress.org/Class_Reference/WP_Query" target="_blank">WP_Query</a> arguments that are used to fetch the initial batch of posts from the database.</div>
+                    </div>
+                </div>
                 <textarea class="template-query"></textarea>
             </div>
             <div class="table-row">
-                <div class="row-label"><?php _e( 'Display Code', 'fwp' ); ?>:</div>
+                <div class="row-label">
+                    <?php _e( 'Display Code', 'fwp' ); ?>:
+                    <div class="facetwp-tooltip">
+                        <span class="icon-question">?</span>
+                        <div class="facetwp-tooltip-content">This is your template output. Using the <a href="http://codex.wordpress.org/The_Loop" target="_blank">WordPress Loop</a>, we iterate through our posts to display some HTML for each.</div>
+                    </div>
+                </div>
                 <textarea class="template-template"></textarea>
             </div>
             <a class="remove-template"><?php _e( 'Delete Template', 'fwp' ); ?></a>

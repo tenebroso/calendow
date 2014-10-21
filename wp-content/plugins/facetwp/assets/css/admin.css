@@ -96,8 +96,7 @@
 }
 
 .table-row .row-label {
-    font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .facet-count,
@@ -189,6 +188,10 @@
 
 .facetwp-tooltip-content {
     display: none;
+}
+
+#powerTip a {
+    color: #bbb;
 }
 
 #powerTip {
