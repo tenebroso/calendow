@@ -13,9 +13,9 @@
 
 	<ul class="filters">
 
-		<?php echo do_shortcode( '[facetwp facet="work"]' ); ?>
-		<?php echo do_shortcode( '[facetwp facet="campaigns"]' ); ?>
-		<?php echo do_shortcode( '[facetwp facet="places"]' ); ?>
+		<?php //echo do_shortcode( '[facetwp facet="work"]' ); ?>
+		<?php //echo do_shortcode( '[facetwp facet="campaigns"]' ); ?>
+		<li><a>Filter by <span>Places</span></a><?php echo do_shortcode( '[facetwp facet="places"]' ); ?></li>
 
 	</ul>
 
