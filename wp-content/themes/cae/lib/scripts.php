@@ -32,7 +32,7 @@ function roots_scripts() {
   wp_enqueue_script('vendor_js', get_template_directory_uri() . $assets['scripts'], array(), null, true);
   wp_enqueue_script('site_js', get_stylesheet_directory_uri() . $assets['js'], array(), null, true);
   wp_enqueue_script( 'isotope', '//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js', array(), '2.0.0', true );
-  wp_deregister_style('select2');
+  //wp_deregister_style('select2');
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 

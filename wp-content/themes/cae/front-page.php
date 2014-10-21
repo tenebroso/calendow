@@ -11,13 +11,13 @@
 
 	<?php //get_template_part('templates/content','isotope'); ?>
 
-	<div class="filters">
+	<ul class="filters">
 
+		<?php echo do_shortcode( '[facetwp facet="work"]' ); ?>
 		<?php echo do_shortcode( '[facetwp facet="campaigns"]' ); ?>
 		<?php echo do_shortcode( '[facetwp facet="places"]' ); ?>
-		<?php echo do_shortcode( '[facetwp facet="places"]' ); ?>
 
-	</div>
+	</ul>
 
 </div>
 

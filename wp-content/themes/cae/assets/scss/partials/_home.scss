@@ -159,7 +159,6 @@
 // Filters
 
 .filters {
-	overflow: hidden;
 	margin:0;
 	padding:0;
 	max-width:998px;
@@ -189,7 +188,7 @@
 	}
 
 	// Top Level
-	.facetwp-type-select2 {
+	> li {
 		line-height:1;
 		float:left;
 		width:33.333%;
@@ -200,15 +199,14 @@
 			overflow: visible;
 		}
 	}
-	.facetwp-type-select2 .facetwp-select2 {
+	> li > a {
+		padding-right:70px;
 		position: relative;
 		transition:background .25s ease;
 		background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA+CAYAAADqOXHxAAAAFUlEQVQoU2P4//+/MAOQkBoliCbEAVA4v4lQh5RzAAAAAElFTkSuQmCC);
 		background-repeat: no-repeat;
 		background-position: center right;
 		cursor: pointer;
-		width:100% !important;
-		min-height:100px;
 		&:after {
 			width:31px;
 			height:31px;
@@ -225,20 +223,6 @@
 		}
 	}
 
-}
-
-.select2-choices {
-    height: auto !important;
-    height: 1%;
-    margin: 0;
-    padding: 0 5px 0 0;
-    position: relative;
-    overflow: hidden;
-    min-height: 100px;
-    color:$white;
-    background-color:$accentDark;
-    display: block;
-    padding:25px;
 }
 
 .sub-filter {
@@ -272,6 +256,7 @@
 		}
 	}
 }
+
 
 .grid-container {
   max-width: 1005px;
