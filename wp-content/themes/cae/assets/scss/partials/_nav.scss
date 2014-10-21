@@ -169,27 +169,3 @@
 .nav-full-screen-branding {
 	margin-bottom:60px;
 }
-
-@mixin nav-colors($variable) {
-  &.nav-list li {
-		border-color:darken($variable,30%);
-		&.heading {
-			border-color:$variable;
-		}
-		&:not(.heading) a:hover {
-			background: $variable;
-			color:$white;
-		}
-	}
-	.heading a {
-		color:$variable;
-	}
-}
-
-.prevention { @include nav-colors($prevention) }
-.schools { @include nav-colors($schools) }
-.places { @include nav-colors($places) }
-.grants { @include nav-colors($grants) }
-.action { @include nav-colors($action) }
-.neighborhoods { @include nav-colors($neighborhoods) }
-.secondary { @include nav-colors($yellow) }

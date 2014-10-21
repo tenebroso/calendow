@@ -2602,76 +2602,6 @@ button, .btn, input[type="submit"] {
 .nav-full-screen-branding {
   margin-bottom: 60px; }
 
-.prevention.nav-list li {
-  border-color: #194940; }
-  .prevention.nav-list li.heading {
-    border-color: #3FBCA3; }
-  .prevention.nav-list li:not(.heading) a:hover {
-    background: #3FBCA3;
-    color: #fff; }
-.prevention .heading a {
-  color: #3FBCA3; }
-
-.schools.nav-list li {
-  border-color: #165a5d; }
-  .schools.nav-list li.heading {
-    border-color: #3bc8d1; }
-  .schools.nav-list li:not(.heading) a:hover {
-    background: #3bc8d1;
-    color: #fff; }
-.schools .heading a {
-  color: #3bc8d1; }
-
-.places.nav-list li {
-  border-color: #2c0105; }
-  .places.nav-list li.heading {
-    border-color: #C10512; }
-  .places.nav-list li:not(.heading) a:hover {
-    background: #C10512;
-    color: #fff; }
-.places .heading a {
-  color: #C10512; }
-
-.grants.nav-list li {
-  border-color: #411748; }
-  .grants.nav-list li.heading {
-    border-color: #ab3bbd; }
-  .grants.nav-list li:not(.heading) a:hover {
-    background: #ab3bbd;
-    color: #fff; }
-.grants .heading a {
-  color: #ab3bbd; }
-
-.action.nav-list li {
-  border-color: #0f171f; }
-  .action.nav-list li.heading {
-    border-color: #416386; }
-  .action.nav-list li:not(.heading) a:hover {
-    background: #416386;
-    color: #fff; }
-.action .heading a {
-  color: #416386; }
-
-.neighborhoods.nav-list li {
-  border-color: #672b15; }
-  .neighborhoods.nav-list li.heading {
-    border-color: #D8673D; }
-  .neighborhoods.nav-list li:not(.heading) a:hover {
-    background: #D8673D;
-    color: #fff; }
-.neighborhoods .heading a {
-  color: #D8673D; }
-
-.secondary.nav-list li {
-  border-color: #4c4514; }
-  .secondary.nav-list li.heading {
-    border-color: #c5b634; }
-  .secondary.nav-list li:not(.heading) a:hover {
-    background: #c5b634;
-    color: #fff; }
-.secondary .heading a {
-  color: #c5b634; }
-
 .show-on-hover {
   opacity: 0;
   -webkit-transition: opacity 0.35s;
@@ -2877,7 +2807,7 @@ button, .btn, input[type="submit"] {
   margin: 0; }
 
 .grid-item {
-  border-top: 10px solid #D8673D;
+  border-top: 10px solid transparent;
   background: #fff;
   text-align: left;
   height: 308px;
@@ -3274,3 +3204,101 @@ nav.stick {
       color: #fff; }
       .footer-post-nav a:hover .section-name, .footer-post-nav a:hover .date {
         color: #fff; }
+
+.prevention {
+  border-color: #3FBCA3; }
+  .prevention.nav-list li {
+    border-color: #194940; }
+    .prevention.nav-list li.heading {
+      border-color: #3FBCA3; }
+    .prevention.nav-list li:not(.heading) a:hover {
+      background: #3FBCA3;
+      color: #fff; }
+  .prevention .heading a, .prevention .color {
+    color: #3FBCA3; }
+  .prevention.grid-report, .prevention.grid-page {
+    background-color: #3FBCA3; }
+
+.schools {
+  border-color: #3bc8d1; }
+  .schools.nav-list li {
+    border-color: #165a5d; }
+    .schools.nav-list li.heading {
+      border-color: #3bc8d1; }
+    .schools.nav-list li:not(.heading) a:hover {
+      background: #3bc8d1;
+      color: #fff; }
+  .schools .heading a, .schools .color {
+    color: #3bc8d1; }
+  .schools.grid-report, .schools.grid-page {
+    background-color: #3bc8d1; }
+
+.places {
+  border-color: #C10512; }
+  .places.nav-list li {
+    border-color: #2c0105; }
+    .places.nav-list li.heading {
+      border-color: #C10512; }
+    .places.nav-list li:not(.heading) a:hover {
+      background: #C10512;
+      color: #fff; }
+  .places .heading a, .places .color {
+    color: #C10512; }
+  .places.grid-report, .places.grid-page {
+    background-color: #C10512; }
+
+.grants-and-funding {
+  border-color: #ab3bbd; }
+  .grants-and-funding.nav-list li {
+    border-color: #411748; }
+    .grants-and-funding.nav-list li.heading {
+      border-color: #ab3bbd; }
+    .grants-and-funding.nav-list li:not(.heading) a:hover {
+      background: #ab3bbd;
+      color: #fff; }
+  .grants-and-funding .heading a, .grants-and-funding .color {
+    color: #ab3bbd; }
+  .grants-and-funding.grid-report, .grants-and-funding.grid-page {
+    background-color: #ab3bbd; }
+
+.action {
+  border-color: #416386; }
+  .action.nav-list li {
+    border-color: #0f171f; }
+    .action.nav-list li.heading {
+      border-color: #416386; }
+    .action.nav-list li:not(.heading) a:hover {
+      background: #416386;
+      color: #fff; }
+  .action .heading a, .action .color {
+    color: #416386; }
+  .action.grid-report, .action.grid-page {
+    background-color: #416386; }
+
+.neighborhoods {
+  border-color: #D8673D; }
+  .neighborhoods.nav-list li {
+    border-color: #672b15; }
+    .neighborhoods.nav-list li.heading {
+      border-color: #D8673D; }
+    .neighborhoods.nav-list li:not(.heading) a:hover {
+      background: #D8673D;
+      color: #fff; }
+  .neighborhoods .heading a, .neighborhoods .color {
+    color: #D8673D; }
+  .neighborhoods.grid-report, .neighborhoods.grid-page {
+    background-color: #D8673D; }
+
+.secondary {
+  border-color: #c5b634; }
+  .secondary.nav-list li {
+    border-color: #4c4514; }
+    .secondary.nav-list li.heading {
+      border-color: #c5b634; }
+    .secondary.nav-list li:not(.heading) a:hover {
+      background: #c5b634;
+      color: #fff; }
+  .secondary .heading a, .secondary .color {
+    color: #c5b634; }
+  .secondary.grid-report, .secondary.grid-page {
+    background-color: #c5b634; }

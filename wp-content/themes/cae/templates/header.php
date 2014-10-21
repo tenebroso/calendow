@@ -66,7 +66,7 @@
           </ul>
       </div>
       <div class="col-md-4">
-          <ul class="nav-list grants">
+          <ul class="nav-list grants-and-funding">
             <li class="heading"><a href="#">Prevention</a></li>
             <li><a href="#">Safe Streets</a></li>
             <li><a href="#">Junk Drinks/Food</a></li>

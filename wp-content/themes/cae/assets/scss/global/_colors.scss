@@ -1,0 +1,28 @@
+@mixin colors($variable) {
+border-color:$variable;
+  &.nav-list li {
+		border-color:darken($variable,30%);
+		&.heading {
+			border-color:$variable;
+		}
+		&:not(.heading) a:hover {
+			background: $variable;
+			color:$white;
+		}
+	}
+	.heading a, .color {
+		color:$variable;
+	}
+	&.grid-report,
+	&.grid-page {
+		background-color:$variable;
+	}
+}
+
+.prevention { @include colors($prevention) }
+.schools { @include colors($schools) }
+.places { @include colors($places) }
+.grants-and-funding { @include colors($grants) }
+.action { @include colors($action) }
+.neighborhoods { @include colors($neighborhoods) }
+.secondary { @include colors($yellow) }
