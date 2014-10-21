@@ -10,12 +10,19 @@ border-color:$variable;
 			color:$white;
 		}
 	}
-	.heading a, .color {
+	.heading a, .color, blockquote {
 		color:$variable;
 	}
 	&.grid-report,
-	&.grid-page {
+	&.grid-page,
+	.bg-color {
 		background-color:$variable;
+	}
+	.side-nav li a {
+		border-color: lighten($variable, 30%);
+	}
+	.section-title {
+		border-color:$variable;
 	}
 }
 
@@ -23,6 +30,6 @@ border-color:$variable;
 .schools { @include colors($schools) }
 .places { @include colors($places) }
 .grants-and-funding { @include colors($grants) }
-.action { @include colors($action) }
+.youth-in-action { @include colors($action) }
 .neighborhoods { @include colors($neighborhoods) }
 .secondary { @include colors($yellow) }

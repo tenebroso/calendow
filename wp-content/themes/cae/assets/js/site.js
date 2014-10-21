@@ -85,6 +85,13 @@ var CE = CE || {};
 
   CE.sidebarNav = function() {
 
+    var $nav = $('nav.affix');
+    var $container = $('.page-header.text-right .page-title').width();
+    var $width = $(window).width();
+    var $position = ($width - $container) / 2;
+    console.log($position);
+    $nav.css('left', $position + 15).transit({opacity:1}); 
+
 
     // http://callmenick.com/2013/04/22/single-page-site-with-smooth-scrolling-highlighted-link-and-fixed-navigation/
     
@@ -125,7 +132,7 @@ var CE = CE || {};
         aArray.push(ahref);
     } // this for loop fills the aArray with attribute href values
 
-    $(window).scroll(function(){
+    /*$(window).scroll(function(){
         var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
         var windowHeight = $(window).height(); // get the height of the window
         var docHeight = $(document).height();
@@ -148,7 +155,7 @@ var CE = CE || {};
                 $("nav li:last-child a").addClass("nav-active");
             }
         }
-    });
+    });*/
 
 
   };
@@ -517,7 +524,7 @@ CE.Site = {
   page: {
     init: function() {
       CE.stripeParallax();
-      //CE.sidebarNav();
+      CE.sidebarNav();
     }
   },
   archive: {

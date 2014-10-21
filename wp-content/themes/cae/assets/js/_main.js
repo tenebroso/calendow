@@ -18,7 +18,7 @@ CE.Site = {
   page: {
     init: function() {
       CE.stripeParallax();
-      //CE.sidebarNav();
+      CE.sidebarNav();
     }
   },
   archive: {

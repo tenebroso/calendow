@@ -2243,6 +2243,11 @@ h3 strong, h3 b {
   text-transform: uppercase;
   margin: 0; }
 
+.sidenav-title {
+  font-size: 26px;
+  font-weight: 900;
+  font-family: "source-sans-pro", sans-serif; }
+
 .page-subtext {
   display: block;
   font-size: 27px;
@@ -2280,7 +2285,7 @@ blockquote {
 
 .section-title {
   font-size: 19px;
-  border-top: 1px solid #000;
+  border-top: 1px solid transparent;
   padding: 5px 0 0; }
 
 .grid-title {
@@ -2383,7 +2388,8 @@ button, .btn, input[type="submit"] {
   margin: 0;
   padding: 105px 0 0; }
   .page-header.has-image {
-    background: none; }
+    background: none;
+    height: 570px; }
   .page-header.text-right {
     text-align: right; }
     .page-header.text-right .page-title {
@@ -2404,6 +2410,8 @@ button, .btn, input[type="submit"] {
   z-index: 0;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
+  .has-image .page-header-fixed {
+    height: 602px; }
 
 .search-submit {
   background: url(../img/svg/magnifier.svg) no-repeat;
@@ -2810,7 +2818,7 @@ button, .btn, input[type="submit"] {
   border-top: 10px solid transparent;
   background: #fff;
   text-align: left;
-  height: 308px;
+  height: 340px;
   width: 330px;
   margin: 0 5px 5px 0;
   float: left;
@@ -2856,7 +2864,7 @@ button, .btn, input[type="submit"] {
           transition: opacity 0.25s; }
 
 .grid-news {
-  height: 340px; }
+  height: 380px; }
 
 .grid-infographic, .grid-page {
   height: 360px; }
@@ -3060,9 +3068,22 @@ article[class*="entry-single"] {
   height: 77px;
   margin: 0 auto; }
 
-nav.stick {
-  margin-top: 150px;
-  top: 0; }
+nav.affix {
+  top: 170px;
+  opacity: 0;
+  z-index: 20; }
+
+.side-nav {
+  width: 150px; }
+  .side-nav li a {
+    display: block;
+    color: #fff;
+    padding: 7px 15px;
+    border-bottom: 1px solid transparent;
+    font-size: 18px;
+    font-weight: 600; }
+  .side-nav li:last-child a {
+    border: none; }
 
 .social-icons {
   text-align: center;
@@ -3214,10 +3235,14 @@ nav.stick {
     .prevention.nav-list li:not(.heading) a:hover {
       background: #3FBCA3;
       color: #fff; }
-  .prevention .heading a, .prevention .color {
+  .prevention .heading a, .prevention .color, .prevention blockquote {
     color: #3FBCA3; }
-  .prevention.grid-report, .prevention.grid-page {
+  .prevention.grid-report, .prevention.grid-page, .prevention .bg-color {
     background-color: #3FBCA3; }
+  .prevention .side-nav li a {
+    border-color: #b0e4da; }
+  .prevention .section-title {
+    border-color: #3FBCA3; }
 
 .schools {
   border-color: #3bc8d1; }
@@ -3228,10 +3253,14 @@ nav.stick {
     .schools.nav-list li:not(.heading) a:hover {
       background: #3bc8d1;
       color: #fff; }
-  .schools .heading a, .schools .color {
+  .schools .heading a, .schools .color, .schools blockquote {
     color: #3bc8d1; }
-  .schools.grid-report, .schools.grid-page {
+  .schools.grid-report, .schools.grid-page, .schools .bg-color {
     background-color: #3bc8d1; }
+  .schools .side-nav li a {
+    border-color: #b7ebee; }
+  .schools .section-title {
+    border-color: #3bc8d1; }
 
 .places {
   border-color: #C10512; }
@@ -3242,10 +3271,14 @@ nav.stick {
     .places.nav-list li:not(.heading) a:hover {
       background: #C10512;
       color: #fff; }
-  .places .heading a, .places .color {
+  .places .heading a, .places .color, .places blockquote {
     color: #C10512; }
-  .places.grid-report, .places.grid-page {
+  .places.grid-report, .places.grid-page, .places .bg-color {
     background-color: #C10512; }
+  .places .side-nav li a {
+    border-color: #fb6471; }
+  .places .section-title {
+    border-color: #C10512; }
 
 .grants-and-funding {
   border-color: #ab3bbd; }
@@ -3256,24 +3289,32 @@ nav.stick {
     .grants-and-funding.nav-list li:not(.heading) a:hover {
       background: #ab3bbd;
       color: #fff; }
-  .grants-and-funding .heading a, .grants-and-funding .color {
+  .grants-and-funding .heading a, .grants-and-funding .color, .grants-and-funding blockquote {
     color: #ab3bbd; }
-  .grants-and-funding.grid-report, .grants-and-funding.grid-page {
+  .grants-and-funding.grid-report, .grants-and-funding.grid-page, .grants-and-funding .bg-color {
     background-color: #ab3bbd; }
+  .grants-and-funding .side-nav li a {
+    border-color: #dcace5; }
+  .grants-and-funding .section-title {
+    border-color: #ab3bbd; }
 
-.action {
+.youth-in-action {
   border-color: #416386; }
-  .action.nav-list li {
+  .youth-in-action.nav-list li {
     border-color: #0f171f; }
-    .action.nav-list li.heading {
+    .youth-in-action.nav-list li.heading {
       border-color: #416386; }
-    .action.nav-list li:not(.heading) a:hover {
+    .youth-in-action.nav-list li:not(.heading) a:hover {
       background: #416386;
       color: #fff; }
-  .action .heading a, .action .color {
+  .youth-in-action .heading a, .youth-in-action .color, .youth-in-action blockquote {
     color: #416386; }
-  .action.grid-report, .action.grid-page {
+  .youth-in-action.grid-report, .youth-in-action.grid-page, .youth-in-action .bg-color {
     background-color: #416386; }
+  .youth-in-action .side-nav li a {
+    border-color: #95b0cb; }
+  .youth-in-action .section-title {
+    border-color: #416386; }
 
 .neighborhoods {
   border-color: #D8673D; }
@@ -3284,10 +3325,14 @@ nav.stick {
     .neighborhoods.nav-list li:not(.heading) a:hover {
       background: #D8673D;
       color: #fff; }
-  .neighborhoods .heading a, .neighborhoods .color {
+  .neighborhoods .heading a, .neighborhoods .color, .neighborhoods blockquote {
     color: #D8673D; }
-  .neighborhoods.grid-report, .neighborhoods.grid-page {
+  .neighborhoods.grid-report, .neighborhoods.grid-page, .neighborhoods .bg-color {
     background-color: #D8673D; }
+  .neighborhoods .side-nav li a {
+    border-color: #f2cbbc; }
+  .neighborhoods .section-title {
+    border-color: #D8673D; }
 
 .secondary {
   border-color: #c5b634; }
@@ -3298,7 +3343,11 @@ nav.stick {
     .secondary.nav-list li:not(.heading) a:hover {
       background: #c5b634;
       color: #fff; }
-  .secondary .heading a, .secondary .color {
+  .secondary .heading a, .secondary .color, .secondary blockquote {
     color: #c5b634; }
-  .secondary.grid-report, .secondary.grid-page {
+  .secondary.grid-report, .secondary.grid-page, .secondary .bg-color {
     background-color: #c5b634; }
+  .secondary .side-nav li a {
+    border-color: #e8e1aa; }
+  .secondary .section-title {
+    border-color: #c5b634; }

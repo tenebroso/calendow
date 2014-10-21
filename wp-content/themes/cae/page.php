@@ -1,9 +1,16 @@
 <div id="nav-anchor"></div>
 <nav class="affix">
-    <ul>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#problem">Problem</a></li>
-        <li><a href="#solution">Solution</a></li>
+	<h3 class="color sidenav-title"><?php the_title(); ?>.</h3>
+    <ul class="side-nav">
+    	<?php if( have_rows('cae_content_builder') ): while ( have_rows('cae_content_builder') ) : the_row(); 
+    	$sectionTitle = get_sub_field('section_title'); 
+    	$htmlSectionTitle = strtolower(str_replace(' ', '-', $sectionTitle)); if($sectionTitle): ?>
+        <li>
+        	<a href="#<?php echo $htmlSectionTitle; ?>" class="bg-color">
+        		<?php the_sub_field('section_title'); ?>
+        	</a>
+        </li>
+    <?php endif; endwhile; else : endif; ?>
     </ul>
 </nav>
 
@@ -29,7 +36,7 @@
 		        	<div class="container">
 		        		<div class="row">
 		        			<div class="col-sm-2">
-		        				<h3 class="section-title"><?php echo $sectionTitle; ?></h3>
+		        				<h3 class="section-title color"><?php echo $sectionTitle; ?></h3>
 		        			</div>
 		        			<div class="col-sm-10">
 		        				<?php the_sub_field('section_content'); ?>

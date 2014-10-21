@@ -4,10 +4,11 @@
 <?php // Find variables that are used, per-page ?>
 <?php $accordion = get_field('accordion_content'); ?>
 <?php $builder = get_field('cae_content_builder'); ?>
+<?php $workSlug = wp_get_post_terms($post->ID,'work', array("fields" => "slugs")); ?>
 
   <?php do_action('get_header'); ?>
 
-  <div id="page" class="wrapper" role="document">
+  <div id="page" class="wrapper <?php if($workSlug): echo $workSlug[0]; endif; ?>" role="document">
       <?php get_template_part('templates/header'); ?>
 
       <?php 

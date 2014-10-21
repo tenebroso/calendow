@@ -51,6 +51,12 @@ h3 {
   margin:0;
 }
 
+.sidenav-title {
+  font-size:26px;
+  font-weight:900;
+  font-family:$font-family-base;
+}
+
 .page-subtext {
   display: block;
   font-size:27px;
@@ -102,7 +108,7 @@ blockquote {
 
 .section-title {
   font-size:19px;
-  border-top:1px solid $black;
+  border-top:1px solid transparent;
   padding:5px 0 0;
 }
 

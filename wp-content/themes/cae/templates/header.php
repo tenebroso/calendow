@@ -75,7 +75,7 @@
           </ul>
       </div>
       <div class="col-md-4">
-          <ul class="nav-list action">
+          <ul class="nav-list youth-in-action">
             <li class="heading"><a href="#">Schools</a></li>
             <li><a href="#">Safe Streets</a></li>
             <li><a href="#">Junk Drinks/Food</a></li>
