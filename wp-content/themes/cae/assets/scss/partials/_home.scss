@@ -195,7 +195,7 @@
 		width:calc(100% / 3);
 		position: relative;
 		overflow: hidden;
-		&.active {
+		&.open {
 			overflow: visible;
 		}
 	}
@@ -243,9 +243,23 @@
 	max-height:90px;
 	transition:max-height 2s;
 
-	.active & {
+	&.facetwp-facet {
+		font-size:$font-size-base;
+		margin:0;
+	}
+
+	.open & {
 		transform:translate3d(0,0,0);
 		max-height:999px;
+	}
+	.active {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		a {
+			padding: 39px 25px;
+		}
 	}
 	li {
 		display: block;

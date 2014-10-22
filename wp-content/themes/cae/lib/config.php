@@ -108,3 +108,17 @@ function campaigns_facet_html( $output, $params ) {
 }
 
 add_filter( 'facetwp_facet_html', 'campaigns_facet_html', 10, 2 );
+
+function work_facet_html( $output, $params ) {
+    if ( 'work' == $params['facet']['name'] ) {
+      $output = '';
+      foreach ( $params['values'] as $result ) {
+          $output .= '<li class="facetwp-page" data-value="' . $result->facet_value . '"><a>';
+          $output .= $result->facet_display_value;
+          $output .= '</a></li>';
+      }
+  }
+  return $output;
+}
+
+add_filter( 'facetwp_facet_html', 'work_facet_html', 10, 2 );

@@ -2760,7 +2760,7 @@ button, .btn, input[type="submit"] {
     width: calc(100% / 3);
     position: relative;
     overflow: hidden; }
-    .filters > li.active {
+    .filters > li.open {
       overflow: visible; }
   .filters > li > a {
     padding-right: 70px;
@@ -2800,10 +2800,20 @@ button, .btn, input[type="submit"] {
   max-height: 90px;
   -webkit-transition: max-height 2s;
           transition: max-height 2s; }
-  .active .sub-filter {
+  .sub-filter.facetwp-facet {
+    font-size: 20px;
+    margin: 0; }
+  .open .sub-filter {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     max-height: 999px; }
+  .sub-filter .active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; }
+    .sub-filter .active a {
+      padding: 39px 25px; }
   .sub-filter li {
     display: block;
     padding: 0;
