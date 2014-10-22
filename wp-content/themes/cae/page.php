@@ -1,56 +1,49 @@
-<nav class="side-nav-container affix">
-	<h3 class="color sidenav-title"><?php the_title(); ?>.</h3>
-    <ul class="side-nav">
-    	<?php if( have_rows('cae_content_builder') ): while ( have_rows('cae_content_builder') ) : the_row(); 
-    	$sectionTitle = get_sub_field('section_title'); 
+<?php if( have_rows('cae_content_builder') ): ?>
+	<nav class="side-nav-container affix">
+		<h3 class="color sidenav-title"><?php the_title(); ?>.</h3>
+   		<ul class="side-nav">
+		<?php while ( have_rows('cae_content_builder') ) : the_row();
+    	$sectionTitle = get_sub_field('section_title');
     	$htmlSectionTitle = strtolower(str_replace(' ', '-', $sectionTitle)); if($sectionTitle): ?>
-        <li>
+		<li>
         	<a href="#<?php echo $htmlSectionTitle; ?>" class="bg-color"><?php the_sub_field('section_title'); ?></a>
         </li>
-    <?php endif; endwhile; else : endif; ?>
-    </ul>
-</nav>
+    <?php endif; endwhile; ?>
+		</ul>
+	</nav>
+<?php else : endif; ?>
 
-<?php 
-	// Page.php Used by /places, /our-story
+<?php
 
-	// check if the flexible content field has rows of data
 	if( have_rows('cae_content_builder') ):
 
 	    while ( have_rows('cae_content_builder') ) : the_row();
 
 	        if( get_row_layout() == 'full_width_image' ): ?>
 
-			<div class="stripe bg-image">
-	        	<div data-stellar-background-ratio="0.5" class="parallax-image" style="background-image:url(<?php the_sub_field('full_width_image'); ?>);"></div>
-	        </div>
+				<?php get_template_part('templates/content/full-image'); ?>
 
-	        <?php elseif( get_row_layout() == 'content_anchor_section' ): 
-	        	$sectionTitle = get_sub_field('section_title'); 
-	        	$htmlSectionTitle = strtolower(str_replace(' ', '-', $sectionTitle)); ?>
+			<?php elseif( get_row_layout() == 'content_anchor_section' ): ?>
 
-		        <div class="stripe<?php if($sectionTitle): echo ' scrollto'; endif; ?>" id="<?php echo $htmlSectionTitle; ?>">
-		        	<div class="container">
-		        		<div class="row">
-		        			<div class="col-sm-2">
-		        				<h3 class="section-title color"><?php echo $sectionTitle; ?></h3>
-		        			</div>
-		        			<div class="col-sm-10">
-		        				<?php the_sub_field('section_content'); ?>
-		        			</div>
-		        		</div>
-		        	</div>
-		        </div>
+				<?php get_template_part('templates/content/anchor-section'); ?>
 
-	        <?php endif;
+			<?php elseif( get_row_layout() == 'standard_content' ): ?>
 
-	    endwhile;
+				<?php get_template_part('templates/content/standard-content'); ?>
+
+			<?php elseif( get_row_layout() == 'places_grid'): ?>
+
+				<?php get_template_part('templates/content','places-grid'); ?>
+
+			<?php elseif( get_row_layout() == 'accordion'): ?>
+
+				<?php get_template_part('templates/content','accordion'); ?>
+
+	        <?php endif; endwhile;
 
 	else :
 
-	    // show default page content
-	    get_template_part('templates/content', 'page');
+		get_template_part('templates/content', 'page');
 
 	endif;
-
 ?>

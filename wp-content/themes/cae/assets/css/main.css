@@ -2197,6 +2197,10 @@ body {
     height: 300px;
     overflow: hidden; }
 
+.home .container {
+  max-width: 1000px;
+  padding: 0; }
+
 body {
   font-family: "source-sans-pro", sans-serif;
   font-size: 20px;
@@ -2270,10 +2274,17 @@ h3 strong, h3 b {
   text-transform: uppercase;
   margin: 0 0 1em 80px; }
 
-.hentry ol {
-  font-size: 22px; }
 .hentry li {
   margin: 0 0 0.5em 0; }
+
+.hentry ol, .intro-text {
+  font-size: 22px; }
+
+.grey-text {
+  color: #7f7f7f; }
+  .grey-text a {
+    color: #7f7f7f;
+    text-decoration: underline; }
 
 blockquote {
   font-family: "museo-slab";
@@ -2379,7 +2390,7 @@ button, .btn, input[type="submit"] {
         top: 32px; } }
 
 .page-header {
-  background-color: #d9673e;
+  background-color: #3bc8d1;
   background-position: bottom center;
   background-image: url(../img/svg/pattern.svg);
   background-repeat: repeat;
@@ -2627,8 +2638,7 @@ button, .btn, input[type="submit"] {
 
 .hero-container {
   color: #272A3F;
-  padding-top: 99px;
-  margin: 0 137px 0 0; }
+  padding-top: 99px; }
   .hero-container a {
     color: #272A3F; }
   @media (min-width: 768px) {
@@ -2731,8 +2741,7 @@ button, .btn, input[type="submit"] {
 
 .filters {
   margin: 0;
-  padding: 0;
-  max-width: 998px; }
+  padding: 0; }
   .filters li a {
     color: #fff;
     background-color: #272A3F;
@@ -2824,17 +2833,13 @@ button, .btn, input[type="submit"] {
     .sub-filter li a:hover {
       color: #fff; }
 
-.grid-container {
-  max-width: 1005px;
-  margin: 0; }
-
 .grid-item {
   border-top: 10px solid transparent;
   background: #fff;
   text-align: left;
   height: 340px;
   width: 330px;
-  margin: 0 5px 5px 0;
+  margin: 0 0 5px 0;
   float: left;
   -webkit-transition: all 1s;
           transition: all 1s; }
@@ -3021,16 +3026,15 @@ article[class*="entry-single"] {
     width: 100%; }
 
 .place-grid {
-  margin-top: 2.61111em;
-  margin-bottom: 2.61111em; }
+  padding: 2.61111em 0;
+  text-align: center; }
   .place-grid h2 + p {
     margin: 0 0 1em 0;
     line-height: 1.2; }
   .place-grid li {
     vertical-align: top;
-    text-align: center;
-    width: 14.28571%;
-    width: calc(100% / 7);
+    width: 13%;
+    width: calc(100% / 7.5);
     padding: 0 6px 6px 0;
     font-size: 18px; }
   .place-grid:not(.grid-5-up) li:nth-child(7n+7) {

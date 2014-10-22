@@ -89,11 +89,20 @@ ul, ol {
 }
 
 .hentry {
-  ol {
-    font-size:22px;
-  }
   li {
     margin:0 0 .5em 0;
+  }
+}
+
+.hentry ol, .intro-text {
+  font-size:22px;
+}
+
+.grey-text {
+  color:$grey3;
+  a {
+    color:$grey3;
+    text-decoration:underline;
   }
 }
 

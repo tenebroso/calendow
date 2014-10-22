@@ -1,15 +1,14 @@
 .place-grid {
-	margin-top:2.61111111111111em;
-	margin-bottom:2.61111111111111em;
+	padding:2.61111111111111em 0;
+	text-align: center;
 	h2 + p {
 		margin: 0 0 1em 0;
 		line-height: 1.2;
 	}
 	li {
 		vertical-align: top;
-		text-align: center;
-		width:14.28571428571429%;
-		width:calc(100% / 7);
+		width:13%;
+		width:calc(100% / 7.5);
 		padding:0 6px 6px 0;
 		font-size:18px;
 	}

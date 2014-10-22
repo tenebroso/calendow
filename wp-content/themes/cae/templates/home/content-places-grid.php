@@ -1,14 +1,8 @@
 <?php $x = 1; ?>
 
-<ul class="place-grid list-inline grid-5-up reset-margins">
+<ul class="place-grid list-inline grid-7-up reset-margins">
 
-<li>
-	<a class="center-block placemarker">
-		<div class="v-centered">
-			<div class="icon-places-placemarker"></div>
-		</div>
-	</a>	
-</li><?php
+<?php
 	$args = array('hide_empty' => false);
 	$terms = get_terms('place', $args);
 	 if ( !empty( $terms ) && !is_wp_error( $terms ) ){

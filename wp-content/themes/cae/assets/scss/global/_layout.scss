@@ -50,3 +50,10 @@ body {
 		overflow: hidden;
 	}
 }
+
+.container {
+	.home & {
+		max-width:1000px;
+		padding: 0;
+	}
+}

@@ -24,7 +24,8 @@ CE.facetLoad = function() {
 					resizable:false,
 					resizesContainer : false,
 					masonry: {
-						gutterWidth: 5
+						columnWidth: '.grid-item',
+						gutter:5
 					}
 				});
 			}
