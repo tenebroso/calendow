@@ -5,7 +5,6 @@ nav.affix {
 }
 
 .side-nav {
-	width: 150px;
 	li {
 		a {
 			display: block;
@@ -14,9 +13,31 @@ nav.affix {
 			border-bottom:1px solid transparent;
 			font-size:18px;
 			font-weight:600;
+			transition:all .5s;
+			&:after {
+				width:5px;
+				height:33px;
+				content:"";
+				display: block;
+				float:right;
+				background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAQAAACb+P2wAAAANklEQVQYV2P4b/KfAQIZ/n/57wNj/v//538WjAkCnf8ZYcwZ/5lBzH//yyEKfvyPgGmzgxkGAJUmNtNi5mPVAAAAAElFTkSuQmCC) no-repeat center center;
+				opacity: 0;
+			}
+			&.active, &:hover {
+				background-image:url(../img/svg/pattern.svg);
+				transition:all .5s;
+				&:after {
+					opacity:1;
+				}
+			}
 		}
 		&:last-child a {
 			border: none;
 		}
 	}
+}
+
+.side-nav,
+.section-title {
+	width:150px;
 }

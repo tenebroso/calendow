@@ -983,38 +983,6 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
   };
 
 })( jQuery, window, document );
-/*!
- * jquery.scrollto.js 0.0.1 - https://github.com/yckart/jquery.scrollto.js
- * Scroll smooth to any element in your DOM.
- *
- * Copyright (c) 2012 Yannick Albert (http://yckart.com)
- * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php).
- * 2013/02/17
- **/
-$.scrollTo = $.fn.scrollTo = function(x, y, options){
-    if (!(this instanceof $)) return $.fn.scrollTo.apply($('html, body'), arguments);
-
-    options = $.extend({}, {
-        gap: {
-            x: 0,
-            y: 0
-        },
-        animation: {
-            easing: 'swing',
-            duration: 600,
-            complete: $.noop,
-            step: $.noop
-        }
-    }, options);
-
-    return this.each(function(){
-        var elem = $(this);
-        elem.stop().animate({
-            scrollLeft: !isNaN(Number(x)) ? x : $(y).offset().left + options.gap.x,
-            scrollTop: !isNaN(Number(y)) ? y : $(y).offset().top + options.gap.y
-        }, options.animation);
-    });
-};
 /*! simpleWeather v3.0.2 - http://simpleweatherjs.com */
 (function($) {
   "use strict";
@@ -1789,6 +1757,144 @@ $.scrollTo = $.fn.scrollTo = function(x, y, options){
 	// Expose the plugin class so it can be modified
 	window.Stellar = Plugin;
 }(jQuery, this, document));
+/*
+ * stickyNavbar.js v1.1.3
+ * https://github.com/jbutko/stickyNavbar.js
+ * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
+ *
+ * Developed and maintenained under MIT licence by Jozef Butko - www.jozefbutko.com
+ * http://www.opensource.org/licenses/MIT
+
+ * Original jquery-browser code Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
+ * http://jquery.org/license
+ *
+ * CREDITS:
+ * Daniel Eden for Animate.CSS:
+ * http://daneden.github.io/animate.css/
+ * jQuery easing plugin:
+ * http://gsgd.co.uk/sandbox/jquery/easing/
+ *
+ * COPYRIGHT (C) 2014 Jozef Butko
+ * https://github.com/jbutko
+ * LAST UPDATE: 20/09/2014
+ *
+ */
+/* The semi-colon before function invocation is a safety net against concatenated
+   scripts and/or other plugins which may not be closed properly. */
+;
+(function ($, window, document) {
+
+    'use strict';
+
+    $.fn.stickyNavbar = function (prop) {
+
+        // Set default values
+        var options = $.extend({
+            activeClass: "active", // Class to be added to highlight nav elements
+            sectionSelector: "scrollto", // Class of the section that is interconnected with nav links
+            animDuration: 350, // Duration of jQuery animation as well as jQuery scrolling duration
+            startAt: 0, // Stick the menu at XXXpx from the top of the this() (nav container)
+            easing: "swing", // Easing type if jqueryEffects = true, use jQuery Easing plugin to extend easing types - gsgd.co.uk/sandbox/jquery/easing
+            animateCSS: false, // AnimateCSS effect on/off
+            animateCSSRepeat: false, // Repeat animation everytime user scrolls
+            cssAnimation: "fadeInDown", // AnimateCSS class that will be added to selector
+            jqueryEffects: false, // jQuery animation on/off
+            jqueryAnim: "slideDown", // jQuery animation type: fadeIn, show or slideDown
+            selector: "a", // Selector to which activeClass will be added, either "a" or "li"
+            mobile: false, // If false, nav will not stick under viewport width of 480px (default) or user defined mobileWidth
+            mobileWidth: 480, // The viewport width (without scrollbar) under which stickyNavbar will not be applied (due user usability on mobile)
+            zindex: 9999, // The zindex value to apply to the element: default 9999, other option is "auto"
+            stickyModeClass: "sticky", // Class that will be applied to 'this' in sticky mode
+            unstickyModeClass: "unsticky" // Class that will be applied to 'this' in non-sticky mode
+        }, prop),
+            section = $('.' + options.sectionSelector);
+
+
+        return this.each(function () {
+
+            /* Cache variables */
+            var $self = $(this),
+                $selfPosition = $self.css("position"), // Initial position of this,
+                $selfZindex = $self.css("zIndex"), // Z-index of this
+                thisHeight = $self.outerHeight(true), // Height of navigation wrapper
+                $selfScrollTop = $self.offset().top - thisHeight, // scrollTop position of this
+                $topOffset = $self.css("top") === 'auto' ? 0 : $self.css("top"), // Top property of this: if not set = 0
+                menuItems = options.selector === "a" ? $self.find('li a') : $self.find('li'), // Navigation lists or links
+                menuItemsHref = $self.find('li a[href*=#]'), // href attributes of navigation links
+                windowPosition = $(window).scrollTop();
+
+
+
+
+            /* Smooth scrolling logic */
+            menuItems.click(function(e) {
+                /* v1.1.2: Ignore external links and just let them open - pull request #15 by Globegitter */
+                var href = $(this).attr("href");
+                if (href.substring(0, 4) === 'http' || href.substring(0, 7) === 'mailto:') {
+                    return true;
+                }
+
+                windowPosition = $(window).scrollTop();
+
+                /* Get index of clicked nav link */
+                var index = menuItems.index(this),
+                    section = href; // Get href attr of clicked nav link
+
+                /* Prevent default click behaviour */
+                e.preventDefault();
+
+
+                $("html, body").stop().animate({
+                    scrollTop: $(section).offset().top - 80 + 'px'
+                }, {
+                    duration: options.animDuration,
+                    easing: options.easing
+                });
+
+            });
+
+
+            /* v1.1.0: Main function, then on bottom called window.scroll, ready and resize */
+            var mainFunc = function() {
+
+                /* Cache window and window position from the top */
+                var win = $(window),
+                    windowPosition = win.scrollTop(),
+                    windowWidth = win.width(),
+                    windowHeight = win.height();
+
+                /* v1.1.0: Optional mobileWidth */
+                if (!options.mobile && windowWidth < options.mobileWidth) {
+                    $self.css('position', $selfPosition);
+                    return;
+                }
+
+                /* Everytime we scroll remove the activeClass. Later on we add it if needed. */
+                menuItems.removeClass(options.activeClass);
+
+                /* Add activeClass to the div that is passing the top of the window */
+                section.each(function () {
+                    var top = $(this).offset().top - thisHeight,
+                        bottom = $(this).outerHeight(true) + top;
+
+                    if ((windowPosition >= top) && (windowPosition <= bottom)) {
+                        if (options.selector === "a") {
+                            $self.find('li a[href~="#' + this.id + '"]').addClass(options.activeClass);
+                        } else {
+                            $self.find('li a[href~="#' + this.id + '"]').parent().addClass(options.activeClass);
+                        }
+                    }
+                });
+
+            }
+
+            $(window).scroll(mainFunc); // scroll fn end
+            $(window).ready(mainFunc);
+            $(window).resize(mainFunc);
+
+        }); // return this.each end
+    }; // $.fn.stickyNavbar end
+})(jQuery, window, document); // document ready end
 (function(t,e){if(typeof define==="function"&&define.amd){define(["jquery"],e)}else if(typeof exports==="object"){module.exports=e(require("jquery"))}else{e(t.jQuery)}})(this,function(t){t.transit={version:"0.9.12",propertyMap:{marginLeft:"margin",marginRight:"margin",marginBottom:"margin",marginTop:"margin",paddingLeft:"padding",paddingRight:"padding",paddingBottom:"padding",paddingTop:"padding"},enabled:true,useTransitionEnd:false};var e=document.createElement("div");var n={};function i(t){if(t in e.style)return t;var n=["Moz","Webkit","O","ms"];var i=t.charAt(0).toUpperCase()+t.substr(1);for(var r=0;r<n.length;++r){var s=n[r]+i;if(s in e.style){return s}}}function r(){e.style[n.transform]="";e.style[n.transform]="rotateY(90deg)";return e.style[n.transform]!==""}var s=navigator.userAgent.toLowerCase().indexOf("chrome")>-1;n.transition=i("transition");n.transitionDelay=i("transitionDelay");n.transform=i("transform");n.transformOrigin=i("transformOrigin");n.filter=i("Filter");n.transform3d=r();var a={transition:"transitionend",MozTransition:"transitionend",OTransition:"oTransitionEnd",WebkitTransition:"webkitTransitionEnd",msTransition:"MSTransitionEnd"};var o=n.transitionEnd=a[n.transition]||null;for(var u in n){if(n.hasOwnProperty(u)&&typeof t.support[u]==="undefined"){t.support[u]=n[u]}}e=null;t.cssEase={_default:"ease","in":"ease-in",out:"ease-out","in-out":"ease-in-out",snap:"cubic-bezier(0,1,.5,1)",easeInCubic:"cubic-bezier(.550,.055,.675,.190)",easeOutCubic:"cubic-bezier(.215,.61,.355,1)",easeInOutCubic:"cubic-bezier(.645,.045,.355,1)",easeInCirc:"cubic-bezier(.6,.04,.98,.335)",easeOutCirc:"cubic-bezier(.075,.82,.165,1)",easeInOutCirc:"cubic-bezier(.785,.135,.15,.86)",easeInExpo:"cubic-bezier(.95,.05,.795,.035)",easeOutExpo:"cubic-bezier(.19,1,.22,1)",easeInOutExpo:"cubic-bezier(1,0,0,1)",easeInQuad:"cubic-bezier(.55,.085,.68,.53)",easeOutQuad:"cubic-bezier(.25,.46,.45,.94)",easeInOutQuad:"cubic-bezier(.455,.03,.515,.955)",easeInQuart:"cubic-bezier(.895,.03,.685,.22)",easeOutQuart:"cubic-bezier(.165,.84,.44,1)",easeInOutQuart:"cubic-bezier(.77,0,.175,1)",easeInQuint:"cubic-bezier(.755,.05,.855,.06)",easeOutQuint:"cubic-bezier(.23,1,.32,1)",easeInOutQuint:"cubic-bezier(.86,0,.07,1)",easeInSine:"cubic-bezier(.47,0,.745,.715)",easeOutSine:"cubic-bezier(.39,.575,.565,1)",easeInOutSine:"cubic-bezier(.445,.05,.55,.95)",easeInBack:"cubic-bezier(.6,-.28,.735,.045)",easeOutBack:"cubic-bezier(.175, .885,.32,1.275)",easeInOutBack:"cubic-bezier(.68,-.55,.265,1.55)"};t.cssHooks["transit:transform"]={get:function(e){return t(e).data("transform")||new f},set:function(e,i){var r=i;if(!(r instanceof f)){r=new f(r)}if(n.transform==="WebkitTransform"&&!s){e.style[n.transform]=r.toString(true)}else{e.style[n.transform]=r.toString()}t(e).data("transform",r)}};t.cssHooks.transform={set:t.cssHooks["transit:transform"].set};t.cssHooks.filter={get:function(t){return t.style[n.filter]},set:function(t,e){t.style[n.filter]=e}};if(t.fn.jquery<"1.8"){t.cssHooks.transformOrigin={get:function(t){return t.style[n.transformOrigin]},set:function(t,e){t.style[n.transformOrigin]=e}};t.cssHooks.transition={get:function(t){return t.style[n.transition]},set:function(t,e){t.style[n.transition]=e}}}p("scale");p("scaleX");p("scaleY");p("translate");p("rotate");p("rotateX");p("rotateY");p("rotate3d");p("perspective");p("skewX");p("skewY");p("x",true);p("y",true);function f(t){if(typeof t==="string"){this.parse(t)}return this}f.prototype={setFromString:function(t,e){var n=typeof e==="string"?e.split(","):e.constructor===Array?e:[e];n.unshift(t);f.prototype.set.apply(this,n)},set:function(t){var e=Array.prototype.slice.apply(arguments,[1]);if(this.setter[t]){this.setter[t].apply(this,e)}else{this[t]=e.join(",")}},get:function(t){if(this.getter[t]){return this.getter[t].apply(this)}else{return this[t]||0}},setter:{rotate:function(t){this.rotate=b(t,"deg")},rotateX:function(t){this.rotateX=b(t,"deg")},rotateY:function(t){this.rotateY=b(t,"deg")},scale:function(t,e){if(e===undefined){e=t}this.scale=t+","+e},skewX:function(t){this.skewX=b(t,"deg")},skewY:function(t){this.skewY=b(t,"deg")},perspective:function(t){this.perspective=b(t,"px")},x:function(t){this.set("translate",t,null)},y:function(t){this.set("translate",null,t)},translate:function(t,e){if(this._translateX===undefined){this._translateX=0}if(this._translateY===undefined){this._translateY=0}if(t!==null&&t!==undefined){this._translateX=b(t,"px")}if(e!==null&&e!==undefined){this._translateY=b(e,"px")}this.translate=this._translateX+","+this._translateY}},getter:{x:function(){return this._translateX||0},y:function(){return this._translateY||0},scale:function(){var t=(this.scale||"1,1").split(",");if(t[0]){t[0]=parseFloat(t[0])}if(t[1]){t[1]=parseFloat(t[1])}return t[0]===t[1]?t[0]:t},rotate3d:function(){var t=(this.rotate3d||"0,0,0,0deg").split(",");for(var e=0;e<=3;++e){if(t[e]){t[e]=parseFloat(t[e])}}if(t[3]){t[3]=b(t[3],"deg")}return t}},parse:function(t){var e=this;t.replace(/([a-zA-Z0-9]+)\((.*?)\)/g,function(t,n,i){e.setFromString(n,i)})},toString:function(t){var e=[];for(var i in this){if(this.hasOwnProperty(i)){if(!n.transform3d&&(i==="rotateX"||i==="rotateY"||i==="perspective"||i==="transformOrigin")){continue}if(i[0]!=="_"){if(t&&i==="scale"){e.push(i+"3d("+this[i]+",1)")}else if(t&&i==="translate"){e.push(i+"3d("+this[i]+",0)")}else{e.push(i+"("+this[i]+")")}}}}return e.join(" ")}};function c(t,e,n){if(e===true){t.queue(n)}else if(e){t.queue(e,n)}else{t.each(function(){n.call(this)})}}function l(e){var i=[];t.each(e,function(e){e=t.camelCase(e);e=t.transit.propertyMap[e]||t.cssProps[e]||e;e=h(e);if(n[e])e=h(n[e]);if(t.inArray(e,i)===-1){i.push(e)}});return i}function d(e,n,i,r){var s=l(e);if(t.cssEase[i]){i=t.cssEase[i]}var a=""+y(n)+" "+i;if(parseInt(r,10)>0){a+=" "+y(r)}var o=[];t.each(s,function(t,e){o.push(e+" "+a)});return o.join(", ")}t.fn.transition=t.fn.transit=function(e,i,r,s){var a=this;var u=0;var f=true;var l=t.extend(true,{},e);if(typeof i==="function"){s=i;i=undefined}if(typeof i==="object"){r=i.easing;u=i.delay||0;f=typeof i.queue==="undefined"?true:i.queue;s=i.complete;i=i.duration}if(typeof r==="function"){s=r;r=undefined}if(typeof l.easing!=="undefined"){r=l.easing;delete l.easing}if(typeof l.duration!=="undefined"){i=l.duration;delete l.duration}if(typeof l.complete!=="undefined"){s=l.complete;delete l.complete}if(typeof l.queue!=="undefined"){f=l.queue;delete l.queue}if(typeof l.delay!=="undefined"){u=l.delay;delete l.delay}if(typeof i==="undefined"){i=t.fx.speeds._default}if(typeof r==="undefined"){r=t.cssEase._default}i=y(i);var p=d(l,i,r,u);var h=t.transit.enabled&&n.transition;var b=h?parseInt(i,10)+parseInt(u,10):0;if(b===0){var g=function(t){a.css(l);if(s){s.apply(a)}if(t){t()}};c(a,f,g);return a}var m={};var v=function(e){var i=false;var r=function(){if(i){a.unbind(o,r)}if(b>0){a.each(function(){this.style[n.transition]=m[this]||null})}if(typeof s==="function"){s.apply(a)}if(typeof e==="function"){e()}};if(b>0&&o&&t.transit.useTransitionEnd){i=true;a.bind(o,r)}else{window.setTimeout(r,b)}a.each(function(){if(b>0){this.style[n.transition]=p}t(this).css(l)})};var z=function(t){this.offsetWidth;v(t)};c(a,f,z);return this};function p(e,i){if(!i){t.cssNumber[e]=true}t.transit.propertyMap[e]=n.transform;t.cssHooks[e]={get:function(n){var i=t(n).css("transit:transform");return i.get(e)},set:function(n,i){var r=t(n).css("transit:transform");r.setFromString(e,i);t(n).css({"transit:transform":r})}}}function h(t){return t.replace(/([A-Z])/g,function(t){return"-"+t.toLowerCase()})}function b(t,e){if(typeof t==="string"&&!t.match(/^[\-0-9\.]+$/)){return t}else{return""+t+e}}function y(e){var n=e;if(typeof n==="string"&&!n.match(/^[\-0-9\.]+/)){n=t.fx.speeds[n]||t.fx.speeds._default}return b(n,"ms")}t.transit.getTransitionValue=d;return t});
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-fontface-rgba-cssanimations-geolocation-svg-touch-webgl-shiv-cssclasses-teststyles-testprop-testallprops-prefixes-domprefixes-load

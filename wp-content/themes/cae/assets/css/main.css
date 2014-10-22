@@ -3073,17 +3073,34 @@ nav.affix {
   opacity: 0;
   z-index: 20; }
 
-.side-nav {
-  width: 150px; }
-  .side-nav li a {
+.side-nav li a {
+  display: block;
+  color: #fff;
+  padding: 7px 15px;
+  border-bottom: 1px solid transparent;
+  font-size: 18px;
+  font-weight: 600;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s; }
+  .side-nav li a:after {
+    width: 5px;
+    height: 33px;
+    content: "";
     display: block;
-    color: #fff;
-    padding: 7px 15px;
-    border-bottom: 1px solid transparent;
-    font-size: 18px;
-    font-weight: 600; }
-  .side-nav li:last-child a {
-    border: none; }
+    float: right;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAQAAACb+P2wAAAANklEQVQYV2P4b/KfAQIZ/n/57wNj/v//538WjAkCnf8ZYcwZ/5lBzH//yyEKfvyPgGmzgxkGAJUmNtNi5mPVAAAAAElFTkSuQmCC) no-repeat center center;
+    opacity: 0; }
+  .side-nav li a.active, .side-nav li a:hover {
+    background-image: url(../img/svg/pattern.svg);
+    -webkit-transition: all 0.5s;
+            transition: all 0.5s; }
+    .side-nav li a.active:after, .side-nav li a:hover:after {
+      opacity: 1; }
+.side-nav li:last-child a {
+  border: none; }
+
+.side-nav, .section-title {
+  width: 150px; }
 
 .social-icons {
   text-align: center;
@@ -3108,7 +3125,8 @@ nav.affix {
 .footer {
   background: #1f2233;
   color: #fff;
-  padding: 35px 0 42px 0; }
+  padding: 35px 0 42px 0;
+  position: relative; }
   .home .footer {
     padding-top: 0; }
   .footer input {

@@ -1,14 +1,11 @@
-<div id="nav-anchor"></div>
-<nav class="affix">
+<nav class="side-nav-container affix">
 	<h3 class="color sidenav-title"><?php the_title(); ?>.</h3>
     <ul class="side-nav">
     	<?php if( have_rows('cae_content_builder') ): while ( have_rows('cae_content_builder') ) : the_row(); 
     	$sectionTitle = get_sub_field('section_title'); 
     	$htmlSectionTitle = strtolower(str_replace(' ', '-', $sectionTitle)); if($sectionTitle): ?>
         <li>
-        	<a href="#<?php echo $htmlSectionTitle; ?>" class="bg-color">
-        		<?php the_sub_field('section_title'); ?>
-        	</a>
+        	<a href="#<?php echo $htmlSectionTitle; ?>" class="bg-color"><?php the_sub_field('section_title'); ?></a>
         </li>
     <?php endif; endwhile; else : endif; ?>
     </ul>
@@ -32,7 +29,7 @@
 	        	$sectionTitle = get_sub_field('section_title'); 
 	        	$htmlSectionTitle = strtolower(str_replace(' ', '-', $sectionTitle)); ?>
 
-		        <div class="stripe" id="<?php echo $htmlSectionTitle; ?>">
+		        <div class="stripe<?php if($sectionTitle): echo ' scrollto'; endif; ?>" id="<?php echo $htmlSectionTitle; ?>">
 		        	<div class="container">
 		        		<div class="row">
 		        			<div class="col-sm-2">
