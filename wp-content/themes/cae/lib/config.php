@@ -82,27 +82,29 @@ return $params;
 add_filter( 'facetwp_index_row', 'index_taxonomy_slugs', 10, 2 );
 
 function places_facet_html( $output, $params ) {
-      $params = array(
-        'facet' => array(
-            'name' => 'places',
-            'type' => 'dropdown',
-            'source' => 'tax/category',
-            // any other facet-specific settings
-        ),
-        'values' => array(), // available for checkbox & dropdown facets
-        'selected_values' => array(100, 101)
-    );
     if ( 'places' == $params['facet']['name'] ) {
-
-        $output = '';
-        $output .= '<ul class="sub-filter facetwp-facet facetwp-facet-places facetwp-type-dropdown" data-name="places" data-type="dropdown">';
-        foreach ( $params['values'] as $result ) {
-             $output .= '<li data-value="'.$result->facet_value.'"><a>' . $result->facet_display_value . '</a></li>';
-        }
-        $output .='</ul>';
-        return $output;
-        
-    }
+      $output = '';
+      foreach ( $params['values'] as $result ) {
+          $output .= '<li class="facetwp-page" data-value="' . $result->facet_value . '"><a>';
+          $output .= $result->facet_display_value;
+          $output .= '</a></li>';
+      }
+  }
+  return $output;
 }
 
 add_filter( 'facetwp_facet_html', 'places_facet_html', 10, 2 );
+
+function campaigns_facet_html( $output, $params ) {
+    if ( 'campaigns' == $params['facet']['name'] ) {
+      $output = '';
+      foreach ( $params['values'] as $result ) {
+          $output .= '<li class="facetwp-page" data-value="' . $result->facet_value . '"><a>';
+          $output .= $result->facet_display_value;
+          $output .= '</a></li>';
+      }
+  }
+  return $output;
+}
+
+add_filter( 'facetwp_facet_html', 'campaigns_facet_html', 10, 2 );

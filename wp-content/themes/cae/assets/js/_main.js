@@ -29,8 +29,7 @@ CE.Site = {
   home: {
     init: function() {
       CE.desktopFilter();
-      //CE.selectBox();
-      //$('#container').magnet();
+      CE.facetLoad();
     }
   },
   single_report: {

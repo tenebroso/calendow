@@ -2804,6 +2804,10 @@ button, .btn, input[type="submit"] {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     max-height: 999px; }
+  .sub-filter li {
+    display: block;
+    padding: 0;
+    margin: 0; }
   .sub-filter li a {
     background: #fff;
     color: #272A3F; }

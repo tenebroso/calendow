@@ -7,17 +7,19 @@
 
 <div id="container">
 			
-	<?php //get_template_part('templates/home/filters'); ?>
+	<?php get_template_part('templates/home/filters'); ?>
 
 	<?php //get_template_part('templates/content','isotope'); ?>
 
-	<ul class="filters">
+	<?php //echo do_shortcode( '[facetwp facet="work"]' ); ?>
+
+	<!-- <ul class="filters">
 
 		<?php //echo do_shortcode( '[facetwp facet="work"]' ); ?>
 		<?php //echo do_shortcode( '[facetwp facet="campaigns"]' ); ?>
 		<li><a>Filter by <span>Places</span></a><?php echo do_shortcode( '[facetwp facet="places"]' ); ?></li>
 
-	</ul>
+	</ul> -->
 
 </div>
 

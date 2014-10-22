@@ -247,7 +247,11 @@
 		transform:translate3d(0,0,0);
 		max-height:999px;
 	}
-
+	li {
+		display: block;
+		padding: 0;
+		margin: 0;
+	}
 	li a {
 		background: $white;
 		color:$accentDark;

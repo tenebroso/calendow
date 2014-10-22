@@ -14,6 +14,65 @@ var CE = CE || {};
 
 ;(function() {
 
+CE.facetLoad = function() {
+
+	//https://facetwp.com/how-to-customize-the-facet-loader/
+
+	//https://facetwp.com/add-loading-notifications-to-facetwp-templates/
+
+	
+
+	var container = $('.grid-container');
+
+		$(document).on('facetwp-loaded', function() {
+
+			if(container.hasClass('isotope')) {
+
+			} else {
+				container.isotope({
+					itemSelector: '.grid-item',
+					sortAscending: false,
+					layoutMode:'masonry',
+					resizable:false,
+					resizesContainer : false,
+					masonry: {
+						gutterWidth: 5
+					}
+				});
+			}
+
+
+		});
+
+		$(document).on('facetwp-refresh', function() {
+
+			if(container.hasClass('isotope')) {
+				container.isotope('destroy');
+				container.isotope({
+					itemSelector: '.grid-item',
+					sortAscending: false,
+					layoutMode:'masonry',
+					resizable:false,
+					resizesContainer : false,
+					masonry: {
+						gutterWidth: 5
+					}
+				});
+			} else {
+
+			}
+
+		});
+	
+
+	};
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
   CE.headerParallax = function() {
 
 
@@ -394,47 +453,26 @@ var CE = CE || {};
 
 CE.desktopFilter = function() {
 
-	var container = $('.grid-container');
+	var $parentFilters = $('.filters > li > a');
 
-		$(document).on('facetwp-loaded', function() {
+    $parentFilters.click(function(){
+    	$parentFilters.not(this).parent('li').removeClass('active');
+    	$(this).toggleClass('open').parent('li').toggleClass('active');
+    });
 
-			if(container.hasClass('isotope')) {
-
-			} else {
-				container.isotope({
-					itemSelector: '.grid-item',
-					sortAscending: false,
-					layoutMode:'masonry',
-					resizable:false,
-					resizesContainer : false,
-					masonry: {
-						gutterWidth: 5
-					}
-				});
-			}
-
-
-		});
-
-		$(document).on('facetwp-refresh', function() {
-
-			if(container.hasClass('isotope')) {
-				container.isotope('destroy');
-				container.isotope({
-					itemSelector: '.grid-item',
-					sortAscending: false,
-					layoutMode:'masonry',
-					resizable:false,
-					resizesContainer : false,
-					masonry: {
-						gutterWidth: 5
-					}
-				});
-			} else {
-
-			}
-
-		});
+    $(document).on('click', '.facetwp-page', function(e){
+		e.preventDefault;
+		$('.facetwp-page').removeClass('active');
+		$(this).addClass('active');
+		FWP.paged = $(this).attr('data-page');
+		if (1 < FWP.paged) {
+		    FWP.facets['paged'] = $(this).attr('data-page');
+		}else{
+		    FWP.facets['paged'] = 1;
+		}
+		FWP.set_hash();
+		FWP.fetch_data();
+    });
 	
 
 	};
@@ -472,8 +510,7 @@ CE.Site = {
   home: {
     init: function() {
       CE.desktopFilter();
-      //CE.selectBox();
-      //$('#container').magnet();
+      CE.facetLoad();
     }
   },
   single_report: {
