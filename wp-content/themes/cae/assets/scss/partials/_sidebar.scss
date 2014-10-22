@@ -17,6 +17,10 @@ nav.affix {
 			font-weight:600;
 			transition:all .5s;
 			position: relative;
+			.side-nav-share & {
+				background: $grey3;
+				border-color:lighten($grey3,30%) !important;
+			}
 			&:after {
 				width:5px;
 				height:100%;

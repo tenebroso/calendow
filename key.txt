@@ -43,7 +43,6 @@ http://caendow.herokuapp.com/newsletter/test-newsletter-3/
 009 Blog Post
 http://caendow.herokuapp.com/junk-food-is-a-killer-in-small-communities-big-cities/
 - UL styling
-- Add sidebar sharethis
 - Add breadcrumbs
 - Add sidebar date
 - Add footer card nav

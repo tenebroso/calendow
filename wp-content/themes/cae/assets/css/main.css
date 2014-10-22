@@ -2251,6 +2251,10 @@ h3 strong, h3 b {
   font-size: 26px;
   font-weight: 900;
   font-family: "source-sans-pro", sans-serif; }
+  .side-nav-share .sidenav-title {
+    color: #7f7f7f !important;
+    font-size: 18px;
+    font-weight: 700; }
 
 .page-subtext {
   display: block;
@@ -3114,6 +3118,9 @@ nav.affix {
   -webkit-transition: all 0.5s;
           transition: all 0.5s;
   position: relative; }
+  .side-nav-share .side-nav li a {
+    background: #7f7f7f;
+    border-color: #cccccc !important; }
   .side-nav li a:after {
     width: 5px;
     height: 100%;
@@ -3295,6 +3302,8 @@ nav.affix {
     border-color: #b0e4da; }
   .prevention .section-title {
     border-color: #3FBCA3; }
+  .prevention .page-header {
+    background-color: #3FBCA3; }
 
 .schools {
   border-color: #3bc8d1; }
@@ -3313,6 +3322,8 @@ nav.affix {
     border-color: #b7ebee; }
   .schools .section-title {
     border-color: #3bc8d1; }
+  .schools .page-header {
+    background-color: #3bc8d1; }
 
 .places {
   border-color: #C10512; }
@@ -3331,6 +3342,8 @@ nav.affix {
     border-color: #fb6471; }
   .places .section-title {
     border-color: #C10512; }
+  .places .page-header {
+    background-color: #C10512; }
 
 .grants-and-funding {
   border-color: #ab3bbd; }
@@ -3349,6 +3362,8 @@ nav.affix {
     border-color: #dcace5; }
   .grants-and-funding .section-title {
     border-color: #ab3bbd; }
+  .grants-and-funding .page-header {
+    background-color: #ab3bbd; }
 
 .youth-in-action {
   border-color: #416386; }
@@ -3367,6 +3382,8 @@ nav.affix {
     border-color: #95b0cb; }
   .youth-in-action .section-title {
     border-color: #416386; }
+  .youth-in-action .page-header {
+    background-color: #416386; }
 
 .neighborhoods {
   border-color: #D8673D; }
@@ -3385,6 +3402,8 @@ nav.affix {
     border-color: #f2cbbc; }
   .neighborhoods .section-title {
     border-color: #D8673D; }
+  .neighborhoods .page-header {
+    background-color: #D8673D; }
 
 .secondary {
   border-color: #c5b634; }
@@ -3403,3 +3422,5 @@ nav.affix {
     border-color: #e8e1aa; }
   .secondary .section-title {
     border-color: #c5b634; }
+  .secondary .page-header {
+    background-color: #c5b634; }

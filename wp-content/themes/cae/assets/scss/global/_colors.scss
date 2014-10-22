@@ -24,6 +24,9 @@ border-color:$variable;
 	.section-title {
 		border-color:$variable;
 	}
+	.page-header {
+		background-color:$variable;
+	}
 }
 
 .prevention { @include colors($prevention) }

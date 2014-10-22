@@ -21,9 +21,9 @@ CE.Site = {
       CE.sidebarNav();
     }
   },
-  archive: {
+  single: {
     init: function() {
-      
+      CE.sidebarNav();
     }
   },
   home: {

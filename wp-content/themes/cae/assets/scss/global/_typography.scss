@@ -55,6 +55,11 @@ h3 {
   font-size:26px;
   font-weight:900;
   font-family:$font-family-base;
+  .side-nav-share & {
+    color:$grey3 !important;
+    font-size:18px;
+    font-weight:700;
+  }
 }
 
 .page-subtext {
