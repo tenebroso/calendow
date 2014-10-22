@@ -8,11 +8,14 @@ var CE = CE || {};
     var $container = $('.page-header.text-right .page-title').width();
     var $width = $(window).width();
     var $position = ($width - $container) / 2;
-    $nav.css('left', $position + 15).transit({opacity:1});
+    var $sideNav = $('.side-nav li');
 
-    $nav.stickyNavbar({
-      animateCSS: false
-    });
+    if($sideNav.length) {
+      $nav.css('left', $position + 15).transit({opacity:1});
+      $nav.stickyNavbar({
+        animateCSS: false
+      });
+    }
 
   };
 

@@ -2439,7 +2439,6 @@ button, .btn, input[type="submit"] {
 
 #accordion .panel {
   background: #2d304a;
-  padding: 2em 0;
   border-bottom: 1px solid #3A406D;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
@@ -2449,22 +2448,32 @@ button, .btn, input[type="submit"] {
 .panel-title {
   font-size: 30px;
   font-weight: 800;
+  line-height: 0.9;
   text-align: center;
   margin: 0;
-  cursor: pointer; }
-  .panel-title a {
-    color: #fff; }
+  cursor: pointer;
+  padding: 2em 0; }
+  .panel-title:hover a, .panel-title a {
+    color: #fff;
+    display: block; }
+  .panel-title span {
+    display: inline-block;
+    position: relative;
+    padding: 0 1em; }
+  .panel-title span i {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px; }
   .panel-title span:after {
+    position: absolute;
+    right: 0;
+    top: 50%;
     content: "";
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid #fff;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    right: -15px;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     -webkit-transform: rotate(180deg);
@@ -2481,7 +2490,9 @@ button, .btn, input[type="submit"] {
 
 .panel-body {
   color: #f5f5f5;
-  padding: 3.3em 0 2em; }
+  padding: 3.3em 0 2em;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
   .panel-body .container {
     max-width: 1000px;
     margin: 0 auto; }

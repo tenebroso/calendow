@@ -1,57 +1,30 @@
 <div class="panel-group" id="accordion">
+
+<?php $i = 1; if( have_rows('accordion_builder') ):
+
+    while ( have_rows('accordion_builder') ) : the_row(); 
+    
+      $title = get_sub_field('accordion_title');
+      $sub = get_sub_field('accordion_sub-title');
+      $aContent = get_sub_field('accordion_content'); ?>
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" class="collapsed">
-          <span>Mission</span>
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse<?php echo $i; ?>" class="collapsed">
+          <span><?php echo $title; ?><?php if($sub): ?><br /><i><?php echo $sub; ?></i><?php endif; ?></span>
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse in">
       <div class="panel-body">
-      	<div class="container">
-      		<div class="row">
-      			<div class="col-sm-4">
-					<img src="/psd-assets/sq-our-story.jpg">
-      			</div>
-      			<div class="col-sm-8">
-        			<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
-        		</div>
-        	</div>
+        <div class="container">
+          <?php echo $aContent; ?>
         </div>
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" class="collapsed">
-          <span>History</span>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse in">
-      <div class="panel-body">
-      	<div class="container">
-        	Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" class="collapsed">
-          <span>Values</span>
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse in">
-      <div class="panel-body">
-      	<div class="container">
-        	Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-        </div>
-      </div>
-    </div>
-  </div>
+
+  <?php $i++; endwhile; else : endif; ?>
+
 </div>

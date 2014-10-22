@@ -2,111 +2,6 @@ var CE = CE || {};
 
 ;(function() {
 
-CE.desktopFilter = function() {
-
-	var $parentFilters = $('.filters > li > a');
-
-    $parentFilters.click(function(){
-    	$parentFilters.not(this).parent('li').removeClass('open');
-    	$(this).toggleClass('open').parent('li').toggleClass('open');
-    });
-
-	wp.hooks.addAction('facetwp/refresh/dropdown', function($this, facet_name) {
-        var val = $this.find('.facetwp-page').data('value');
-        FWP.facets[facet_name] = val ? [val] : [];
-    });
-
-    wp.hooks.addAction('facetwp/ready', function() {
-        $(document).on('click', '.facetwp-facet .facetwp-page', function() {
-        	$(this).parent('ul').children('.facetwp-page').not(this).removeClass('selected');
-        	$(this).addClass('selected');
-            var $facet = $(this).closest('.facetwp-facet');
-            console.log($facet);
-            if ('' != $facet.hasClass('selected')) {
-                FWP.static_facet = $facet.attr('data-name');
-                console.log(FWP.static_facet);
-            }
-            FWP.autoload();
-        });
-    });
-
-	};
-
-
-})();
-var CE = CE || {};
-
-;(function() {
-
-  CE.reportPageHeight = function() {
-
-
-    var $container = $('.single-report .main');
-    var $report = $('.report-single');
-
-
-    // Get an array of all element heights
-    var elementHeights = $report.map(function() {
-      return $(this).height();
-    }).get();
-
-    var maxHeight = Math.max.apply(null, elementHeights);
-
-    $container.height(maxHeight);
-
-
-  };
-
-
-})();
-var CE = CE || {};
-
-;(function() {
-
-  CE.reportSectionSwitcher = function() {
-
-  	var $prev = $('.report-prev a');
-  	var $next = $('.report-next a');
-  	var $reportNavFirst = $('.report-nav li:first-child');
-  	var $reportPanelFirst = $('#report-panel-1');
-  	var $reportNav = $('.report-nav li');
-
-  	$reportNavFirst.addClass('active');
-
-	$next.click(function(e) {
-		var $href = $(this).attr('href');
-		var $parent = $(this).parents('.report-single');
-		var $theID  = $(this).parents('.report-single').data("id");
-		$parent.transit({x:'-1000%'}, 800, 'ease');
-		$($href).transit({x:0}, 800, 'ease');
-		$reportNav.removeClass('active');
-		$reportNav.filter(function() {
-			return $(this).data('id') === $theID + 1;
-		}).addClass('active');
-		e.preventDefault();
-	});
-
-	$prev.click(function(e) {
-		var $href = $(this).attr('href');
-		var $parent = $(this).parents('.report-single');
-		var $theID  = $(this).parents('.report-single').data("id");
-		$parent.transit({x:'1000%'}, 800, 'ease');
-		$($href).transit({x:0}, 800, 'ease');
-		$reportNav.removeClass('active');
-		$reportNav.filter(function() {
-			return $(this).data('id') === $theID - 1;
-		}).addClass('active');
-		e.preventDefault();
-	});
-
-  };
-
-
-})();
-var CE = CE || {};
-
-;(function() {
-
   CE.collapse = function() {
 
   	$('.collapse').collapse();
@@ -254,11 +149,14 @@ var CE = CE || {};
     var $container = $('.page-header.text-right .page-title').width();
     var $width = $(window).width();
     var $position = ($width - $container) / 2;
-    $nav.css('left', $position + 15).transit({opacity:1});
+    var $sideNav = $('.side-nav li');
 
-    $nav.stickyNavbar({
-      animateCSS: false
-    });
+    if($sideNav.length) {
+      $nav.css('left', $position + 15).transit({opacity:1});
+      $nav.stickyNavbar({
+        animateCSS: false
+      });
+    }
 
   };
 
@@ -481,6 +379,111 @@ var CE = CE || {};
   });
 
 };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
+CE.desktopFilter = function() {
+
+	var $parentFilters = $('.filters > li > a');
+
+    $parentFilters.click(function(){
+    	$parentFilters.not(this).parent('li').removeClass('open');
+    	$(this).toggleClass('open').parent('li').toggleClass('open');
+    });
+
+	wp.hooks.addAction('facetwp/refresh/dropdown', function($this, facet_name) {
+        var val = $this.find('.facetwp-page').data('value');
+        FWP.facets[facet_name] = val ? [val] : [];
+    });
+
+    wp.hooks.addAction('facetwp/ready', function() {
+        $(document).on('click', '.facetwp-facet .facetwp-page', function() {
+        	$(this).parent('ul').children('.facetwp-page').not(this).removeClass('selected');
+        	$(this).addClass('selected');
+            var $facet = $(this).closest('.facetwp-facet');
+            console.log($facet);
+            if ('' != $facet.hasClass('selected')) {
+                FWP.static_facet = $facet.attr('data-name');
+                console.log(FWP.static_facet);
+            }
+            FWP.autoload();
+        });
+    });
+
+	};
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
+  CE.reportPageHeight = function() {
+
+
+    var $container = $('.single-report .main');
+    var $report = $('.report-single');
+
+
+    // Get an array of all element heights
+    var elementHeights = $report.map(function() {
+      return $(this).height();
+    }).get();
+
+    var maxHeight = Math.max.apply(null, elementHeights);
+
+    $container.height(maxHeight);
+
+
+  };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
+  CE.reportSectionSwitcher = function() {
+
+  	var $prev = $('.report-prev a');
+  	var $next = $('.report-next a');
+  	var $reportNavFirst = $('.report-nav li:first-child');
+  	var $reportPanelFirst = $('#report-panel-1');
+  	var $reportNav = $('.report-nav li');
+
+  	$reportNavFirst.addClass('active');
+
+	$next.click(function(e) {
+		var $href = $(this).attr('href');
+		var $parent = $(this).parents('.report-single');
+		var $theID  = $(this).parents('.report-single').data("id");
+		$parent.transit({x:'-1000%'}, 800, 'ease');
+		$($href).transit({x:0}, 800, 'ease');
+		$reportNav.removeClass('active');
+		$reportNav.filter(function() {
+			return $(this).data('id') === $theID + 1;
+		}).addClass('active');
+		e.preventDefault();
+	});
+
+	$prev.click(function(e) {
+		var $href = $(this).attr('href');
+		var $parent = $(this).parents('.report-single');
+		var $theID  = $(this).parents('.report-single').data("id");
+		$parent.transit({x:'1000%'}, 800, 'ease');
+		$($href).transit({x:0}, 800, 'ease');
+		$reportNav.removeClass('active');
+		$reportNav.filter(function() {
+			return $(this).data('id') === $theID - 1;
+		}).addClass('active');
+		e.preventDefault();
+	});
+
+  };
 
 
 })();
