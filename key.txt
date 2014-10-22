@@ -52,7 +52,7 @@ http://caendow.herokuapp.com/junk-food-is-a-killer-in-small-communities-big-citi
 http://caendow.herokuapp.com/conference-spaces/
 
 011 Conference Space Detail
-- Create subpage w/ placeholder content
+http://caendow.herokuapp.com/oakland-conference-space/
 
 012 Report Detail
 http://caendow.herokuapp.com/report/getting-the-word-out/

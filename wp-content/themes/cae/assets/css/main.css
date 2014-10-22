@@ -3105,18 +3105,23 @@ nav.affix {
 .side-nav li a {
   display: block;
   color: #fff;
-  padding: 7px 15px;
+  background: #D8673D;
+  padding: 7px 25px 7px 15px;
   border-bottom: 1px solid transparent;
   font-size: 18px;
+  line-height: 1.3;
   font-weight: 600;
   -webkit-transition: all 0.5s;
-          transition: all 0.5s; }
+          transition: all 0.5s;
+  position: relative; }
   .side-nav li a:after {
     width: 5px;
-    height: 33px;
+    height: 100%;
     content: "";
     display: block;
-    float: right;
+    position: absolute;
+    right: 10px;
+    top: 0;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAQAAACb+P2wAAAANklEQVQYV2P4b/KfAQIZ/n/57wNj/v//538WjAkCnf8ZYcwZ/5lBzH//yyEKfvyPgGmzgxkGAJUmNtNi5mPVAAAAAElFTkSuQmCC) no-repeat center center;
     opacity: 0; }
   .side-nav li a.active, .side-nav li a:hover {
