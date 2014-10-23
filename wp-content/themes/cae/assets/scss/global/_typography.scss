@@ -10,6 +10,7 @@ h1,h2,h3,h4,h5,h6, .heading-font {
   font-kerning: normal;
   font-family:$headings-font-family;
   font-weight:700;
+  margin:.5em 0;
   .footer & {
     margin:0;
   }
@@ -89,13 +90,18 @@ ul, ol {
   .entry-content & {
     font-weight:800;
     text-transform:uppercase;
-    margin:0 0 1em 80px;
+    margin:0 0 1em 40px;
   }
 }
 
 .hentry {
   li {
     margin:0 0 .5em 0;
+    .single & {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAQAAADY4iz3AAAAcklEQ…UgiUyudOUODu0y79wGd4Hx2xCwwIB3KVbA37DkIwCSxGH1AAodzpKkjv8XAAAAAElFTkSuQmCC) no-repeat left center;
+        padding-left: 1em;
+      }
+    }
   }
 }
 
@@ -138,12 +144,32 @@ blockquote {
 .breadcrumbs {
   font-size:18px;
   line-height:1.4;
+  text-transform: capitalize;
+  .single & {
+    font-weight:600;
+  }
   strong {
     color:$grey4;
-    text-transform: capitalize;
     font-size: 37px;
     font-weight: 100;
 
     display: block;
+  }
+}
+
+.meta-date {
+  font-weight:900;
+  font-size:24px;
+  text-align: center;
+  margin: 0;
+  padding:70px 0 0;
+  i {
+    display: block;
+    border-top:1px solid $black;
+    color:$grey1;
+    letter-spacing:2px;
+    font-size:20px;
+    font-weight:500;
+    font-style: normal;
   }
 }
