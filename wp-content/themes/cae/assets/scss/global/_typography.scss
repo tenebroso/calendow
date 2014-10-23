@@ -97,10 +97,9 @@ ul, ol {
 .hentry {
   li {
     margin:0 0 .5em 0;
-    .single & {
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAQAAADY4iz3AAAAcklEQ…UgiUyudOUODu0y79wGd4Hx2xCwwIB3KVbA37DkIwCSxGH1AAodzpKkjv8XAAAAAElFTkSuQmCC) no-repeat left center;
-        padding-left: 1em;
-      }
+  .single & {
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAQAAADY4iz3AAAAcklEQ…UgiUyudOUODu0y79wGd4Hx2xCwwIB3KVbA37DkIwCSxGH1AAodzpKkjv8XAAAAAElFTkSuQmCC) no-repeat left center;
+      padding-left: 1em;
     }
   }
 }

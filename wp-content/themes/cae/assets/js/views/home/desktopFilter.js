@@ -12,13 +12,13 @@ CE.desktopFilter = function() {
     });
 
 	wp.hooks.addAction('facetwp/refresh/dropdown', function($this, facet_name) {
-        var val = $this.find('.facetwp-page').data('value');
+        var val = $this.find('.facetwp-dd-val').data('value');
         FWP.facets[facet_name] = val ? [val] : [];
     });
 
     wp.hooks.addAction('facetwp/ready', function() {
-        $(document).on('click', '.facetwp-facet .facetwp-page', function() {
-        	$(this).parent('ul').children('.facetwp-page').not(this).removeClass('selected');
+        $(document).on('click', '.facetwp-facet .facetwp-dd-val', function() {
+        	$(this).parent('ul').children('.facetwp-dd-val').not(this).removeClass('selected');
         	$(this).addClass('selected');
             var $facet = $(this).closest('.facetwp-facet');
             console.log($facet);

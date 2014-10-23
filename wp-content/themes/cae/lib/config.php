@@ -85,7 +85,7 @@ function places_facet_html( $output, $params ) {
     if ( 'places' == $params['facet']['name'] ) {
       $output = '';
       foreach ( $params['values'] as $result ) {
-          $output .= '<li class="facetwp-page" data-value="' . $result->facet_value . '"><a>';
+          $output .= '<li class="facetwp-dd-val" data-value="' . $result->facet_value . '"><a>';
           $output .= $result->facet_display_value;
           $output .= '</a></li>';
       }
@@ -99,7 +99,7 @@ function campaigns_facet_html( $output, $params ) {
     if ( 'campaigns' == $params['facet']['name'] ) {
       $output = '';
       foreach ( $params['values'] as $result ) {
-          $output .= '<li class="facetwp-page" data-value="' . $result->facet_value . '"><a>';
+          $output .= '<li class="facetwp-dd-val" data-value="' . $result->facet_value . '"><a>';
           $output .= $result->facet_display_value;
           $output .= '</a></li>';
       }
@@ -113,7 +113,7 @@ function work_facet_html( $output, $params ) {
     if ( 'work' == $params['facet']['name'] ) {
       $output = '';
       foreach ( $params['values'] as $result ) {
-          $output .= '<li class="facetwp-page" data-value="' . $result->facet_value . '"><a>';
+          $output .= '<li class="facetwp-dd-val" data-value="' . $result->facet_value . '"><a>';
           $output .= $result->facet_display_value;
           $output .= '</a></li>';
       }
