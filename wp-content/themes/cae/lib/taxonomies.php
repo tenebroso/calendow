@@ -4,15 +4,16 @@
    Remove the default Category & Tag. We are replacing these with Our Work, Campaigns and Places
    ========================================================================== */
 
-add_action( 'init', 'unregister_taxonomy');
+
 function unregister_taxonomy(){
-	global $wp_taxonomies;
-	$taxonomies = array( 'category', 'post_tag' );
-	foreach( $taxonomies as $taxonomy ) {
-		if ( taxonomy_exists( $taxonomy) )
-			unset( $wp_taxonomies[$taxonomy]);
-	}
+    register_taxonomy('post_tag', array());
+    register_taxonomy('category', array());
 }
+add_action('init', 'unregister_taxonomy');
+
+/* =============================================================================
+   Register Our Work, Campaigns and Places
+   ========================================================================== */
 
 function our_work() {
 
