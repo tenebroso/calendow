@@ -1,17 +1,14 @@
-<div class="footer post-nav-footer">
+<div class="footer footer-posts">
 
   <div class="footer-light-blue-wrap">
 
     <div class="container">
-
       <div class="row">
-		<div class="col-xs-3">
-			<p>Previous Story</p>
-			<h2><strong><a href="#">Places to Walk and Play and Grow</a></strong></h2>
+		<div class="col-xs-6 footer-post-nav-item footer-post-nav-prev">
+			<?php previous_post_link('%link', '<p>Previous Story</p> <h2><strong>%title</strong></h2>', ''); ?>
 		</div>
-		<div class="col-xs-3 col-xs-offset-6 text-right">
-			<p>Next Story</p>
-			<h2><strong><a href="#">Another Newsletter Title</a></strong></h2>
+		<div class="col-xs-6 text-right footer-post-nav-item footer-post-nav-next">
+			<?php next_post_link('%link', '<p>Next Story</p> <h2><strong>%title</strong></h2>', ''); ?>
 		</div>
       </div>
 

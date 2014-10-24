@@ -3269,6 +3269,8 @@ nav.affix {
   .footer .ui-group {
     vertical-align: middle;
     line-height: 3.5; }
+  .footer.footer-posts {
+    padding: 0; }
 
 .footer-cta-wrap {
   margin: 0 0 35px 0; }
@@ -3287,7 +3289,7 @@ nav.affix {
 
 .footer-light-blue-wrap {
   background: #272A3F;
-  padding: 38px 0 14px; }
+  padding: 48px 0 60px; }
 
 .footer-nav {
   font-size: 17px;
@@ -3301,6 +3303,18 @@ nav.affix {
       color: #fff; }
   .footer-nav .social-icons {
     margin-left: 1em; }
+
+.footer-post-nav-prev a {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAvCAMAAADKIyriAAAAP1BMVEXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fEXeu2AAAAFHRSTlMAAQMGChETFR0yX3CQn62uutTc3UrWfzIAAABESURBVDjL7cm3AcAgEANAgcEBjBPaf1YWeBXU/msPMC0lQMzFM6hhX825yb7/ZT4fMagkD3OQHvLd/PwmLstrEeJqxABK8A6m0yE+JwAAAABJRU5ErkJggg==) no-repeat center left;
+  padding: 0 0 0 46px;
+  margin: 0 0 0 -46px;
+  display: block; }
+
+.footer-post-nav-next a {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAvBAMAAAAP08fjAAAAKlBMVEXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fVjvTfAAAADXRSTlMAAQknLi9IWWqTlLjqfI9HvQAAAEBJREFUKJFjYGpkQALaNwWQeDZ3JyLxWM+iSMaMSqJLst+9hsTzubsQwWE5e0tgEEpNRJa6SUsp1LSEms5Q0iAA9YNOXf2vFqAAAAAASUVORK5CAII=) no-repeat center right;
+  padding: 0 46px 0 0;
+  margin: 0 -46px 0 0;
+  display: block; }
 
 .footer-logo {
   position: relative; }
