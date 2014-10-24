@@ -2196,6 +2196,8 @@ body {
   .stripe.bg-image {
     height: 300px;
     overflow: hidden; }
+    .page-template-page-campaign-detail-php .stripe.bg-image {
+      height: 368px; }
 
 .home .container {
   max-width: 1000px;

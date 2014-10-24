@@ -12,20 +12,17 @@ CE.desktopFilter = function() {
     });
 
 	wp.hooks.addAction('facetwp/refresh/dropdown', function($this, facet_name) {
-        var val = $this.find('.facetwp-dd-val').data('value');
-        FWP.facets[facet_name] = val ? [val] : [];
+        var val = [];
+        $this.find('.facetwp-dd-val.selected').each(function() {
+            val.push($(this).attr('data-value'));
+        });
+        FWP.facets[facet_name] = val;
     });
-
+ 
     wp.hooks.addAction('facetwp/ready', function() {
-        $(document).on('click', '.facetwp-facet .facetwp-dd-val', function() {
-        	$(this).parent('ul').children('.facetwp-dd-val').not(this).removeClass('selected');
-        	$(this).addClass('selected');
+        $(document).on('click', '.facetwp-dd-val', function() {
+            $(this).toggleClass('selected');
             var $facet = $(this).closest('.facetwp-facet');
-            console.log($facet);
-            if ('' != $facet.hasClass('selected')) {
-                FWP.static_facet = $facet.attr('data-name');
-                console.log(FWP.static_facet);
-            }
             FWP.autoload();
         });
     });

@@ -5,6 +5,7 @@
 <?php $accordion = get_field('accordion_content'); ?>
 <?php $builder = get_field('cae_content_builder'); ?>
 <?php $workSlug = wp_get_post_terms($post->ID,'work', array("fields" => "slugs")); ?>
+<?php $template = get_page_template_slug( $post->ID ); ?>
 
   <?php do_action('get_header'); ?>
 
@@ -16,9 +17,19 @@
       if(!(is_front_page() || is_singular('report'))): get_template_part('templates/page','header'); endif; ?>
 
       <?php 
-        // The default wrapper/content display for most layouts. This should only show if no page builder
-      if(!$builder): ?>
+        // No Page Builder in Place, default view
+      if(!$builder && ($template !== 'page-campaign-detail.php')): ?>
         <main class="main" role="main">
+          <div class="container">
+            <?php include roots_template_path(); ?>
+          </div>
+        </main>
+      <?php 
+        // If this is a campaign detail page
+      elseif(!$builder && ($template == 'page-campaign-detail.php')): ?>
+        <main class="main" role="main">
+          <?php get_template_part('templates/header','nav'); ?>
+          <?php get_template_part('templates/content/full-image'); ?>
           <div class="container">
             <?php include roots_template_path(); ?>
           </div>
@@ -30,10 +41,6 @@
           <?php include roots_template_path(); ?>
         </main>
       <?php endif; ?>
-
-        <?php 
-          // Show the Full Width Accordion Content outside of the wrapper
-        if($accordion): get_template_part('templates/content','accordion'); endif; ?>
 
         <?php 
           // Show the Count Me In CTA stripe if we are on the homepage

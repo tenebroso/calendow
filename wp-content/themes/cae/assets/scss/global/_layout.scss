@@ -48,6 +48,9 @@ body {
 	&.bg-image {
 		height: 300px;
 		overflow: hidden;
+		.page-template-page-campaign-detail-php & {
+			height:368px;
+		}
 	}
 }
 
