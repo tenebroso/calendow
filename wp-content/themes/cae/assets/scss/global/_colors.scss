@@ -10,7 +10,10 @@ border-color:$variable;
 			color:$white;
 		}
 	}
-	.heading a, .color, blockquote {
+	.heading a, 
+	.color, 
+	blockquote,
+	.footer-post-nav .section-name {
 		color:$variable;
 	}
 	&.grid-report,
@@ -21,9 +24,11 @@ border-color:$variable;
 	.side-nav li a {
 		border-color: lighten($variable, 30%);
 	}
-	.section-title {
+	.section-title,
+	.footer-post-nav li {
 		border-color:$variable;
 	}
+	.footer-post-nav a:hover,
 	.page-header {
 		background-color:$variable;
 	}

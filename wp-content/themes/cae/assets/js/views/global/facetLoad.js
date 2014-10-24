@@ -8,6 +8,17 @@ CE.facetLoad = function() {
 
 	//https://facetwp.com/add-loading-notifications-to-facetwp-templates/
 
+	var isPager = false;
+	var template_html;
+
+	function loadMore() {
+		isPager = true;
+		template_html = jQuery('.facetwp-template').html();
+		var next_page = parseInt(jQuery('.pager').attr('data-page'));
+		jQuery('.pager').attr('data-page', next_page + 1);
+		FWP.paged = (next_page + 1);
+		FWP.refresh();
+	}
 	
 
 	var container = $('.grid-container');
@@ -28,6 +39,15 @@ CE.facetLoad = function() {
 						gutter:5
 					}
 				});
+			}
+
+			if ( isPager ) {
+				var new_html = $('.facetwp-template').html();
+				$('.facetwp-template').html(template_html + new_html);
+				isPager = false;
+			}
+			else {
+				$('.pager').attr('data-page', 1);
 			}
 
 
@@ -52,7 +72,6 @@ CE.facetLoad = function() {
 			}
 
 		});
-	
 
 	};
 

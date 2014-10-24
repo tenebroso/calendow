@@ -1,9 +1,10 @@
 <?php 
 	// On certain pages, we show a grid navigation that is directly attached to the footer
 	// The variable below is a check for that general grid
-	$hasNav = get_field('footer-grid-nav'); ?>
+  $template = get_page_template_slug( $post->ID );
+	$hasNav = ($template == 'page-campaign-overview.php' || $template == 'page-campaign-detail.php'); ?>
 
-<footer class="footer<?php if($hasNav): echo 'footer-add-padding'; endif; ?>" role="contentinfo">
+<footer class="footer<?php if($hasNav): echo ' footer-add-padding'; endif; ?>" role="contentinfo">
 
 	<?php if($hasNav): 
 	 get_template_part('templates/footer/footer-post-nav'); 
@@ -21,30 +22,4 @@
   </div>
 
 </footer>
-<script>
-  var isPager = false;
-  var template_html;
-
-function loadMore() {
-      isPager = true;
-      template_html = jQuery('.facetwp-template').html();
-      var next_page = parseInt(jQuery('.pager').attr('data-page'));
-      jQuery('.pager').attr('data-page', next_page + 1);
-      FWP.paged = (next_page + 1);
-      FWP.refresh();
-  }
-
-  (function($) {
-      $(document).on('facetwp-loaded', function() {
-          if ( isPager ) {
-              var new_html = $('.facetwp-template').html();
-              $('.facetwp-template').html(template_html + new_html);
-              isPager = false;
-          }
-          else {
-              $('.pager').attr('data-page', 1);
-          }
-      });
-  })(jQuery);
-  </script>
 <?php wp_footer(); ?>

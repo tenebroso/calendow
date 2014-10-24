@@ -37,10 +37,21 @@
 	height:415px;
 	text-align:center;
 	margin:0;
-	padding:105px 0 0;
+	padding:100px 0 0;
 	&.has-image {
 		background:none;
 		height:570px;
+		position: relative;
+		div {
+			height:720px;
+			background-repeat:no-repeat;
+			background-size:cover;
+			background-position:center bottom;
+			position: absolute;
+			top:-100px;
+			left:0;
+			width:100%;
+		}
 	}
 	&.text-right {
 		text-align: right;
@@ -58,10 +69,6 @@
 	position:fixed;
 	top:0;
 	left:0;
-	height:447px;
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center bottom;
 	width:100%;
 	z-index:0;
 	transform:translate3d(0,0,0);

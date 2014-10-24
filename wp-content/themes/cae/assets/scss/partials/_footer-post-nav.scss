@@ -1,13 +1,26 @@
 .footer-post-nav {
-	text-align: center;
-	margin:-12em 0 1em 0;
+	margin-top:-12em;
+	margin-bottom:1em;
+	> h2 {
+		margin:0 0 37px 0;
+		font-size:32px;
+	}
+	.page-template-page-campaign-detail-php & {
+		margin-top:-18em;
+	}
 	li {
 		vertical-align: top;
 		border-top:12px solid $red;
 		background: $white;
 		width:265px;
-		margin:0 5px 0 0;
+		margin:0 9px 9px 0;
 		padding:0;
+		&:nth-child(3n+3) {
+			margin-right:0;
+		}
+		&:nth-of-type(4) {
+			clear:left;
+		}
 		h3 {
 			font-size:30px;
 			margin-bottom:18px;
@@ -19,12 +32,6 @@
 		height: 100%;
 		transition:all .25s;
 		position: relative;
-		.section-name {
-			color:$red;
-			font-size:18px;
-			font-weight:700;
-			margin-bottom:1em;
-		}
 		.date {
 			color:$grey4;
 		}
@@ -35,5 +42,14 @@
 				color:$white;
 			}
 		}
+	}
+	.section-name {
+		color:$red;
+		font-size:18px;
+		font-weight:600;
+		margin-bottom:1em;
+	}
+	.list-inline {
+		margin:0;
 	}
 }

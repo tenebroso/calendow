@@ -80,6 +80,14 @@ h3 {
   color:$white;
 }
 
+.black-text {
+  color:$black;
+}
+
+.caps {
+  text-transform:uppercase;
+}
+
 .reset-margins {
   p,h1,h2,h4,h5,h6 {
     margin:0;

@@ -60,8 +60,11 @@
 }
 
 .footer-add-padding {
-	margin-top: 9em;
-	padding-top: 3em;
+	margin-top: 21em;
+	padding-top: 8em;
+	.page-template-page-campaign-detail-php & {
+		margin-top:29em;
+	}
 }
 
 .footer-light-blue-wrap {
@@ -84,10 +87,6 @@
 	.social-icons {
 		margin-left:1em;
 	}
-}
-
-.post-nav-footer {
-	padding:0;
 }
 
 .footer-logo {

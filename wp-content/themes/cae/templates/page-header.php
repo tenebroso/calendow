@@ -10,7 +10,7 @@
 <?php if($large_image_url && ($template !== 'page-campaign-detail.php')): 
 	// If a Featured Image was Uploaded ?>
 	<div class="page-header has-image<?php if($right): echo ' text-right'; endif; ?>">
-		<div class="page-header-fixed" style="background-image:url(<?php echo $large_image_url[0]; ?>);"></div>
+		<div style="background-image:url(<?php echo $large_image_url[0]; ?>);" data-stellar-background-ratio="0.5"></div>
 
 <?php else: 
 	// Otherwise a CSS background color should be applied, along with the pattern overlay ?>
