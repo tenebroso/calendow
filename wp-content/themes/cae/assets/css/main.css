@@ -2546,10 +2546,24 @@ button, .btn, input[type="submit"] {
   text-align: center;
   padding: 5px 0 0;
   background: #fff;
-  position: relative;
-  z-index: 2; }
+  position: relative; }
   .nav.newsletters .pull-left, .nav.newsletters .pull-right {
-    margin-top: 18px; }
+    margin: 18px 0 0;
+    padding: 0;
+    height: 60px;
+    width: 40px;
+    background-position: center center;
+    opacity: 0.4; }
+    .nav.newsletters .pull-left:hover, .nav.newsletters .pull-right:hover {
+      opacity: 1; }
+    .nav.newsletters .pull-left a, .nav.newsletters .pull-right a {
+      display: block;
+      width: 100%;
+      height: 100%; }
+  .nav.newsletters .pull-left {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg); }
 
 .inactive {
   opacity: 0.6;
@@ -2558,13 +2572,19 @@ button, .btn, input[type="submit"] {
   .inactive:hover {
     opacity: 1; }
 
-.newsletters.nav .active {
-  opacity: 1;
-  position: relative;
-  display: block;
+.newsletters.nav li {
+  margin: 0 1px;
   padding-bottom: 16px;
-  margin: 0 1px; }
-  .newsletters.nav .active:after {
+  position: relative;
+  opacity: 0.6;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: opacity 0.25s;
+          transition: opacity 0.25s; }
+
+.newsletters.nav .active, .newsletters.nav li:not(.pull-left):not(.pull-right):hover {
+  opacity: 1; }
+  .newsletters.nav .active:after, .newsletters.nav li:not(.pull-left):not(.pull-right):hover:after {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAVCAYAAACOleY7AAABzElEQVRo3u3XO08CQRQFYEiwgA7pFFuQXvgBQq9o66P3Uas/wEftqxW1VbFXWyPaI62indJpQ4KeSU4xmQRCloWdnZnis1HZ5d5T3BN5nMgkYQmu4Af+HKN9QQXmIB7BD1mcvzjjH7qBmeEdjmAWYvLO1QDIYvyHQ3hzQwydOuzBDES77blXAGRRftAuP9gNWD8dqMEWZPvca98BUGX5oCc+2C0gGG24g3WY9LJLrwGQiQev8UXabilDJw71G1jmAT/Q/vwIgCzJF7t2jcJX33AO85Dwc2d+B0CW4AtXXKPwpAnHUFQv97AEQG0URVaRpltuV6+wD/lel3sYA6A2ijwrSt1d7pln2IHpAHYRSABU4otvcxAdSy73e17u6aDnr0MAZGkOxrRGIQ7iKqzCuE4z1y0AMjGoFQ4ujI2iBRdQ9vtytyUAaqMoswq1NF76B5xAaZiXu40BUBtFiRVJh0bRgAMojOpytz0AaqMosDo1Rni5v/Byz4V8fqEPgCrHxfjdKMRB+gCbMGXSzEwLgEwsaoOL89IofuGWl3vK1DmZHABZiouscrG9LvdLWNT5cncBGLxRLLCiiYV/wikPyzHb5mFjANRGEbV5Bv9NY7eQGFUpBgAAAABJRU5ErkJggg==) no-repeat center bottom;
     width: 127px;
     height: 20px;
