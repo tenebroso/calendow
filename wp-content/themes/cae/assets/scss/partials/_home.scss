@@ -166,6 +166,7 @@
 		background-color:$accentDark;
 		display: block;
 		padding:25px;
+		height:97px;
 		span {
 			font-size:27px;
 			font-family:$headings-font-family;
@@ -173,6 +174,13 @@
 			color:$accentLighter;
 			display: block;
 
+		}
+		&.reset {
+			span {
+				top: 50%;
+				position: relative;
+				transform: translate3d(0,-50%,0);
+			}
 		}
 		&:hover {
 			background-color: $accentLight;

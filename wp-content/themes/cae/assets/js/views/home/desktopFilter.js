@@ -4,7 +4,7 @@ var CE = CE || {};
 
 CE.desktopFilter = function() {
 
-	var $parentFilters = $('.filter-key');
+	var $parentFilters = $('.filters > li > a');
     var $childFilters = $('.sub-filter li a');
 
     var masOptions = {
@@ -19,7 +19,7 @@ CE.desktopFilter = function() {
     $parentFilters.click(function(e){
         e.preventDefault();
         $parentFilters.not(this).parent('li').removeClass('open');
-        $(this).toggleClass('open').parent('li').toggleClass('open');
+        $(this).parent('li').toggleClass('open');
     });
 
 var $container = $('.grid-container').imagesLoaded( function() {
@@ -33,7 +33,10 @@ $childFilters.click( function(e) {
 
         var $text = $(this).text();
 
-        $(this).parents('li').removeClass('open').children('.filter-key').html($text);
+        $('.filter-key.reset').hide();
+        $('.filter-key:last-of-type').show();
+
+        $(this).parents('li').removeClass('open').prepend('<a class="filter-key reset"><span>'+$(this).text()+'</span></a>').children('.filter-key:last-of-type').hide();
 
         e.preventDefault();
         var selected_taxonomy = $(this).attr('title');

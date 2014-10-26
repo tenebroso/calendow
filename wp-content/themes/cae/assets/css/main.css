@@ -2819,13 +2819,19 @@ button, .btn, input[type="submit"] {
     color: #fff;
     background-color: #272A3F;
     display: block;
-    padding: 25px; }
+    padding: 25px;
+    height: 97px; }
     .filters li a span {
       font-size: 27px;
       font-family: "azo-sans-web", sans-serif;
       text-transform: uppercase;
       color: #777987;
       display: block; }
+    .filters li a.reset span {
+      top: 50%;
+      position: relative;
+      -webkit-transform: translate3d(0, -50%, 0);
+              transform: translate3d(0, -50%, 0); }
     .filters li a:hover {
       background-color: #3A406D;
       background-image: none;

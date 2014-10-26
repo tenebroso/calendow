@@ -36,6 +36,7 @@
 		       echo '<li><a href=' . get_term_link( $term ) . ' title=' .$term->slug.'>' . $term->name . '</a></li>';
 		        
 		     }
+		     echo '<li><a href="" title="">Reset</a></li>';
 		     echo "</ul>";
 		 } ?>
 	</li>
