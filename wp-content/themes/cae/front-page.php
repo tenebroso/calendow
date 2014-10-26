@@ -42,31 +42,9 @@
 </ul>
 
 <div class="clearfix"></div>
-<div class="grid-container">
 
-<?php $args = array(
-    'post_type' => 'any',
-    'posts_per_page' => 10,
-  );
-	$query = new WP_Query( $args );
- 
-  if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
- 
-    <?php get_template_part('templates/home/grid'); ?>
- 
-  <?php endwhile; ?>
-  <?php else: ?>
-    <h2>No posts found</h2>
-  <?php endif; ?>
+	<?php echo do_shortcode('[ajax_load_more post_type="post, page, report, newsletter, news, action, event, grant, video, infographic" scroll="false" pause="true" button_label="Load More" offset="0"]'); ?>
 
-	<?php //echo do_shortcode( '[facetwp template="default"]' ); ?>
-</div>
-
-<div class="clearfix"></div>
-<div class="text-center">
-	<?php //echo do_shortcode('[facetwp pager="true"]'); ?>
-	<!-- <button class="pager btn" data-page="1">Load more</button> -->
-</div>
 
 
 <div class="row">

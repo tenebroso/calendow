@@ -2914,10 +2914,17 @@ button, .btn, input[type="submit"] {
   width: 330px;
   margin: 0 0 5px 0;
   float: left;
-  -webkit-transition: all 1s;
-          transition: all 1s;
   -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0); }
+          transform: translate3d(0, 0, 0);
+  -webkit-transform: scale(0.4);
+      -ms-transform: scale(0.4);
+          transform: scale(0.4);
+  opacity: 0; }
+  .grid-item.loaded {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    opacity: 1; }
   .grid-item a {
     display: block;
     width: 100%;
@@ -2926,6 +2933,38 @@ button, .btn, input[type="submit"] {
     background-position: center center; }
   .grid-item:not(.grid-video) a {
     padding: 15px 22px; }
+
+/* .grid-container {
+	&[style*="position: relative;"] {
+		> .grid-item {
+			transform:scale(1);
+			opacity:1;
+		}
+	}
+	.alm-reveal {
+		> .grid-item {
+			transform:scale(1);
+			opacity:1;
+		}
+	}
+} */
+.grid-container {
+  -webkit-transition: height 0.5s;
+          transition: height 0.5s; }
+
+#ajax-load-more {
+  margin-bottom: 100px; }
+  #ajax-load-more .alm-btn-wrap {
+    text-align: center;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.25s;
+            transition: all 0.25s; }
+    #ajax-load-more .alm-btn-wrap .more {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
+    #ajax-load-more .alm-btn-wrap .done {
+      display: none; }
 
 .grid-video {
   height: 360px;
