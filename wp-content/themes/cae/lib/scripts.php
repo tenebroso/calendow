@@ -31,9 +31,18 @@ function roots_scripts() {
   wp_enqueue_script('jquery');
   wp_enqueue_script('vendor_js', get_template_directory_uri() . $assets['scripts'], array(), null, true);
   wp_enqueue_script('site_js', get_stylesheet_directory_uri() . $assets['js'], array(), null, true);
-  wp_enqueue_script( 'isotope', '//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js', array(), '2.0.0', true );
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
+
+function ajax_filter_posts_scripts() {
+
+  wp_localize_script( 'site_js', 'afp_vars', array(
+      'afp_nonce' => wp_create_nonce( 'afp_nonce' ),
+      'afp_ajax_url' => admin_url( 'admin-ajax.php' ),
+    )
+  );
+}
+add_action('wp_enqueue_scripts', 'ajax_filter_posts_scripts', 100);
 
 /* =============================================================================
    jQuery Local Fallback from CDN

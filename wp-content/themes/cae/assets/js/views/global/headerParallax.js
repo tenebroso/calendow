@@ -5,7 +5,7 @@ var CE = CE || {};
   CE.headerParallax = function() {
 
 
-		var sectionPhoto = ".page-header"
+		var sectionPhoto = ".page-header";
 
 		$.stellar({ horizontalScrolling: false });
 

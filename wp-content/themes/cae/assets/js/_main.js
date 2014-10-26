@@ -29,7 +29,7 @@ CE.Site = {
   home: {
     init: function() {
       CE.desktopFilter();
-      CE.facetLoad();
+      //CE.facetLoad();
     }
   },
   single_report: {

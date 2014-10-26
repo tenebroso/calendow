@@ -22,6 +22,7 @@ var CE = CE || {};
 		$reportNav.filter(function() {
 			return $(this).data('id') === $theID + 1;
 		}).addClass('active');
+		window.location.hash = $theID + 1;
 		e.preventDefault();
 	});
 
@@ -35,7 +36,17 @@ var CE = CE || {};
 		$reportNav.filter(function() {
 			return $(this).data('id') === $theID - 1;
 		}).addClass('active');
+		window.location.hash = $theID - 1;
 		e.preventDefault();
+	});
+
+	$("body").keydown(function(e) {
+		if(e.which == 37) { // left     
+			$prev.trigger("click");
+		}
+		else if(e.which == 39) { // right     
+			$next.trigger("click");
+		}
 	});
 
   };

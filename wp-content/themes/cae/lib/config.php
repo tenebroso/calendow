@@ -122,3 +122,48 @@ function work_facet_html( $output, $params ) {
 }
 
 add_filter( 'facetwp_facet_html', 'work_facet_html', 10, 2 );
+
+
+
+$result = array();
+
+function ajax_filter_get_posts( $taxonomy ) {
+ 
+  // Verify nonce
+  if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
+    die('Permission denied');
+ 
+  $taxonomy = $_POST['taxonomy'];
+  $tax = $_POST['tax'];
+  
+  // WP Query
+  $args = array(
+    $tax => $taxonomy,
+    'post_type' => 'any',
+    'posts_per_page' => 10,
+  );
+ 
+  // If taxonomy is not set, remove key from array and get all posts
+  if( !$taxonomy ) {
+    unset( $args['work'] );
+  }
+ 
+  $query = new WP_Query( $args );
+ 
+if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+
+    $result['response'] = get_template_part('templates/home/grid');
+    //$result['status']   = 'success';
+
+  endwhile; else: endif;
+ 
+  //$result = json_encode($result);
+  foreach ($result as $item) {
+    echo $item;
+  }
+
+  die();
+}
+ 
+add_action('wp_ajax_filter_posts', 'ajax_filter_get_posts');
+add_action('wp_ajax_nopriv_filter_posts', 'ajax_filter_get_posts');

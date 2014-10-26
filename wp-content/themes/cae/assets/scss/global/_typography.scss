@@ -179,4 +179,7 @@ blockquote {
     font-weight:500;
     font-style: normal;
   }
+  .single-newsletter & {
+    display: none;
+  }
 }

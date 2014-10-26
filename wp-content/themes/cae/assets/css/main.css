@@ -2348,6 +2348,8 @@ blockquote {
     font-size: 20px;
     font-weight: 500;
     font-style: normal; }
+  .single-newsletter .meta-date {
+    display: none; }
 
 a {
   text-decoration: none;
@@ -2913,7 +2915,9 @@ button, .btn, input[type="submit"] {
   margin: 0 0 5px 0;
   float: left;
   -webkit-transition: all 1s;
-          transition: all 1s; }
+          transition: all 1s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
   .grid-item a {
     display: block;
     width: 100%;
@@ -2962,6 +2966,45 @@ button, .btn, input[type="submit"] {
 .facetwp-template {
   height: 1510px;
   position: relative; }
+
+.loading_data {
+  background: url(../img/svg/placemarker.svg) no-repeat center center;
+  width: 100%;
+  height: 200px;
+  -webkit-animation: downarrow 0.6s infinite alternate ease-in-out;
+          animation: downarrow 0.6s infinite alternate ease-in-out;
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+  background-size: 80px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  position: relative;
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%; }
+
+@-webkit-keyframes downarrow {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.9; }
+
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    opacity: 0.4; } }
+
+@keyframes downarrow {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.9; }
+
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+    opacity: 0.4; } }
 
 .parallax-image {
   height: 600px;
