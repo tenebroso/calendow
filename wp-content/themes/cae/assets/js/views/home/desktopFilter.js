@@ -55,7 +55,8 @@ $childFilters.click( function(e) {
             success: function( data, textStatus, XMLHttpRequest ) {
                 $container.html( data );
                 console.log(data);
-                $container.fadeIn(); 
+                $container.fadeIn();
+                $('#ajax-load-more .alm-btn-wrap .more').hide();
             },
             error: function( XMLHttpRequest, textStatus, errorThrown ) {
                 console.log( XMLHttpRequest );

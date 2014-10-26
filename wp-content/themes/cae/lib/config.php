@@ -64,66 +64,8 @@ function root_display_sidebar() {
 add_image_size( 'homepage-thumb', 351, 329, true ); // (cropped)
 
 /* =============================================================================
-   Use Taxonomy name in FacetWP Filtering
+   Homepage AJAX filtering
    ========================================================================== */
-
-function index_taxonomy_slugs( $params, $class ) {
-// if this is a taxonomy facet...
-if ( 'tax/' == substr( $params['facet_source'], 0, 4 ) ) {
-    $taxonomy = substr( $params['facet_source'], 4 );
-    $id = $params['facet_value'];
-    $term = get_term_by( 'id', $id, $taxonomy );
-    if ( isset( $term->slug ) ) {
-        $params['facet_value'] = $term->slug;
-    }
-}
-return $params;
-}
-add_filter( 'facetwp_index_row', 'index_taxonomy_slugs', 10, 2 );
-
-function places_facet_html( $output, $params ) {
-    if ( 'places' == $params['facet']['name'] ) {
-      $output = '';
-      foreach ( $params['values'] as $result ) {
-          $output .= '<li class="facetwp-dd-val" data-value="' . $result->facet_value . '"><a>';
-          $output .= $result->facet_display_value;
-          $output .= '</a></li>';
-      }
-  }
-  return $output;
-}
-
-add_filter( 'facetwp_facet_html', 'places_facet_html', 10, 2 );
-
-function campaigns_facet_html( $output, $params ) {
-    if ( 'campaigns' == $params['facet']['name'] ) {
-      $output = '';
-      foreach ( $params['values'] as $result ) {
-          $output .= '<li class="facetwp-dd-val" data-value="' . $result->facet_value . '"><a>';
-          $output .= $result->facet_display_value;
-          $output .= '</a></li>';
-      }
-  }
-  return $output;
-}
-
-add_filter( 'facetwp_facet_html', 'campaigns_facet_html', 10, 2 );
-
-function work_facet_html( $output, $params ) {
-    if ( 'work' == $params['facet']['name'] ) {
-      $output = '';
-      foreach ( $params['values'] as $result ) {
-          $output .= '<li class="facetwp-dd-val" data-value="' . $result->facet_value . '"><a>';
-          $output .= $result->facet_display_value;
-          $output .= '</a></li>';
-      }
-  }
-  return $output;
-}
-
-add_filter( 'facetwp_facet_html', 'work_facet_html', 10, 2 );
-
-
 
 $result = array();
 
@@ -140,7 +82,7 @@ function ajax_filter_get_posts( $taxonomy ) {
   $args = array(
     $tax => $taxonomy,
     'post_type' => 'any',
-    'posts_per_page' => 10,
+    'posts_per_page' => -1,
   );
  
   // If taxonomy is not set, remove key from array and get all posts
