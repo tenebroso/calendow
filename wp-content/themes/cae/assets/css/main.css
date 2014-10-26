@@ -2819,8 +2819,7 @@ button, .btn, input[type="submit"] {
     color: #fff;
     background-color: #272A3F;
     display: block;
-    padding: 25px;
-    height: 97px; }
+    padding: 25px; }
     .filters li a span {
       font-size: 27px;
       font-family: "azo-sans-web", sans-serif;
@@ -2852,6 +2851,7 @@ button, .btn, input[type="submit"] {
       overflow: visible; }
   .filters > li > a {
     padding-right: 70px;
+    height: 97px;
     position: relative;
     -webkit-transition: background 0.25s ease;
             transition: background 0.25s ease;

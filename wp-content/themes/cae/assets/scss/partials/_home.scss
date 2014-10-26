@@ -166,7 +166,6 @@
 		background-color:$accentDark;
 		display: block;
 		padding:25px;
-		height:97px;
 		span {
 			font-size:27px;
 			font-family:$headings-font-family;
@@ -207,6 +206,7 @@
 	}
 	> li > a {
 		padding-right:70px;
+		height:97px;
 		position: relative;
 		transition:background .25s ease;
 		background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA+CAYAAADqOXHxAAAAFUlEQVQoU2P4//+/MAOQkBoliCbEAVA4v4lQh5RzAAAAAElFTkSuQmCC);
