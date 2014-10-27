@@ -38,8 +38,14 @@ border-color:$variable;
 		border-color:$variable;
 	}
 	.footer-post-nav a:hover,
-	.page-header {
+	.page-header,
+	&.grid-item:hover {
 		background-color:$variable;
+		transition:background-color .25s;
+	}
+	&.grid-item:hover .breadcrumbs .color,
+	&.grid-item:hover .breadcrumbs strong {
+		color:$white;
 	}
 }
 

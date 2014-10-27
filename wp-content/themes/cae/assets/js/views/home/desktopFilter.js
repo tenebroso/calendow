@@ -40,6 +40,8 @@ $childFilters.click( function(e) {
 
         e.preventDefault();
 
+        var selected_taxonomy, taxonomy_type, taxonomy_name;
+
         if($(this).parents('li').hasClass('selected')) {
             var selected_taxonomy = '';
             var taxonomy_type = '';

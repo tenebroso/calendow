@@ -94,7 +94,11 @@ function ajax_filter_get_posts( $taxonomy ) {
 
   <div class="grid-item hero-item">
     <a href="/<?php echo $taxonomy; ?>">
-      <h2 class="grid-title"><?php echo $name; ?></h2>
+      <div class="v-centered reset-margins">
+        <p>Learn About</p>
+        <h2 class="grid-title page-subtext caps"><?php echo $name; ?></h2>
+        <img src="<?php echo img_dir(); ?>/health-happens-here-pin.png" >
+      </div>
     </a>
   </div>
 

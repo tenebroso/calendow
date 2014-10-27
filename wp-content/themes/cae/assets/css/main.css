@@ -3028,8 +3028,7 @@ button, .btn, input[type="submit"] {
       display: none; }
 
 .grid-video {
-  height: 360px;
-  border: none; }
+  height: 360px; }
   .grid-video:hover .grid-play-button {
     opacity: 1; }
   .grid-video a {
@@ -3044,9 +3043,22 @@ button, .btn, input[type="submit"] {
   background-image: url(../img/svg/pattern.svg); }
 
 .hero-item {
-  background-color: #3A406D; }
+  background-color: #3A406D;
+  text-align: center; }
   .hero-item a {
     color: #fff; }
+  .hero-item p {
+    font-size: 16px;
+    font-weight: 600; }
+  .hero-item .grid-title {
+    font-size: 27px;
+    font-family: "azo-sans-web", sans-serif;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 500;
+    color: #777987;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0 0 10px 0; }
 
 .grid-play-button {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAB5UlEQVRIx62Vy0sCYRTFtbQHpZFmBFFZUSgEKRQpRdAmMIza1TpdRKR/QUb0F2iE4EKhXbtIodYmrV3oRjASBEFKXPjA50xnRic0H40zXjir4f648333nE9AkqRI0M+qVqvnpVLpzuVyTQkEwkHewHw+b8GUZLlcjofD4VNAR6ABzsBMJmMlGyqdTj95PJ4lQEV9AVJVqVTS0Wj0EtDRnqdtB2QK3958Pt86oGJIyBtIFS4tH4/HbwyGAymraf8DMpXL5UJ+v38X0KGu07IFUkUQRCWZTN5bLFZFxxXrBchUoVCIBYPBY0CHW6blAmQGTqVSjw6HY75pxXgAybohviKRiPnXEHyBVCUSiVej8XCFPgI+wGw2m3Q6nVcA6aEF2ghcgLhtApfyrFKpjYBsQEpISp9lr0B4/dNmu7aieRtSQYqmQGELhGOKgUDgQSaT76NZC81B4y37yAaIZQ6ZTOaz+lmtQvKOjukGRPBmvV6vQyQS76GZColZaKyrpzsBY7HYOwLhBM1b0DI0ySp1/gKR4N9ut/sWjVQQrEEzPeViA5DAE/Ci0WiP0LwJLUITNVuxzEIGWCwWP+x2+wUadyA1NM35bYEPVTqdXlnfKcroEp6vH9VM35ykbRxxAAprv8YbRNcPLQ91RS2X3FsAAAAASUVORK5CIIA=) no-repeat center center;
@@ -3565,8 +3577,12 @@ nav.affix {
     border-color: #b0e4da; }
   .prevention .section-title, .prevention .footer-post-nav li {
     border-color: #3FBCA3; }
-  .prevention .footer-post-nav a:hover, .prevention .page-header {
-    background-color: #3FBCA3; }
+  .prevention .footer-post-nav a:hover, .prevention .page-header, .prevention.grid-item:hover {
+    background-color: #3FBCA3;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .prevention.grid-item:hover .breadcrumbs .color, .prevention.grid-item:hover .breadcrumbs strong {
+    color: #fff; }
 
 .schools {
   border-color: #3bc8d1; }
@@ -3591,8 +3607,12 @@ nav.affix {
     border-color: #b7ebee; }
   .schools .section-title, .schools .footer-post-nav li {
     border-color: #3bc8d1; }
-  .schools .footer-post-nav a:hover, .schools .page-header {
-    background-color: #3bc8d1; }
+  .schools .footer-post-nav a:hover, .schools .page-header, .schools.grid-item:hover {
+    background-color: #3bc8d1;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .schools.grid-item:hover .breadcrumbs .color, .schools.grid-item:hover .breadcrumbs strong {
+    color: #fff; }
 
 .places {
   border-color: #C10512; }
@@ -3617,8 +3637,12 @@ nav.affix {
     border-color: #fb6471; }
   .places .section-title, .places .footer-post-nav li {
     border-color: #C10512; }
-  .places .footer-post-nav a:hover, .places .page-header {
-    background-color: #C10512; }
+  .places .footer-post-nav a:hover, .places .page-header, .places.grid-item:hover {
+    background-color: #C10512;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .places.grid-item:hover .breadcrumbs .color, .places.grid-item:hover .breadcrumbs strong {
+    color: #fff; }
 
 .grants-and-funding {
   border-color: #ab3bbd; }
@@ -3643,8 +3667,12 @@ nav.affix {
     border-color: #dcace5; }
   .grants-and-funding .section-title, .grants-and-funding .footer-post-nav li {
     border-color: #ab3bbd; }
-  .grants-and-funding .footer-post-nav a:hover, .grants-and-funding .page-header {
-    background-color: #ab3bbd; }
+  .grants-and-funding .footer-post-nav a:hover, .grants-and-funding .page-header, .grants-and-funding.grid-item:hover {
+    background-color: #ab3bbd;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .grants-and-funding.grid-item:hover .breadcrumbs .color, .grants-and-funding.grid-item:hover .breadcrumbs strong {
+    color: #fff; }
 
 .youth-in-action {
   border-color: #416386; }
@@ -3669,8 +3697,12 @@ nav.affix {
     border-color: #95b0cb; }
   .youth-in-action .section-title, .youth-in-action .footer-post-nav li {
     border-color: #416386; }
-  .youth-in-action .footer-post-nav a:hover, .youth-in-action .page-header {
-    background-color: #416386; }
+  .youth-in-action .footer-post-nav a:hover, .youth-in-action .page-header, .youth-in-action.grid-item:hover {
+    background-color: #416386;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .youth-in-action.grid-item:hover .breadcrumbs .color, .youth-in-action.grid-item:hover .breadcrumbs strong {
+    color: #fff; }
 
 .neighborhoods {
   border-color: #D8673D; }
@@ -3695,8 +3727,12 @@ nav.affix {
     border-color: #f2cbbc; }
   .neighborhoods .section-title, .neighborhoods .footer-post-nav li {
     border-color: #D8673D; }
-  .neighborhoods .footer-post-nav a:hover, .neighborhoods .page-header {
-    background-color: #D8673D; }
+  .neighborhoods .footer-post-nav a:hover, .neighborhoods .page-header, .neighborhoods.grid-item:hover {
+    background-color: #D8673D;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .neighborhoods.grid-item:hover .breadcrumbs .color, .neighborhoods.grid-item:hover .breadcrumbs strong {
+    color: #fff; }
 
 .secondary {
   border-color: #c5b634; }
@@ -3721,5 +3757,9 @@ nav.affix {
     border-color: #e8e1aa; }
   .secondary .section-title, .secondary .footer-post-nav li {
     border-color: #c5b634; }
-  .secondary .footer-post-nav a:hover, .secondary .page-header {
-    background-color: #c5b634; }
+  .secondary .footer-post-nav a:hover, .secondary .page-header, .secondary.grid-item:hover {
+    background-color: #c5b634;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .secondary.grid-item:hover .breadcrumbs .color, .secondary.grid-item:hover .breadcrumbs strong {
+    color: #fff; }
