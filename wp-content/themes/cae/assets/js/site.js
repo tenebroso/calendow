@@ -433,96 +433,6 @@ var CE = CE || {};
 
 ;(function() {
 
-  CE.reportPageHeight = function() {
-
-
-    var $container = $('.single-report .main');
-    var $report = $('.report-single');
-
-
-    // Get an array of all element heights
-    var elementHeights = $report.map(function() {
-      return $(this).height();
-    }).get();
-
-    var maxHeight = Math.max.apply(null, elementHeights);
-
-    $container.height(maxHeight);
-
-
-  };
-
-
-})();
-var CE = CE || {};
-
-;(function() {
-
-  CE.reportSectionSwitcher = function() {
-
-  	var $prev = $('.report-prev a');
-  	var $next = $('.report-next a');
-  	var $reportNavFirst = $('.report-nav li:first-child');
-  	var $reportPanelFirst = $('#report-panel-1');
-  	var $reportNav = $('.report-nav li');
-
-  	$reportNavFirst.addClass('active');
-
-  	$('.report-single:nth-of-type(1) .report-prev a').remove();
-  	$('.report-single:last-of-type .report-next a').remove();
-
-	$next.click(function(e) {
-		var $href = $(this).attr('href');
-		var $parent = $(this).parents('.report-single');
-		var $theID  = $(this).parents('.report-single').data("id");
-		$parent.transit({x:'-1000%'}, 800, 'ease').removeClass('current');
-		$($href).transit({x:0}, 800, 'ease').addClass('current');
-		$reportNav.removeClass('active');
-		$reportNav.filter(function() {
-			return $(this).data('id') === $theID + 1;
-		}).addClass('active');
-		window.location.hash = $theID + 1;
-		e.preventDefault();
-	});
-
-	$prev.click(function(e) {
-		var $href = $(this).attr('href');
-		var $parent = $(this).parents('.report-single');
-		var $theID  = $(this).parents('.report-single').data("id");
-		$parent.transit({x:'1000%'}, 800, 'ease').removeClass('current');
-		$($href).transit({x:0}, 800, 'ease').addClass('current');
-		$reportNav.removeClass('active');
-		$reportNav.filter(function() {
-			return $(this).data('id') === $theID - 1;
-		}).addClass('active');
-		window.location.hash = $theID - 1;
-		e.preventDefault();
-	});
-
-
-	$('body').on('keydown', function(e){
-		if(e.which == 37) { // left     
-			e.preventDefault();
-			$('.report-single.current .report-prev a')
-			.trigger('click');
-		}
-		else if(e.which == 39) {
-			e.preventDefault();
-			$('.report-single.current .report-next a')
-			.trigger('click');
-			
-			//$('.report-single').hasClass('current').children('.report-next a').trigger('click');
-		}
-	});
-
-  };
-
-
-})();
-var CE = CE || {};
-
-;(function() {
-
 CE.desktopFilter = function() {
 
 	var $parentFilters = $('.filters > li > a');
@@ -622,6 +532,96 @@ $.fn.almComplete = function(alm){
     
 
 };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
+  CE.reportPageHeight = function() {
+
+
+    var $container = $('.single-report .main');
+    var $report = $('.report-single');
+
+
+    // Get an array of all element heights
+    var elementHeights = $report.map(function() {
+      return $(this).height();
+    }).get();
+
+    var maxHeight = Math.max.apply(null, elementHeights);
+
+    $container.height(maxHeight);
+
+
+  };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
+  CE.reportSectionSwitcher = function() {
+
+  	var $prev = $('.report-prev a');
+  	var $next = $('.report-next a');
+  	var $reportNavFirst = $('.report-nav li:first-child');
+  	var $reportPanelFirst = $('#report-panel-1');
+  	var $reportNav = $('.report-nav li');
+
+  	$reportNavFirst.addClass('active');
+
+  	$('.report-single:nth-of-type(1) .report-prev a').remove();
+  	$('.report-single:last-of-type .report-next a').remove();
+
+	$next.click(function(e) {
+		var $href = $(this).attr('href');
+		var $parent = $(this).parents('.report-single');
+		var $theID  = $(this).parents('.report-single').data("id");
+		$parent.transit({x:'-1000%'}, 800, 'ease').removeClass('current');
+		$($href).transit({x:0}, 800, 'ease').addClass('current');
+		$reportNav.removeClass('active');
+		$reportNav.filter(function() {
+			return $(this).data('id') === $theID + 1;
+		}).addClass('active');
+		window.location.hash = $theID + 1;
+		e.preventDefault();
+	});
+
+	$prev.click(function(e) {
+		var $href = $(this).attr('href');
+		var $parent = $(this).parents('.report-single');
+		var $theID  = $(this).parents('.report-single').data("id");
+		$parent.transit({x:'1000%'}, 800, 'ease').removeClass('current');
+		$($href).transit({x:0}, 800, 'ease').addClass('current');
+		$reportNav.removeClass('active');
+		$reportNav.filter(function() {
+			return $(this).data('id') === $theID - 1;
+		}).addClass('active');
+		window.location.hash = $theID - 1;
+		e.preventDefault();
+	});
+
+
+	$('body').on('keydown', function(e){
+		if(e.which == 37) { // left     
+			e.preventDefault();
+			$('.report-single.current .report-prev a')
+			.trigger('click');
+		}
+		else if(e.which == 39) {
+			e.preventDefault();
+			$('.report-single.current .report-next a')
+			.trigger('click');
+			
+			//$('.report-single').hasClass('current').children('.report-next a').trigger('click');
+		}
+	});
+
+  };
 
 
 })();

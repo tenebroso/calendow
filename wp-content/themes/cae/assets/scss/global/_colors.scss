@@ -31,7 +31,16 @@ border-color:$variable;
 		}
 	}
 	.side-nav li a {
+		background-color:$variable;
 		border-color: lighten($variable, 30%);
+	}
+	.side-nav li.cta a {
+		background: $white;
+		color:$variable;
+		&:hover {
+			background: $variable;
+			color:$white;
+		}
 	}
 	.section-title,
 	.footer-post-nav li {

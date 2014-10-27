@@ -17,10 +17,6 @@ nav.affix {
 			font-weight:600;
 			transition:all .5s;
 			position: relative;
-			.side-nav-share & {
-				background: $grey3;
-				border-color:lighten($grey3,30%) !important;
-			}
 			&:after {
 				width:5px;
 				height:100%;
@@ -47,7 +43,7 @@ nav.affix {
 			margin:10px 0 0;
 			a {
 				background: $white;
-				border: 3px solid $grey1 !important;
+				border: 3px solid $grey1;
 				border-radius:4px;
 				color:$grey1;
 				text-align: center;
@@ -85,6 +81,32 @@ nav.affix {
 			}
 		}
 	}
+}
+
+.single-post, .single-newsletter {
+  .side-nav-share.side-nav-container {
+    .sidenav-title {
+      color:$grey3;
+    }
+    li {
+    	a {
+			background-color:$grey3;
+			border-color:lighten($grey3,30%);
+			&:hover {
+				background-color:$black;
+			}
+    	}
+    	&.cta {
+    		a {
+    			color:$black;
+    			&:hover {
+    				color:$white;
+    				background: $black;
+    			}
+    		}
+    	}
+    }
+  }
 }
 
 .side-nav,

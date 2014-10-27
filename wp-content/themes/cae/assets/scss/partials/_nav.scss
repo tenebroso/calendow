@@ -65,6 +65,11 @@
 	}
 }
 
+.resize-thumb img {
+	height: auto;
+	max-width:127px;
+}
+
 .icon-lg-arrow {
 	height:45px;
 	width:25px;
@@ -73,8 +78,8 @@
 		margin-right:18px;
 	}
 	.pull-left & {
-		margin-left:18px;
-		transform:rotate(180deg);
+		//margin-left:18px;
+		//transform:rotate(180deg);
 	}
 }
 

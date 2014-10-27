@@ -2252,12 +2252,14 @@ h3 strong, h3 b {
   text-transform: uppercase;
   margin: 0; }
 
+.page-secondary-title {
+  font-size: 30px; }
+
 .sidenav-title {
   font-size: 26px;
   font-weight: 900;
   font-family: "source-sans-pro", sans-serif; }
   .side-nav-share .sidenav-title {
-    color: #7f7f7f !important;
     font-size: 18px;
     font-weight: 700; }
 
@@ -2476,7 +2478,7 @@ button, .btn, input[type="submit"] {
         .page-header.text-right .page-title {
           margin-right: 6.4em; } }
   .page-header .page-title {
-    max-width: 780px;
+    max-width: 835px;
     margin: 0 auto; }
 
 .page-header-fixed {
@@ -2638,17 +2640,16 @@ button, .btn, input[type="submit"] {
     content: "";
     display: block; }
 
+.resize-thumb img {
+  height: auto;
+  max-width: 127px; }
+
 .icon-lg-arrow {
   height: 45px;
   width: 25px;
   display: block; }
   .pull-right .icon-lg-arrow {
     margin-right: 18px; }
-  .pull-left .icon-lg-arrow {
-    margin-left: 18px;
-    -webkit-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-            transform: rotate(180deg); }
 
 .nav-collapse {
   background: url(../img/svg/hamburger.svg) no-repeat;
@@ -3425,9 +3426,6 @@ nav.affix {
   -webkit-transition: all 0.5s;
           transition: all 0.5s;
   position: relative; }
-  .side-nav-share .side-nav li a {
-    background: #7f7f7f;
-    border-color: #cccccc !important; }
   .side-nav li a:after {
     width: 5px;
     height: 100%;
@@ -3450,7 +3448,7 @@ nav.affix {
   margin: 10px 0 0; }
   .side-nav li.cta a {
     background: #fff;
-    border: 3px solid #383838 !important;
+    border: 3px solid #383838;
     border-radius: 4px;
     color: #383838;
     text-align: center;
@@ -3475,6 +3473,19 @@ nav.affix {
 .side-nav-share .side-nav li a[href*=facebook] {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAVCAQAAADVu7d4AAAAbUlEQVQoU2P4zwCFPP9d/oeCoRFMKPf/1/8wMA0i5Pj/H1wILjgHSQguuAXK3fBf7b/SfxFUwUyIDTgEW/7v/v8aKngdyN79PwGhCgHysQkGM/yv+L/q/zMo9yyQveq/Cg6LhpIgyFcg6AYRBABAxzx+IYyJzwAAAABJRU5ErkJggg==);
   background-position: 122px center; }
+
+.single-post .side-nav-share.side-nav-container .sidenav-title, .single-newsletter .side-nav-share.side-nav-container .sidenav-title {
+  color: #7f7f7f; }
+.single-post .side-nav-share.side-nav-container li a, .single-newsletter .side-nav-share.side-nav-container li a {
+  background-color: #7f7f7f;
+  border-color: #cccccc; }
+  .single-post .side-nav-share.side-nav-container li a:hover, .single-newsletter .side-nav-share.side-nav-container li a:hover {
+    background-color: #000; }
+.single-post .side-nav-share.side-nav-container li.cta a, .single-newsletter .side-nav-share.side-nav-container li.cta a {
+  color: #000; }
+  .single-post .side-nav-share.side-nav-container li.cta a:hover, .single-newsletter .side-nav-share.side-nav-container li.cta a:hover {
+    color: #fff;
+    background: #000; }
 
 .side-nav, .section-title {
   width: 150px; }
@@ -3665,7 +3676,14 @@ nav.affix {
     .prevention.grid-report .breadcrumbs strong, .prevention.grid-page .breadcrumbs strong, .prevention .bg-color .breadcrumbs strong {
       color: #000; }
   .prevention .side-nav li a {
+    background-color: #3FBCA3;
     border-color: #b0e4da; }
+  .prevention .side-nav li.cta a {
+    background: #fff;
+    color: #3FBCA3; }
+    .prevention .side-nav li.cta a:hover {
+      background: #3FBCA3;
+      color: #fff; }
   .prevention .section-title, .prevention .footer-post-nav li {
     border-color: #3FBCA3; }
   .prevention .footer-post-nav a:hover, .prevention .page-header, .prevention.grid-item:hover, .prevention .campaign-grid li a:hover {
@@ -3699,7 +3717,14 @@ nav.affix {
     .schools.grid-report .breadcrumbs strong, .schools.grid-page .breadcrumbs strong, .schools .bg-color .breadcrumbs strong {
       color: #000; }
   .schools .side-nav li a {
+    background-color: #3bc8d1;
     border-color: #b7ebee; }
+  .schools .side-nav li.cta a {
+    background: #fff;
+    color: #3bc8d1; }
+    .schools .side-nav li.cta a:hover {
+      background: #3bc8d1;
+      color: #fff; }
   .schools .section-title, .schools .footer-post-nav li {
     border-color: #3bc8d1; }
   .schools .footer-post-nav a:hover, .schools .page-header, .schools.grid-item:hover, .schools .campaign-grid li a:hover {
@@ -3733,7 +3758,14 @@ nav.affix {
     .places.grid-report .breadcrumbs strong, .places.grid-page .breadcrumbs strong, .places .bg-color .breadcrumbs strong {
       color: #000; }
   .places .side-nav li a {
+    background-color: #C10512;
     border-color: #fb6471; }
+  .places .side-nav li.cta a {
+    background: #fff;
+    color: #C10512; }
+    .places .side-nav li.cta a:hover {
+      background: #C10512;
+      color: #fff; }
   .places .section-title, .places .footer-post-nav li {
     border-color: #C10512; }
   .places .footer-post-nav a:hover, .places .page-header, .places.grid-item:hover, .places .campaign-grid li a:hover {
@@ -3767,7 +3799,14 @@ nav.affix {
     .grants-and-funding.grid-report .breadcrumbs strong, .grants-and-funding.grid-page .breadcrumbs strong, .grants-and-funding .bg-color .breadcrumbs strong {
       color: #000; }
   .grants-and-funding .side-nav li a {
+    background-color: #ab3bbd;
     border-color: #dcace5; }
+  .grants-and-funding .side-nav li.cta a {
+    background: #fff;
+    color: #ab3bbd; }
+    .grants-and-funding .side-nav li.cta a:hover {
+      background: #ab3bbd;
+      color: #fff; }
   .grants-and-funding .section-title, .grants-and-funding .footer-post-nav li {
     border-color: #ab3bbd; }
   .grants-and-funding .footer-post-nav a:hover, .grants-and-funding .page-header, .grants-and-funding.grid-item:hover, .grants-and-funding .campaign-grid li a:hover {
@@ -3801,7 +3840,14 @@ nav.affix {
     .youth-in-action.grid-report .breadcrumbs strong, .youth-in-action.grid-page .breadcrumbs strong, .youth-in-action .bg-color .breadcrumbs strong {
       color: #000; }
   .youth-in-action .side-nav li a {
+    background-color: #416386;
     border-color: #95b0cb; }
+  .youth-in-action .side-nav li.cta a {
+    background: #fff;
+    color: #416386; }
+    .youth-in-action .side-nav li.cta a:hover {
+      background: #416386;
+      color: #fff; }
   .youth-in-action .section-title, .youth-in-action .footer-post-nav li {
     border-color: #416386; }
   .youth-in-action .footer-post-nav a:hover, .youth-in-action .page-header, .youth-in-action.grid-item:hover, .youth-in-action .campaign-grid li a:hover {
@@ -3835,7 +3881,14 @@ nav.affix {
     .neighborhoods.grid-report .breadcrumbs strong, .neighborhoods.grid-page .breadcrumbs strong, .neighborhoods .bg-color .breadcrumbs strong {
       color: #000; }
   .neighborhoods .side-nav li a {
+    background-color: #D8673D;
     border-color: #f2cbbc; }
+  .neighborhoods .side-nav li.cta a {
+    background: #fff;
+    color: #D8673D; }
+    .neighborhoods .side-nav li.cta a:hover {
+      background: #D8673D;
+      color: #fff; }
   .neighborhoods .section-title, .neighborhoods .footer-post-nav li {
     border-color: #D8673D; }
   .neighborhoods .footer-post-nav a:hover, .neighborhoods .page-header, .neighborhoods.grid-item:hover, .neighborhoods .campaign-grid li a:hover {
@@ -3869,7 +3922,14 @@ nav.affix {
     .secondary.grid-report .breadcrumbs strong, .secondary.grid-page .breadcrumbs strong, .secondary .bg-color .breadcrumbs strong {
       color: #000; }
   .secondary .side-nav li a {
+    background-color: #c5b634;
     border-color: #e8e1aa; }
+  .secondary .side-nav li.cta a {
+    background: #fff;
+    color: #c5b634; }
+    .secondary .side-nav li.cta a:hover {
+      background: #c5b634;
+      color: #fff; }
   .secondary .section-title, .secondary .footer-post-nav li {
     border-color: #c5b634; }
   .secondary .footer-post-nav a:hover, .secondary .page-header, .secondary.grid-item:hover, .secondary .campaign-grid li a:hover {

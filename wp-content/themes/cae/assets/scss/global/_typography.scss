@@ -52,12 +52,15 @@ h3 {
   margin:0;
 }
 
+.page-secondary-title {
+  font-size:30px;
+}
+
 .sidenav-title {
   font-size:26px;
   font-weight:900;
   font-family:$font-family-base;
   .side-nav-share & {
-    color:$grey3 !important;
     font-size:18px;
     font-weight:700;
   }
