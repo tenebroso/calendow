@@ -4,6 +4,9 @@ button, .btn, input[type="submit"] {
 	color:$white;
 	padding:15px 50px;
 	line-height:20px;
+  &:focus {
+    outline: 2px solid $grey2;
+  }
 }
 
 .btn-load-more {

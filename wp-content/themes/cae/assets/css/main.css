@@ -2172,6 +2172,8 @@ body {
   padding: 50px 0 35px;
   max-width: 1000px;
   margin: 0 auto; }
+  .search-results .content-page {
+    padding-top: 120px; }
 
 .entry-content {
   max-width: 811px;
@@ -2296,6 +2298,16 @@ h3 strong, h3 b {
 .hentry ol, .intro-text {
   font-size: 22px; }
 
+ul.search-results {
+  line-height: 1.2; }
+  ul.search-results li {
+    padding: 0 0 0 1em;
+    border-left-width: 5px;
+    border-left-style: solid; }
+    ul.search-results li a {
+      padding: 0.75em 0;
+      display: block; }
+
 .grey-text {
   color: #7f7f7f; }
   .grey-text a {
@@ -2318,6 +2330,12 @@ blockquote {
 .grid-title {
   font-size: 38px;
   font-weight: 800; }
+
+.search-term {
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 500;
+  font-size: 46px;
+  color: #7f7f7f; }
 
 .date, small {
   font-size: 15px; }
@@ -2375,6 +2393,8 @@ button, .btn, input[type="submit"] {
   color: #fff;
   padding: 15px 50px;
   line-height: 20px; }
+  button:focus, .btn:focus, input[type="submit"]:focus {
+    outline: 2px solid #bdbdbd; }
 
 .btn-load-more {
   margin: 40px auto;
@@ -3020,7 +3040,8 @@ button, .btn, input[type="submit"] {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     -webkit-transition: all 0.25s;
-            transition: all 0.25s; }
+            transition: all 0.25s;
+    padding: 2em 0 0; }
     #ajax-load-more .alm-btn-wrap .more {
       -webkit-transform: translate3d(0, 0, 0);
               transform: translate3d(0, 0, 0); }
@@ -3041,6 +3062,8 @@ button, .btn, input[type="submit"] {
   background-color: #d9673e;
   background-position: bottom center;
   background-image: url(../img/svg/pattern.svg); }
+  .grid-report:hover, .grid-page:hover, .hero-item:hover {
+    background-image: none; }
 
 .hero-item {
   background-color: #3A406D;
@@ -3425,7 +3448,7 @@ nav.affix {
       border: none;
       margin-right: 17px; }
     .footer input[type=text] {
-      width: 206px; }
+      width: 181px; }
     .footer input[type=email] {
       width: 394px; }
     .footer input[type=submit] {
@@ -3458,7 +3481,7 @@ nav.affix {
     display: inline-block;
     vertical-align: middle; }
   .footer-cta-wrap .nb-cta-text {
-    margin: 0 100px 0 0;
+    margin: 0;
     line-height: 46px; }
 
 .footer-add-padding {

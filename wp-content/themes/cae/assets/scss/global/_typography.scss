@@ -116,6 +116,20 @@ ul, ol {
   font-size:22px;
 }
 
+ul.search-results {
+  line-height:1.2;
+  li {
+    padding:0 0 0 1em;
+    border-left-width: 5px;
+    border-left-style: solid;
+    //list-style-type: circle;
+    a {
+      padding: .75em 0;
+      display: block;
+    }
+  }
+}
+
 .grey-text {
   color:$grey3;
   a {
@@ -142,6 +156,13 @@ blockquote {
 .grid-title {
   font-size:38px;
   font-weight:800;
+}
+
+.search-term {
+  font-family:$font-family-base;
+  font-weight:500;
+  font-size:46px;
+  color:$grey3;
 }
 
 .date, small {

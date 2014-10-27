@@ -16,7 +16,7 @@
 
       <?php 
         // Only show the default page header/featured image if it is not the homepage or report
-      if(!(is_front_page() || is_singular('report'))): get_template_part('templates/page','header'); endif; ?>
+      if(!(is_front_page() || is_singular('report') || is_search())): get_template_part('templates/page','header'); endif; ?>
 
       <?php 
         // No Page Builder in Place, default view
@@ -28,7 +28,7 @@
         </main>
       <?php 
         // If this is a campaign detail page
-      elseif(!$builder && ($template == 'page-campaign-detail.php')): ?>
+      elseif(!$builder && ($template == 'page-campaign-detail.php') && !is_search()): ?>
         <main class="main" role="main">
           <?php get_template_part('templates/header','nav'); ?>
           <?php get_template_part('templates/content/full-image'); ?>

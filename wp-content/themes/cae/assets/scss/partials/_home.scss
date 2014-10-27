@@ -399,6 +399,7 @@
 		text-align: center;
 		transform:translate3d(0,0,0);
 		transition:all .25s;
+		padding:2em 0 0;
 		.more {
 			transform:translate3d(0,0,0);
 		}
@@ -433,6 +434,9 @@
 	background-color:$orange;
 	background-position:bottom center;
 	background-image:url(../img/svg/pattern.svg);
+	&:hover {
+		background-image:none;
+	}
 }
 
 .hero-item {
