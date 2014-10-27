@@ -84,7 +84,7 @@
 	height:15px;
 	display: block;
 	cursor: pointer;
-	margin:20px 47px 0 0;
+	margin:20px 47px 0 1em;
 	&.active {
 		background:url(../img/svg/hamburger-close.svg) no-repeat;
 	}
@@ -191,4 +191,13 @@
 
 .nav-full-screen-branding {
 	margin-bottom:60px;
+	@media (min-width:$screen-sm-min) {
+		.home & {
+			.text-right {
+				position: relative;
+				right: -8em;
+			}
+		}
+		
+	}
 }

@@ -14,7 +14,9 @@ var CE = CE || {};
     	$menu.addClass('opened');
     	$body.addClass('faded');
     	$closeTrigger.addClass('active');
-      $('html,body').scrollTo(0,0);
+      $("html, body").stop().animate({
+          scrollTop: $(window).top + 5 + 'px'
+      });
     });
 
     $closeTrigger.click(function(){

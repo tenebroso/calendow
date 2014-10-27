@@ -7,7 +7,7 @@
 			<div class="col-sm-2">
 				<h3 class="section-title color"><?php echo $sectionTitle; ?></h3>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<?php the_sub_field('section_content'); ?>
 			</div>
 		</div>
