@@ -24,6 +24,7 @@ CE.Site = {
   single: {
     init: function() {
       CE.sidebarNav();
+      $(".hentry").fitVids();
     }
   },
   home: {
