@@ -77,18 +77,28 @@ function ajax_filter_get_posts( $taxonomy ) {
  
   $taxonomy = $_POST['taxonomy'];
   $tax = $_POST['tax'];
+  $name = $_POST['name'];
   
   // WP Query
   $args = array(
     $tax => $taxonomy,
     'post_type' => 'any',
     'posts_per_page' => -1,
+    'orderby' => 'type'
   );
  
   // If taxonomy is not set, remove key from array and get all posts
   if( !$taxonomy ) {
     unset($args['posts_per_page']);
-  }
+  } else { ?>
+
+  <div class="grid-item hero-item">
+    <a href="/<?php echo $taxonomy; ?>">
+      <h2 class="grid-title"><?php echo $name; ?></h2>
+    </a>
+  </div>
+
+  <?php }
  
   $query = new WP_Query( $args );
  

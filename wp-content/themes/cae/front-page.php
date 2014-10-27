@@ -43,7 +43,7 @@
 
 <div class="clearfix"></div>
 
-	<?php echo do_shortcode('[ajax_load_more post_type="post, page, report, newsletter, news, action, event, grant, video, infographic" scroll="false" pause="true" button_label="Load More" offset="0" posts_per_page="10"]'); ?>
+	<?php echo do_shortcode('[ajax_load_more post_type="post, report, newsletter, news, action, event, grant, video, infographic" scroll="false" pause="true" button_label="Load More" offset="0" posts_per_page="9" orderby="rand"]'); ?>
 
 
 

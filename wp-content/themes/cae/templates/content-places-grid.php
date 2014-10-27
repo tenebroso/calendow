@@ -15,7 +15,7 @@
 	     foreach ( $terms as $term ) { 
 			$abbr = get_field('name_abbreviation', $term);
 		?><li>
-		<a class="center-block" href="/place/<?php echo $term->slug; ?>">
+		<a class="center-block" href="/places/<?php echo $term->slug; ?>">
 			<div class="v-centered">
 				<h2><strong><?php echo $abbr; ?></strong></h2>
 				<p><?php echo $term->name; ?></p>

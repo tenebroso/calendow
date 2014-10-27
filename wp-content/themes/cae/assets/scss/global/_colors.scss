@@ -20,6 +20,15 @@ border-color:$variable;
 	&.grid-page,
 	.bg-color {
 		background-color:$variable;
+		a {
+			color:$black;
+		}
+		.breadcrumbs .color {
+			color:$white;
+		}
+		.breadcrumbs strong {
+			color:$black;
+		}
 	}
 	.side-nav li a {
 		border-color: lighten($variable, 30%);

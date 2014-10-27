@@ -429,10 +429,18 @@
 }
 
 .grid-report,
-.grid-page {
+.grid-page,
+.hero-item {
 	background-color:$orange;
 	background-position:bottom center;
 	background-image:url(../img/svg/pattern.svg);
+}
+
+.hero-item {
+	background-color:$accentLight;
+	a {
+		color:$white;
+	}
 }
 
 .grid-play-button {

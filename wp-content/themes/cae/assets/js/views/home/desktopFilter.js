@@ -47,6 +47,7 @@ $childFilters.click( function(e) {
         } else {
             var selected_taxonomy = $(this).attr('title');
             var taxonomy_type = $(this).parents('ul').data('tax');
+            var taxonomy_name = $(this).children('span').html();
             $('.filter-main').removeClass('selected');
             $(this).parents('li').removeClass('open').addClass('selected');
         }
@@ -56,6 +57,7 @@ $childFilters.click( function(e) {
             afp_nonce: afp_vars.afp_nonce,
             tax: taxonomy_type,
             taxonomy: selected_taxonomy,
+            name: taxonomy_name
         };
 
         $.ajax({
