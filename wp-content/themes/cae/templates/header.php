@@ -25,10 +25,29 @@
         </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-4">
+          <?php wp_nav_menu( array('menu' => 'Neighborhoods','menu_class' => 'nav-list neighborhoods' )); ?>
+      </div>
+      <div class="col-md-4">
+          <?php wp_nav_menu( array('menu' => 'Prevention','menu_class' => 'nav-list prevention' )); ?>
+      </div>
+      <div class="col-md-4">
+         <?php wp_nav_menu( array('menu' => 'Schools','menu_class' => 'nav-list schools' )); ?>
+      </div>
+    </div>
 
-
-    <?php get_template_part('templates/header/main-nav'); ?>
-
+    <div class="row">
+      <div class="col-md-4">
+          <?php wp_nav_menu( array('menu' => 'Places','menu_class' => 'nav-list places' )); ?>
+      </div>
+      <div class="col-md-4">
+          <?php wp_nav_menu( array('menu' => 'Grants and Funding','menu_class' => 'nav-list grants-and-funding' )); ?>
+      </div>
+      <div class="col-md-4">
+          <?php wp_nav_menu( array('menu' => 'Action','menu_class' => 'nav-list youth-in-action' )); ?>
+      </div>
+    </div><!-- .row -->
 
   </div><!-- .container -->
 
@@ -38,31 +57,13 @@
 
       <div class="row">
         <div class="col-md-4">
-            <ul class="nav-list secondary">
-              <li class="heading"><a href="#">Neighborhoods</a></li>
-              <li><a href="#">Safe Streets</a></li>
-              <li><a href="#">Junk Drinks/Food</a></li>
-              <li><a href="#">Place to Walk</a></li>
-              <li><a href="#">Neighborhood Campaigns</a></li>
-            </ul>
+            <?php wp_nav_menu( array('menu' => 'Our Story','menu_class' => 'nav-list secondary' )); ?>
         </div>
         <div class="col-md-4">
-            <ul class="nav-list secondary">
-              <li class="heading"><a href="#">Prevention</a></li>
-              <li><a href="#">Safe Streets</a></li>
-              <li><a href="#">Junk Drinks/Food</a></li>
-              <li><a href="#">Place to Walk</a></li>
-              <li><a href="#">Neighborhood Campaigns</a></li>
-            </ul>
+            <?php wp_nav_menu( array('menu' => 'Youth in Action','menu_class' => 'nav-list secondary' )); ?>
         </div>
         <div class="col-md-4">
-            <ul class="nav-list secondary">
-              <li class="heading"><a href="#">Schools</a></li>
-              <li><a href="#">Safe Streets</a></li>
-              <li><a href="#">Junk Drinks/Food</a></li>
-              <li><a href="#">Place to Walk</a></li>
-              <li><a href="#">Neighborhood Campaigns</a></li>
-            </ul>
+            <?php wp_nav_menu( array('menu' => 'Newsletters','menu_class' => 'nav-list secondary' )); ?>
         </div>
       </div><!-- .row -->
 
@@ -76,22 +77,12 @@
 
         <div class="row">
           <div class="col-md-4">
-              <ul class="nav-list">
-                <li class="heading"><a href="#">Careers</a></li>
-                <li><a href="#">Safe Streets</a></li>
-                <li><a href="#">Junk Drinks/Food</a></li>
-                <li><a href="#">Place to Walk</a></li>
-                <li><a href="#">Neighborhood Campaigns</a></li>
-              </ul>
+              <?php wp_nav_menu( array('menu' => 'Careers','menu_class' => 'nav-list' )); ?>
           </div>
           <div class="col-md-4">
-              <ul class="nav-list">
-                <li class="heading"><a href="#">Conferences</a></li>
-                <li><a href="#">Safe Streets</a></li>
-                <li><a href="#">Junk Drinks/Food</a></li>
-                <li><a href="#">Place to Walk</a></li>
-                <li><a href="#">Neighborhood Campaigns</a></li>
-              </ul>
+
+            <?php wp_nav_menu( array('menu' => 'Conferences','menu_class' => 'nav-list' )); ?>
+
           </div>
           <div class="col-md-4">
               <ul class="nav-list">
@@ -113,6 +104,6 @@
 
     <?php
       if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav'));
+        //wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav'));
       endif;
     ?>
