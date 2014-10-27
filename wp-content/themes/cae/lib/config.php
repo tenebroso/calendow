@@ -63,6 +63,60 @@ function root_display_sidebar() {
 
 add_image_size( 'homepage-thumb', 351, 329, true ); // (cropped)
 
+
+
+/* =============================================================================
+   Add Campaigns Shortcode
+   ========================================================================== */
+
+function custom_query_shortcode($atts) {
+
+   global $post;
+   $thePost = $post->ID;
+
+   // de-funkify query
+   $the_query = array(
+      'posts_per_page' => -1,
+      'post_parent' => $thePost,
+      'post_type' => 'page'
+    );
+
+   // query is made               
+   query_posts($the_query);
+   
+   // Reset and setup variables
+   $output = '';
+   $temp_title = '';
+   $temp_link = '';
+   $large_image_url = '';
+
+   $output .= "<ul class='campaign-grid'>";
+   
+   // the loop
+   if (have_posts()) : while (have_posts()) : the_post();
+   
+      $temp_title = get_the_title($post->ID);
+      $temp_link = get_permalink($post->ID);
+      $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
+      
+      
+      $output .= "<li style='background-image:url($large_image_url[0]);'><a href='$temp_link'><h2 class='grid-title'>$temp_title</h2></a></li>";
+     
+          
+  endwhile; else:
+   
+      $output .= "nothing found.";
+      
+  endif;
+
+  $output .= "</ul>";
+   
+   wp_reset_query();
+   return $output;
+   
+}
+add_shortcode("campaigns", "custom_query_shortcode");
+
 /* =============================================================================
    Homepage AJAX filtering
    ========================================================================== */

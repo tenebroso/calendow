@@ -62,7 +62,7 @@
 		text-align: right;
 		.page-title {
 			max-width: 1170px;
-			@media (min-width:$screen-sm-min) {
+			@media (min-width:$screen-lg-min) {
 				margin-right: 6.4em;
 			}
 		}

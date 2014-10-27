@@ -39,9 +39,14 @@ border-color:$variable;
 	}
 	.footer-post-nav a:hover,
 	.page-header,
-	&.grid-item:hover {
+	&.grid-item:hover,
+	.campaign-grid li a:hover {
 		background-color:$variable;
 		transition:background-color .25s;
+	}
+	.campaign-grid li a:hover {
+		transition:background-color .25s;
+		background-color:rgba($variable, .9);
 	}
 	&.grid-item:hover .breadcrumbs .color,
 	&.grid-item:hover .breadcrumbs strong {
