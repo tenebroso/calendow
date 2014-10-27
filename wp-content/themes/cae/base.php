@@ -4,8 +4,10 @@
 <?php // Find variables that are used, per-page ?>
 <?php $accordion = get_field('accordion_content'); ?>
 <?php $builder = get_field('cae_content_builder'); ?>
-<?php $workSlug = wp_get_post_terms($post->ID,'work', array("fields" => "slugs")); ?>
-<?php $template = get_page_template_slug( $post->ID ); ?>
+<?php if(!is_404()): ?>
+  <?php $workSlug = wp_get_post_terms($post->ID,'work', array("fields" => "slugs")); ?>
+  <?php $template = get_page_template_slug( $post->ID ); ?>
+<?php endif; ?>
 
   <?php do_action('get_header'); ?>
 

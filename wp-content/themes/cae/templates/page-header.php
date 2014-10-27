@@ -4,7 +4,8 @@
 	$title = get_field('custom_header_text'); 
 	$subtext = get_field('subtext'); 
 	$right = get_field('right_align');
-	$template = get_page_template_slug( $post->ID );
+	if(is_404()): $title = '404'; endif; 
+	if(!is_404()): $template = get_page_template_slug( $post->ID ); endif;
 	if(!$title): $title = get_the_title(); endif; ?>
 
 <?php if($large_image_url && ($template !== 'page-campaign-detail.php')): 
