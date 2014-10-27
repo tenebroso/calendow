@@ -73,7 +73,7 @@ if (!defined('WP_ENV')) {
 
 register_nav_menus( array(
     'footer' => 'Footer Navigation',
-    'primary_navigation' => 'Primary Navigation'
+    //'primary_navigation' => 'Primary Navigation'
   ) 
 );
 
