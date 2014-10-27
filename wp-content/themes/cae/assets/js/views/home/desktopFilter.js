@@ -19,7 +19,7 @@ CE.desktopFilter = function() {
     $parentFilters.click(function(e){
         e.preventDefault();
         $parentFilters.not(this).parent('li').removeClass('open');
-        $(this).parent('li').toggleClass('open');
+        $(this).parent('.filter-main').toggleClass('open').removeClass('selected');
     });
 
 var $container = $('.grid-container').imagesLoaded( function() {
@@ -29,18 +29,27 @@ var $container = $('.grid-container').imagesLoaded( function() {
 
 $childFilters.click( function(e) {
 
-        $container.fadeOut();
-
         var $text = $(this).text();
+
+        $container.fadeOut();
 
         $('.filter-key.reset').hide();
         $('.filter-key:last-of-type').show();
 
-        $(this).parents('li').removeClass('open').prepend('<a class="filter-key reset"><span>'+$(this).text()+'</span></a>').children('.filter-key:last-of-type').hide();
+        
 
         e.preventDefault();
-        var selected_taxonomy = $(this).attr('title');
-        var taxonomy_type = $(this).parents('ul').data('tax');
+
+        if($(this).parents('li').hasClass('selected')) {
+            var selected_taxonomy = '';
+            var taxonomy_type = '';
+            $(this).parents('li').removeClass('selected');
+        } else {
+            var selected_taxonomy = $(this).attr('title');
+            var taxonomy_type = $(this).parents('ul').data('tax');
+            $('.filter-main').removeClass('selected');
+            $(this).parents('li').removeClass('open').addClass('selected');
+        }
 
         data = {
             action: 'filter_posts',

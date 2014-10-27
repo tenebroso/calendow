@@ -2820,12 +2820,6 @@ button, .btn, input[type="submit"] {
     background-color: #272A3F;
     display: block;
     padding: 25px; }
-    .filters li a span {
-      font-size: 27px;
-      font-family: "azo-sans-web", sans-serif;
-      text-transform: uppercase;
-      color: #777987;
-      display: block; }
     .filters li a.reset span {
       top: 50%;
       position: relative;
@@ -2849,6 +2843,8 @@ button, .btn, input[type="submit"] {
     overflow: hidden; }
     .filters > li.open {
       overflow: visible; }
+    .filters > li.selected > a {
+      padding: 0; }
   .filters > li > a {
     padding-right: 70px;
     height: 97px;
@@ -2859,12 +2855,21 @@ button, .btn, input[type="submit"] {
     background-repeat: no-repeat;
     background-position: center right;
     cursor: pointer; }
+    .filters > li > a span {
+      font-size: 27px;
+      font-family: "azo-sans-web", sans-serif;
+      text-transform: uppercase;
+      color: #777987;
+      display: block; }
     .filters > li > a:after {
       width: 31px;
       height: 31px;
-      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAYAAADwMZRfAAAAMklEQVQ4y2NgwAP+////DIQZKAGjhlBgCFARPx78DIrxqWFkQFJILuajjiGjUTzcDQEAKZUdALYkK+QAAAAASUVORK5CIIA=) no-repeat center center;
+      content: "+";
+      font-size: 28px;
+      line-height: 26px;
+      text-align: center;
+      color: #fff;
       border: 2px solid #777987;
-      content: "";
       display: block;
       border-radius: 50%;
       position: absolute;
@@ -2873,6 +2878,12 @@ button, .btn, input[type="submit"] {
       margin-top: -15px;
       -webkit-transition: border-color 0.25s ease;
               transition: border-color 0.25s ease; }
+    .filters > li > a.reset {
+      background-color: #3A406D; }
+      .filters > li > a.reset:after {
+        content: "x";
+        font-size: 21px;
+        line-height: 24px; }
 
 .sub-filter {
   position: absolute;
@@ -2888,6 +2899,50 @@ button, .btn, input[type="submit"] {
   max-height: 90px;
   -webkit-transition: max-height 2s;
           transition: max-height 2s; }
+  .selected .sub-filter {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    top: 0;
+    overflow: visible; }
+    .selected .sub-filter .selected {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 97px;
+      width: 100%;
+      background: #3A406D; }
+      .selected .sub-filter .selected a {
+        font-size: 27px;
+        height: 100%;
+        font-family: "azo-sans-web", sans-serif;
+        text-transform: uppercase;
+        color: #777987;
+        display: block;
+        background: none; }
+        .selected .sub-filter .selected a span {
+          position: relative;
+          top: 50%;
+          -webkit-transform: translate3d(0, -50%, 0);
+                  transform: translate3d(0, -50%, 0);
+          display: block; }
+        .selected .sub-filter .selected a:after {
+          width: 31px;
+          height: 31px;
+          content: "x";
+          font-size: 21px;
+          line-height: 22px;
+          text-align: center;
+          text-transform: lowercase;
+          color: #fff;
+          border: 2px solid #777987;
+          display: block;
+          border-radius: 50%;
+          position: absolute;
+          right: 25px;
+          top: 50%;
+          margin-top: -15px;
+          -webkit-transition: border-color 0.25s ease;
+                  transition: border-color 0.25s ease; }
   .sub-filter.facetwp-facet {
     font-size: 20px;
     margin: 0; }

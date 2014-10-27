@@ -87,7 +87,7 @@ function ajax_filter_get_posts( $taxonomy ) {
  
   // If taxonomy is not set, remove key from array and get all posts
   if( !$taxonomy ) {
-    unset( $args['work'] );
+    unset($args['posts_per_page']);
   }
  
   $query = new WP_Query( $args );
