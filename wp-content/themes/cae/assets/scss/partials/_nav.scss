@@ -163,8 +163,11 @@
 
 .nav-list {
 	margin:0 0 40px 0;
-	li:not(:last-child) {
+	li:not(:first-child) {
 		border-bottom: 1px solid transparent;
+	}
+	li:not(.heading):last-child {
+		border-color: transparent !important;
 	}
 }
 

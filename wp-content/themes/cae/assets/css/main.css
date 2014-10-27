@@ -2695,8 +2695,10 @@ button, .btn, input[type="submit"] {
 
 .nav-list {
   margin: 0 0 40px 0; }
-  .nav-list li:not(:last-child) {
+  .nav-list li:not(:first-child) {
     border-bottom: 1px solid transparent; }
+  .nav-list li:not(.heading):last-child {
+    border-color: transparent !important; }
 
 .secondary-nav, .utility-nav {
   background: #383838;

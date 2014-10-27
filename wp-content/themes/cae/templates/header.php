@@ -25,65 +25,10 @@
         </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-4">
-          <ul class="nav-list neighborhoods">
-            <li class="heading"><a href="#">Neighborhoods</a></li>
-            <li><a href="#">Safe Streets</a></li>
-            <li><a href="#">Junk Drinks/Food</a></li>
-            <li><a href="#">Place to Walk</a></li>
-            <li><a href="#">Neighborhood Campaigns</a></li>
-          </ul>
-      </div>
-      <div class="col-md-4">
-          <ul class="nav-list prevention">
-            <li class="heading"><a href="#">Prevention</a></li>
-            <li><a href="#">Safe Streets</a></li>
-            <li><a href="#">Junk Drinks/Food</a></li>
-            <li><a href="#">Place to Walk</a></li>
-            <li><a href="#">Neighborhood Campaigns</a></li>
-          </ul>
-      </div>
-      <div class="col-md-4">
-          <ul class="nav-list schools">
-            <li class="heading"><a href="#">Schools</a></li>
-            <li><a href="#">Safe Streets</a></li>
-            <li><a href="#">Junk Drinks/Food</a></li>
-            <li><a href="#">Place to Walk</a></li>
-            <li><a href="#">Neighborhood Campaigns</a></li>
-          </ul>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-4">
-          <ul class="nav-list places">
-            <li class="heading"><a href="#">Neighborhoods</a></li>
-            <li><a href="#">Safe Streets</a></li>
-            <li><a href="#">Junk Drinks/Food</a></li>
-            <li><a href="#">Place to Walk</a></li>
-            <li><a href="#">Neighborhood Campaigns</a></li>
-          </ul>
-      </div>
-      <div class="col-md-4">
-          <ul class="nav-list grants-and-funding">
-            <li class="heading"><a href="#">Prevention</a></li>
-            <li><a href="#">Safe Streets</a></li>
-            <li><a href="#">Junk Drinks/Food</a></li>
-            <li><a href="#">Place to Walk</a></li>
-            <li><a href="#">Neighborhood Campaigns</a></li>
-          </ul>
-      </div>
-      <div class="col-md-4">
-          <ul class="nav-list youth-in-action">
-            <li class="heading"><a href="#">Schools</a></li>
-            <li><a href="#">Safe Streets</a></li>
-            <li><a href="#">Junk Drinks/Food</a></li>
-            <li><a href="#">Place to Walk</a></li>
-            <li><a href="#">Neighborhood Campaigns</a></li>
-          </ul>
-      </div>
-    </div><!-- .row -->
+
+    <?php get_template_part('templates/header/main-nav'); ?>
+
 
   </div><!-- .container -->
 
