@@ -415,10 +415,18 @@
 		.grid-play-button {
 			opacity:1;
 		}
+		a {
+			transform: rotate(10deg);
+			transform: scale(1.1);
+			transition: transform 2s;
+		}
 	}
 	a {
 		background-size:cover;
+		transform:translate3d(0,0,0);
+		transition: transform 1s;
 	}
+	overflow: hidden;
 }
 
 .grid-news, 
@@ -434,8 +442,10 @@
 	background-color:$orange;
 	background-position:bottom center;
 	background-image:url(../img/svg/pattern.svg);
+	transition:background-color .25s;
 	&:hover {
-		background-image:none;
+		background-color:$accentLighter !important;
+		border-color:$black !important;
 	}
 }
 

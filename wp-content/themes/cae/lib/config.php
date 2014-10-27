@@ -73,7 +73,7 @@ function ajax_filter_get_posts( $taxonomy ) {
  
   // Verify nonce
   if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
-    die('Permission denied');
+    die('Sorry! There was a server error. Please try again.');
  
   $taxonomy = $_POST['taxonomy'];
   $tax = $_POST['tax'];

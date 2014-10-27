@@ -3049,11 +3049,25 @@ button, .btn, input[type="submit"] {
       display: none; }
 
 .grid-video {
-  height: 360px; }
+  height: 360px;
+  overflow: hidden; }
   .grid-video:hover .grid-play-button {
     opacity: 1; }
+  .grid-video:hover a {
+    -webkit-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+            transform: rotate(10deg);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transition: -webkit-transform 2s;
+            transition: transform 2s; }
   .grid-video a {
-    background-size: cover; }
+    background-size: cover;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 1s;
+            transition: transform 1s; }
 
 .grid-news, .grid-post, .grid-report, .grid-action {
   height: 480px; }
@@ -3061,9 +3075,12 @@ button, .btn, input[type="submit"] {
 .grid-report, .grid-page, .hero-item {
   background-color: #d9673e;
   background-position: bottom center;
-  background-image: url(../img/svg/pattern.svg); }
+  background-image: url(../img/svg/pattern.svg);
+  -webkit-transition: background-color 0.25s;
+          transition: background-color 0.25s; }
   .grid-report:hover, .grid-page:hover, .hero-item:hover {
-    background-image: none; }
+    background-color: #777987 !important;
+    border-color: #000 !important; }
 
 .hero-item {
   background-color: #3A406D;
