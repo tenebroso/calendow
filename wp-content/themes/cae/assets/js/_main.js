@@ -19,6 +19,7 @@ CE.Site = {
     init: function() {
       CE.stripeParallax();
       CE.sidebarNav();
+      CE.socialPopup();
       if($('.newsletter-wrapper').length) {
          $('#ajax-load-more .alm-btn-wrap .more').trigger('click');
       }
@@ -28,6 +29,7 @@ CE.Site = {
     init: function() {
       CE.sidebarNav();
       $(".hentry").fitVids();
+      CE.socialPopup();
     }
   },
   home: {

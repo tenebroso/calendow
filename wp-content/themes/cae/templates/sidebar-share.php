@@ -2,10 +2,10 @@
 	<h3 class="color sidenav-title">Share This.</h3>
 		<ul class="side-nav">
 		<li>
-			<a href="http://twitter.com">Twitter</a>
+			<a class="popup" href="http://twitter.com/home?status=Currently reading <?php the_permalink();?>">Twitter</a>
 		</li>
 		<li>
-			<a href="http://facebook.com">Facebook</a>
+			<a class="popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">Facebook</a>
 		</li>
 		<li>
 			<a href="sms:body=<?php the_title(); ?>">SMS</a>
