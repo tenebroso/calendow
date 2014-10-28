@@ -1,30 +1,9 @@
 001 Home
 http://caendow.herokuapp.com/
 - Filter mobile select
-- Responsive styling
-
-
-012 Report Detail
-http://caendow.herokuapp.com/report/getting-the-word-out/
-- Click on subnav functionality
-- responsive
-
-006 Campaign Detail - Single Community
-http://caendow.herokuapp.com/places/coachella-valley/
-- Customize read this section
-
-
-007 Newsletters Archive
-http://caendow.herokuapp.com/newsletters/
-- Setup filtering
-- Finish styling cards
-
-009 Blog Post
-http://caendow.herokuapp.com/junk-food-is-a-killer-in-small-communities-big-cities/
-- Add footer card nav
-
-
-
+- Responsive styling for nav
+- Social icons/footer
+- Please note that client added a 15th location, the design was set for 14...
 
 002 Our Story
 http://caendow.herokuapp.com/our-story
@@ -37,22 +16,42 @@ http://caendow.herokuapp.com/neighborhoods/junk-food-junk-drinks/
 
 005 Campaign Overview - Places
 http://caendow.herokuapp.com/places
+- Please note that client added a 15th location, the design was set for 14...
+
+006 Campaign Detail - Single Community
+http://caendow.herokuapp.com/places/coachella-valley/
+- Customize read this section to pull in dynamically
+
+007 Newsletters Archive
+http://caendow.herokuapp.com/newsletters/
+- Setup filtering (not active)
+- Finish styling card grid
+- Add load more functionality
 
 008 Newsletter Detail
-http://caendow.herokuapp.com/newsletter/test-newsletter-3/
+http://caendow.herokuapp.com/newsletter/test-newsletter/
+
+009 Blog Post
+http://caendow.herokuapp.com/junk-food-is-a-killer-in-small-communities-big-cities/
+- Add footer card nav
+- Li styling
 
 010 Conference Spaces
 http://caendow.herokuapp.com/conference-spaces/
+- CTA in accordion below photos
 
 011 Conference Space Detail
 http://caendow.herokuapp.com/oakland-conference-space/
 
+012 Report Detail
+http://caendow.herokuapp.com/report/getting-the-word-out/
+- Click on subnav functionality
+- responsive
+
 013 Search Results
 http://caendow.herokuapp.com/?s=junk+food
+- I am not able to group listings by category so I opted to do a color coding instead. Will this work?
 
 014 Blank Template
 http://caendow.herokuapp.com/blank-template/
-
-015 Places
-http://caendow.herokuapp.com/places/
 
