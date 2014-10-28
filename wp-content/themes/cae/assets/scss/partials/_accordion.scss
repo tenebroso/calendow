@@ -16,7 +16,9 @@
 	text-align: center;
 	margin: 0;
 	cursor: pointer;
-	padding:2em 0;
+	> a {
+		padding:2em 0;
+	}
 	&:hover a, a {
 		color:$white;
 		display: block;
