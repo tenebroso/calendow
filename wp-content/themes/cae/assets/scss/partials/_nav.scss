@@ -118,7 +118,10 @@
 	height:15px;
 	display: block;
 	cursor: pointer;
-	margin:20px 47px 0 1em;
+	margin:20px 0 0 1em;
+	@media (min-width:$screen-md-min) {
+		margin-right:47px;
+	}
 	&.active {
 		background:url(../img/svg/hamburger-close.svg) no-repeat;
 	}
@@ -163,8 +166,17 @@
 	}
 
 	.nav-collapse {
-		margin:35px 50px 0 0;
+		margin:35px 0 0 0;
+		@media (min-width:$screen-sm-min) {
+			margin-right:50px;
+		}
 		float: right;
+	}
+
+	@media (max-width:$screen-xs-max) {
+		.nav-list {
+			margin-bottom:20px;
+		}
 	}
 
 	.heading {
@@ -224,8 +236,9 @@
 }
 
 .nav-full-screen-branding {
-	margin-bottom:60px;
+	margin-bottom:20px;
 	@media (min-width:$screen-sm-min) {
+		margin-bottom:60px;
 		.home & {
 			.text-right {
 				position: relative;

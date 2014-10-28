@@ -12,11 +12,13 @@ var CE = CE || {};
       var $width = $(window).width();
       var $position = ($width - $container) / 2;
       var $sideNav = $('.side-nav li');
-      if($sideNav.length) {
+      if($sideNav.length && $width > 992) {
         $nav.css('left', $position).transit({opacity:1});
         $nav.stickyNavbar({
           animateCSS: false
         });
+      } else {
+        $nav.transit({opacity:0});
       }
     }
 

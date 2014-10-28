@@ -3,6 +3,13 @@
 	color:$white;
 	padding:35px 0 42px 0;
 	position: relative;
+	@media (max-width:$screen-xs-max) {
+		text-align: center;
+		.text-right,
+		.text-right .social-icons {
+			text-align: center;
+		}
+	}
 	.home & {
 		padding-top:0;
 	}
@@ -35,6 +42,14 @@
 				border-color:$accentDarker;
 				transition:background .35s;
 				transition:border .45s;
+			}
+		}
+		&[type=email],
+		&[type=text] {
+			@media (max-width:$screen-xs-max) {
+				display: block;
+				width: 100%;
+				margin: 0 0 10px 0;
 			}
 		}
 	}
@@ -72,7 +87,11 @@
 
 .footer-light-blue-wrap {
 	background: $accentDark;
-	padding:48px 0 60px;
+	padding:1em 0;
+	@media (min-width:$screen-sm-min) {
+		padding:48px 0 60px;
+	}
+	
 }
 
 .footer-nav {
@@ -112,8 +131,10 @@
 
 .footer-logo {
 	position: relative;
-	img {
-		margin:0 0 0 -58px;
+	@media (min-width:$screen-sm-min) {
+		img {
+			margin:0 0 0 -58px;
+		}
 	}
 }
 
@@ -122,7 +143,9 @@
 	opacity: 0.5;
 	font-size: 12px;
 	letter-spacing: 1px;
-	position: absolute;
-	top: 50px;
-	left: 7px;
+	@media (min-width:$screen-sm-min) {
+		position: absolute;
+		top: 50px;
+		left: 7px;
+	}
 }

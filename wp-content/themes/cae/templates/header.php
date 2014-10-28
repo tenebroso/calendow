@@ -14,37 +14,37 @@
 <div class="nav-full-screen">
   <div class="container">
     <div class="row nav-full-screen-branding">
-        <div class="col-sm-3">
+        <div class="col-xs-3">
           <a class="brand" href="<?php echo home_url(); ?>/"><img src="<?php echo img_dir(); ?>/svg/logo-white.svg"></a>
         </div>
-        <div class="col-sm-7 text-right">
+        <div class="col-xs-7 text-right">
           <?php get_template_part('templates/footer/icons'); ?>
         </div>
-        <div class="col-sm-2 text-right">
+        <div class="col-xs-2 text-right">
           <a class="js-nav-close-trigger nav-collapse"></a>
         </div>
     </div>
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-sm-4">
           <?php wp_nav_menu( array('menu' => 'Neighborhoods','menu_class' => 'nav-list neighborhoods' )); ?>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-4">
           <?php wp_nav_menu( array('menu' => 'Prevention','menu_class' => 'nav-list prevention' )); ?>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-4">
          <?php wp_nav_menu( array('menu' => 'Schools','menu_class' => 'nav-list schools' )); ?>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-sm-4">
           <?php wp_nav_menu( array('menu' => 'Places','menu_class' => 'nav-list places' )); ?>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-4">
           <?php wp_nav_menu( array('menu' => 'Grants and Funding','menu_class' => 'nav-list grants-and-funding' )); ?>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-4">
           <?php wp_nav_menu( array('menu' => 'Action','menu_class' => 'nav-list youth-in-action' )); ?>
       </div>
     </div><!-- .row -->
@@ -56,13 +56,13 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <?php wp_nav_menu( array('menu' => 'Our Story','menu_class' => 'nav-list secondary' )); ?>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <?php wp_nav_menu( array('menu' => 'Youth in Action','menu_class' => 'nav-list secondary' )); ?>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <?php wp_nav_menu( array('menu' => 'Newsletters','menu_class' => 'nav-list secondary' )); ?>
         </div>
       </div><!-- .row -->
@@ -76,15 +76,15 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-sm-4">
               <?php wp_nav_menu( array('menu' => 'Careers','menu_class' => 'nav-list' )); ?>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4">
 
             <?php wp_nav_menu( array('menu' => 'Conferences','menu_class' => 'nav-list' )); ?>
 
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4">
               <ul class="nav-list">
                 <li class="heading"><a href="#">Contact Us</a></li>
                 <li><a href="#">Safe Streets</a></li>

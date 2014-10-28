@@ -14,9 +14,11 @@
 	.nav-collapse {
 		display: inline-block;
 	}
-	.home & {
-		.pull-right {
-			margin-right:-7em;
+	@media (min-width:$screen-lg-min) {
+		.home & {
+			.pull-right {
+				margin-right:-7em;
+			}
 		}
 	}
 }

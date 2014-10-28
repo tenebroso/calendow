@@ -4,6 +4,11 @@
 	@media (min-width:$screen-sm-min) {
 		padding:24px 163px 0 0;
 	}
+	@media (max-width:$screen-sm-max) {
+		.nav-full-screen-branding & {
+			display: none;
+		}
+	}
 	li[class*='icon'] {
 		width:40px;
 		height:40px;
@@ -16,8 +21,10 @@
 			border-color:$white;
 		}
 	}
-	.text-right & {
-		text-align: right;
-		padding-right:0;
+	@media (min-width:$screen-sm-min) {
+		.text-right & {
+			text-align: right;
+			padding-right:0;
+		}
 	}
 }

@@ -1,20 +1,32 @@
 .place-grid {
 	padding:2.61111111111111em 0;
 	text-align: center;
+	@media (max-width:$screen-xs-max) {
+		margin:0;
+		padding:0 0 0 9px;
+	}
 	h2 + p {
 		margin: 0 0 1em 0;
 		line-height: 1.2;
 	}
 	li {
 		vertical-align: top;
-		width:13%;
-		width:calc(100% / 7.5);
+		width: 50%;
+		@media (min-width:$screen-xs-min) {
+			width:25%;
+		}
+		@media (min-width:$screen-sm-min) {
+			width:13%;
+			width:calc(100% / 7.5);
+		}
 		padding:0 6px 6px 0;
 		font-size:18px;
 	}
-	&:not(.grid-5-up) {
-		li:nth-child(7n+7) {
-			padding-right:0;
+	@media (min-width:$screen-sm-min) {
+		&:not(.grid-5-up) {
+			li:nth-child(7n+7) {
+				padding-right:0;
+			}
 		}
 	}
 	&.grid-5-up {
@@ -22,9 +34,11 @@
 		margin-left: auto;
 		margin-right:auto;
 		li {
-			width:20%;
-			&:nth-child(5n+5) {
-				padding-right:0;
+			@media (min-width:$screen-sm-min) {
+				width:20%;
+				&:nth-child(5n+5) {
+					padding-right:0;
+				}
 			}
 		}
 	}

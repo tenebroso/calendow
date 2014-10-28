@@ -58,9 +58,17 @@ body {
 	}
 }
 
-.container {
-	.home & {
-		max-width:1000px;
-		padding: 0;
+@media (min-width:$screen-md-min) {
+	.container {
+		.home & {
+			max-width:1001px;
+			padding: 0;
+		}
+	}	
+}
+
+@media (max-width:782px) {
+	html #wpadminbar {
+		position: fixed;
 	}
 }

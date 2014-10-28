@@ -36,7 +36,7 @@
 								</a>
 								<?php endif; ?>
 							</li><?php else: ?><li><a class="bg-color center-block"><h3 class="white-text"><strong>Lorem Ipsum.</strong></h3></a>
-							</li><?php endif; $x++; endwhile; endif; wp_reset_postdata(); ?>>
+							</li><?php endif; $x++; endwhile; endif; wp_reset_postdata(); ?>
 
 						</ul>
 
