@@ -4,24 +4,18 @@
 
 
 if ($workSlug[0] == 'places') { ?>
-	<li class="active"><a class="resize-thumb">FPO</a></li>
-<?php
-	$url = get_permalink();
-	$args = array(
-		'hide_empty' => false,
-		);
-	$terms = get_terms('place', $args);
-	 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-	     foreach ( $terms as $term ) { 
-	     	$abbr = get_field('name_abbreviation', $term);?><li>
+	<li class="active"><a class="resize-thumb"><?php the_field('name_abbreviation'); ?></a></li><?php
+	for($i = 1; $i <= 3; $i++):
+	    $post = get_next_post();
+		if($post):
+	    setup_postdata($post); 
+	    $url = get_permalink(); ?><li>
 			<a href="<?php echo $url; ?>" class="resize-thumb">
-				<?php echo $abbr; ?>
+				<?php the_field('name_abbreviation'); ?>
 			</a>
-		</li><?php }
-	}
+	    </li><?php endif; endfor;
 } else { ?>
-	<li class="active"><a class="resize-thumb"><?php the_post_thumbnail('thumbnail');?></a></li>
-<?php
+	<li class="active"><a class="resize-thumb"><?php the_post_thumbnail('thumbnail');?></a></li><?php
     for($i = 1; $i <= 3; $i++):
 	    $post = get_next_post();
 		if($post):
