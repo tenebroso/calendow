@@ -1,4 +1,4 @@
-<ul class="newsletters nav"><?php previous_post_link('<li class="pull-left icon-lg-arrow text-hide">%link</li>', '', ''); ?><li class="active"><a class="resize-thumb"><?php the_post_thumbnail('thumbnail');?></a></li><?php
+<ul class="newsletters bg-color sub-nav nav"><?php previous_post_link('<li class="pull-left icon-lg-arrow text-hide">%link</li>', '', ''); ?><li class="active"><a class="resize-thumb"><?php the_post_thumbnail('thumbnail');?></a></li><?php
     $current_post = $post;
 
     for($i = 1; $i <= 3; $i++):

@@ -65,9 +65,38 @@
 	}
 }
 
+.nav.newsletters.sub-nav {
+	background-image:url(../img/svg/pattern.svg);
+	max-height: 88px;
+	padding: 2px 0;
+	margin:0 0 2em 0;
+	.active:after,
+	li:not(.pull-left):not(.pull-right):hover:after {
+		border-top: 20px solid transparent;
+		border-left: 42px solid transparent;
+		border-right: 42px solid transparent;
+		width: 46px;
+		bottom: 5px;
+		background: none;
+	}
+}
+
+.nav.sub-nav.newsletters li[class*="pull-"] {
+	position: relative;
+	top: 86px;
+}
+
+.newsletters.sub-nav + .heading-font {
+	margin-bottom: 1em;
+}
+
 .resize-thumb img {
-	height: auto;
-	max-width:127px;
+	width:auto;
+	max-height:81px;
+	border:2px solid transparent;
+	.active & {
+		border-color:$white;
+	}
 }
 
 .icon-lg-arrow {

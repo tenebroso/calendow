@@ -30,6 +30,9 @@ border-color:$variable;
 			color:$black;
 		}
 	}
+	.sub-nav {
+		border-top:2px solid $variable;
+	}
 	.side-nav li a {
 		background-color:$variable;
 		border-color: lighten($variable, 30%);
@@ -45,6 +48,12 @@ border-color:$variable;
 	.section-title,
 	.footer-post-nav li {
 		border-color:$variable;
+	}
+	.nav.newsletters.sub-nav {
+		.active:after,
+		li:not(.pull-left):not(.pull-right):hover:after {
+			border-top-color:$variable;
+		}
 	}
 	.footer-post-nav a:hover,
 	.page-header,

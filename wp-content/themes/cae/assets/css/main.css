@@ -2199,7 +2199,8 @@ body {
     height: 300px;
     overflow: hidden; }
     .page-template-page-campaign-detail-php .stripe.bg-image {
-      height: 368px; }
+      height: 368px;
+      padding: 0; }
 
 .home .container {
   max-width: 1000px;
@@ -2640,9 +2641,32 @@ button, .btn, input[type="submit"] {
     content: "";
     display: block; }
 
+.nav.newsletters.sub-nav {
+  background-image: url(../img/svg/pattern.svg);
+  max-height: 88px;
+  padding: 2px 0;
+  margin: 0 0 2em 0; }
+  .nav.newsletters.sub-nav .active:after, .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top: 20px solid transparent;
+    border-left: 42px solid transparent;
+    border-right: 42px solid transparent;
+    width: 46px;
+    bottom: 5px;
+    background: none; }
+
+.nav.sub-nav.newsletters li[class*="pull-"] {
+  position: relative;
+  top: 86px; }
+
+.newsletters.sub-nav + .heading-font {
+  margin-bottom: 1em; }
+
 .resize-thumb img {
-  height: auto;
-  max-width: 127px; }
+  width: auto;
+  max-height: 81px;
+  border: 2px solid transparent; }
+  .active .resize-thumb img {
+    border-color: #fff; }
 
 .icon-lg-arrow {
   height: 45px;
@@ -3675,6 +3699,8 @@ nav.affix {
       color: #fff; }
     .prevention.grid-report .breadcrumbs strong, .prevention.grid-page .breadcrumbs strong, .prevention .bg-color .breadcrumbs strong {
       color: #000; }
+  .prevention .sub-nav {
+    border-top: 2px solid #3FBCA3; }
   .prevention .side-nav li a {
     background-color: #3FBCA3;
     border-color: #b0e4da; }
@@ -3686,6 +3712,8 @@ nav.affix {
       color: #fff; }
   .prevention .section-title, .prevention .footer-post-nav li {
     border-color: #3FBCA3; }
+  .prevention .nav.newsletters.sub-nav .active:after, .prevention .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top-color: #3FBCA3; }
   .prevention .footer-post-nav a:hover, .prevention .page-header, .prevention.grid-item:hover, .prevention .campaign-grid li a:hover {
     background-color: #3FBCA3;
     -webkit-transition: background-color 0.25s;
@@ -3716,6 +3744,8 @@ nav.affix {
       color: #fff; }
     .schools.grid-report .breadcrumbs strong, .schools.grid-page .breadcrumbs strong, .schools .bg-color .breadcrumbs strong {
       color: #000; }
+  .schools .sub-nav {
+    border-top: 2px solid #3bc8d1; }
   .schools .side-nav li a {
     background-color: #3bc8d1;
     border-color: #b7ebee; }
@@ -3727,6 +3757,8 @@ nav.affix {
       color: #fff; }
   .schools .section-title, .schools .footer-post-nav li {
     border-color: #3bc8d1; }
+  .schools .nav.newsletters.sub-nav .active:after, .schools .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top-color: #3bc8d1; }
   .schools .footer-post-nav a:hover, .schools .page-header, .schools.grid-item:hover, .schools .campaign-grid li a:hover {
     background-color: #3bc8d1;
     -webkit-transition: background-color 0.25s;
@@ -3757,6 +3789,8 @@ nav.affix {
       color: #fff; }
     .places.grid-report .breadcrumbs strong, .places.grid-page .breadcrumbs strong, .places .bg-color .breadcrumbs strong {
       color: #000; }
+  .places .sub-nav {
+    border-top: 2px solid #C10512; }
   .places .side-nav li a {
     background-color: #C10512;
     border-color: #fb6471; }
@@ -3768,6 +3802,8 @@ nav.affix {
       color: #fff; }
   .places .section-title, .places .footer-post-nav li {
     border-color: #C10512; }
+  .places .nav.newsletters.sub-nav .active:after, .places .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top-color: #C10512; }
   .places .footer-post-nav a:hover, .places .page-header, .places.grid-item:hover, .places .campaign-grid li a:hover {
     background-color: #C10512;
     -webkit-transition: background-color 0.25s;
@@ -3798,6 +3834,8 @@ nav.affix {
       color: #fff; }
     .grants-and-funding.grid-report .breadcrumbs strong, .grants-and-funding.grid-page .breadcrumbs strong, .grants-and-funding .bg-color .breadcrumbs strong {
       color: #000; }
+  .grants-and-funding .sub-nav {
+    border-top: 2px solid #ab3bbd; }
   .grants-and-funding .side-nav li a {
     background-color: #ab3bbd;
     border-color: #dcace5; }
@@ -3809,6 +3847,8 @@ nav.affix {
       color: #fff; }
   .grants-and-funding .section-title, .grants-and-funding .footer-post-nav li {
     border-color: #ab3bbd; }
+  .grants-and-funding .nav.newsletters.sub-nav .active:after, .grants-and-funding .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top-color: #ab3bbd; }
   .grants-and-funding .footer-post-nav a:hover, .grants-and-funding .page-header, .grants-and-funding.grid-item:hover, .grants-and-funding .campaign-grid li a:hover {
     background-color: #ab3bbd;
     -webkit-transition: background-color 0.25s;
@@ -3839,6 +3879,8 @@ nav.affix {
       color: #fff; }
     .youth-in-action.grid-report .breadcrumbs strong, .youth-in-action.grid-page .breadcrumbs strong, .youth-in-action .bg-color .breadcrumbs strong {
       color: #000; }
+  .youth-in-action .sub-nav {
+    border-top: 2px solid #416386; }
   .youth-in-action .side-nav li a {
     background-color: #416386;
     border-color: #95b0cb; }
@@ -3850,6 +3892,8 @@ nav.affix {
       color: #fff; }
   .youth-in-action .section-title, .youth-in-action .footer-post-nav li {
     border-color: #416386; }
+  .youth-in-action .nav.newsletters.sub-nav .active:after, .youth-in-action .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top-color: #416386; }
   .youth-in-action .footer-post-nav a:hover, .youth-in-action .page-header, .youth-in-action.grid-item:hover, .youth-in-action .campaign-grid li a:hover {
     background-color: #416386;
     -webkit-transition: background-color 0.25s;
@@ -3880,6 +3924,8 @@ nav.affix {
       color: #fff; }
     .neighborhoods.grid-report .breadcrumbs strong, .neighborhoods.grid-page .breadcrumbs strong, .neighborhoods .bg-color .breadcrumbs strong {
       color: #000; }
+  .neighborhoods .sub-nav {
+    border-top: 2px solid #D8673D; }
   .neighborhoods .side-nav li a {
     background-color: #D8673D;
     border-color: #f2cbbc; }
@@ -3891,6 +3937,8 @@ nav.affix {
       color: #fff; }
   .neighborhoods .section-title, .neighborhoods .footer-post-nav li {
     border-color: #D8673D; }
+  .neighborhoods .nav.newsletters.sub-nav .active:after, .neighborhoods .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top-color: #D8673D; }
   .neighborhoods .footer-post-nav a:hover, .neighborhoods .page-header, .neighborhoods.grid-item:hover, .neighborhoods .campaign-grid li a:hover {
     background-color: #D8673D;
     -webkit-transition: background-color 0.25s;
@@ -3921,6 +3969,8 @@ nav.affix {
       color: #fff; }
     .secondary.grid-report .breadcrumbs strong, .secondary.grid-page .breadcrumbs strong, .secondary .bg-color .breadcrumbs strong {
       color: #000; }
+  .secondary .sub-nav {
+    border-top: 2px solid #c5b634; }
   .secondary .side-nav li a {
     background-color: #c5b634;
     border-color: #e8e1aa; }
@@ -3932,6 +3982,8 @@ nav.affix {
       color: #fff; }
   .secondary .section-title, .secondary .footer-post-nav li {
     border-color: #c5b634; }
+  .secondary .nav.newsletters.sub-nav .active:after, .secondary .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top-color: #c5b634; }
   .secondary .footer-post-nav a:hover, .secondary .page-header, .secondary.grid-item:hover, .secondary .campaign-grid li a:hover {
     background-color: #c5b634;
     -webkit-transition: background-color 0.25s;
