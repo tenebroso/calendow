@@ -1,6 +1,6 @@
 .newsletter-wrapper {
 	max-width:998px;
-	margin:0 auto;
+	margin:-4.25em auto 0;
 	.filters > li {
 		width:25%;
 		> a {
@@ -10,6 +10,9 @@
 		a span {
 			font-size:18px;
 		}
+	}
+	#ajax-load-more {
+		margin-bottom:0;
 	}
 }
 

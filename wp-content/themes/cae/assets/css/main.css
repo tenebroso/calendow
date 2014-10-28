@@ -3321,7 +3321,7 @@ article[class*="entry-single"] {
 
 .newsletter-wrapper {
   max-width: 998px;
-  margin: 0 auto; }
+  margin: -4.25em auto 0; }
   .newsletter-wrapper .filters > li {
     width: 25%; }
     .newsletter-wrapper .filters > li > a {
@@ -3329,6 +3329,8 @@ article[class*="entry-single"] {
       height: 85px; }
     .newsletter-wrapper .filters > li a span {
       font-size: 18px; }
+  .newsletter-wrapper #ajax-load-more {
+    margin-bottom: 0; }
 
 @media (min-width: 768px) {
   .newsletter-archives li {

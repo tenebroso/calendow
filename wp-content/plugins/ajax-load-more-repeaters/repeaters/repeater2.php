@@ -1,1 +1,1 @@
-<!-- Template #2 -->
+<?php get_template_part('templates/newsletter/newsletters','grid'); ?>

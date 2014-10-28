@@ -637,7 +637,7 @@ CE.Site = {
       CE.temperature();
     }
   },
-  blog: {
+  newsletters: {
     init: function() {
      
     }
@@ -646,6 +646,9 @@ CE.Site = {
     init: function() {
       CE.stripeParallax();
       CE.sidebarNav();
+      if($('.newsletter-wrapper').length) {
+         $('#ajax-load-more .alm-btn-wrap .more').trigger('click');
+      }
     }
   },
   single: {

@@ -25,8 +25,6 @@ http://caendow.herokuapp.com/places/coachella-valley/
 007 Newsletters Archive
 http://caendow.herokuapp.com/newsletters/
 - Setup filtering (not active)
-- Finish styling card grid
-- Add load more functionality
 
 008 Newsletter Detail
 http://caendow.herokuapp.com/newsletter/test-newsletter/
