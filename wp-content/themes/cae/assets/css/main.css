@@ -3433,6 +3433,28 @@ article[class*="entry-single"] {
   height: 77px;
   margin: 0 auto; }
 
+.places .sub-nav li:not(.pull-left):not(.pull-right) {
+  opacity: 1;
+  vertical-align: top;
+  overflow: hidden;
+  padding-bottom: 20px; }
+
+.places .sub-nav li:not(.pull-left):not(.pull-right) a {
+  background: #C10512;
+  color: white;
+  display: block;
+  line-height: 81px;
+  font-weight: 900;
+  width: 81px;
+  border: 2px solid white;
+  height: 81px; }
+
+.places .sub-nav li:not(.pull-left):not(.pull-right):nth-child(n+5) {
+  display: none; }
+
+.places .sub-nav.newsletters.nav li.active:after, .places .sub-nav.newsletters.nav li:not(.pull-right):not(.pull-left):hover:after {
+  bottom: 0; }
+
 nav.affix {
   top: 170px;
   opacity: 0;
