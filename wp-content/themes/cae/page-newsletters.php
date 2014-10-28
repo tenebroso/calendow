@@ -2,7 +2,7 @@
 
 	<ul class="filters" id="filters">
 		<li class="selector-group">
-			<a data-filter-group="color">Filter by <span>Our Work</span></a>
+			<a data-filter-group="color">Filter by <span>Neighborhood</span></a>
 			<ul class="sub-filter">
 				<li><a class="selector" data-filter="">Any</a></li>
 				<li><a class="selector" data-filter=".red">Red</a></li>
@@ -10,8 +10,9 @@
 			</ul>
 
 		</li>
-		<li><a data-filter-group="campaigns">Filter by <span>Campaigns</span></a></li>
-		<li><a data-filter-group="places">Filter by <span>Places</span></a>
+		<li><a data-filter-group="campaigns">Filter by <span>Prevention</span></a></li>
+		<li><a data-filter-group="campaigns">Filter by <span>Schools</span></a></li>
+		<li><a data-filter-group="places">Filter by <span>Communities</span></a>
 			<ul class="sub-filter">
 				<?php
 					$args = array(

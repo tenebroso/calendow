@@ -3322,6 +3322,13 @@ article[class*="entry-single"] {
 .newsletter-wrapper {
   max-width: 998px;
   margin: 0 auto; }
+  .newsletter-wrapper .filters > li {
+    width: 25%; }
+    .newsletter-wrapper .filters > li > a {
+      font-size: 15px;
+      height: 85px; }
+    .newsletter-wrapper .filters > li a span {
+      font-size: 18px; }
 
 @media (min-width: 768px) {
   .newsletter-archives li {
