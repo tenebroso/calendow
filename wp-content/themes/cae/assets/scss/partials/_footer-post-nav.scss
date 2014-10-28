@@ -15,28 +15,33 @@
 		width:265px;
 		margin:0 9px 9px 0;
 		padding:0;
-		&:nth-child(3n+3) {
-			margin-right:0;
-		}
-		&:nth-of-type(4) {
-			clear:left;
-		}
 		h3 {
 			font-size:30px;
 			margin-bottom:18px;
+		}
+	}
+	ul:not(.bx-slider) {
+		li {
+			&:nth-child(3n+3) {
+				margin-right:0;
+			}
+			&:nth-of-type(4) {
+				clear:left;
+			}
 		}
 	}
 	a {
 		color:$black;
 		padding:25px 35px;
 		height: 100%;
+		min-height:315px;
 		transition:all .25s;
 		position: relative;
 		.date {
 			color:$grey4;
 		}
 		&:hover {
-			background: $red;
+			background-image:url(../img/svg/pattern.svg);
 			color:$white;
 			.section-name, .date {
 				color:$white;
@@ -48,8 +53,79 @@
 		font-size:18px;
 		font-weight:600;
 		margin-bottom:1em;
+		text-transform:capitalize;
 	}
 	.list-inline {
 		margin:0;
+	}
+}
+
+.center-block-bg-img {
+	background-repeat:no-repeat;
+	background-size:cover;
+	position: relative;
+	&:after {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left:0;
+		top:0;
+		display: block;
+		content: "";
+		background-color:rgba(0,0,0,.2);
+		background-image:url(../img/svg/pattern.svg);
+		opacity:0;
+		transition:opacity .25s;
+	}
+	&:hover {
+		&:after {
+			opacity:1;
+		}
+	}
+}
+
+.bx-wrapper {
+	position: relative;
+}
+
+.bx-controls {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.bx-controls-direction {
+	top: 50%;
+	position: relative;
+	transform: translate3d(0,-50%,0);
+}
+
+.footer-post-nav .bx-controls-direction a {
+	padding: 0;
+	min-height: 1px;
+	font-size:0;
+	line-height:0;
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20%20--%3E%0D%0A%3Csvg%20version%3D%221.1%22%0D%0A%09%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Aa%3D%22http%3A//ns.adobe.com/AdobeSVGViewerExtensions/3.0/%22%0D%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2224.5px%22%20height%3D%2246.2px%22%20viewBox%3D%220%200%2024.5%2046.2%22%20enable-background%3D%22new%200%200%2024.5%2046.2%22%0D%0A%09%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cdefs%3E%0D%0A%3C/defs%3E%0D%0A%3Cpolygon%20fill%3D%22%233A406D%22%20points%3D%2224.5%2C23.1%201.4%2C0%200%2C1.4%2021.7%2C23.1%200%2C44.8%201.4%2C46.2%2024.5%2C23.2%2024.5%2C23.1%20%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+	background-repeat: no-repeat;
+	width:24px;
+	height:46px;
+
+	position: absolute;
+	top: -7px;
+	left: auto;
+	right: -70px;
+
+	display: block;
+
+	&:hover {
+		background-color:none;
+		opacity: .7;
+	}
+	&.bx-prev {
+		transform:rotate(180deg);
+		left: -70px;
+		right: auto;
 	}
 }

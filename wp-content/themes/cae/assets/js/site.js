@@ -684,9 +684,15 @@ CE.Site = {
       CE.temperature();
     }
   },
-  newsletters: {
+  page_template_page_campaign_overview_php: {
     init: function() {
-     
+      $('.bx-slider').bxSlider({
+        minSlides:3,
+        maxSlides:3,
+        auto:false,
+        pager:false,
+        slideWidth:265
+      });
     }
   },
   page: {
