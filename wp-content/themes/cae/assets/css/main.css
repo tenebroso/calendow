@@ -3330,11 +3330,13 @@ article[class*="entry-single"] {
     margin: 0 5px 5px 0;
     display: inline-block;
     vertical-align: top;
-    height: 360px;
-    background: #07a8c6;
-    border-top: 11px solid #0ad3f6; }
+    height: 360px; }
     .newsletter-archives li:nth-child(3n+3) {
       margin-right: 0; } }
+.newsletter-archives .bg-color {
+  border-top: 11px solid rgba(255, 255, 255, 0.5); }
+  .newsletter-archives .bg-color:hover {
+    background-image: url(../img/svg/pattern.svg); }
 .newsletter-archives .center-block {
   height: 100%;
   width: 100%;
@@ -3344,11 +3346,15 @@ article[class*="entry-single"] {
   color: #000; }
   .newsletter-archives .center-block p, .newsletter-archives .center-block h2, .newsletter-archives .center-block h3 {
     margin: 0; }
+  .newsletter-archives .center-block h3 {
+    font-weight: 800;
+    font-size: 32px; }
   .newsletter-archives .center-block .breadcrumbs {
     position: absolute;
-    top: 31px;
+    top: 20px;
     left: 0;
-    width: 100%; }
+    width: 100%;
+    font-size: 16px; }
 
 .campaign-grid li {
   background-position: center top;

@@ -12,11 +12,15 @@
 			display: inline-block;
 			vertical-align: top;
 			height:360px;
-			background: $blueLight;
-			border-top:11px solid lighten($blueLight, 10%);
 			&:nth-child(3n+3) {
 				margin-right:0;
 			}
+		}
+	}
+	.bg-color {
+		border-top:11px solid rgba(255,255,255,.5);
+		&:hover {
+			background-image:url(../img/svg/pattern.svg);
 		}
 	}
 	.center-block {
@@ -29,11 +33,16 @@
 		p, h2, h3 {
 			margin:0;
 		}
+		h3 {
+			font-weight:800;
+			font-size:32px;
+		}
 		.breadcrumbs {
 			position:absolute;
-			top:31px;
+			top:20px;
 			left:0;
 			width:100%;
+			font-size:16px;
 		}
 	}
 }
