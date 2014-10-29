@@ -17,7 +17,9 @@ CE.Site = {
         maxSlides:3,
         auto:false,
         pager:false,
-        slideWidth:265
+        slideWidth:265,
+        infiniteLoop:false,
+        hideControlOnEnd:true
       });
     }
   },

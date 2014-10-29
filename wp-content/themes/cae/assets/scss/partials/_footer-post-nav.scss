@@ -123,13 +123,19 @@
 
 	display: block;
 
+	opacity:1;
+	transition:opacity .25s;
+
 	&:hover {
-		background-color:none;
+		background-color:transparent !important;
 		opacity: .7;
 	}
 	&.bx-prev {
 		transform:rotate(180deg);
 		left: -70px;
 		right: auto;
+	}
+	&.disabled {
+		opacity:0;
 	}
 }
