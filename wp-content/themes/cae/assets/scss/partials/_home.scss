@@ -207,8 +207,12 @@
 	> li {
 		line-height:1;
 		float:left;
-		width:33.333%;
-		width:calc(100% / 3);
+		width: 100%;
+		@media (min-width:$screen-sm-min) {
+			width:33.333%;
+			width:calc(100% / 3);
+		}
+		
 		position: relative;
 		overflow: hidden;
 		&.open {
@@ -232,6 +236,9 @@
 		cursor: pointer;
 		span {
 			font-size:27px;
+			@media (max-width:$screen-xs-max) {
+				font-size:22px;
+			}
 			font-family:$headings-font-family;
 			text-transform: uppercase;
 			color:$accentLighter;
