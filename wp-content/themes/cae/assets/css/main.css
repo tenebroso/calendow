@@ -3819,16 +3819,33 @@ nav.affix {
     margin-left: 1em; }
 
 .footer-post-nav-prev a {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAvCAMAAADKIyriAAAAP1BMVEXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fEXeu2AAAAFHRSTlMAAQMGChETFR0yX3CQn62uutTc3UrWfzIAAABESURBVDjL7cm3AcAgEANAgcEBjBPaf1YWeBXU/msPMC0lQMzFM6hhX825yb7/ZT4fMagkD3OQHvLd/PwmLstrEeJqxABK8A6m0yE+JwAAAABJRU5ErkJggg==) no-repeat center left;
-  padding: 0 0 0 46px;
-  margin: 0 0 0 -46px;
   display: block; }
+  @media (min-width: 768px) {
+    .footer-post-nav-prev a {
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAvCAMAAADKIyriAAAAP1BMVEXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fEXeu2AAAAFHRSTlMAAQMGChETFR0yX3CQn62uutTc3UrWfzIAAABESURBVDjL7cm3AcAgEANAgcEBjBPaf1YWeBXU/msPMC0lQMzFM6hhX825yb7/ZT4fMagkD3OQHvLd/PwmLstrEeJqxABK8A6m0yE+JwAAAABJRU5ErkJggg==) no-repeat center left;
+      padding: 0 0 0 46px;
+      margin: 0 0 0 -46px; } }
+@media (max-width: 991px) {
+  .footer-post-nav-prev {
+    text-align: left; }
+    .footer-post-nav-prev h2 {
+      font-size: 26px; } }
 
 .footer-post-nav-next a {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAvBAMAAAAP08fjAAAAKlBMVEXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fVjvTfAAAADXRSTlMAAQknLi9IWWqTlLjqfI9HvQAAAEBJREFUKJFjYGpkQALaNwWQeDZ3JyLxWM+iSMaMSqJLst+9hsTzubsQwWE5e0tgEEpNRJa6SUsp1LSEms5Q0iAA9YNOXf2vFqAAAAAASUVORK5CAII=) no-repeat center right;
-  padding: 0 46px 0 0;
-  margin: 0 -46px 0 0;
   display: block; }
+  @media (min-width: 768px) {
+    .footer-post-nav-next a {
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAvBAMAAAAP08fjAAAAKlBMVEXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fVjvTfAAAADXRSTlMAAQknLi9IWWqTlLjqfI9HvQAAAEBJREFUKJFjYGpkQALaNwWQeDZ3JyLxWM+iSMaMSqJLst+9hsTzubsQwWE5e0tgEEpNRJa6SUsp1LSEms5Q0iAA9YNOXf2vFqAAAAAASUVORK5CAII=) no-repeat center right;
+      padding: 0 46px 0 0;
+      margin: 0 -46px 0 0; } }
+@media (max-width: 991px) {
+  .footer-post-nav-next {
+    text-align: right !important;
+    border-top: 1px solid #3A406D;
+    margin-top: 1em;
+    padding: 0.5em 15px; }
+    .footer-post-nav-next h2 {
+      font-size: 26px; } }
 
 .footer-logo {
   position: relative; }
@@ -3922,6 +3939,9 @@ nav.affix {
   left: 0;
   height: 100%;
   width: 100%; }
+  @media (max-width: 767px) {
+    .bx-controls {
+      display: none; } }
 
 .bx-viewport {
   z-index: 20; }
