@@ -14,6 +14,10 @@ h1,h2,h3,h4,h5,h6, .heading-font {
   .footer & {
     margin:0;
   }
+  .entry-content & {
+    font-family:$font-family-base;
+    font-weight:600;
+  }
 }
 
 p {
