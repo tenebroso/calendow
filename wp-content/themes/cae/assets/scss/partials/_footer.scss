@@ -35,13 +35,11 @@
 			border:2px solid $white;
 			border-radius:3px;
 			padding:9px 21px;
-			transition:background .25s;
-			transition:border .35s;
+			transition:all .25s;
 			&:hover {
 				background: $accentDarker;
 				border-color:$accentDarker;
-				transition:background .35s;
-				transition:border .45s;
+				transition:all .25s;
 			}
 		}
 		&[type=email],

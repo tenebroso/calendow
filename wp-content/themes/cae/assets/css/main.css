@@ -3737,17 +3737,13 @@ nav.affix {
       border: 2px solid #fff;
       border-radius: 3px;
       padding: 9px 21px;
-      -webkit-transition: background 0.25s;
-              transition: background 0.25s;
-      -webkit-transition: border 0.35s;
-              transition: border 0.35s; }
+      -webkit-transition: all 0.25s;
+              transition: all 0.25s; }
       .footer input[type=submit]:hover {
         background: #1f2233;
         border-color: #1f2233;
-        -webkit-transition: background 0.35s;
-                transition: background 0.35s;
-        -webkit-transition: border 0.45s;
-                transition: border 0.45s; }
+        -webkit-transition: all 0.25s;
+                transition: all 0.25s; }
     @media (max-width: 767px) {
       .footer input[type=email], .footer input[type=text] {
         display: block;
