@@ -80,8 +80,11 @@
 	font-weight:bold;
 	position: relative;
 	z-index:20;
+	transform:translate3d(0,0,0) scale(1.0,1.0);
+	backface-visibility: hidden;
 	li {
 		line-height: 1;
+		
 		&.hero-nav-intro {
 			margin:40px 0 21px;
 		}
@@ -91,6 +94,8 @@
 		display: inline-block;
 		position: relative;
 		overflow: hidden;
+		transform:translate3d(0,0,0) scale(1.0,1.0);
+		backface-visibility: hidden;
 	}
 	.hero-nav-color-block {
 		position: absolute;
@@ -105,13 +110,15 @@
 
 		transition:all .75s ease;
 
-		transform:translate3d(0,0,0);
+		transform:translate3d(0,0,0) scale(1.0,1.0);
+		backface-visibility: hidden;
 	}
 	li a:hover {
 		.hero-nav-color-block {
 			left:-100%;
 			right:0;
-			transition:all .35s ease;
+			transition:all .75s ease;
+			transform: translate3d(0,0,0), rotate(0.02deg);
 		}
 	}
 	li {
