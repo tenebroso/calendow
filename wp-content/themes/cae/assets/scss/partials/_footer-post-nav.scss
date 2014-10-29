@@ -12,7 +12,10 @@
 		vertical-align: top;
 		border-top:12px solid $red;
 		background: $white;
-		width:265px;
+		width:100%;
+		@media (min-width:$screen-sm-min) {
+			width:265px;
+		}
 		margin:0 9px 9px 0;
 		padding:0;
 		h3 {

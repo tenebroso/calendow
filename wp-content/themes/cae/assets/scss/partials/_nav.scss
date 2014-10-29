@@ -19,6 +19,9 @@
 			width:40px;
 			background-position:center center;
 			opacity:.4;
+			@media (max-width:$screen-xs-max) {
+				display: none;
+			}
 			&:hover {
 				opacity:1;
 			}
@@ -49,6 +52,11 @@
 	opacity:.6;
 	transform:translate3d(0,0,0);
 	transition:opacity .25s;
+	@media (max-width:$screen-sm-max) {
+		&:nth-child(n+5) {
+			display: none;
+		}
+	}
 }
 
 .newsletters.nav .active, .newsletters.nav li:not(.pull-left):not(.pull-right):hover {
@@ -92,6 +100,7 @@
 
 .resize-thumb img {
 	width:auto;
+	max-width:100%;
 	max-height:81px;
 	border:2px solid transparent;
 	.active & {

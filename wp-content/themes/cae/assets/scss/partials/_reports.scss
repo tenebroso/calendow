@@ -1,9 +1,18 @@
 .single-report {
-	background: url(../img/bg-reports-detail.jpg) no-repeat center center;
-	background-size: cover;
+	width: 100%;
+	overflow-x: hidden;
+	background: $white;
+	@media (min-width:$screen-sm-min) {
+		background: url(../img/bg-reports-detail.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	
 	.main {
 		background: none;
 		padding:150px 0 60px;
+		@media (max-width:$screen-sm-max) {
+			padding-top:120px;
+		}
 	}
 	.breadcrumbs {
 		display: none;
@@ -26,20 +35,40 @@
 .report-container {
 	position: relative;
 	background: none;
-}
-
-.report-content {
-	width: 670px;
-	padding:0 60px;
+	@media (max-width:$screen-sm-max) {
+		width: 100%;
+	}
 }
 
 .report-sidebar {
-	width: 300px;
-	margin: 0 35px 0 0;
 	font-size:18px;
 	position: relative;
 	z-index:20;
+	display: block;
 }
+
+@media (max-width:$screen-sm-max) {
+	.report-nav {
+		display: none;
+	}
+	.report-content {
+		padding:15px 0;
+	}
+}
+
+@media (min-width:$screen-sm-min) {
+	.report-sidebar {
+		width: 300px;
+		margin: 0 35px 0 0;
+	}
+	.report-content {
+		width: 670px;
+		padding:0 60px;
+	}
+
+}
+
+
 
 .report-nav {
 	a {

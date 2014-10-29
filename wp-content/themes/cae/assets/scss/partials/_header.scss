@@ -61,7 +61,9 @@
 		}
 	}
 	&.text-right {
-		text-align: right;
+		@media (min-width:$screen-sm-min) {
+			text-align: right;
+		}
 		.page-title {
 			max-width: 1170px;
 			@media (min-width:$screen-lg-min) {

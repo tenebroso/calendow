@@ -3,7 +3,8 @@
 		background-position:center top;
 		background-size:cover;
 		width: 100%;
-		min-height:260px;
+		height:260px;
+		margin:0 0 15px 0;
 		@media (min-width:$screen-sm-min) {
 			width:267px;
 			height:260px;
@@ -24,6 +25,12 @@
 			height: 100%;
 			color:$white;
 			padding:24px;
+			@media (max-width:$screen-xs-max) {
+				top:50%;
+				position: relative;
+				transform:translate3d(0,-50%,0);
+				height: auto;
+			}
 		}
 	}
 }

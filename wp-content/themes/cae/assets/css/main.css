@@ -2162,6 +2162,10 @@ tbody.collapse.in {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+html {
+  overflow-x: hidden;
+  width: 100%; }
+
 body {
   background: #f9f9f9; }
 
@@ -2198,9 +2202,15 @@ body {
   .stripe.bg-image {
     height: 300px;
     overflow: hidden; }
+    @media (max-width: 767px) {
+      .stripe.bg-image {
+        height: 100px; } }
     .page-template-page-campaign-detail-php .stripe.bg-image {
       height: 368px;
       padding: 0; }
+      @media (max-width: 767px) {
+        .page-template-page-campaign-detail-php .stripe.bg-image {
+          height: 168px; } }
 
 @media (min-width: 992px) {
   .home .container {
@@ -2239,9 +2249,11 @@ b, strong {
   font-weight: 800; }
 
 h3 strong, h3 b {
-  font-family: "azo-sans-web", sans-serif;
-  line-height: 34px;
-  text-transform: uppercase; }
+  font-family: "azo-sans-web", sans-serif; }
+  @media (min-width: 768px) {
+    h3 strong, h3 b {
+      line-height: 34px;
+      text-transform: uppercase; } }
 
 .lead {
   font-size: 30px;
@@ -2259,7 +2271,7 @@ h3 strong, h3 b {
   margin: 0; }
   @media (max-width: 767px) {
     .page-title {
-      font-size: 30px;
+      font-size: 28px;
       line-height: 1.2;
       padding: 0 1em; }
       .page-title br {
@@ -2282,6 +2294,9 @@ h3 strong, h3 b {
   padding: 0.5em 0 0;
   text-transform: none;
   font-weight: normal; }
+  @media (max-width: 767px) {
+    .page-subtext {
+      font-size: 21px; } }
 
 .light-thin-text {
   color: #808080;
@@ -2484,13 +2499,14 @@ button, .btn, input[type="submit"] {
       top: -100px;
       left: 0;
       width: 100%; }
-  .page-header.text-right {
-    text-align: right; }
-    .page-header.text-right .page-title {
-      max-width: 1170px; }
-      @media (min-width: 1200px) {
-        .page-header.text-right .page-title {
-          margin-right: 6.4em; } }
+  @media (min-width: 768px) {
+    .page-header.text-right {
+      text-align: right; } }
+  .page-header.text-right .page-title {
+    max-width: 1170px; }
+    @media (min-width: 1200px) {
+      .page-header.text-right .page-title {
+        margin-right: 6.4em; } }
   .page-header .page-title {
     max-width: 835px;
     margin: 0 auto; }
@@ -2618,6 +2634,9 @@ button, .btn, input[type="submit"] {
     width: 40px;
     background-position: center center;
     opacity: 0.4; }
+    @media (max-width: 767px) {
+      .nav.newsletters .pull-left, .nav.newsletters .pull-right {
+        display: none; } }
     .nav.newsletters .pull-left:hover, .nav.newsletters .pull-right:hover {
       opacity: 1; }
     .nav.newsletters .pull-left a, .nav.newsletters .pull-right a {
@@ -2645,6 +2664,9 @@ button, .btn, input[type="submit"] {
           transform: translate3d(0, 0, 0);
   -webkit-transition: opacity 0.25s;
           transition: opacity 0.25s; }
+  @media (max-width: 991px) {
+    .newsletters.nav li:nth-child(n+5) {
+      display: none; } }
 
 .newsletters.nav .active, .newsletters.nav li:not(.pull-left):not(.pull-right):hover {
   opacity: 1; }
@@ -2680,6 +2702,7 @@ button, .btn, input[type="submit"] {
 
 .resize-thumb img {
   width: auto;
+  max-width: 100%;
   max-height: 81px;
   border: 2px solid transparent; }
   .active .resize-thumb img {
@@ -3276,16 +3299,31 @@ button, .btn, input[type="submit"] {
   height: 600px;
   width: 100%;
   background-size: cover; }
+  @media (max-width: 767px) {
+    .parallax-image {
+      height: 300px; } }
+
+.hentry img, .report-container img {
+  max-width: 100%;
+  height: auto; }
 
 article[class*="entry-single"] {
   padding: 3em 0; }
 
 .single-report {
-  background: url(../img/bg-reports-detail.jpg) no-repeat center center;
-  background-size: cover; }
+  width: 100%;
+  overflow-x: hidden;
+  background: #fff; }
+  @media (min-width: 768px) {
+    .single-report {
+      background: url(../img/bg-reports-detail.jpg) no-repeat center center;
+      background-size: cover; } }
   .single-report .main {
     background: none;
     padding: 150px 0 60px; }
+    @media (max-width: 991px) {
+      .single-report .main {
+        padding-top: 120px; } }
   .single-report .breadcrumbs {
     display: none; }
   .single-report .hentry, .single-report .sidebar {
@@ -3300,17 +3338,29 @@ article[class*="entry-single"] {
 .report-container {
   position: relative;
   background: none; }
-
-.report-content {
-  width: 670px;
-  padding: 0 60px; }
+  @media (max-width: 991px) {
+    .report-container {
+      width: 100%; } }
 
 .report-sidebar {
-  width: 300px;
-  margin: 0 35px 0 0;
   font-size: 18px;
   position: relative;
-  z-index: 20; }
+  z-index: 20;
+  display: block; }
+
+@media (max-width: 991px) {
+  .report-nav {
+    display: none; }
+  .report-content {
+    padding: 15px 0; } }
+
+@media (min-width: 768px) {
+  .report-sidebar {
+    width: 300px;
+    margin: 0 35px 0 0; }
+  .report-content {
+    width: 670px;
+    padding: 0 60px; } }
 
 .report-nav a {
   display: block;
@@ -3425,7 +3475,8 @@ article[class*="entry-single"] {
   background-position: center top;
   background-size: cover;
   width: 100%;
-  min-height: 260px; }
+  height: 260px;
+  margin: 0 0 15px 0; }
   @media (min-width: 768px) {
     .campaign-grid li {
       width: 267px;
@@ -3443,6 +3494,13 @@ article[class*="entry-single"] {
     height: 100%;
     color: #fff;
     padding: 24px; }
+    @media (max-width: 767px) {
+      .campaign-grid li a {
+        top: 50%;
+        position: relative;
+        -webkit-transform: translate3d(0, -50%, 0);
+                transform: translate3d(0, -50%, 0);
+        height: auto; } }
 
 .place-grid {
   padding: 2.61111em 0;
@@ -3544,6 +3602,10 @@ nav.affix {
   opacity: 0;
   z-index: 20; }
 
+@media (max-width: 767px) {
+  .side-nav-container {
+    display: none; } }
+
 .side-nav li a {
   display: block;
   color: #fff;
@@ -3617,8 +3679,9 @@ nav.affix {
     color: #fff;
     background: #000; }
 
-.side-nav, .section-title {
-  width: 150px; }
+@media (min-width: 992px) {
+  .side-nav, .section-title {
+    width: 150px; } }
 
 .social-icons {
   text-align: center;
@@ -3774,9 +3837,12 @@ nav.affix {
     vertical-align: top;
     border-top: 12px solid #d51f2c;
     background: #fff;
-    width: 265px;
+    width: 100%;
     margin: 0 9px 9px 0;
     padding: 0; }
+    @media (min-width: 768px) {
+      .footer-post-nav li {
+        width: 265px; } }
     .footer-post-nav li h3 {
       font-size: 30px;
       margin-bottom: 18px; }

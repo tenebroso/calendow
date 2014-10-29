@@ -4,6 +4,12 @@ nav.affix {
 	z-index:20;
 }
 
+@media (max-width:$screen-xs-max) {
+	.side-nav-container {
+		display: none;
+	}
+}
+
 .side-nav {
 	li {
 		a {
@@ -109,7 +115,10 @@ nav.affix {
   }
 }
 
-.side-nav,
-.section-title {
-	width:150px;
+@media (min-width:$screen-md-min) {
+	.side-nav,
+	.section-title {
+		width:150px;
+	}
 }
+

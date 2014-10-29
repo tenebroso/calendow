@@ -29,8 +29,10 @@ b, strong {
 h3 {
   strong, b {
     font-family:$headings-font-family;
-    line-height:34px;
-    text-transform: uppercase;
+    @media (min-width:$screen-sm-min) {
+      line-height:34px;
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -51,7 +53,7 @@ h3 {
   text-transform: uppercase;
   margin:0;
   @media (max-width:$screen-xs-max) {
-    font-size:30px;
+    font-size:28px;
     line-height:1.2;
     padding:0 1em;
     br {
@@ -80,6 +82,9 @@ h3 {
   padding:.5em 0 0;
   text-transform:none;
   font-weight:normal;
+  @media (max-width:$screen-xs-max) {
+    font-size:21px;
+  }
 }
 
 .light-thin-text {

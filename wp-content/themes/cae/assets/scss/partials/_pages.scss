@@ -1,6 +1,16 @@
 .parallax-image {
 	height:600px;
+	@media (max-width:$screen-xs-max) {
+		height:300px;
+	}
 	width: 100%;
 	background-size:cover;
 
+}
+
+.hentry, .report-container {
+	img {
+		max-width:100%;
+		height: auto;
+	}
 }
