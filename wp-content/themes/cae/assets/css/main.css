@@ -2478,7 +2478,7 @@ button, .btn, input[type="submit"] {
         top: 32px; } }
 
 .page-header {
-  background-color: #3bc8d1;
+  background-color: #07a8c6;
   background-position: bottom center;
   background-image: url(../img/svg/pattern.svg);
   background-repeat: repeat;
@@ -2777,8 +2777,8 @@ button, .btn, input[type="submit"] {
       color: #fff; }
   .nav-full-screen .heading, .nav-full-screen .heading a {
     font-weight: bold;
-    color: #D8673D;
-    border-color: #D8673D;
+    color: #d9673e;
+    border-color: #d9673e;
     padding-left: 0; }
   .nav-full-screen .footer-social-icons li[class*='icon'] {
     border-color: #383838; }
@@ -2921,29 +2921,29 @@ button, .btn, input[type="submit"] {
     -webkit-transition: all 0.35s ease;
             transition: all 0.35s ease; }
   .hero-nav li.neighborhoods a {
-    color: #D8673D; }
+    color: #d9673e; }
   .hero-nav li.neighborhoods .hero-nav-color-block {
-    background: #D8673D; }
+    background: #d9673e; }
   .hero-nav li.prevention a {
-    color: #3FBCA3; }
+    color: #15c6a7; }
   .hero-nav li.prevention .hero-nav-color-block {
-    background: #3FBCA3; }
+    background: #15c6a7; }
   .hero-nav li.schools a {
-    color: #3bc8d1; }
+    color: #07a8c6; }
   .hero-nav li.schools .hero-nav-color-block {
-    background: #3bc8d1; }
+    background: #07a8c6; }
   .hero-nav li.places a {
     color: #C10512; }
   .hero-nav li.places .hero-nav-color-block {
     background: #C10512; }
   .hero-nav li.grants a {
-    color: #ab3bbd; }
+    color: #5d0770; }
   .hero-nav li.grants .hero-nav-color-block {
-    background: #ab3bbd; }
+    background: #5d0770; }
   .hero-nav li.action a {
-    color: #416386; }
+    color: #ff0078; }
   .hero-nav li.action .hero-nav-color-block {
-    background: #416386; }
+    background: #ff0078; }
 
 @media (min-width: 768px) {
   .hero-container-text, .hero-nav {
@@ -3611,7 +3611,7 @@ nav.affix {
 .side-nav li a {
   display: block;
   color: #fff;
-  background: #D8673D;
+  background: #d9673e;
   padding: 7px 25px 7px 15px;
   border-bottom: 1px solid transparent;
   font-size: 18px;
@@ -3938,18 +3938,18 @@ nav.affix {
     opacity: 0; }
 
 .prevention {
-  border-color: #3FBCA3; }
+  border-color: #15c6a7; }
   .prevention.nav-list li {
-    border-color: #194940; }
+    border-color: #063c32; }
     .prevention.nav-list li.heading {
-      border-color: #3FBCA3; }
+      border-color: #15c6a7; }
     .prevention.nav-list li:not(.heading) a:hover {
-      background: #3FBCA3;
+      background: #15c6a7;
       color: #fff; }
   .prevention > li.heading a, .prevention .color, .prevention blockquote, .prevention .footer-post-nav .section-name {
-    color: #3FBCA3; }
+    color: #15c6a7; }
   .prevention.grid-report, .prevention.grid-page, .prevention .bg-color {
-    background-color: #3FBCA3; }
+    background-color: #15c6a7; }
     .prevention.grid-report a, .prevention.grid-page a, .prevention .bg-color a {
       color: #000; }
     .prevention.grid-report .breadcrumbs .color, .prevention.grid-page .breadcrumbs .color, .prevention .bg-color .breadcrumbs .color {
@@ -3957,44 +3957,44 @@ nav.affix {
     .prevention.grid-report .breadcrumbs strong, .prevention.grid-page .breadcrumbs strong, .prevention .bg-color .breadcrumbs strong {
       color: #000; }
   .prevention .sub-nav {
-    border-top: 2px solid #3FBCA3; }
+    border-top: 2px solid #15c6a7; }
   .prevention .side-nav li a {
-    background-color: #3FBCA3;
-    border-color: #b0e4da; }
+    background-color: #15c6a7;
+    border-color: #82f2dd; }
   .prevention .side-nav li.cta a {
     background: #fff;
-    color: #3FBCA3; }
+    color: #15c6a7; }
     .prevention .side-nav li.cta a:hover {
-      background: #3FBCA3;
+      background: #15c6a7;
       color: #fff; }
   .prevention .section-title, .prevention .footer-post-nav li {
-    border-color: #3FBCA3; }
+    border-color: #15c6a7; }
   .prevention .nav.newsletters.sub-nav .active:after, .prevention .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
-    border-top-color: #3FBCA3; }
+    border-top-color: #15c6a7; }
   .prevention .footer-post-nav a:hover, .prevention .page-header, .prevention.grid-item:hover, .prevention .campaign-grid li a:hover {
-    background-color: #3FBCA3;
+    background-color: #15c6a7;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
   .prevention .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
-    background-color: rgba(63, 188, 163, 0.9); }
+    background-color: rgba(21, 198, 167, 0.9); }
   .prevention.grid-item:hover .breadcrumbs .color, .prevention.grid-item:hover .breadcrumbs strong {
     color: #fff; }
 
 .schools {
-  border-color: #3bc8d1; }
+  border-color: #07a8c6; }
   .schools.nav-list li {
-    border-color: #165a5d; }
+    border-color: #022b32; }
     .schools.nav-list li.heading {
-      border-color: #3bc8d1; }
+      border-color: #07a8c6; }
     .schools.nav-list li:not(.heading) a:hover {
-      background: #3bc8d1;
+      background: #07a8c6;
       color: #fff; }
   .schools > li.heading a, .schools .color, .schools blockquote, .schools .footer-post-nav .section-name {
-    color: #3bc8d1; }
+    color: #07a8c6; }
   .schools.grid-report, .schools.grid-page, .schools .bg-color {
-    background-color: #3bc8d1; }
+    background-color: #07a8c6; }
     .schools.grid-report a, .schools.grid-page a, .schools .bg-color a {
       color: #000; }
     .schools.grid-report .breadcrumbs .color, .schools.grid-page .breadcrumbs .color, .schools .bg-color .breadcrumbs .color {
@@ -4002,28 +4002,28 @@ nav.affix {
     .schools.grid-report .breadcrumbs strong, .schools.grid-page .breadcrumbs strong, .schools .bg-color .breadcrumbs strong {
       color: #000; }
   .schools .sub-nav {
-    border-top: 2px solid #3bc8d1; }
+    border-top: 2px solid #07a8c6; }
   .schools .side-nav li a {
-    background-color: #3bc8d1;
-    border-color: #b7ebee; }
+    background-color: #07a8c6;
+    border-color: #6ce5fa; }
   .schools .side-nav li.cta a {
     background: #fff;
-    color: #3bc8d1; }
+    color: #07a8c6; }
     .schools .side-nav li.cta a:hover {
-      background: #3bc8d1;
+      background: #07a8c6;
       color: #fff; }
   .schools .section-title, .schools .footer-post-nav li {
-    border-color: #3bc8d1; }
+    border-color: #07a8c6; }
   .schools .nav.newsletters.sub-nav .active:after, .schools .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
-    border-top-color: #3bc8d1; }
+    border-top-color: #07a8c6; }
   .schools .footer-post-nav a:hover, .schools .page-header, .schools.grid-item:hover, .schools .campaign-grid li a:hover {
-    background-color: #3bc8d1;
+    background-color: #07a8c6;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
   .schools .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
-    background-color: rgba(59, 200, 209, 0.9); }
+    background-color: rgba(7, 168, 198, 0.9); }
   .schools.grid-item:hover .breadcrumbs .color, .schools.grid-item:hover .breadcrumbs strong {
     color: #fff; }
 
@@ -4073,18 +4073,18 @@ nav.affix {
     color: #fff; }
 
 .grants-and-funding {
-  border-color: #ab3bbd; }
+  border-color: #5d0770; }
   .grants-and-funding.nav-list li {
-    border-color: #411748; }
+    border-color: black; }
     .grants-and-funding.nav-list li.heading {
-      border-color: #ab3bbd; }
+      border-color: #5d0770; }
     .grants-and-funding.nav-list li:not(.heading) a:hover {
-      background: #ab3bbd;
+      background: #5d0770;
       color: #fff; }
   .grants-and-funding > li.heading a, .grants-and-funding .color, .grants-and-funding blockquote, .grants-and-funding .footer-post-nav .section-name {
-    color: #ab3bbd; }
+    color: #5d0770; }
   .grants-and-funding.grid-report, .grants-and-funding.grid-page, .grants-and-funding .bg-color {
-    background-color: #ab3bbd; }
+    background-color: #5d0770; }
     .grants-and-funding.grid-report a, .grants-and-funding.grid-page a, .grants-and-funding .bg-color a {
       color: #000; }
     .grants-and-funding.grid-report .breadcrumbs .color, .grants-and-funding.grid-page .breadcrumbs .color, .grants-and-funding .bg-color .breadcrumbs .color {
@@ -4092,44 +4092,44 @@ nav.affix {
     .grants-and-funding.grid-report .breadcrumbs strong, .grants-and-funding.grid-page .breadcrumbs strong, .grants-and-funding .bg-color .breadcrumbs strong {
       color: #000; }
   .grants-and-funding .sub-nav {
-    border-top: 2px solid #ab3bbd; }
+    border-top: 2px solid #5d0770; }
   .grants-and-funding .side-nav li a {
-    background-color: #ab3bbd;
-    border-color: #dcace5; }
+    background-color: #5d0770;
+    border-color: #ca1ff1; }
   .grants-and-funding .side-nav li.cta a {
     background: #fff;
-    color: #ab3bbd; }
+    color: #5d0770; }
     .grants-and-funding .side-nav li.cta a:hover {
-      background: #ab3bbd;
+      background: #5d0770;
       color: #fff; }
   .grants-and-funding .section-title, .grants-and-funding .footer-post-nav li {
-    border-color: #ab3bbd; }
+    border-color: #5d0770; }
   .grants-and-funding .nav.newsletters.sub-nav .active:after, .grants-and-funding .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
-    border-top-color: #ab3bbd; }
+    border-top-color: #5d0770; }
   .grants-and-funding .footer-post-nav a:hover, .grants-and-funding .page-header, .grants-and-funding.grid-item:hover, .grants-and-funding .campaign-grid li a:hover {
-    background-color: #ab3bbd;
+    background-color: #5d0770;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
   .grants-and-funding .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
-    background-color: rgba(171, 59, 189, 0.9); }
+    background-color: rgba(93, 7, 112, 0.9); }
   .grants-and-funding.grid-item:hover .breadcrumbs .color, .grants-and-funding.grid-item:hover .breadcrumbs strong {
     color: #fff; }
 
 .youth-in-action {
-  border-color: #416386; }
+  border-color: #ff0078; }
   .youth-in-action.nav-list li {
-    border-color: #0f171f; }
+    border-color: #660031; }
     .youth-in-action.nav-list li.heading {
-      border-color: #416386; }
+      border-color: #ff0078; }
     .youth-in-action.nav-list li:not(.heading) a:hover {
-      background: #416386;
+      background: #ff0078;
       color: #fff; }
   .youth-in-action > li.heading a, .youth-in-action .color, .youth-in-action blockquote, .youth-in-action .footer-post-nav .section-name {
-    color: #416386; }
+    color: #ff0078; }
   .youth-in-action.grid-report, .youth-in-action.grid-page, .youth-in-action .bg-color {
-    background-color: #416386; }
+    background-color: #ff0078; }
     .youth-in-action.grid-report a, .youth-in-action.grid-page a, .youth-in-action .bg-color a {
       color: #000; }
     .youth-in-action.grid-report .breadcrumbs .color, .youth-in-action.grid-page .breadcrumbs .color, .youth-in-action .bg-color .breadcrumbs .color {
@@ -4137,44 +4137,44 @@ nav.affix {
     .youth-in-action.grid-report .breadcrumbs strong, .youth-in-action.grid-page .breadcrumbs strong, .youth-in-action .bg-color .breadcrumbs strong {
       color: #000; }
   .youth-in-action .sub-nav {
-    border-top: 2px solid #416386; }
+    border-top: 2px solid #ff0078; }
   .youth-in-action .side-nav li a {
-    background-color: #416386;
-    border-color: #95b0cb; }
+    background-color: #ff0078;
+    border-color: #ff99ca; }
   .youth-in-action .side-nav li.cta a {
     background: #fff;
-    color: #416386; }
+    color: #ff0078; }
     .youth-in-action .side-nav li.cta a:hover {
-      background: #416386;
+      background: #ff0078;
       color: #fff; }
   .youth-in-action .section-title, .youth-in-action .footer-post-nav li {
-    border-color: #416386; }
+    border-color: #ff0078; }
   .youth-in-action .nav.newsletters.sub-nav .active:after, .youth-in-action .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
-    border-top-color: #416386; }
+    border-top-color: #ff0078; }
   .youth-in-action .footer-post-nav a:hover, .youth-in-action .page-header, .youth-in-action.grid-item:hover, .youth-in-action .campaign-grid li a:hover {
-    background-color: #416386;
+    background-color: #ff0078;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
   .youth-in-action .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
-    background-color: rgba(65, 99, 134, 0.9); }
+    background-color: rgba(255, 0, 120, 0.9); }
   .youth-in-action.grid-item:hover .breadcrumbs .color, .youth-in-action.grid-item:hover .breadcrumbs strong {
     color: #fff; }
 
 .neighborhoods {
-  border-color: #D8673D; }
+  border-color: #d9673e; }
   .neighborhoods.nav-list li {
-    border-color: #672b15; }
+    border-color: #692a15; }
     .neighborhoods.nav-list li.heading {
-      border-color: #D8673D; }
+      border-color: #d9673e; }
     .neighborhoods.nav-list li:not(.heading) a:hover {
-      background: #D8673D;
+      background: #d9673e;
       color: #fff; }
   .neighborhoods > li.heading a, .neighborhoods .color, .neighborhoods blockquote, .neighborhoods .footer-post-nav .section-name {
-    color: #D8673D; }
+    color: #d9673e; }
   .neighborhoods.grid-report, .neighborhoods.grid-page, .neighborhoods .bg-color {
-    background-color: #D8673D; }
+    background-color: #d9673e; }
     .neighborhoods.grid-report a, .neighborhoods.grid-page a, .neighborhoods .bg-color a {
       color: #000; }
     .neighborhoods.grid-report .breadcrumbs .color, .neighborhoods.grid-page .breadcrumbs .color, .neighborhoods .bg-color .breadcrumbs .color {
@@ -4182,28 +4182,28 @@ nav.affix {
     .neighborhoods.grid-report .breadcrumbs strong, .neighborhoods.grid-page .breadcrumbs strong, .neighborhoods .bg-color .breadcrumbs strong {
       color: #000; }
   .neighborhoods .sub-nav {
-    border-top: 2px solid #D8673D; }
+    border-top: 2px solid #d9673e; }
   .neighborhoods .side-nav li a {
-    background-color: #D8673D;
-    border-color: #f2cbbc; }
+    background-color: #d9673e;
+    border-color: #f2cbbe; }
   .neighborhoods .side-nav li.cta a {
     background: #fff;
-    color: #D8673D; }
+    color: #d9673e; }
     .neighborhoods .side-nav li.cta a:hover {
-      background: #D8673D;
+      background: #d9673e;
       color: #fff; }
   .neighborhoods .section-title, .neighborhoods .footer-post-nav li {
-    border-color: #D8673D; }
+    border-color: #d9673e; }
   .neighborhoods .nav.newsletters.sub-nav .active:after, .neighborhoods .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
-    border-top-color: #D8673D; }
+    border-top-color: #d9673e; }
   .neighborhoods .footer-post-nav a:hover, .neighborhoods .page-header, .neighborhoods.grid-item:hover, .neighborhoods .campaign-grid li a:hover {
-    background-color: #D8673D;
+    background-color: #d9673e;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
   .neighborhoods .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
-    background-color: rgba(216, 103, 61, 0.9); }
+    background-color: rgba(217, 103, 62, 0.9); }
   .neighborhoods.grid-item:hover .breadcrumbs .color, .neighborhoods.grid-item:hover .breadcrumbs strong {
     color: #fff; }
 
