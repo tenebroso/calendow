@@ -121,13 +121,14 @@ function ajax_filter_get_posts( $taxonomy ) {
   $taxonomy = $_POST['taxonomy'];
   $tax = $_POST['tax'];
   $name = $_POST['name'];
+  $postTypes = array('post', 'video', 'infographic', 'action', 'event', 'grant', 'newsletter', 'report', 'news');
   
   // WP Query
   $args = array(
     $tax => $taxonomy,
-    'post_type' => 'any',
+    'post_type' => $postTypes,
     'posts_per_page' => -1,
-    'orderby' => 'type'
+    'orderby' => 'date'
   );
  
   // If taxonomy is not set, remove key from array and get all posts
