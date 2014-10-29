@@ -3133,6 +3133,8 @@ button, .btn, input[type="submit"] {
   height: 340px;
   margin: 0 0 5px 0;
   float: left;
+  -webkit-transition: background-color 0.3s;
+          transition: background-color 0.3s;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   -webkit-transform: scale(0.4);
