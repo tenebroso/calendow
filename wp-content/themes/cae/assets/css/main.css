@@ -3192,14 +3192,14 @@ button, .btn, input[type="submit"] {
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
             transform: scale(1.1);
-    -webkit-transition: -webkit-transform 2s;
-            transition: transform 2s; }
+    -webkit-transition: -webkit-transform 0.3s;
+            transition: transform 0.3s; }
   .grid-video a {
     background-size: cover;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-    -webkit-transition: -webkit-transform 1s;
-            transition: transform 1s; }
+    -webkit-transition: -webkit-transform 0.3s;
+            transition: transform 0.3s; }
 
 .grid-news, .grid-post, .grid-report, .grid-action {
   height: 480px; }

@@ -45,6 +45,7 @@ $childFilters.click( function(e) {
         if($(this).parents('li').hasClass('selected')) {
             var selected_taxonomy = '';
             var taxonomy_type = '';
+            var taxonomy_name = '';
             $(this).parents('li').removeClass('selected');
         } else {
             var selected_taxonomy = $(this).attr('title');
@@ -53,6 +54,8 @@ $childFilters.click( function(e) {
             $('.filter-main').removeClass('selected');
             $(this).parents('li').removeClass('open').addClass('selected');
         }
+
+        console.log(taxonomy_name);
 
         data = {
             action: 'filter_posts',
@@ -70,7 +73,6 @@ $childFilters.click( function(e) {
             timeout: 5000,
             success: function( data, textStatus, XMLHttpRequest ) {
                 $container.html( data );
-                console.log(data);
                 $container.fadeIn();
                 $('#ajax-load-more .alm-btn-wrap .more').hide();
             },
