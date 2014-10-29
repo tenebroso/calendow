@@ -3520,18 +3520,18 @@ article[class*="entry-single"] {
     @media (min-width: 480px) {
       .place-grid li {
         width: 25%; } }
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       .place-grid li {
         width: 13%;
         width: calc(100% / 7.5); } }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .place-grid:not(.grid-5-up) li:nth-child(7n+7) {
       padding-right: 0; } }
   .place-grid.grid-5-up {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto; }
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       .place-grid.grid-5-up li {
         width: 20%; }
         .place-grid.grid-5-up li:nth-child(5n+5) {
@@ -3550,7 +3550,9 @@ article[class*="entry-single"] {
     font-size: 24px;
     position: relative;
     display: inline;
-    z-index: 2; }
+    z-index: 2;
+    -webkit-transition: all 0.25s;
+            transition: all 0.25s; }
     .place-grid .temperature:after {
       background: #fff;
       border-radius: 50%;

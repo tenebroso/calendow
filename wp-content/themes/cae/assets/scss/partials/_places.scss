@@ -15,14 +15,14 @@
 		@media (min-width:$screen-xs-min) {
 			width:25%;
 		}
-		@media (min-width:$screen-sm-min) {
+		@media (min-width:$screen-md-min) {
 			width:13%;
 			width:calc(100% / 7.5);
 		}
 		padding:0 6px 6px 0;
 		font-size:18px;
 	}
-	@media (min-width:$screen-sm-min) {
+	@media (min-width:$screen-md-min) {
 		&:not(.grid-5-up) {
 			li:nth-child(7n+7) {
 				padding-right:0;
@@ -34,7 +34,7 @@
 		margin-left: auto;
 		margin-right:auto;
 		li {
-			@media (min-width:$screen-sm-min) {
+			@media (min-width:$screen-md-min) {
 				width:20%;
 				&:nth-child(5n+5) {
 					padding-right:0;
@@ -56,6 +56,7 @@
 		position: relative;
 		display: inline;
 		z-index:2;
+		transition:all .25s;
 		&:after {
 			background: $white;
 			border-radius:50%;
