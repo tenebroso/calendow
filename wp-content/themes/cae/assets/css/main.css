@@ -3810,9 +3810,6 @@ nav.affix {
 
 .footer-logo {
   position: relative; }
-  @media (min-width: 768px) {
-    .footer-logo img {
-      margin: 0 0 0 -58px; } }
 
 .footer-copyright {
   text-transform: uppercase;
@@ -3823,7 +3820,7 @@ nav.affix {
     .footer-copyright {
       position: absolute;
       top: 50px;
-      left: 7px; } }
+      left: 55px; } }
 
 .footer-post-nav {
   margin-top: -12em;
