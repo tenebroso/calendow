@@ -9,7 +9,7 @@
 			<li data-id="<?php echo $i; ?>"><a><?php the_sub_field('section_title'); ?></a></li>
 
 		<?php $i++; endwhile; $total = count( get_field('section_builder') ); else : endif; ?>
-		<li><a hef="<?php the_field('full_report_download'); ?>">Get Full Report</a></li>
+		<li><a href="<?php the_field('full_report_download'); ?>">Get Full Report</a></li>
 	</ul>
 </div>
 

@@ -3306,7 +3306,8 @@ article[class*="entry-single"] {
 .report-nav a {
   display: block;
   padding: 10px 20px;
-  border-bottom: 1px solid #f9f9f9; }
+  border-bottom: 1px solid #f9f9f9;
+  cursor: pointer; }
 .report-nav li.active a, .report-nav a:hover {
   background: #f9f9f9 url(../img/svg/pattern.svg) repeat;
   color: #15c7a7; }
