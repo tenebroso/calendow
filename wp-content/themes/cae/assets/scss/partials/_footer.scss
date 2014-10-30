@@ -80,6 +80,9 @@
 	padding-top: 8em;
 	.page-template-page-campaign-detail-php & {
 		margin-top:29em;
+		&.short {
+			margin-top:19em;
+		}
 	}
 }
 

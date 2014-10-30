@@ -31,6 +31,13 @@ CE.Site = {
       });
     }
   },
+  page_template_page_campaign_detail_php: {
+    init: function() {
+      if($('.footer-post-nav li').length < 4) {
+        $('.footer-post-nav,.footer-add-padding').addClass('short');
+      }
+    }
+  },
   page: {
     init: function() {
       CE.stripeParallax();

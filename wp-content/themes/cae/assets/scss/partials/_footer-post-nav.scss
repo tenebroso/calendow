@@ -7,6 +7,9 @@
 	}
 	.page-template-page-campaign-detail-php & {
 		margin-top:-18em;
+		&.short {
+			margin-top:-13em;
+		}
 	}
 	li {
 		vertical-align: top;

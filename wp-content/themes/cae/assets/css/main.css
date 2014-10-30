@@ -3954,6 +3954,8 @@ nav.affix {
   padding-top: 8em; }
   .page-template-page-campaign-detail-php .footer-add-padding {
     margin-top: 29em; }
+    .page-template-page-campaign-detail-php .footer-add-padding.short {
+      margin-top: 19em; }
 
 .footer-light-blue-wrap {
   background: #272A3F;
@@ -4042,6 +4044,8 @@ nav.affix {
     font-size: 32px; }
   .page-template-page-campaign-detail-php .footer-post-nav {
     margin-top: -18em; }
+    .page-template-page-campaign-detail-php .footer-post-nav.short {
+      margin-top: -13em; }
   .footer-post-nav li {
     vertical-align: top;
     border-top: 12px solid #d51f2c;
