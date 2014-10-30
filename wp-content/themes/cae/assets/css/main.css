@@ -4051,6 +4051,7 @@ nav.affix {
     border-top: 12px solid #d51f2c;
     background: #fff;
     width: 100%;
+    outline: 1px solid #f1f1f1;
     margin: 0 9px 9px 0;
     padding: 0; }
     @media (min-width: 768px) {
