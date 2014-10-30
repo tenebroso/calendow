@@ -70,20 +70,24 @@ var CE = CE || {};
 		var $parent = $(this).parent('li');
 		var $cur = window.location.hash;
 		window.location.hash = $theID
+		
 		$reportNav.removeClass('active');
 		$parent.addClass('active');
+		
 		if('#' + $parent.data("id") > $cur) {
-			$('.report-single')
+			$($href)
+				.next()
 				.transit({x:'1000%'}, 800, 'ease').removeClass('current');
 			$($href)
-			.transit({x:0}, 800, 'ease')
-			.addClass('current');
+				.transit({x:0}, 800, 'ease')
+				.addClass('current');
 		} else if ('#' + $parent.data("id") < $cur) {
-			$('.report-single')
+			$($href)
+				.next()
 				.transit({x:'-1000%'}, 800, 'ease').removeClass('current');
 			$($href)
-			.transit({x:0}, 800, 'ease')
-			.addClass('current');
+				.transit({x:0}, 800, 'ease')
+				.addClass('current');
 		}
 
 		e.preventDefault();
