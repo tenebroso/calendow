@@ -4070,7 +4070,8 @@ nav.affix {
   .footer-post-nav ul:not(.bx-slider) li:nth-child(3n+3) {
     margin-right: 0; }
   .footer-post-nav ul:not(.bx-slider) li:nth-of-type(4) {
-    clear: left; }
+    clear: left;
+    outline: none; }
   .footer-post-nav a {
     color: #000;
     padding: 25px 35px;
