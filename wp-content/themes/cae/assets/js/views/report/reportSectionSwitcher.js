@@ -13,7 +13,7 @@ var CE = CE || {};
   	
   	if($targetSection.length) {
   		$id = $targetSection.substr(1);
-  		$('.report-nav li:not(:last-of-type').each(function() {
+  		$('.report-nav li:not(.report)').each(function() {
   			if($(this).data('id') == $id) {
   				$(this).addClass('active');
   			}
@@ -64,7 +64,7 @@ var CE = CE || {};
 		e.preventDefault();
 	});
 
-	$('.report-nav li:not(last-of-type) a').click(function(e){
+	$('.report-nav li:not(.full-report) a').click(function(e){
 		var $href = $(this).attr('href');
 		var $theID  = $($href).data("id");
 		var $parent = $(this).parent('li');
