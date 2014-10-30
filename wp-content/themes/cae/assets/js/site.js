@@ -567,12 +567,12 @@ var CE = CE || {};
 	$('body').on('keydown', function(e){
 		if(e.which == 37) { // left     
 			e.preventDefault();
-			$('.report-single.current .report-prev a')
+			$('.report-single.current .report-nav-top .report-prev a')
 			.trigger('click');
 		}
 		else if(e.which == 39) {
 			e.preventDefault();
-			$('.report-single.current .report-next a')
+			$('.report-single.current .report-nav-top .report-next a')
 			.trigger('click');
 			
 			//$('.report-single').hasClass('current').children('.report-next a').trigger('click');

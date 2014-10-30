@@ -19,12 +19,15 @@
 	<?php $i = 1; if( have_rows('section_builder') ): while ( have_rows('section_builder') ) : the_row(); ?>
 
 	<div class="report-single<?php if($i == 1):?> current<?php endif; ?>" id="report-panel-<?php echo $i; ?>" data-id="<?php echo $i; ?>">
-		<ul class="report-lr-nav">
+		<ul class="report-lr-nav report-nav-top">
 			<li class="report-prev"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i - 1; ?>"></a></li><li class="report-current"><span><?php echo $i; ?></span> of <?php echo $total; ?></li><li class="report-next"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i + 1; ?>"></a></li>
 		</ul>
 		<div class="report-content">
 			<?php the_sub_field('section_content'); ?>
 		</div>
+		<ul class="report-lr-nav">
+			<li class="report-prev"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i - 1; ?>"></a></li><li class="report-current report-share">Share this Card </li><li class="report-next"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i + 1; ?>"></a></li>
+		</ul>
 	</div>
 
 	<?php $i++; endwhile; else : endif; ?>
