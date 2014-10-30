@@ -43,6 +43,19 @@ var CE = CE || {};
 		e.preventDefault();
 	});
 
+	$('.report-nav li:not(last-of-type) a').click(function(e){
+		$reportNav.removeClass('active');
+		$(this).parent('li').addClass('active');
+		var $href = $(this).attr('href');
+		$($href)
+			.transit({x:0}, 800, 'ease')
+			.addClass('current')
+		.prevAll()
+			.transit({x:'-1000%'}, 800, 'ease').removeClass('current');
+
+		e.preventDefault();
+	});
+
 
 	$('body').on('keydown', function(e){
 		if(e.which == 37) { // left     

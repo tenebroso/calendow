@@ -4,9 +4,10 @@
 		<p class="time"><?php the_time('F j, Y'); ?></p>
 	</a>
 	<ul class="report-nav">
-		<?php $i = 1; if( have_rows('section_builder') ): while ( have_rows('section_builder') ) : the_row(); ?>
+		<?php $i = 1; if( have_rows('section_builder') ): while ( have_rows('section_builder') ) : the_row(); 
+			$title = get_sub_field('section_title'); ?>
 
-			<li data-id="<?php echo $i; ?>"><a><?php the_sub_field('section_title'); ?></a></li>
+			<li data-id="<?php echo $i; ?>"><a href="#report-panel-<?php echo $i; ?>"><?php echo $title; ?></a></li>
 
 		<?php $i++; endwhile; $total = count( get_field('section_builder') ); else : endif; ?>
 		<li><a href="<?php the_field('full_report_download'); ?>">Get Full Report</a></li>
