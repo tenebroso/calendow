@@ -16,10 +16,8 @@ CE.Site = {
       $('.js-popover').click(function () {
          $('.js-popover').not(this).popover('hide');
       });
-      if (Modernizr.touch) { 
-         
-      } else {
-        CE.headerParallax();
+      if (!Modernizr.touch) { 
+         CE.headerParallax();
       }
     }
   },
@@ -46,10 +44,8 @@ CE.Site = {
     init: function() {
       CE.sidebarNav();
       CE.socialPopup();
-      if (Modernizr.touch) { 
-         
-      } else {
-        CE.stripeParallax();
+      if (!Modernizr.touch) { 
+         CE.stripeParallax();
       }
       if($('.newsletter-wrapper').length) {
          $('#ajax-load-more .alm-btn-wrap .more').trigger('click');
