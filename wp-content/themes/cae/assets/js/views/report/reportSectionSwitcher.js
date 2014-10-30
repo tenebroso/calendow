@@ -9,8 +9,29 @@ var CE = CE || {};
   	var $reportNavFirst = $('.report-nav li:first-child');
   	var $reportPanelFirst = $('#report-panel-1');
   	var $reportNav = $('.report-nav li');
-
-  	$reportNavFirst.addClass('active');
+  	var $targetSection = window.location.hash;
+  	
+  	if($targetSection.length) {
+  		$id = $targetSection.substr(1);
+  		$('.report-nav li:not(:last-of-type').each(function() {
+  			if($(this).data('id') == $id) {
+  				$(this).addClass('active');
+  			}
+	    });
+	    $('.report-single').each(function() {
+  			if($(this).data('id') == $id) {
+  				$(this)
+  					.addClass('current')
+  					.transit({x:0}, 800, 'ease');
+  				$('.report-single')
+  					.not($(this))
+					.transit({x:'1000%'}, 800, 'ease')
+					.removeClass('current');
+  			}
+	    });
+  	} else {
+  		$reportNavFirst.addClass('active');
+  	}
 
   	$('.report-single:nth-of-type(1) .report-prev a').remove();
   	$('.report-single:last-of-type .report-next a').remove();
@@ -46,14 +67,24 @@ var CE = CE || {};
 	$('.report-nav li:not(last-of-type) a').click(function(e){
 		var $href = $(this).attr('href');
 		var $theID  = $($href).data("id");
-		window.location.hash = $theID;
+		var $parent = $(this).parent('li');
+		var $cur = window.location.hash;
+		window.location.hash = $theID
 		$reportNav.removeClass('active');
-		$(this).parent('li').addClass('active');
-		$($href)
+		$parent.addClass('active');
+		if('#' + $parent.data("id") > $cur) {
+			$('.report-single')
+				.transit({x:'1000%'}, 800, 'ease').removeClass('current');
+			$($href)
 			.transit({x:0}, 800, 'ease')
-			.addClass('current')
-		.prevAll()
-			.transit({x:'-1000%'}, 800, 'ease').removeClass('current');
+			.addClass('current');
+		} else if ('#' + $parent.data("id") < $cur) {
+			$('.report-single')
+				.transit({x:'-1000%'}, 800, 'ease').removeClass('current');
+			$($href)
+			.transit({x:0}, 800, 'ease')
+			.addClass('current');
+		}
 
 		e.preventDefault();
 	});
