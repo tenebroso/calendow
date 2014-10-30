@@ -3447,14 +3447,14 @@ article[class*="entry-single"] {
   width: 100%;
   overflow-x: hidden;
   background: #fff; }
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     .single-report {
       background: url(../img/bg-reports-detail.jpg) no-repeat center center;
       background-size: cover; } }
   .single-report .main {
     background: none;
     padding: 150px 0 60px; }
-    @media (max-width: 991px) {
+    @media (max-width: 1199px) {
       .single-report .main {
         padding-top: 120px; } }
   .single-report .breadcrumbs {
@@ -3471,7 +3471,7 @@ article[class*="entry-single"] {
 .report-container {
   position: relative;
   background: none; }
-  @media (max-width: 991px) {
+  @media (max-width: 1199px) {
     .report-container {
       width: 100%; } }
 
@@ -3480,14 +3480,17 @@ article[class*="entry-single"] {
   position: relative;
   z-index: 20;
   display: block; }
+  @media (max-width: 1199px) {
+    .report-sidebar {
+      width: 100%; } }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .report-nav {
     display: none; }
   .report-content {
     padding: 15px 0; } }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .report-sidebar {
     width: 300px;
     margin: 0 35px 0 0; }

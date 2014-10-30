@@ -2,7 +2,7 @@
 	width: 100%;
 	overflow-x: hidden;
 	background: $white;
-	@media (min-width:$screen-sm-min) {
+	@media (min-width:$screen-lg-min) {
 		background: url(../img/bg-reports-detail.jpg) no-repeat center center;
 		background-size: cover;
 	}
@@ -10,7 +10,7 @@
 	.main {
 		background: none;
 		padding:150px 0 60px;
-		@media (max-width:$screen-sm-max) {
+		@media (max-width:$screen-md-max) {
 			padding-top:120px;
 		}
 	}
@@ -35,7 +35,7 @@
 .report-container {
 	position: relative;
 	background: none;
-	@media (max-width:$screen-sm-max) {
+	@media (max-width:$screen-md-max) {
 		width: 100%;
 	}
 }
@@ -45,9 +45,12 @@
 	position: relative;
 	z-index:20;
 	display: block;
+	@media (max-width:$screen-md-max) {
+		width: 100%;
+	}
 }
 
-@media (max-width:$screen-sm-max) {
+@media (max-width:$screen-md-max) {
 	.report-nav {
 		display: none;
 	}
@@ -56,7 +59,7 @@
 	}
 }
 
-@media (min-width:$screen-sm-min) {
+@media (min-width:$screen-lg-min) {
 	.report-sidebar {
 		width: 300px;
 		margin: 0 35px 0 0;
