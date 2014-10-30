@@ -3423,7 +3423,8 @@ button, .btn, input[type="submit"] {
 .parallax-image {
   height: 600px;
   width: 100%;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center center; }
   @media (max-width: 767px) {
     .parallax-image {
       height: 300px; } }
