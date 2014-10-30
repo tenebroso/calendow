@@ -2728,9 +2728,13 @@ button, .btn, input[type="submit"] {
 
 .nav li a {
   text-transform: uppercase;
-  font-family: "azo-sans-web", sans-serif; }
+  font-family: "azo-sans-web", sans-serif;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s; }
 .nav li {
-  display: inline-block; }
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s; }
 .nav.newsletters {
   text-align: center;
   padding: 5px 0 0;
@@ -4168,6 +4172,9 @@ nav.affix {
     .prevention.nav-list li:not(.heading) a:hover {
       background: #15c6a7;
       color: #fff; }
+      .no-touch .prevention.nav-list li:not(.heading) a:hover {
+        -webkit-transition: all 0.3s;
+                transition: all 0.3s; }
   .prevention > li.heading a, .prevention .color, .prevention blockquote, .prevention .footer-post-nav .section-name {
     color: #15c6a7; }
   .prevention .bg-color {
@@ -4193,7 +4200,11 @@ nav.affix {
     border-color: #15c6a7; }
   .prevention .nav.newsletters.sub-nav .active:after, .prevention .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
     border-top-color: #15c6a7; }
-  .prevention .footer-post-nav a:hover, .prevention .page-header, .prevention.grid-item:hover, .prevention .campaign-grid li a:hover {
+  .prevention .footer-post-nav a:hover, .prevention .page-header, .prevention .campaign-grid li a:hover {
+    background-color: #15c6a7;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .no-touch .prevention.grid-item:hover {
     background-color: #15c6a7;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
@@ -4213,6 +4224,9 @@ nav.affix {
     .schools.nav-list li:not(.heading) a:hover {
       background: #07a8c6;
       color: #fff; }
+      .no-touch .schools.nav-list li:not(.heading) a:hover {
+        -webkit-transition: all 0.3s;
+                transition: all 0.3s; }
   .schools > li.heading a, .schools .color, .schools blockquote, .schools .footer-post-nav .section-name {
     color: #07a8c6; }
   .schools .bg-color {
@@ -4238,7 +4252,11 @@ nav.affix {
     border-color: #07a8c6; }
   .schools .nav.newsletters.sub-nav .active:after, .schools .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
     border-top-color: #07a8c6; }
-  .schools .footer-post-nav a:hover, .schools .page-header, .schools.grid-item:hover, .schools .campaign-grid li a:hover {
+  .schools .footer-post-nav a:hover, .schools .page-header, .schools .campaign-grid li a:hover {
+    background-color: #07a8c6;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .no-touch .schools.grid-item:hover {
     background-color: #07a8c6;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
@@ -4258,6 +4276,9 @@ nav.affix {
     .places.nav-list li:not(.heading) a:hover {
       background: #C10512;
       color: #fff; }
+      .no-touch .places.nav-list li:not(.heading) a:hover {
+        -webkit-transition: all 0.3s;
+                transition: all 0.3s; }
   .places > li.heading a, .places .color, .places blockquote, .places .footer-post-nav .section-name {
     color: #C10512; }
   .places .bg-color {
@@ -4283,7 +4304,11 @@ nav.affix {
     border-color: #C10512; }
   .places .nav.newsletters.sub-nav .active:after, .places .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
     border-top-color: #C10512; }
-  .places .footer-post-nav a:hover, .places .page-header, .places.grid-item:hover, .places .campaign-grid li a:hover {
+  .places .footer-post-nav a:hover, .places .page-header, .places .campaign-grid li a:hover {
+    background-color: #C10512;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .no-touch .places.grid-item:hover {
     background-color: #C10512;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
@@ -4303,6 +4328,9 @@ nav.affix {
     .grants-and-funding.nav-list li:not(.heading) a:hover {
       background: #5d0770;
       color: #fff; }
+      .no-touch .grants-and-funding.nav-list li:not(.heading) a:hover {
+        -webkit-transition: all 0.3s;
+                transition: all 0.3s; }
   .grants-and-funding > li.heading a, .grants-and-funding .color, .grants-and-funding blockquote, .grants-and-funding .footer-post-nav .section-name {
     color: #5d0770; }
   .grants-and-funding .bg-color {
@@ -4328,7 +4356,11 @@ nav.affix {
     border-color: #5d0770; }
   .grants-and-funding .nav.newsletters.sub-nav .active:after, .grants-and-funding .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
     border-top-color: #5d0770; }
-  .grants-and-funding .footer-post-nav a:hover, .grants-and-funding .page-header, .grants-and-funding.grid-item:hover, .grants-and-funding .campaign-grid li a:hover {
+  .grants-and-funding .footer-post-nav a:hover, .grants-and-funding .page-header, .grants-and-funding .campaign-grid li a:hover {
+    background-color: #5d0770;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .no-touch .grants-and-funding.grid-item:hover {
     background-color: #5d0770;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
@@ -4348,6 +4380,9 @@ nav.affix {
     .youth-in-action.nav-list li:not(.heading) a:hover {
       background: #ff0078;
       color: #fff; }
+      .no-touch .youth-in-action.nav-list li:not(.heading) a:hover {
+        -webkit-transition: all 0.3s;
+                transition: all 0.3s; }
   .youth-in-action > li.heading a, .youth-in-action .color, .youth-in-action blockquote, .youth-in-action .footer-post-nav .section-name {
     color: #ff0078; }
   .youth-in-action .bg-color {
@@ -4373,7 +4408,11 @@ nav.affix {
     border-color: #ff0078; }
   .youth-in-action .nav.newsletters.sub-nav .active:after, .youth-in-action .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
     border-top-color: #ff0078; }
-  .youth-in-action .footer-post-nav a:hover, .youth-in-action .page-header, .youth-in-action.grid-item:hover, .youth-in-action .campaign-grid li a:hover {
+  .youth-in-action .footer-post-nav a:hover, .youth-in-action .page-header, .youth-in-action .campaign-grid li a:hover {
+    background-color: #ff0078;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .no-touch .youth-in-action.grid-item:hover {
     background-color: #ff0078;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
@@ -4393,6 +4432,9 @@ nav.affix {
     .neighborhoods.nav-list li:not(.heading) a:hover {
       background: #d9673e;
       color: #fff; }
+      .no-touch .neighborhoods.nav-list li:not(.heading) a:hover {
+        -webkit-transition: all 0.3s;
+                transition: all 0.3s; }
   .neighborhoods > li.heading a, .neighborhoods .color, .neighborhoods blockquote, .neighborhoods .footer-post-nav .section-name {
     color: #d9673e; }
   .neighborhoods .bg-color {
@@ -4418,7 +4460,11 @@ nav.affix {
     border-color: #d9673e; }
   .neighborhoods .nav.newsletters.sub-nav .active:after, .neighborhoods .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
     border-top-color: #d9673e; }
-  .neighborhoods .footer-post-nav a:hover, .neighborhoods .page-header, .neighborhoods.grid-item:hover, .neighborhoods .campaign-grid li a:hover {
+  .neighborhoods .footer-post-nav a:hover, .neighborhoods .page-header, .neighborhoods .campaign-grid li a:hover {
+    background-color: #d9673e;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .no-touch .neighborhoods.grid-item:hover {
     background-color: #d9673e;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }
@@ -4438,6 +4484,9 @@ nav.affix {
     .secondary.nav-list li:not(.heading) a:hover {
       background: #c5b634;
       color: #fff; }
+      .no-touch .secondary.nav-list li:not(.heading) a:hover {
+        -webkit-transition: all 0.3s;
+                transition: all 0.3s; }
   .secondary > li.heading a, .secondary .color, .secondary blockquote, .secondary .footer-post-nav .section-name {
     color: #c5b634; }
   .secondary .bg-color {
@@ -4463,7 +4512,11 @@ nav.affix {
     border-color: #c5b634; }
   .secondary .nav.newsletters.sub-nav .active:after, .secondary .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
     border-top-color: #c5b634; }
-  .secondary .footer-post-nav a:hover, .secondary .page-header, .secondary.grid-item:hover, .secondary .campaign-grid li a:hover {
+  .secondary .footer-post-nav a:hover, .secondary .page-header, .secondary .campaign-grid li a:hover {
+    background-color: #c5b634;
+    -webkit-transition: background-color 0.25s;
+            transition: background-color 0.25s; }
+  .no-touch .secondary.grid-item:hover {
     background-color: #c5b634;
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s; }

@@ -2,9 +2,11 @@
 	li a {
 		text-transform:uppercase;
 		font-family:$headings-font-family;
+		transition:all .3s;
 	}
 	li {
 		display:inline-block;
+		transition:all .3s;
 	}
 	&.newsletters {
 		text-align:center;
