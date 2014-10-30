@@ -4195,7 +4195,8 @@ nav.affix {
     border-color: #82f2dd; }
   .prevention .side-nav li.cta a {
     background: #fff;
-    color: #15c6a7; }
+    color: #15c6a7;
+    border-color: #15c6a7; }
     .prevention .side-nav li.cta a:hover {
       background: #15c6a7;
       color: #fff; }
@@ -4247,7 +4248,8 @@ nav.affix {
     border-color: #6ce5fa; }
   .schools .side-nav li.cta a {
     background: #fff;
-    color: #07a8c6; }
+    color: #07a8c6;
+    border-color: #07a8c6; }
     .schools .side-nav li.cta a:hover {
       background: #07a8c6;
       color: #fff; }
@@ -4299,7 +4301,8 @@ nav.affix {
     border-color: #fb6471; }
   .places .side-nav li.cta a {
     background: #fff;
-    color: #C10512; }
+    color: #C10512;
+    border-color: #C10512; }
     .places .side-nav li.cta a:hover {
       background: #C10512;
       color: #fff; }
@@ -4351,7 +4354,8 @@ nav.affix {
     border-color: #ca1ff1; }
   .grants-and-funding .side-nav li.cta a {
     background: #fff;
-    color: #5d0770; }
+    color: #5d0770;
+    border-color: #5d0770; }
     .grants-and-funding .side-nav li.cta a:hover {
       background: #5d0770;
       color: #fff; }
@@ -4403,7 +4407,8 @@ nav.affix {
     border-color: #ff99ca; }
   .youth-in-action .side-nav li.cta a {
     background: #fff;
-    color: #ff0078; }
+    color: #ff0078;
+    border-color: #ff0078; }
     .youth-in-action .side-nav li.cta a:hover {
       background: #ff0078;
       color: #fff; }
@@ -4455,7 +4460,8 @@ nav.affix {
     border-color: #f2cbbe; }
   .neighborhoods .side-nav li.cta a {
     background: #fff;
-    color: #d9673e; }
+    color: #d9673e;
+    border-color: #d9673e; }
     .neighborhoods .side-nav li.cta a:hover {
       background: #d9673e;
       color: #fff; }
@@ -4507,7 +4513,8 @@ nav.affix {
     border-color: #e8e1aa; }
   .secondary .side-nav li.cta a {
     background: #fff;
-    color: #c5b634; }
+    color: #c5b634;
+    border-color: #c5b634; }
     .secondary .side-nav li.cta a:hover {
       background: #c5b634;
       color: #fff; }
