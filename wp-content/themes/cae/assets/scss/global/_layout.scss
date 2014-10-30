@@ -57,7 +57,8 @@ body {
 		height: 300px;
 		overflow: hidden;
 		@media (max-width:$screen-xs-max) {
-			height:100px;
+			height:auto;
+			padding: 0;
 		}
 		.page-template-page-campaign-detail-php & {
 			height:368px;
