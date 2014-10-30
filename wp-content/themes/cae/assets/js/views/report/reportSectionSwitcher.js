@@ -44,9 +44,11 @@ var CE = CE || {};
 	});
 
 	$('.report-nav li:not(last-of-type) a').click(function(e){
+		var $href = $(this).attr('href');
+		var $theID  = $($href).data("id");
+		window.location.hash = $theID;
 		$reportNav.removeClass('active');
 		$(this).parent('li').addClass('active');
-		var $href = $(this).attr('href');
 		$($href)
 			.transit({x:0}, 800, 'ease')
 			.addClass('current')
