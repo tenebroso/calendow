@@ -6,7 +6,6 @@ CE.Site = {
       CE.searchExpand();
       CE.navTrigger();
       CE.collapse();
-      CE.headerParallax();
       CE.temperature();
       $('.js-popover').popover({ 
         html : true,
@@ -17,6 +16,11 @@ CE.Site = {
       $('.js-popover').click(function () {
          $('.js-popover').not(this).popover('hide');
       });
+      if (Modernizr.touch) { 
+         
+      } else {
+        CE.headerParallax();
+      }
     }
   },
   page_template_page_campaign_overview_php: {
@@ -40,9 +44,13 @@ CE.Site = {
   },
   page: {
     init: function() {
-      CE.stripeParallax();
       CE.sidebarNav();
       CE.socialPopup();
+      if (Modernizr.touch) { 
+         
+      } else {
+        CE.stripeParallax();
+      }
       if($('.newsletter-wrapper').length) {
          $('#ajax-load-more .alm-btn-wrap .more').trigger('click');
       }
