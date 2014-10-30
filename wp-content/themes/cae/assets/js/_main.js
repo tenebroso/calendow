@@ -8,6 +8,15 @@ CE.Site = {
       CE.collapse();
       CE.headerParallax();
       CE.temperature();
+      $('.js-popover').popover({ 
+        html : true,
+        content: function() {
+          return $(this).children('span').html();
+        }
+      });
+      $('.js-popover').click(function () {
+         $('.js-popover').not(this).popover('hide');
+      });
     }
   },
   page_template_page_campaign_overview_php: {

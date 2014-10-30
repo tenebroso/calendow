@@ -1,6 +1,6 @@
 <ul class="nav social-icons ui-group">
-	<li class="icon-twitter"> </li>
-	<li class="icon-facebook"> </li>
-	<li class="icon-youtube"> </li>
-	<li class="icon-instagram"> </li>
+	<li class="icon-twitter js-popover" data-placement="bottom"><span><a href="https://twitter.com/calendow" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @calendow</a></span></li>
+	<li class="icon-facebook js-popover" data-placement="bottom"><span><iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FCalEndow&amp;width=80&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=540281932739279" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe></span> </li>
+	<li class="icon-youtube js-popover" data-placement="bottom"><span><div class="g-ytsubscribe" data-channel="TCEVideo"></div></span> </li>
+	<li class="icon-instagram js-popover" data-placement="bottom"><span><a href="http://instagram.com/CalEndow?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a></span> </li>
 </ul>
