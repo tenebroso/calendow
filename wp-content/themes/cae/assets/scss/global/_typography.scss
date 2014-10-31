@@ -224,3 +224,35 @@ blockquote {
     display: none;
   }
 }
+
+
+
+@media (max-width:$screen-sm-max) {
+  .placemarker-block,
+  .health-block {
+    display: none;
+  }
+}
+
+@media (min-width:$screen-md-min) {
+  .health-block {
+    width: 240px;
+    height: 140px;
+    margin: 90px 0 0 -90px;
+    background-position:center left;
+  }
+
+  .placemarker-block {
+    line-height: 1.2;
+    color:#5f6062;
+    padding:10px 0 0 90px;
+    font-weight:600;
+    font-size:14px;
+    transform:translate3d(0,-50%,0);
+    top: 50%;
+    position: relative;
+    span {
+      text-transform:none;
+    }
+  }
+}

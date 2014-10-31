@@ -2513,6 +2513,29 @@ blockquote {
   .single-newsletter .meta-date {
     display: none; }
 
+@media (max-width: 991px) {
+  .placemarker-block, .health-block {
+    display: none; } }
+
+@media (min-width: 992px) {
+  .health-block {
+    width: 240px;
+    height: 140px;
+    margin: 90px 0 0 -90px;
+    background-position: center left; }
+  .placemarker-block {
+    line-height: 1.2;
+    color: #5f6062;
+    padding: 10px 0 0 90px;
+    font-weight: 600;
+    font-size: 14px;
+    -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+    top: 50%;
+    position: relative; }
+    .placemarker-block span {
+      text-transform: none; } }
+
 a {
   text-decoration: none;
   color: #7f7f7f;
