@@ -2523,6 +2523,10 @@ blockquote {
     height: 140px;
     margin: 90px 0 0 -90px;
     background-position: center left; }
+    .page-template-page-campaign-detail-php .health-block {
+      position: absolute;
+      bottom: 7em;
+      left: -8em; }
   .placemarker-block {
     line-height: 1.2;
     color: #5f6062;

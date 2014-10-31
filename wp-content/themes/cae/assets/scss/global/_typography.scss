@@ -240,6 +240,11 @@ blockquote {
     height: 140px;
     margin: 90px 0 0 -90px;
     background-position:center left;
+    .page-template-page-campaign-detail-php & {
+      position: absolute;
+      bottom:7em;
+      left: -8em;
+    }
   }
 
   .placemarker-block {
