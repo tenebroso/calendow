@@ -6,14 +6,14 @@ Description: A simple solution for lazy loading WordPress posts and pages with A
 Author: Darren Cooney
 Twitter: @KaptonKaos
 Author URI: http://connekthq.com
-Version: 2.2.3
+Version: 2.2.6
 License: GPL
 Copyright: Darren Cooney & Connekt Media
 */
 
 		
-define('ALM_VERSION', '2.2.3');
-define('ALM_RELEASE', 'October 6, 2014');
+define('ALM_VERSION', '2.2.6');
+define('ALM_RELEASE', 'October 29, 2014');
 
 /*
 *  alm_install
@@ -224,6 +224,7 @@ if( !class_exists('AjaxLoadMore') ):
 		$postType = (isset($_GET['postType'])) ? $_GET['postType'] : 'post';
 		$postFormat = (isset($_GET['postFormat'])) ? $_GET['postFormat'] : '';
 		$category = (isset($_GET['category'])) ? $_GET['category'] : '';
+		$tag = (isset($_GET['tag'])) ? $_GET['tag'] : '';
 		$author_id = (isset($_GET['author'])) ? $_GET['author'] : '';
 		
 		$taxonomy = (isset($_GET['taxonomy'])) ? $_GET['taxonomy'] : '';
@@ -234,15 +235,11 @@ if( !class_exists('AjaxLoadMore') ):
 		}
 		
 		$post_format = (isset($_GET['postFormat'])) ? $_GET['postFormat'] : '';
-		$tag = (isset($_GET['tag'])) ? $_GET['tag'] : '';
 		$s = (isset($_GET['search'])) ? $_GET['search'] : '';
 		
 		$meta_key = (isset($_GET['meta_key'])) ? $_GET['meta_key'] : '';
 		$meta_value = (isset($_GET['meta_value'])) ? $_GET['meta_value'] : '';
-		$meta_compare = (isset($_GET['meta_compare'])) ? $_GET['meta_compare'] : '';
-		if($meta_compare == ''){
-			$meta_compare = '=';
-		}
+		$meta_compare = (isset($_GET['meta_compare'])) ? $_GET['meta_compare'] : '=';
 		
 		$order = (isset($_GET['order'])) ? $_GET['order'] : 'DESC';
 		$orderby = (isset($_GET['orderby'])) ? $_GET['orderby'] : 'date';
@@ -256,35 +253,47 @@ if( !class_exists('AjaxLoadMore') ):
 
 		$args = array(
 			'post_type' => $postType,
-			'category_name' => $category,
-			'tag' => $tag,
-			'author' => $author_id,
 			'posts_per_page' => $numPosts,
 			'offset' => $offset + ($numPosts*$page),
-			
-			/*
-'meta_key' => $meta_key,
-      	'meta_value' => $meta_value,
-      	'meta_compare' => $meta_compare,
-*/
-      	
-			's' => $s,
 			'order' => $order,
-			'orderby' => $orderby,			
-			'lang' => $lang,
+			'orderby' => $orderby,	
 			'post_status' => 'publish',
 			'ignore_sticky_posts' => false,
 		);
+      
+      // Category
+		if(!empty($category)){
+			$args['category_name'] = $category;
+		}
+      
+      // Tag
+		if(!empty($tag)){
+			$args['tag'] = $tag;
+		}
+      
+      // Author
+		if(!empty($author_id)){
+			$args['author'] = $author_id;
+		}
+      
+      // Search Term
+		if(!empty($s)){
+			$args['s'] = $s;
+		}
+      
+      // Language
+		if(!empty($lang)){
+			$args['lang'] = $lang;
+		}
 
-
-		// Exclude posts if needed - See plugin examples for more info on excluding posts
-
+		// Exclude posts
+		// - Please see plugin examples for more info on excluding posts
 		if(!empty($exclude)){
 			$exclude=explode(",",$exclude);
 			$args['post__not_in'] = $exclude;
 		}
 
-      // Post Format query
+      // Post Format
 		if(!empty($postFormat)){	
 		   $format = "post-format-$postFormat";
 		   //If query is for standrd we need to filter by NOT IN
@@ -314,7 +323,7 @@ if( !class_exists('AjaxLoadMore') ):
 			}
 	    }
       
-		// Taxonomy query
+		// Taxonomy
 		if(!empty($taxonomy)){	
 			$the_terms = explode(", ", $taxonomy_terms);	
 			$args['tax_query'] = array(
@@ -328,11 +337,8 @@ if( !class_exists('AjaxLoadMore') ):
 			);
 	    }
 	    
-	    // Meta query
+	    // Meta Query
 		if(!empty($meta_key) && !empty($meta_value)){
-	    echo $meta_key . ' - ';
-	    echo $meta_value . ' - ';	
-	    echo $meta_compare;	
 			$args['meta_query'] = array(
 				array(
 			        'key' => $meta_key,
@@ -343,16 +349,16 @@ if( !class_exists('AjaxLoadMore') ):
 	    }
 		
 
-		// Query by $args
+		// WP_Query()
 		$alm_query = new WP_Query( $args );
 		
-		// the WP loop
+		// Run the loop
 		if ($alm_query->have_posts()) :
 			while ($alm_query->have_posts()): $alm_query->the_post();			
 			$file = $repeater;
 			$include = '';
 			$found = false;
-			if (has_action('alm_repeater_installed')){// If Custom Repeaters is installed
+			if (has_action('alm_repeater_installed')){// If Custom Repeaters add-on is installed
 			   $repeaterLength = ALM_REPEATER_LENGTH;
 			   if(!defined('ALM_REPEATER_LENGTH')){
    			   $repeaterLength = 6;
