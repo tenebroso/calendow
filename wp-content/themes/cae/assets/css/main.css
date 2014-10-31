@@ -3195,7 +3195,8 @@ button, .btn, input[type="submit"] {
         text-transform: uppercase;
         color: #777987;
         display: block;
-        background: none; }
+        background: none;
+        padding-right: 65px; }
         .selected .sub-filter .selected a span {
           position: relative;
           top: 50%;
