@@ -4168,7 +4168,8 @@ nav.affix {
     padding: 0; }
     @media (min-width: 768px) {
       .footer-post-nav li {
-        width: 265px; } }
+        width: 265px;
+        max-width: 32%; } }
     .footer-post-nav li h3 {
       font-size: 30px;
       margin-bottom: 18px; }
