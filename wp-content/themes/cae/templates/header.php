@@ -87,10 +87,13 @@
           <div class="col-sm-4">
               <ul class="nav-list">
                 <li class="heading"><a href="#">Contact Us</a></li>
-                <li><a href="#">Safe Streets</a></li>
-                <li><a href="#">Junk Drinks/Food</a></li>
-                <li><a href="#">Place to Walk</a></li>
-                <li><a href="#">Neighborhood Campaigns</a></li>
+                <li><span class="caps">Headquarters</span><br />
+                1000 N. Alameda Street<br />
+                Los Angeles, CA 90012<br />
+                Phone  (800) 449 - 4149</li>
+                <li>Regional Offices<br />
+                Media Inquiries</li>
+                </li>
               </ul>
           </div>
         </div><!-- .row -->

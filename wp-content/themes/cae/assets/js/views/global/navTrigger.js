@@ -8,11 +8,12 @@ var CE = CE || {};
   		$closeTrigger = $('.js-nav-close-trigger'),
   		$menu = $('.nav-full-screen'),
       $page = $('html'),
-  		$body = $('body:after');
+      $intViewportHeight = window.innerHeight;
+  		$body = $('body');
 
     $openTrigger.click(function(){
     	$menu.addClass('opened');
-    	$body.addClass('faded');
+    	$body.addClass('faded').css('min-height',$intViewportHeight);
     	$closeTrigger.addClass('active');
       $("html, body").stop().animate({
           scrollTop: $(window).top + 5 + 'px'
@@ -22,7 +23,7 @@ var CE = CE || {};
     $closeTrigger.click(function(){
     	$(this).removeClass('active');
     	$menu.removeClass('opened');
-    	$body.removeClass('faded');
+    	$body.removeClass('faded').css('min-height','');
       $page.css('min-height','');
     });
 

@@ -13,7 +13,30 @@ html {
 
 body {
 	background: $offWhite;
+	position: relative;
+	&:after {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 1;
+		background: rgba(255,255,255,.7);
+		content: "";
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		display: none;
+		transform:translate3d(0,-100%,0);
+		transition:transform .75s;
+	}
+	&.faded:after {
+		display: block;
+		transform:translate3d(0,0,0);
+		transition: transform .75s;
+	}
 }
+
+
 
 .hentry,
 .sidebar {

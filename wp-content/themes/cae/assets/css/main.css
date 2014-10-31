@@ -2273,7 +2273,30 @@ html {
   width: 100%; }
 
 body {
-  background: #f9f9f9; }
+  background: #f9f9f9;
+  position: relative; }
+  body:after {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.7);
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+            transition: transform 0.75s; }
+  body.faded:after {
+    display: block;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+            transition: transform 0.75s; }
 
 .hentry, .sidebar {
   padding: 35px 0 0; }
