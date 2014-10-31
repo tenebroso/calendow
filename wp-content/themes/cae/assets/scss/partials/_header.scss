@@ -47,7 +47,10 @@
 	padding:100px 0 0;
 	&.has-image {
 		background:none;
-		height:570px;
+		.page-template-page-campaign-detail-php &,
+		.page-template-page-campaign-overview-php & {
+			height: 570px;
+		}
 		position: relative;
 		div {
 			height:720px;

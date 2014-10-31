@@ -2598,8 +2598,9 @@ button, .btn, input[type="submit"] {
   padding: 100px 0 0; }
   .page-header.has-image {
     background: none;
-    height: 570px;
     position: relative; }
+    .page-template-page-campaign-detail-php .page-header.has-image, .page-template-page-campaign-overview-php .page-header.has-image {
+      height: 570px; }
     .page-header.has-image div {
       height: 720px;
       background-repeat: no-repeat;
