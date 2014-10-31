@@ -147,6 +147,9 @@
 				margin:0 -50px 0 0;
 			}
 		}
+		@media (min-width:$screen-md-min) {
+			float: right;
+		}
 		
 		display: block;
 	}
@@ -163,8 +166,17 @@
 
 .footer-post-nav-item a {
 	transition:all .3s;
+	@media (min-width:$screen-md-min) {
+		max-width: 75%;
+	}
 	&:hover {
 		opacity:.7;
+	}
+}
+
+.footer-post-nav-item {
+	h2 {
+		font-size:30px;
 	}
 }
 
