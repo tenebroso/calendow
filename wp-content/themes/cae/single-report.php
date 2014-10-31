@@ -26,7 +26,15 @@
 			<?php the_sub_field('section_content'); ?>
 		</div>
 		<ul class="report-lr-nav">
-			<li class="report-prev"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i - 1; ?>"></a></li><li class="report-current report-share">Share this Card </li><li class="report-next"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i + 1; ?>"></a></li>
+			<li class="report-prev"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i - 1; ?>"></a></li><li class="report-current report-share">
+
+			<span class="inline-block">Share this Card</span> 
+
+			<a class="inline-block popup" href="http://twitter.com/home?status=Currently reading <?php the_permalink();?>">Twitter </a> 
+
+			<a class="inline-block popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank"> Facebook </a>
+
+			</li><li class="report-next"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i + 1; ?>"></a></li>
 		</ul>
 	</div>
 

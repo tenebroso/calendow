@@ -4,11 +4,11 @@ var CE = CE || {};
 
   CE.reportSectionSwitcher = function() {
 
-  	var $prev = $('.report-prev a');
-  	var $next = $('.report-next a');
+  	var $prev = $('.report-prev > a');
+  	var $next = $('.report-next > a');
   	var $reportNavFirst = $('.report-nav li:first-child');
   	var $reportPanelFirst = $('#report-panel-1');
-  	var $reportNav = $('.report-nav li');
+  	var $reportNav = $('.report-nav > li');
   	var $targetSection = window.location.hash;
   	
   	if($targetSection.length) {

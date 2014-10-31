@@ -50,6 +50,12 @@ body {
 	position: relative;
 }
 
+.inline-block,
+.inline-block img {
+	vertical-align: middle;
+	display: inline-block;
+}
+
 .stripe {
 	width: 100%;
 	padding:40px 0;

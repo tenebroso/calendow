@@ -2302,6 +2302,10 @@ body {
           transform: translate3d(0, -50%, 0);
   position: relative; }
 
+.inline-block, .inline-block img {
+  vertical-align: middle;
+  display: inline-block; }
+
 .stripe {
   width: 100%;
   padding: 40px 0; }
@@ -3524,6 +3528,12 @@ article[class*="entry-single"] {
   border-bottom: 2px solid #f9f9f9;
   height: 47px;
   line-height: 47px; }
+  .report-lr-nav:last-of-type {
+    border-top: 2px solid #f9f9f9;
+    border-bottom: none;
+    padding: 5px 0;
+    overflow: hidden;
+    height: 60px; }
   .report-lr-nav li {
     display: inline-block;
     vertical-align: top;
@@ -3550,8 +3560,29 @@ article[class*="entry-single"] {
       text-transform: uppercase;
       color: #2f2f2f;
       font-size: 12px;
-      font-weight: bold; }
-    .report-lr-nav li a {
+      font-weight: bold;
+      width: 40%; }
+      .report-lr-nav li.report-share a {
+        -webkit-transition: all 0.3s;
+                transition: all 0.3s; }
+        .report-lr-nav li.report-share a:hover {
+          opacity: 0.7;
+          -webkit-transition: all 0.3s;
+                  transition: all 0.3s; }
+      .report-lr-nav li.report-share .popup {
+        font-size: 0;
+        line-height: 0;
+        width: 32px;
+        height: 32px; }
+        .report-lr-nav li.report-share .popup[href*='twitter.com'] {
+          background: url(../img/twitter.png) no-repeat; }
+        .report-lr-nav li.report-share .popup[href*='facebook.com'] {
+          background: url(../img/facebook.png) no-repeat; }
+      .report-lr-nav li.report-share + .report-next {
+        width: 26%; }
+      .report-lr-nav li.report-share .inline-block {
+        margin: 0 5px 0 0; }
+    .report-lr-nav li a:not(.inline-block) {
       display: block; }
   .report-lr-nav .icon-sm-arrow {
     width: 13px;

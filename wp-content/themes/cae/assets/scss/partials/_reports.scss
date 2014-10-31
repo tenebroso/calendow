@@ -107,6 +107,13 @@
 	border-bottom:2px solid $offWhite;
 	height:47px;
 	line-height: 47px;
+	&:last-of-type {
+		border-top: 2px solid $offWhite;
+		border-bottom: none;
+		padding: 5px 0;
+		overflow: hidden;
+		height: 60px;
+	}
 	li {
 		display: inline-block;
 		vertical-align: top;
@@ -138,8 +145,34 @@
 			color:$blackLighter;
 			font-size:12px;
 			font-weight:bold;
+			width: 40%;
+			a {
+				transition:all .3s;
+				&:hover {
+					opacity:.7;
+					transition:all .3s;
+				}
+			}
+			.popup {
+				font-size:0;
+				line-height:0;
+				width:32px;
+				height: 32px;
+				&[href*='twitter.com'] {
+					background: url(../img/twitter.png) no-repeat;
+				}
+				&[href*='facebook.com'] {
+					background: url(../img/facebook.png) no-repeat;
+				}
+			}
+			+ .report-next {
+				width: 26%;
+			}
+			.inline-block {
+				margin:0 5px 0 0;
+			}
 		}
-		a {
+		a:not(.inline-block) {
 			display: block;
 		}
 	}
