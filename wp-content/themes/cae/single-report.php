@@ -15,6 +15,7 @@
 </div>
 
 <div class="report-container">
+	<span class="clearfix"></span>
 
 	<?php $i = 1; if( have_rows('section_builder') ): while ( have_rows('section_builder') ) : the_row(); ?>
 
@@ -39,5 +40,6 @@
 	</div>
 
 	<?php $i++; endwhile; else : endif; ?>
+	<span class="clearfix"></span>
 
 </div>

@@ -22,10 +22,10 @@ var CE = CE || {};
   			if($(this).data('id') == $id) {
   				$(this)
   					.addClass('current')
-  					.transit({x:0}, 800, 'ease');
+  					.transit({x:0,opacity:1}, 800, 'ease');
   				$('.report-single')
   					.not($(this))
-					.transit({x:'1000%'}, 800, 'ease')
+					.transit({x:'100%',opacity:0}, 800, 'ease')
 					.removeClass('current');
   			}
 	    });
@@ -40,8 +40,8 @@ var CE = CE || {};
 		var $href = $(this).attr('href');
 		var $parent = $(this).parents('.report-single');
 		var $theID  = $(this).parents('.report-single').data("id");
-		$parent.transit({x:'-1000%'}, 800, 'ease').removeClass('current');
-		$($href).transit({x:0}, 800, 'ease').addClass('current');
+		$parent.transit({x:'-100%',opacity:0}, 800, 'ease').removeClass('current');
+		$($href).transit({x:0,opacity:1}, 800, 'ease').addClass('current');
 		$reportNav.removeClass('active');
 		$reportNav.filter(function() {
 			return $(this).data('id') === $theID + 1;
@@ -54,8 +54,8 @@ var CE = CE || {};
 		var $href = $(this).attr('href');
 		var $parent = $(this).parents('.report-single');
 		var $theID  = $(this).parents('.report-single').data("id");
-		$parent.transit({x:'1000%'}, 800, 'ease').removeClass('current');
-		$($href).transit({x:0}, 800, 'ease').addClass('current');
+		$parent.transit({x:'100%',opacity:0}, 800, 'ease').removeClass('current');
+		$($href).transit({x:0,opacity:1}, 800, 'ease').addClass('current');
 		$reportNav.removeClass('active');
 		$reportNav.filter(function() {
 			return $(this).data('id') === $theID - 1;
@@ -69,26 +69,42 @@ var CE = CE || {};
 		var $theID  = $($href).data("id");
 		var $parent = $(this).parent('li');
 		var $cur = window.location.hash;
-		window.location.hash = $theID
+		window.location.hash = $theID;
 		
 		$reportNav.removeClass('active');
 		$parent.addClass('active');
+
+		$($href)
+			.nextUntil('span')
+				.transit({x:'100%',opacity:0}, 800, 'ease')
+				.removeClass('current');
+		$($href)
+			.prevUntil('span')
+				.transit({x:'-100%',opacity:0}, 800, 'ease')
+				.removeClass('current');
+
+		$($href)
+			.transit({x:0,opacity:1}, 800, 'ease')
+			.addClass('current');
+
 		
-		if('#' + $parent.data("id") > $cur) {
+		/*if('#' + $parent.data("id") > $cur) {
 			$($href)
 				.next()
-				.transit({x:'1000%'}, 800, 'ease').removeClass('current');
+				.transit({x:'100%',opacity:0}, 800, 'ease').removeClass('current');
 			$($href)
-				.transit({x:0}, 800, 'ease')
+				.transit({x:0,opacity:1}, 800, 'ease')
 				.addClass('current');
 		} else if ('#' + $parent.data("id") < $cur) {
 			$($href)
 				.next()
-				.transit({x:'-1000%'}, 800, 'ease').removeClass('current');
+				.transit({x:'-100%',opacity:0}, 800, 'ease').removeClass('current');
 			$($href)
-				.transit({x:0}, 800, 'ease')
+				.transit({x:0,opacity:1}, 800, 'ease')
 				.addClass('current');
-		}
+		}*/
+
+
 
 		e.preventDefault();
 	});
