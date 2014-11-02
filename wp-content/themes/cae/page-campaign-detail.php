@@ -10,7 +10,7 @@
 		<div class="health-block icon-health-placemarker-neighborhoods">
 			<p class="placemarker-block caps">Health <br />Happens <br />Here <br /><span class="color">in Neighborhoods</p>
 		</div>
-	<?php } else { ?>
+	<?php } elseif( has_term( 'places', 'work' ) ) { ?>
 		<div class="health-block icon-health-placemarker-places">
 			<p class="placemarker-block caps">Health <br />Happens <br />Here <br /><span class="color">in Places</p>
 		</div>
