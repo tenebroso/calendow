@@ -7,6 +7,16 @@
 			border-color:transparent;
 		}
 	}
+	.btn {
+		background: #272a40 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAQAAADSmGXeAAAAOElEQVQY02P4zwCGmf/bISwI1+//n///gYJQAfP/X/+DwB+gBFBA5f+r/zDw9b85w3/h/0pIUBwA9Ic3G59hEKgAAAAASUVORK5CAII=) no-repeat calc(100% - 10px) center;
+		padding:5px 25px 5px 10px;
+		font-size:13px;
+		color:$offWhite;
+		display: inline-block;
+		clear: both;
+		float: right;
+		margin:5em 0 0;
+	}
 }
 
 .panel-title { 

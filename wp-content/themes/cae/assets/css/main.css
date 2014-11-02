@@ -2728,6 +2728,15 @@ button, .btn, input[type="submit"] {
           transform: translate3d(0, 0, 0); }
   #accordion .panel:last-child {
     border-color: transparent; }
+#accordion .btn {
+  background: #272a40 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAQAAADSmGXeAAAAOElEQVQY02P4zwCGmf/bISwI1+//n///gYJQAfP/X/+DwB+gBFBA5f+r/zDw9b85w3/h/0pIUBwA9Ic3G59hEKgAAAAASUVORK5CAII=) no-repeat calc(100% - 10px) center;
+  padding: 5px 25px 5px 10px;
+  font-size: 13px;
+  color: #f9f9f9;
+  display: inline-block;
+  clear: both;
+  float: right;
+  margin: 5em 0 0; }
 
 .panel-title {
   font-size: 30px;
@@ -3492,7 +3501,7 @@ button, .btn, input[type="submit"] {
       background-repeat: no-repeat;
       background-position: top center; } }
 
-.hentry img, .report-container img {
+.hentry img, .report-container img, .panel-group img {
   max-width: 100%;
   height: auto; }
 
