@@ -4,7 +4,7 @@
     $current_post = $post;
 
     for($i = 1; $i <= 3; $i++):
-	    $post = get_next_post();
+	    $post = get_previous_post();
 		if($post):
 	    setup_postdata($post); 
 	    $img = get_field('thumbnail_image');
