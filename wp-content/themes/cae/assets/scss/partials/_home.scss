@@ -243,7 +243,7 @@
 		cursor: pointer;
 		span {
 			font-size:27px;
-			@media (max-width:$screen-xs-max) {
+			@media (max-width:$screen-sm-max) {
 				font-size:22px;
 			}
 			font-family:$headings-font-family;
@@ -325,6 +325,9 @@
 					top:50%;
 					transform: translate3d(0,-50%,0);
 					display: block;
+					@media (max-width:$screen-sm-max) {
+						font-size:22px;
+					}
 				}
 				&:after {
 					width:31px;

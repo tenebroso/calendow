@@ -3203,7 +3203,7 @@ button, .btn, input[type="submit"] {
       text-transform: uppercase;
       color: #777987;
       display: block; }
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         .filters > li > a span {
           font-size: 22px; } }
     .filters > li > a:after {
@@ -3271,6 +3271,9 @@ button, .btn, input[type="submit"] {
           -webkit-transform: translate3d(0, -50%, 0);
                   transform: translate3d(0, -50%, 0);
           display: block; }
+          @media (max-width: 991px) {
+            .selected .sub-filter .selected a span {
+              font-size: 22px; } }
         .selected .sub-filter .selected a:after {
           width: 31px;
           height: 31px;
