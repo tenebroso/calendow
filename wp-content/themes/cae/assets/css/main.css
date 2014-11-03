@@ -2687,6 +2687,14 @@ button, .btn, input[type="submit"] {
   .has-image .page-header-fixed {
     height: 602px; }
 
+.section-intro-title {
+  text-align: center;
+  text-transform: capitalize;
+  background-image: url(../img/svg/pattern.svg);
+  background-position: top right;
+  margin: -1em 0 0;
+  color: white; }
+
 .search-form {
   position: relative; }
   @media (max-width: 767px) {
@@ -2862,7 +2870,8 @@ button, .btn, input[type="submit"] {
   background-image: url(../img/svg/pattern.svg);
   max-height: 88px;
   padding: 2px 0;
-  margin: 0 0 2em 0; }
+  margin: 0 0 2em 0;
+  background-position: center left; }
   .nav.newsletters.sub-nav .active:after, .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
     border-top: 20px solid transparent;
     border-left: 42px solid transparent;
