@@ -2908,10 +2908,16 @@ button, .btn, input[type="submit"] {
   height: 15px;
   display: block;
   cursor: pointer;
-  margin: 20px 0 0 1em; }
+  margin: 20px 0 0 1em;
+  -webkit-transition: opacity 0.25s;
+          transition: opacity 0.25s; }
   @media (min-width: 992px) {
     .nav-collapse {
       margin-right: 47px; } }
+  .no-touch .nav-collapse:hover {
+    opacity: 0.7;
+    -webkit-transition: opacity 0.25s;
+            transition: opacity 0.25s; }
   .nav-collapse.active {
     background: url(../img/svg/hamburger-close.svg) no-repeat; }
 

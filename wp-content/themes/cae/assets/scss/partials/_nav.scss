@@ -131,8 +131,15 @@
 	display: block;
 	cursor: pointer;
 	margin:20px 0 0 1em;
+	transition: opacity .25s;
 	@media (min-width:$screen-md-min) {
 		margin-right:47px;
+	}
+	.no-touch & {
+		&:hover {
+			opacity:.7;
+			transition: opacity .25s;
+		}
 	}
 	&.active {
 		background:url(../img/svg/hamburger-close.svg) no-repeat;
