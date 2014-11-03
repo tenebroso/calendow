@@ -60,6 +60,44 @@ nav.affix {
 				}
 			}
 		}
+		&.share {
+			font-size:12px;
+			text-transform: uppercase;
+			padding: 9px 25px 9px 15px;
+			color: $white;
+			font-size:700;
+			a {
+				border: 1px solid $white;
+				border-radius:50%;
+				width:25px;
+				height: 25px;
+				background-repeat: no-repeat;
+				background-position:center center;
+				display: inline-block;
+				margin:0 5px 0 0;
+				font-size: 0;
+				line-height: 0;
+				padding: 0;
+				vertical-align: middle;
+				&:after {
+					display: none;
+				}
+				&:hover {
+					background-color:$black;
+				}
+			}
+			span {
+				padding:0 10px 0 0;
+				position: relative;
+				top: 1px;
+			}
+			a[href*="twitter"] {
+				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAQAAAAOu8/qAAAAkUlEQVQoFQXBrzIDAADA4Z9zHDfBgp0/aecZlpQ9hkBd2QNosqKsaMRFSfIA3AmctqALgqTx+b4kSZKRmXPbNg2yYWlLkrEvsPLgKEO8mkgWAN7sJY/gyZVnAKfKrncAAEyV3AIA+LGjZOgFAHAjJbkDAJ/2pSRrLv0Bvp1IyqFrH4Bf944lKVk3NXfhzIEkSf8tida9HVPHMAAAAABJRU5ErkJggg==);
+			}
+			a[href*="facebook"] {
+				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAPCAQAAACCCB01AAAAYElEQVQY02P4zwCGnP/t/vv8N4Nw7P+//g8CR0Ecxv+PgMx//9/93wbiSoNlMkDqQFw5MNcbwg35XwHmTv6f9j+E4f+l/whwmOH/kf8fwMzPQKPWYOilKpfrfygQSoK4AAR0ltdDC5VLAAAAAElFTkSuQmCC);
+			}
+		}
 		.side-nav-share & {
 			&:nth-of-type(3) a {
 				border: none;

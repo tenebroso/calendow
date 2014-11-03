@@ -11,7 +11,7 @@ var CE = CE || {};
       var $container = $('.container').width();
       var $width = $(window).width();
       var $position = ($width - $container) / 2;
-      var $sideNav = $('.side-nav li');
+      var $sideNav = $('.side-nav li:not(.share)');
       if($sideNav.length && $width > 992) {
         $nav.css('left', $position).transit({opacity:1});
         $nav.stickyNavbar({

@@ -9,6 +9,7 @@
         	<a href="#<?php echo $htmlSectionTitle; ?>" class="bg-color"><?php the_sub_field('section_title'); ?></a>
         </li>
     <?php endif; endwhile; ?>
+    	<li class="share bg-color"><span class="caps">Share</span><a class="popup" href="http://twitter.com/home?status=Currently reading <?php the_permalink();?>">Twitter</a><a class="popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">Facebook</a></li>
 		</ul>
 	</nav>
 <?php else : endif; ?>
