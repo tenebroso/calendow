@@ -6,11 +6,9 @@ var CE = CE || {};
 
   	$('.collapse').collapse();
 
-  	$('.panel-body .btn').click(function(e){
-  		$("html,body").animate({
-	          scrollTop: $(window).top + 25 + 'px',
-	      }, 1000);
-  		e.preventDefault;
+  	$('.panel-body .btn').click(function(){
+  		$('html, body').animate({scrollTop : 0},800);
+		return false;
   	});
 
   };

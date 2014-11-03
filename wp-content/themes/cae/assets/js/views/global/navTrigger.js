@@ -15,9 +15,7 @@ var CE = CE || {};
     	$menu.addClass('opened');
     	$body.addClass('faded').css('min-height',$intViewportHeight);
     	$closeTrigger.addClass('active');
-      $("html, body").stop().animate({
-          scrollTop: $(window).top + 5 + 'px'
-      });
+      $('html, body').animate({scrollTop : 0},200);
     });
 
     $closeTrigger.click(function(){
