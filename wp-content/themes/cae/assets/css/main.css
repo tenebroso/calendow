@@ -2982,6 +2982,9 @@ button, .btn, input[type="submit"] {
     border-bottom: 1px solid transparent; }
   .nav-list li:not(.heading):last-child {
     border-color: transparent !important; }
+  .nav-list li a {
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s; }
 
 .secondary-nav, .utility-nav {
   background: #383838;
