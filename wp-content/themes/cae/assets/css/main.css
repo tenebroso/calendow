@@ -2998,6 +2998,8 @@ button, .btn, input[type="submit"] {
     border-color: transparent;
     font-weight: 600;
     font-size: 18px; }
+  .utility-nav .heading a:hover, .utility-nav a:hover {
+    color: black; }
 
 .nav-full-screen-branding {
   margin-bottom: 20px; }
