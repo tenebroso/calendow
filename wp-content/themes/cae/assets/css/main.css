@@ -3816,7 +3816,9 @@ article[class*="entry-single"] {
       display: block;
       left: -15px;
       top: -10px;
-      z-index: -1; }
+      z-index: -1;
+      -webkit-transition: all 0.25s;
+              transition: all 0.25s; }
   .place-grid li a:not(.placemarker):hover {
     background: #d51f2c url(../img/svg/pattern.svg) repeat;
     color: #fff; }
