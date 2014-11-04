@@ -441,7 +441,7 @@
 }
 
 #ajax-load-more {
-	margin-bottom:100px;
+	margin:5px 0 100px;
 	.alm-btn-wrap {
 		text-align: center;
 		transform:translate3d(0,0,0);
@@ -449,6 +449,18 @@
 		padding:2em 0 0;
 		.more {
 			transform:translate3d(0,0,0);
+			font-weight: 700;
+			text-transform: uppercase;
+			font-family: $font-family-base;
+			font-size: 18px;
+			background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAHCAQAAACbpRToAAAAUElEQVQY02XIsQ1AQABG4Se5KDRCrbSD3nIWsYAtrlCpTaAzwVO4HOL/m5cPm99LnPxus8bC+UW7nSAGl0SHvdyIlVE9HeRBbF0dU2fEkIsL1kteMPZn3G4AAAAASUVORK5CAII=);
+			background-repeat:no-repeat;
+			background-position:165px center;
+			transition:all .3s;
+			&:hover {
+				background-color: $black;
+				transition:all .3s;
+			}
 		}
 		.done {
 			display: none;

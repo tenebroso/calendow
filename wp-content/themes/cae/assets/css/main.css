@@ -2586,7 +2586,8 @@ button, .btn, input[type="submit"] {
   background: #7f7f7f;
   color: #fff;
   padding: 15px 50px;
-  line-height: 20px; }
+  line-height: 20px;
+  border-radius: 3px; }
   button:focus, .btn:focus, input[type="submit"]:focus {
     outline: 2px solid #bdbdbd; }
 
@@ -3417,7 +3418,7 @@ button, .btn, input[type="submit"] {
           transition: height 0.5s; }
 
 #ajax-load-more {
-  margin-bottom: 100px; }
+  margin: 5px 0 100px; }
   #ajax-load-more .alm-btn-wrap {
     text-align: center;
     -webkit-transform: translate3d(0, 0, 0);
@@ -3427,7 +3428,20 @@ button, .btn, input[type="submit"] {
     padding: 2em 0 0; }
     #ajax-load-more .alm-btn-wrap .more {
       -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0); }
+              transform: translate3d(0, 0, 0);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: "source-sans-pro", sans-serif;
+      font-size: 18px;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAHCAQAAACbpRToAAAAUElEQVQY02XIsQ1AQABG4Se5KDRCrbSD3nIWsYAtrlCpTaAzwVO4HOL/m5cPm99LnPxus8bC+UW7nSAGl0SHvdyIlVE9HeRBbF0dU2fEkIsL1kteMPZn3G4AAAAASUVORK5CAII=);
+      background-repeat: no-repeat;
+      background-position: 165px center;
+      -webkit-transition: all 0.3s;
+              transition: all 0.3s; }
+      #ajax-load-more .alm-btn-wrap .more:hover {
+        background-color: #000;
+        -webkit-transition: all 0.3s;
+                transition: all 0.3s; }
     #ajax-load-more .alm-btn-wrap .done {
       display: none; }
 
