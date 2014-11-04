@@ -4067,7 +4067,9 @@ nav.affix {
     .footer {
       text-align: center; }
       .footer .text-right, .footer .text-right .social-icons {
-        text-align: center; } }
+        text-align: center;
+        padding: 0;
+        max-height: 40px; } }
   .home .footer {
     padding-top: 0; }
   .footer input {
