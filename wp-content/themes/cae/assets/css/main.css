@@ -2902,6 +2902,32 @@ button, .btn, input[type="submit"] {
   .pull-right .icon-lg-arrow {
     margin-right: 18px; }
 
+@-webkit-keyframes bumpUp {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+
+  50% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0); }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+
+@keyframes bumpUp {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
+
+  50% {
+    -webkit-transform: translate3d(0, -5px, 0);
+            transform: translate3d(0, -5px, 0); }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+
 .nav-collapse {
   background: url(../img/svg/hamburger.svg) no-repeat;
   width: 25px;
@@ -2919,7 +2945,11 @@ button, .btn, input[type="submit"] {
     -webkit-transition: opacity 0.25s;
             transition: opacity 0.25s; }
   .nav-collapse.active {
-    background: url(../img/svg/hamburger-close.svg) no-repeat; }
+    background: url(../img/svg/hamburger-close.svg) no-repeat;
+    height: 35px; }
+    .no-touch .nav-collapse.active:hover {
+      -webkit-animation: bumpUp 1s infinite;
+              animation: bumpUp 1s infinite; }
 
 .nav-full-screen {
   width: 100%;
@@ -3998,7 +4028,7 @@ nav.affix {
     height: 40px;
     cursor: pointer;
     background-position: center;
-    border: 1px solid #34395f;
+    border: 1px solid #565656;
     border-radius: 50%;
     margin: 0 2px;
     position: relative; }

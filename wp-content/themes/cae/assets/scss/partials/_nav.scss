@@ -124,6 +124,12 @@
 	}
 }
 
+@keyframes bumpUp {
+	0% { transform:translate3d(0,0,0);}
+	50% { transform:translate3d(0,-5px,0);}
+	100% { transform:translate3d(0,0,0);}
+}
+
 .nav-collapse {
 	background:url(../img/svg/hamburger.svg) no-repeat;
 	width:25px;
@@ -143,6 +149,12 @@
 	}
 	&.active {
 		background:url(../img/svg/hamburger-close.svg) no-repeat;
+		height: 35px;
+		.no-touch & {
+			&:hover {
+				animation:bumpUp 1s infinite;
+			}
+		}
 	}
 }
 
