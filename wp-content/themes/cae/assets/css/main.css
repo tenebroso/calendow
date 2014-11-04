@@ -2915,7 +2915,7 @@ button, .btn, input[type="submit"] {
     .nav-collapse {
       margin-right: 47px; } }
   .no-touch .nav-collapse:hover {
-    opacity: 0.7;
+    opacity: 0.5;
     -webkit-transition: opacity 0.25s;
             transition: opacity 0.25s; }
   .nav-collapse.active {
