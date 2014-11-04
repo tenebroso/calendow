@@ -3817,6 +3817,8 @@ article[class*="entry-single"] {
     .place-grid {
       margin: 0;
       padding: 0 0 0 9px; } }
+  .place-grid h2 {
+    font-size: 32px; }
   .place-grid h2 + p {
     margin: 0 0 1em 0;
     line-height: 1.2; }
@@ -3861,6 +3863,12 @@ article[class*="entry-single"] {
     z-index: 2;
     -webkit-transition: all 0.25s;
             transition: all 0.25s; }
+    @media (min-width: 768px) {
+      .place-grid .temperature {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        margin-left: -15px; } }
     .place-grid .temperature:after {
       background: #fff;
       border-radius: 50%;
@@ -3881,6 +3889,9 @@ article[class*="entry-single"] {
       color: #fff; }
     .place-grid li a:not(.placemarker):hover .temperature:after {
       background: #d51f2c; }
+
+.place-grid-spacer {
+  padding-top: 72px; }
 
 .icon-places-placemarker {
   width: 64px;

@@ -16,7 +16,7 @@
 			$abbr = get_field('name_abbreviation', $term);
 		?><li>
 		<a class="center-block" href="/places/<?php echo $term->slug; ?>">
-			<div class="v-centered">
+			<div class="place-grid-spacer">
 				<h2><strong><?php echo $abbr; ?></strong></h2>
 				<p><?php echo $term->name; ?></p>
 				<p class="temperature light-thin-text" id="<?php echo strtolower($abbr); ?>"></p>
