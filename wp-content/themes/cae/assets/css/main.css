@@ -4127,11 +4127,14 @@ nav.affix {
         border-color: #1f2233;
         -webkit-transition: all 0.25s;
                 transition: all 0.25s; }
+      @media (max-width: 767px) {
+        .footer input[type=submit] {
+          margin: 10px 0; } }
     @media (max-width: 767px) {
       .footer input[type=email], .footer input[type=text] {
         display: block;
         width: 100%;
-        margin: 0 0 10px 0; } }
+        margin: 10px 0; } }
   .footer a {
     color: #fff; }
   .footer .ui-group {

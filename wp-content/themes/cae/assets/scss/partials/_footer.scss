@@ -43,13 +43,16 @@
 				border-color:$accentDarker;
 				transition:all .25s;
 			}
+			@media (max-width:$screen-xs-max) {
+				margin: 10px 0;
+			}
 		}
 		&[type=email],
 		&[type=text] {
 			@media (max-width:$screen-xs-max) {
 				display: block;
 				width: 100%;
-				margin: 0 0 10px 0;
+				margin: 10px 0;
 			}
 		}
 	}
