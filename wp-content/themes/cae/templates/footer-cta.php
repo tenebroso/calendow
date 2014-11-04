@@ -38,14 +38,9 @@
 
       <div class="row">
 
-        <div class="col-xs-12">
+        <div class="col-xs-12 text-center">
           
-          <ul class="nav footer-social-icons">
-            <li class="icon-twitter"> </li>
-            <li class="icon-facebook"> </li>
-            <li class="icon-youtube"> </li>
-            <li class="icon-instagram"> </li>
-          </ul>
+          <?php get_template_part('templates/footer/icons'); ?>
 
         </div>
 
