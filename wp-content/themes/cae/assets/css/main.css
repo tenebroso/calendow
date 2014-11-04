@@ -3977,6 +3977,8 @@ nav.affix {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAQAAAAOu8/qAAAAkUlEQVQoFQXBrzIDAADA4Z9zHDfBgp0/aecZlpQ9hkBd2QNosqKsaMRFSfIA3AmctqALgqTx+b4kSZKRmXPbNg2yYWlLkrEvsPLgKEO8mkgWAN7sJY/gyZVnAKfKrncAAEyV3AIA+LGjZOgFAHAjJbkDAJ/2pSRrLv0Bvp1IyqFrH4Bf944lKVk3NXfhzIEkSf8tida9HVPHMAAAAABJRU5ErkJggg==); }
   .side-nav li.share a[href*="facebook"] {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAPCAQAAACCCB01AAAAYElEQVQY02P4zwCGnP/t/vv8N4Nw7P+//g8CR0Ecxv+PgMx//9/93wbiSoNlMkDqQFw5MNcbwg35XwHmTv6f9j+E4f+l/whwmOH/kf8fwMzPQKPWYOilKpfrfygQSoK4AAR0ltdDC5VLAAAAAElFTkSuQmCC); }
+  .parent-pageid-118 .side-nav li.share {
+    display: none; }
 .side-nav-share .side-nav li:nth-of-type(3) a {
   border: none; }
 .side-nav-share .side-nav li a {
@@ -3994,6 +3996,12 @@ nav.affix {
 .side-nav-share .side-nav li a[href*=facebook] {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAVCAQAAADVu7d4AAAAbUlEQVQoU2P4zwCFPP9d/oeCoRFMKPf/1/8wMA0i5Pj/H1wILjgHSQguuAXK3fBf7b/SfxFUwUyIDTgEW/7v/v8aKngdyN79PwGhCgHysQkGM/yv+L/q/zMo9yyQveq/Cg6LhpIgyFcg6AYRBABAxzx+IYyJzwAAAABJRU5ErkJggg==);
   background-position: 122px center; }
+
+.parent-pageid-118 .sidenav-title {
+  display: none; }
+
+.parent-pageid-118 .side-nav li a {
+  border-bottom: 1px solid #e18769; }
 
 .single-post .side-nav-share.side-nav-container .sidenav-title, .single-newsletter .side-nav-share.side-nav-container .sidenav-title {
   color: #828282; }
