@@ -2795,6 +2795,9 @@ button, .btn, input[type="submit"] {
   padding: 3.3em 0 2em;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
+  @media (min-width: 768px) {
+    .panel-body {
+      padding: 3.3em 0 5.3em; } }
   .panel-body .container {
     max-width: 1000px;
     margin: 0 auto; }

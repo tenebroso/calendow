@@ -72,6 +72,9 @@
 	color: darken($white,4%);
 	padding:3.3em 0 2em;
 	transform:translate3d(0,0,0);
+	@media (min-width:$screen-sm-min) {
+		padding:3.3em 0 5.3em;
+	}
 	.container {
 		max-width:1000px;
 		margin: 0 auto;
