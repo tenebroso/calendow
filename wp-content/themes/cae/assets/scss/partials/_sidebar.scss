@@ -42,6 +42,9 @@ nav.affix {
 				}
 			}
 		}
+		&:not(.cta) a {
+			font-weight:200;
+		}
 		&:last-child a {
 			border: none;
 		}

@@ -3946,6 +3946,8 @@ nav.affix {
             transition: all 0.5s; }
     .side-nav li a.active:after, .side-nav li a:hover:after {
       opacity: 1; }
+.side-nav li:not(.cta) a {
+  font-weight: 200; }
 .side-nav li:last-child a {
   border: none; }
 .side-nav li.cta {
