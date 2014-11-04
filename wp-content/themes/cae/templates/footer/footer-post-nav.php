@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="footer-post-nav col-sm-9 col-sm-offset-2">
-				<h2 class="text-center caps black-text"><strong>Read This.</strong></h2>
+				<h2 class="text-center black-text"><strong>Read This.</strong></h2>
 
 					<?php if($template == 'page-campaign-detail.php'): 
 

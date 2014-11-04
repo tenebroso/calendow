@@ -4240,6 +4240,9 @@ nav.affix {
 .footer-post-nav-item h2 {
   font-size: 30px; }
 
+.footer-post-nav h3 strong {
+  text-transform: capitalize; }
+
 .footer-logo {
   position: relative; }
 
