@@ -4103,6 +4103,7 @@ nav.affix {
   .footer a {
     color: #fff; }
   .footer .ui-group {
+    display: inline-block;
     vertical-align: middle;
     line-height: 3.5; }
   .footer.footer-posts {
