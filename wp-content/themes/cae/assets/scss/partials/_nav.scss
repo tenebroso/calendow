@@ -198,7 +198,7 @@
 
 	.nav-collapse {
 		margin:35px 0 0 0;
-		@media (min-width:$screen-sm-min) {
+		@media (min-width:$screen-md-min) {
 			margin-right:50px;
 		}
 		float: right;
@@ -274,7 +274,7 @@
 
 .nav-full-screen-branding {
 	margin-bottom:20px;
-	@media (min-width:$screen-sm-min) {
+	@media (min-width:$screen-lg-min) {
 		margin-bottom:60px;
 		.home & {
 			.text-right {

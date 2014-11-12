@@ -2313,7 +2313,6 @@ body {
   padding: 0 0 75px 0; }
 
 .main {
-  background: #fff;
   z-index: 1;
   position: relative; }
   .home .main, .page-template-page-campaign-detail-php .main {
@@ -2620,8 +2619,7 @@ button, .btn, input[type="submit"] {
   width: 122px; }
 
 .banner {
-  background: #fff;
-  background: rgba(255, 255, 255, 0.902);
+  background: #f7f7f7;
   padding: 20px 0 30px;
   height: 99px;
   z-index: 999; }
@@ -2989,7 +2987,7 @@ button, .btn, input[type="submit"] {
   .nav-full-screen .nav-collapse {
     margin: 35px 0 0 0;
     float: right; }
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       .nav-full-screen .nav-collapse {
         margin-right: 50px; } }
   @media (max-width: 767px) {
@@ -3043,7 +3041,7 @@ button, .btn, input[type="submit"] {
 
 .nav-full-screen-branding {
   margin-bottom: 20px; }
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     .nav-full-screen-branding {
       margin-bottom: 60px; }
       .home .nav-full-screen-branding .text-right {
@@ -3233,6 +3231,7 @@ button, .btn, input[type="submit"] {
     .filters > li.selected > a {
       padding: 0; }
   .filters > li > a {
+    font-size: 15px;
     padding-right: 70px;
     height: 97px;
     position: relative;
@@ -3341,9 +3340,12 @@ button, .btn, input[type="submit"] {
     font-size: 20px;
     margin: 0; }
   .open .sub-filter {
+    -webkit-transition: -webkit-transform 0s;
+            transition: transform 0s;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-    max-height: 999px; }
+    max-height: 999px;
+    border: 1px solid #acacac; }
   .sub-filter .active {
     position: absolute;
     left: 0;
