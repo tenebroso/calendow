@@ -18,7 +18,7 @@
     </div>
     <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse in">
       <div class="panel-body">
-        <div class="container">
+        <div class="container text-content">
           <?php echo $aContent; ?>
         </div>
       </div>

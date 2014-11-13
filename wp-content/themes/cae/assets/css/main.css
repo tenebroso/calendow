@@ -2373,6 +2373,11 @@ h1, h2, h3, h4, h5, h6, .heading-font {
   font-family: "azo-sans-web", sans-serif;
   font-weight: 700;
   margin: 0.5em 0; }
+  .text-content h1, .text-content h2, .text-content h3, .text-content h4, .text-content h5, .text-content h6, .text-content .heading-font {
+    font-family: "source-sans-pro", sans-serif;
+    font-weight: 600; }
+    .text-content h1:nth-child(1), .text-content h2:nth-child(1), .text-content h3:nth-child(1), .text-content h4:nth-child(1), .text-content h5:nth-child(1), .text-content h6:nth-child(1), .text-content .heading-font:nth-child(1) {
+      margin-top: 0; }
   .footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6, .footer .heading-font {
     margin: 0; }
   .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .entry-content .heading-font {
@@ -4052,7 +4057,9 @@ nav.affix {
   border-bottom: 1px solid #e18769; }
 
 .single-post .side-nav-share.side-nav-container .sidenav-title, .single-newsletter .side-nav-share.side-nav-container .sidenav-title {
-  color: #828282; }
+  color: #828282;
+  background: none;
+  border: none; }
 .single-post .side-nav-share.side-nav-container li a, .single-newsletter .side-nav-share.side-nav-container li a {
   background-color: #5f6062;
   border-color: #acadae;

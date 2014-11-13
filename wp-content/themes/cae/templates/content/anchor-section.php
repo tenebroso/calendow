@@ -12,7 +12,7 @@
 					</div>
 				<?php endif; ?>
 			</div>
-			<div class="col-sm-9">
+			<div class="col-sm-9 text-content">
 				<?php the_sub_field('section_content'); ?>
 			</div>
 		</div>

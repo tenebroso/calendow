@@ -11,6 +11,13 @@ h1,h2,h3,h4,h5,h6, .heading-font {
   font-family:$headings-font-family;
   font-weight:700;
   margin:.5em 0;
+  .text-content & {
+    font-family:$font-family-base;
+    font-weight: 600;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
   .footer & {
     margin:0;
   }
