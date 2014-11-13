@@ -1,5 +1,5 @@
 <nav class="side-nav-container side-nav-share affix">
-	<h3 class="color sidenav-title">Share This.</h3>
+	<h3 class="sidenav-title bg-color">Share This.</h3>
 		<ul class="side-nav">
 		<li>
 			<a class="popup" href="http://twitter.com/home?status=Currently reading <?php the_permalink();?>">Twitter</a>

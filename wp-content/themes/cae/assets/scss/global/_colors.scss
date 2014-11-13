@@ -34,9 +34,10 @@ border-color:$variable;
 	.sub-nav {
 		border-top:2px solid $variable;
 	}
-	.side-nav li a {
+	.side-nav li a,
+	.side-nav-share .sidenav-title {
 		background-color:$variable;
-		border-color: lighten($variable, 30%);
+		border-color: lighten($variable, 10%);
 	}
 	.side-nav li.cta a {
 		background: $white;

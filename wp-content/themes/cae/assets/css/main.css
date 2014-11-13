@@ -2422,7 +2422,11 @@ h3 strong, h3 b {
   font-family: "source-sans-pro", sans-serif; }
   .side-nav-share .sidenav-title {
     font-size: 18px;
-    font-weight: 700; }
+    font-weight: 700;
+    padding: 0.5em 0.75em;
+    margin: 0;
+    color: #fff;
+    border-bottom: 1px solid transparent; }
 
 .page-subtext {
   display: block;
@@ -4457,9 +4461,9 @@ nav.affix {
       color: #000; }
   .prevention .sub-nav {
     border-top: 2px solid #15c6a7; }
-  .prevention .side-nav li a {
+  .prevention .side-nav li a, .prevention .side-nav-share .sidenav-title {
     background-color: #15c6a7;
-    border-color: #82f2dd; }
+    border-color: #26e8c4; }
   .prevention .side-nav li.cta a {
     background: #fff;
     color: #15c6a7;
@@ -4510,9 +4514,9 @@ nav.affix {
       color: #000; }
   .schools .sub-nav {
     border-top: 2px solid #07a8c6; }
-  .schools .side-nav li a {
+  .schools .side-nav li a, .schools .side-nav-share .sidenav-title {
     background-color: #07a8c6;
-    border-color: #6ce5fa; }
+    border-color: #0ad3f6; }
   .schools .side-nav li.cta a {
     background: #fff;
     color: #07a8c6;
@@ -4563,9 +4567,9 @@ nav.affix {
       color: #000; }
   .places .sub-nav {
     border-top: 2px solid #C10512; }
-  .places .side-nav li a {
+  .places .side-nav li a, .places .side-nav-share .sidenav-title {
     background-color: #C10512;
-    border-color: #fb6471; }
+    border-color: #f3061a; }
   .places .side-nav li.cta a {
     background: #fff;
     color: #C10512;
@@ -4616,9 +4620,9 @@ nav.affix {
       color: #000; }
   .grants-and-funding .sub-nav {
     border-top: 2px solid #5d0770; }
-  .grants-and-funding .side-nav li a {
+  .grants-and-funding .side-nav li a, .grants-and-funding .side-nav-share .sidenav-title {
     background-color: #5d0770;
-    border-color: #ca1ff1; }
+    border-color: #840aa0; }
   .grants-and-funding .side-nav li.cta a {
     background: #fff;
     color: #5d0770;
@@ -4669,9 +4673,9 @@ nav.affix {
       color: #000; }
   .youth-in-action .sub-nav {
     border-top: 2px solid #ff0078; }
-  .youth-in-action .side-nav li a {
+  .youth-in-action .side-nav li a, .youth-in-action .side-nav-share .sidenav-title {
     background-color: #ff0078;
-    border-color: #ff99ca; }
+    border-color: #ff3396; }
   .youth-in-action .side-nav li.cta a {
     background: #fff;
     color: #ff0078;
@@ -4722,9 +4726,9 @@ nav.affix {
       color: #000; }
   .neighborhoods .sub-nav {
     border-top: 2px solid #d9673e; }
-  .neighborhoods .side-nav li a {
+  .neighborhoods .side-nav li a, .neighborhoods .side-nav-share .sidenav-title {
     background-color: #d9673e;
-    border-color: #f2cbbe; }
+    border-color: #e18769; }
   .neighborhoods .side-nav li.cta a {
     background: #fff;
     color: #d9673e;
@@ -4775,9 +4779,9 @@ nav.affix {
       color: #000; }
   .secondary .sub-nav {
     border-top: 2px solid #c5b634; }
-  .secondary .side-nav li a {
+  .secondary .side-nav li a, .secondary .side-nav-share .sidenav-title {
     background-color: #c5b634;
-    border-color: #e8e1aa; }
+    border-color: #d3c559; }
   .secondary .side-nav li.cta a {
     background: #fff;
     color: #c5b634;
