@@ -506,6 +506,17 @@ CE.desktopFilter = function() {
         $(this).parent('.filter-main').toggleClass('open').removeClass('selected');
     });
 
+    $(document).mouseup(function (e)
+    {
+        var container = $(".main");
+
+        if (!container.is(e.target) // if the target of the click isn't the container...
+            && container.has(e.target).length === 0); // ... nor a descendant of the container
+        {
+            $('.filters li').removeClass('open');
+        }
+    });
+
 var $container = $('.grid-container').imagesLoaded( function() {
       $container.masonry( masOptions );
       $('.grid-item').addClass('loaded');
