@@ -2449,9 +2449,6 @@ h3 strong, h3 b {
   color: #acacac;
   font-weight: 100; }
 
-.white-text {
-  color: #fff; }
-
 .black-text {
   color: #333333; }
 
@@ -2508,6 +2505,12 @@ blockquote {
   font-size: 38px;
   font-weight: 800;
   color: #333333; }
+  .text-content .grid-title {
+    font-family: "azo-sans-web", sans-serif;
+    font-weight: 700; }
+
+.white-text {
+  color: #fff; }
 
 .search-term {
   font-family: "source-sans-pro", sans-serif;

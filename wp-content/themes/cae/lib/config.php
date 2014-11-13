@@ -89,7 +89,7 @@ function custom_query_shortcode($atts) {
       $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
       
       
-      $output .= "<li style='background-image:url($large_image_url[0]);'><a href='$temp_link'><h2 class='grid-title'>$temp_title</h2></a></li>";
+      $output .= "<li style='background-image:url($large_image_url[0]);'><a href='$temp_link'><h2 class='grid-title white-text'>$temp_title</h2></a></li>";
      
           
   endwhile; else:

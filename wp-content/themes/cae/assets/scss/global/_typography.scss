@@ -108,10 +108,6 @@ h3 {
   font-weight:100;
 }
 
-.white-text {
-  color:$white;
-}
-
 .black-text {
   color:$black;
 }
@@ -189,6 +185,14 @@ blockquote {
   font-size:38px;
   font-weight:800;
   color: #333333;
+  .text-content & {
+    font-family:$headings-font-family;
+    font-weight:700;
+  }
+}
+
+.white-text {
+  color:$white;
 }
 
 .search-term {
