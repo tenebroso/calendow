@@ -2646,12 +2646,16 @@ button, .btn, input[type="submit"] {
   background-position: bottom center;
   background-image: url(../img/svg/pattern.svg);
   background-repeat: repeat;
-  height: 415px;
+  height: 515px;
   text-align: center;
   margin: 0;
   padding: 100px 0 0; }
+  @media (max-width: 1199px) {
+    .page-header {
+      height: 315px; } }
   .page-header.has-image {
     background: none;
+    overflow: hidden;
     position: relative; }
     .page-template-page-campaign-detail-php .page-header.has-image, .page-template-page-campaign-overview-php .page-header.has-image {
       height: 570px; }
@@ -2664,6 +2668,9 @@ button, .btn, input[type="submit"] {
       top: -100px;
       left: 0;
       width: 100%; }
+      @media (max-width: 1199px) {
+        .page-header.has-image div {
+          height: 420px; } }
   @media (min-width: 768px) {
     .page-header.text-right {
       text-align: right; } }
