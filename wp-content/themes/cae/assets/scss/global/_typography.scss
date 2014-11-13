@@ -85,14 +85,15 @@ h3 {
   font-size:27px;
   padding:.5em 0 0;
   text-transform:none;
-  font-weight:normal;
+  font-weight:100;
+  font-family: $font-family-base;
   @media (max-width:$screen-xs-max) {
     font-size:21px;
   }
 }
 
 .light-thin-text {
-  color:lighten($black, 50%);
+  color:$grey4;
   font-weight:100;
 }
 
@@ -176,6 +177,7 @@ blockquote {
 .grid-title {
   font-size:38px;
   font-weight:800;
+  color: #333333;
 }
 
 .search-term {
@@ -187,17 +189,23 @@ blockquote {
 
 .date, small {
   font-size:15px;
+  color: $grey4;
 }
 
 .breadcrumbs {
   font-size:18px;
   line-height:1.4;
   text-transform: capitalize;
+  color:#333333;
   .single & {
     font-weight:600;
   }
+  .carrot,
   strong {
-    color:$grey4;
+    color: $grey4;
+  }
+  strong {
+    //color:$grey4;
     font-size: 37px;
     font-weight: 100;
 

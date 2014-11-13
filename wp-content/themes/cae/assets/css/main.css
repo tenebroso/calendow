@@ -2429,13 +2429,14 @@ h3 strong, h3 b {
   font-size: 27px;
   padding: 0.5em 0 0;
   text-transform: none;
-  font-weight: normal; }
+  font-weight: 100;
+  font-family: "source-sans-pro", sans-serif; }
   @media (max-width: 767px) {
     .page-subtext {
       font-size: 21px; } }
 
 .light-thin-text {
-  color: #808080;
+  color: #acacac;
   font-weight: 100; }
 
 .white-text {
@@ -2495,7 +2496,8 @@ blockquote {
 
 .grid-title {
   font-size: 38px;
-  font-weight: 800; }
+  font-weight: 800;
+  color: #333333; }
 
 .search-term {
   font-family: "source-sans-pro", sans-serif;
@@ -2504,16 +2506,19 @@ blockquote {
   color: #7f7f7f; }
 
 .date, small {
-  font-size: 15px; }
+  font-size: 15px;
+  color: #acacac; }
 
 .breadcrumbs {
   font-size: 18px;
   line-height: 1.4;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  color: #333333; }
   .single .breadcrumbs {
     font-weight: 600; }
+  .breadcrumbs .carrot, .breadcrumbs strong {
+    color: #acacac; }
   .breadcrumbs strong {
-    color: #acacac;
     font-size: 37px;
     font-weight: 100;
     display: block; }
@@ -3081,7 +3086,7 @@ button, .btn, input[type="submit"] {
   color: #272A3F;
   padding-top: 99px; }
   .hero-container a {
-    color: #272A3F; }
+    color: #23406a; }
   @media (min-width: 768px) {
     .hero-container {
       height: 600px; } }
@@ -3974,7 +3979,7 @@ nav.affix {
     .side-nav li a.active:after, .side-nav li a:hover:after {
       opacity: 1; }
 .side-nav li:not(.cta) a {
-  font-weight: 200; }
+  font-weight: 400; }
 .side-nav li:last-child a {
   border: none; }
 .side-nav li.cta {
