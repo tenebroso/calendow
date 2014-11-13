@@ -73,8 +73,7 @@ border-color:$variable;
 		transition:background-color .25s;
 		background-color:rgba($variable, .9);
 	}
-	&.grid-item:hover .breadcrumbs .color,
-	&.grid-item:hover .breadcrumbs strong {
+	&.grid-item:hover .hover-white  {
 		color:$white;
 	}
 }

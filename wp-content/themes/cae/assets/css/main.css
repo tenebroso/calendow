@@ -2623,8 +2623,9 @@ button, .btn, input[type="submit"] {
   padding: 20px 0 30px;
   height: 99px;
   z-index: 999; }
-  .banner .search-form, .banner .nav-collapse {
-    display: inline-block; }
+  .banner .search-form, .banner .nav-collapse-wrap {
+    display: inline-block;
+    vertical-align: top; }
   @media (min-width: 1200px) {
     .home .banner .pull-right {
       margin-right: -7em; } }
@@ -2930,24 +2931,28 @@ button, .btn, input[type="submit"] {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); } }
 
+.nav-collapse-wrap {
+  background: #fff; }
+  @media (min-width: 992px) {
+    .nav-collapse-wrap {
+      margin-right: 47px; } }
+
 .nav-collapse {
-  background: url(../img/svg/hamburger.svg) no-repeat;
-  width: 25px;
-  height: 15px;
+  background-image: url(../img/svg/hamburger.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 65px;
+  height: 54px;
   display: block;
   cursor: pointer;
-  margin: 20px 0 0 1em;
   -webkit-transition: opacity 0.25s;
           transition: opacity 0.25s; }
-  @media (min-width: 992px) {
-    .nav-collapse {
-      margin-right: 47px; } }
   .no-touch .nav-collapse:hover {
     opacity: 0.5;
     -webkit-transition: opacity 0.25s;
             transition: opacity 0.25s; }
   .nav-collapse.active {
-    background: url(../img/svg/hamburger-close.svg) no-repeat;
+    background-image: url(../img/svg/hamburger-close.svg);
     height: 35px; }
     .no-touch .nav-collapse.active:hover {
       -webkit-animation: bumpUp 1s infinite;
@@ -4469,7 +4474,7 @@ nav.affix {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
     background-color: rgba(21, 198, 167, 0.9); }
-  .prevention.grid-item:hover .breadcrumbs .color, .prevention.grid-item:hover .breadcrumbs strong {
+  .prevention.grid-item:hover .hover-white {
     color: #fff; }
 
 .schools {
@@ -4522,7 +4527,7 @@ nav.affix {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
     background-color: rgba(7, 168, 198, 0.9); }
-  .schools.grid-item:hover .breadcrumbs .color, .schools.grid-item:hover .breadcrumbs strong {
+  .schools.grid-item:hover .hover-white {
     color: #fff; }
 
 .places {
@@ -4575,7 +4580,7 @@ nav.affix {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
     background-color: rgba(193, 5, 18, 0.9); }
-  .places.grid-item:hover .breadcrumbs .color, .places.grid-item:hover .breadcrumbs strong {
+  .places.grid-item:hover .hover-white {
     color: #fff; }
 
 .grants-and-funding {
@@ -4628,7 +4633,7 @@ nav.affix {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
     background-color: rgba(93, 7, 112, 0.9); }
-  .grants-and-funding.grid-item:hover .breadcrumbs .color, .grants-and-funding.grid-item:hover .breadcrumbs strong {
+  .grants-and-funding.grid-item:hover .hover-white {
     color: #fff; }
 
 .youth-in-action {
@@ -4681,7 +4686,7 @@ nav.affix {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
     background-color: rgba(255, 0, 120, 0.9); }
-  .youth-in-action.grid-item:hover .breadcrumbs .color, .youth-in-action.grid-item:hover .breadcrumbs strong {
+  .youth-in-action.grid-item:hover .hover-white {
     color: #fff; }
 
 .neighborhoods {
@@ -4734,7 +4739,7 @@ nav.affix {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
     background-color: rgba(217, 103, 62, 0.9); }
-  .neighborhoods.grid-item:hover .breadcrumbs .color, .neighborhoods.grid-item:hover .breadcrumbs strong {
+  .neighborhoods.grid-item:hover .hover-white {
     color: #fff; }
 
 .secondary {
@@ -4787,5 +4792,5 @@ nav.affix {
     -webkit-transition: background-color 0.25s;
             transition: background-color 0.25s;
     background-color: rgba(197, 182, 52, 0.9); }
-  .secondary.grid-item:hover .breadcrumbs .color, .secondary.grid-item:hover .breadcrumbs strong {
+  .secondary.grid-item:hover .hover-white {
     color: #fff; }

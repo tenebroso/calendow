@@ -5,7 +5,9 @@
 
     <div class="pull-right">
       <?php get_search_form();?>
-      <a class="js-nav-open-trigger nav-collapse"></a>
+      <div class="nav-collapse-wrap">
+        <a class="js-nav-open-trigger nav-collapse"></a>
+      </div>
     </div>
 
   </div>

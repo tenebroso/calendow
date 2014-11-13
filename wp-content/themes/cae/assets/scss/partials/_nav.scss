@@ -130,17 +130,22 @@
 	100% { transform:translate3d(0,0,0);}
 }
 
-.nav-collapse {
-	background:url(../img/svg/hamburger.svg) no-repeat;
-	width:25px;
-	height:15px;
-	display: block;
-	cursor: pointer;
-	margin:20px 0 0 1em;
-	transition: opacity .25s;
+.nav-collapse-wrap {
+	background: $white;
 	@media (min-width:$screen-md-min) {
 		margin-right:47px;
 	}
+}
+
+.nav-collapse {
+	background-image:url(../img/svg/hamburger.svg);
+	background-repeat:no-repeat;
+	background-position:center center;
+	width:65px;
+	height:54px;
+	display: block;
+	cursor: pointer;
+	transition: opacity .25s;
 	.no-touch & {
 		&:hover {
 			opacity:.5;
@@ -148,7 +153,7 @@
 		}
 	}
 	&.active {
-		background:url(../img/svg/hamburger-close.svg) no-repeat;
+		background-image:url(../img/svg/hamburger-close.svg);
 		height: 35px;
 		.no-touch & {
 			&:hover {
