@@ -80,8 +80,6 @@
 	font-weight:600;
 	position: relative;
 	z-index:20;
-	transform:translate3d(0,0,0) scale(1.0,1.0);
-	backface-visibility: hidden;
 	li {
 		line-height: 1;
 		
@@ -94,7 +92,7 @@
 		display: inline-block;
 		position: relative;
 		overflow: hidden;
-		transform:translate3d(0,0,0) scale(1.0,1.0);
+		transform:translate(0,0);
 		backface-visibility: hidden;
 	}
 	.hero-nav-color-block {
@@ -109,16 +107,12 @@
 		color:$white;
 
 		transition:all .75s ease;
-
-		transform:translate3d(0,0,0) scale(1.0,1.0);
-		backface-visibility: hidden;
 	}
 	li a:hover {
 		.hero-nav-color-block {
 			left:-100%;
 			right:0;
 			transition:all .75s ease;
-			transform: translate3d(0,0,0), rotate(0.02deg);
 		}
 	}
 	li {
@@ -176,7 +170,7 @@
 @media (min-width:$screen-sm-min) {
 	.hero-container-text, .hero-nav {
 		top:50%;
-		transform:translate3d(0,-50%,0);
+		transform:translate(0,-50%);
 		position: relative;
 	}
 }

@@ -47,18 +47,18 @@
 	text-align:center;
 	margin:0;
 	padding:100px 0 0;
-	@media (max-width:$screen-md-max) {
-		height: 315px;
-	}
 	&.has-image {
 		background:none;
 		overflow: hidden;
+		@media (max-width:$screen-md-max) {
+			height: 315px;
+		}
 		.page-template-page-campaign-detail-php &,
 		.page-template-page-campaign-overview-php & {
 			height: 570px;
 		}
 		position: relative;
-		div {
+		.stellar-container {
 			height:720px;
 			background-repeat:no-repeat;
 			background-size:cover;
@@ -68,7 +68,7 @@
 			left:0;
 			width:100%;
 			@media (max-width:$screen-md-max) {
-				height:420px;
+				//height:420px;
 				//background-position: right bottom;
 			}
 		}
@@ -78,15 +78,19 @@
 			text-align: right;
 		}
 		.page-title {
-			max-width: 1170px;
-			@media (min-width:$screen-lg-min) {
-				margin-right: 6.4em;
+			@media (min-width:$screen-md-min) {
+				max-width: 100%;
 			}
 		}
 	}
 	.page-title {
-		max-width: 835px;
+		@media (min-width:$screen-md-min) {
+			max-width: calc(100% - 320px);
+		}
 		margin: 0 auto;
+			br {
+				display: none;
+			}
 	}
 }
 

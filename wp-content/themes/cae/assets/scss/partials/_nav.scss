@@ -169,7 +169,7 @@
 	width:100%;
 	//max-height:0;
 	overflow: hidden;
-	transform:translate3d(0,-100%,0);
+	transform:translate3d(0,-150%,0);
 	transition:transform .35s ease;
 	&.opened {
 		//max-height:1200%;
@@ -204,7 +204,9 @@
 	}
 
 	.nav-collapse {
-		margin:35px 0 0 0;
+		margin:25px 0 0 0;
+		padding-bottom: 55px;
+		margin-bottom: -55px;
 		@media (min-width:$screen-md-min) {
 			margin-right:50px;
 		}

@@ -11,7 +11,7 @@
 <?php if($large_image_url && ($template !== 'page-campaign-detail.php')): 
 	// If a Featured Image was Uploaded ?>
 	<div class="page-header has-image<?php if($right): echo ' text-right'; endif; ?>">
-		<div style="background-image:url(<?php echo $large_image_url[0]; ?>);" data-stellar-background-ratio="0.5"></div>
+		<div class="stellar-container" style="background-image:url(<?php echo $large_image_url[0]; ?>);" data-stellar-background-ratio="0.5"></div>
 
 <?php else: 
 	// Otherwise a CSS background color should be applied, along with the pattern overlay ?>
@@ -19,13 +19,18 @@
 
 <?php endif; 
 	// The normal header text that appears ?>
-		<h1 class="page-title v-centered">
-			<strong><?php echo $title;?></strong>
-			<?php if($subtext): 
-				// Show the subtext if it exists ?>
-				<span class="page-subtext"><?php echo $subtext; ?></span>
-			<?php endif; ?>
-		</h1>
-	</div><?php // End the .page-header div ?>
+	<div class="container v-centered">
+		<?php if($right): echo '<div class="row"><div class="col-sm-9 col-sm-offset-2">'; endif; ?>
+			<h1 class="page-title">
+				<strong><?php echo $title;?></strong>
+				<?php if($subtext): 
+					// Show the subtext if it exists ?>
+					<span class="page-subtext"><?php echo $subtext; ?></span>
+				<?php endif; ?>
+			</h1>
+		<?php if($right): echo '</div></div>'; endif; ?>
+	</div>
+
+</div><?php // End the .page-header div ?>
 
 <?php if(is_singular('newsletter')): get_template_part('templates/newsletter/header-nav'); endif; ?>

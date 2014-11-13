@@ -56,7 +56,7 @@ h3 {
   color:$white;
   text-transform: uppercase;
   margin:0;
-  @media (max-width:$screen-xs-max) {
+  @media (max-width:$screen-sm-max) {
     font-size:28px;
     line-height:1.2;
     padding:0 1em;
