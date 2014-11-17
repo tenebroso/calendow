@@ -2686,7 +2686,10 @@ button, .btn, input[type="submit"] {
       top: -100px;
       left: 0;
       width: 100%; }
-      @media (max-width: 1199px) { }
+      @media (max-width: 1199px) {
+        .page-header.has-image .stellar-container {
+          height: 420px;
+          background-position: right bottom; } }
   @media (min-width: 768px) {
     .page-header.text-right {
       text-align: right; } }
