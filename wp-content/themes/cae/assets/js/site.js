@@ -156,10 +156,6 @@ var CE = CE || {};
       $('html, body').animate({scrollTop : 0},200);
     });
 
-    $('.main').click(function() {
-      console.log('test');
-    });
-
     $closeTrigger.click(function(){
     	$(this).removeClass('active');
     	$menu.removeClass('opened');
@@ -510,6 +506,12 @@ CE.desktopFilter = function() {
         e.preventDefault();
         $parentFilters.not(this).parent('li').removeClass('open');
         $(this).parent('.filter-main').toggleClass('open').removeClass('selected');
+    });
+
+    $('.filters > li').hover(function() {
+        $('.filters > li').not(this).children('.filter-key').css('background-image','none');
+    },function(){
+        $('.filter-key').css('background-image','');
     });
 
     $(document).mouseup(function (e)

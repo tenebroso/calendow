@@ -23,6 +23,12 @@ CE.desktopFilter = function() {
         $(this).parent('.filter-main').toggleClass('open').removeClass('selected');
     });
 
+    $('.filters > li').hover(function() {
+        $('.filters > li').not(this).children('.filter-key').css('background-image','none');
+    },function(){
+        $('.filter-key').css('background-image','');
+    });
+
     $(document).mouseup(function (e)
     {
         var container = $(".main");

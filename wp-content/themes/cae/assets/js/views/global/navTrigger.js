@@ -19,10 +19,6 @@ var CE = CE || {};
       $('html, body').animate({scrollTop : 0},200);
     });
 
-    $('.main').click(function() {
-      console.log('test');
-    });
-
     $closeTrigger.click(function(){
     	$(this).removeClass('active');
     	$menu.removeClass('opened');
