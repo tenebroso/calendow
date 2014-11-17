@@ -60,6 +60,10 @@
 		position: relative;
 		.stellar-container {
 			height:620px;
+			.page-template-page-campaign-detail-php &,
+			.page-template-page-campaign-overview-php & {
+				height: 720px;
+			}
 			background-repeat:no-repeat;
 			background-size:cover;
 			background-position:center bottom;
