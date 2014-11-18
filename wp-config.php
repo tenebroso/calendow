@@ -69,7 +69,10 @@ $table_prefix  = 'wp_';
  * in their development environments.
  */
 define('DISALLOW_FILE_EDIT',true);
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
+
+define( 'AWS_ACCESS_KEY_ID', 'AKIAIE3VANGH3O725CEA' );
+define( 'AWS_SECRET_ACCESS_KEY', '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' );
 
 /* That's all, stop editing! Happy blogging. */
 
