@@ -2683,7 +2683,7 @@ button, .btn, input[type="submit"] {
     .page-template-page-campaign-detail-php .page-header.has-image, .page-template-page-campaign-overview-php .page-header.has-image {
       height: 570px; }
     .page-header.has-image .stellar-container {
-      height: 620px;
+      height: 631px;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center bottom;
@@ -2692,7 +2692,7 @@ button, .btn, input[type="submit"] {
       left: 0;
       width: 100%; }
       .page-template-page-campaign-detail-php .page-header.has-image .stellar-container, .page-template-page-campaign-overview-php .page-header.has-image .stellar-container {
-        height: 720px; }
+        height: 731px; }
       @media (max-width: 1199px) {
         .page-header.has-image .stellar-container {
           height: 420px;

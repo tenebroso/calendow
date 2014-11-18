@@ -19,7 +19,9 @@ var CE = CE || {};
       $('.main, .footer').css('z-index','2').transit({opacity:0.2});
     	$closeTrigger.addClass('active');
       $('html, body').animate({scrollTop : 0},200);
-      $
+      $('.main a,.footer a').click(function(e){
+        e.preventDefault();
+      });
     });
 
     $closeTrigger.click(function(){
@@ -29,6 +31,7 @@ var CE = CE || {};
       $('.main, .footer').css('z-index','').transit({opacity:1});
     	//$body.removeClass('faded').css('min-height','').css('overflow','');
       $page.css('min-height','');
+      $('.main a,.footer a').unbind('click');
     });
 
 
