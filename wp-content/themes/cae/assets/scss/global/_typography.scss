@@ -189,6 +189,10 @@ blockquote {
     font-family:$headings-font-family;
     font-weight:700;
   }
+  &.v-centered {
+    margin:0;
+    transform:translate(0,-50%);
+  }
 }
 
 .white-text {

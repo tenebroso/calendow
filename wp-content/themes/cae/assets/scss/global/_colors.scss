@@ -77,6 +77,9 @@ border-color:$variable;
 	&.grid-item:hover .hover-white  {
 		color:$white;
 	}
+	.bg-color.show-on-hover {
+		background-color:rgba($variable,.7);
+	}
 }
 
 .prevention { @include colors($prevention) }

@@ -11,3 +11,13 @@
 		}
 	}
 }
+
+.grid-item {
+	.show-on-hover {
+		margin: -15px -22px;
+		display: block;
+		height:330px;
+		height: calc(100% + 30px);
+		padding: 15px 22px;
+	}
+}

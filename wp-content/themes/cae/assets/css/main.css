@@ -2508,6 +2508,11 @@ blockquote {
   .text-content .grid-title {
     font-family: "azo-sans-web", sans-serif;
     font-weight: 700; }
+  .grid-title.v-centered {
+    margin: 0;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%); }
 
 .white-text {
   color: #fff; }
@@ -3096,6 +3101,13 @@ button, .btn, input[type="submit"] {
   opacity: 1;
   -webkit-transition: opacity 0.25s;
           transition: opacity 0.25s; }
+
+.grid-item .show-on-hover {
+  margin: -15px -22px;
+  display: block;
+  height: 330px;
+  height: calc(100% + 30px);
+  padding: 15px 22px; }
 
 .home {
   background-image: url(../img/home-billboard-bg.jpg);
@@ -4505,6 +4517,8 @@ nav.affix {
     background-color: rgba(21, 198, 167, 0.9); }
   .prevention.grid-item:hover .hover-white {
     color: #fff; }
+  .prevention .bg-color.show-on-hover {
+    background-color: rgba(21, 198, 167, 0.7); }
 
 .schools {
   border-color: #07a8c6; }
@@ -4558,6 +4572,8 @@ nav.affix {
     background-color: rgba(7, 168, 198, 0.9); }
   .schools.grid-item:hover .hover-white {
     color: #fff; }
+  .schools .bg-color.show-on-hover {
+    background-color: rgba(7, 168, 198, 0.7); }
 
 .places {
   border-color: #C10512; }
@@ -4611,6 +4627,8 @@ nav.affix {
     background-color: rgba(193, 5, 18, 0.9); }
   .places.grid-item:hover .hover-white {
     color: #fff; }
+  .places .bg-color.show-on-hover {
+    background-color: rgba(193, 5, 18, 0.7); }
 
 .grants-and-funding {
   border-color: #5d0770; }
@@ -4664,6 +4682,8 @@ nav.affix {
     background-color: rgba(93, 7, 112, 0.9); }
   .grants-and-funding.grid-item:hover .hover-white {
     color: #fff; }
+  .grants-and-funding .bg-color.show-on-hover {
+    background-color: rgba(93, 7, 112, 0.7); }
 
 .youth-in-action {
   border-color: #ff0078; }
@@ -4717,6 +4737,8 @@ nav.affix {
     background-color: rgba(255, 0, 120, 0.9); }
   .youth-in-action.grid-item:hover .hover-white {
     color: #fff; }
+  .youth-in-action .bg-color.show-on-hover {
+    background-color: rgba(255, 0, 120, 0.7); }
 
 .neighborhoods {
   border-color: #d9673e; }
@@ -4770,6 +4792,8 @@ nav.affix {
     background-color: rgba(217, 103, 62, 0.9); }
   .neighborhoods.grid-item:hover .hover-white {
     color: #fff; }
+  .neighborhoods .bg-color.show-on-hover {
+    background-color: rgba(217, 103, 62, 0.7); }
 
 .secondary {
   border-color: #c5b634; }
@@ -4823,3 +4847,5 @@ nav.affix {
     background-color: rgba(197, 182, 52, 0.9); }
   .secondary.grid-item:hover .hover-white {
     color: #fff; }
+  .secondary .bg-color.show-on-hover {
+    background-color: rgba(197, 182, 52, 0.7); }
