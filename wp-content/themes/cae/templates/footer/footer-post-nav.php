@@ -24,7 +24,7 @@
 						<?php $the_query = new WP_Query( $args ); 
 								if ( $the_query->have_posts() ) : 
 									while ( $the_query->have_posts() ) : 
-										$the_query->the_post(); $img = get_field('thumbnail_image'); if($x != 4): ?><li>
+										$the_query->the_post(); $img = get_field('read_this_thumbnail_image'); if($x != 4): ?><li>
 
 								<?php if($img): ?>
 								<a class="center-block center-block-bg-img" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo $img; ?>);"></a>

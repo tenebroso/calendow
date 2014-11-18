@@ -47,14 +47,6 @@ function root_display_sidebar() {
 }
 
 /* =============================================================================
-   Define pages that do not have a sidebar
-   ========================================================================== */
-
-add_image_size( 'homepage-thumb', 351, 329, true ); // (cropped)
-
-
-
-/* =============================================================================
    Add Campaigns Shortcode
    ========================================================================== */
 
@@ -82,17 +74,23 @@ function custom_query_shortcode($atts) {
    $output .= "<ul class='campaign-grid'>";
    
    // the loop
-   if (have_posts()) : while (have_posts()) : the_post();
+   $i = 1; if (have_posts()) : while (have_posts()) : the_post();
    
       $temp_title = get_the_title($post->ID);
       $temp_link = get_permalink($post->ID);
-      $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
+      if($i == 2):
+        $image_url = get_field('campaigns_grid_image_2');
+          if(!$image_url): $image_url = 'http://placehold.it/267x525'; endif;
+      else:
+        $image_url = get_field('campaigns_grid_image_1');
+          if(!$image_url): $image_url = 'http://placehold.it/267x260'; endif;
+      endif;
       
       
-      $output .= "<li style='background-image:url($large_image_url[0]);'><a href='$temp_link'><h2 class='grid-title white-text'>$temp_title</h2></a></li>";
+      $output .= "<li style='background-image:url($image_url);'><a href='$temp_link'><h2 class='grid-title white-text'>$temp_title</h2></a></li>";
      
           
-  endwhile; else:
+  $i++; endwhile; else:
    
       $output .= "nothing found.";
       

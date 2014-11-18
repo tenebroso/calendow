@@ -18,4 +18,11 @@ window.caeicons=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.cre
 caeicons( [ "/assets/icons.data.svg.css", "/assets/icons.data.png.css", "/assets/icons.fallback.css" ] );
 </script>
 <noscript><link href="/assets/icons.fallback.css" rel="stylesheet"></noscript>
+<?php if(is_front_page()): ?>
+	<style type="text/css">
+		body.home {
+			background-image:url(<?php the_field('hero_image'); ?>);
+		}
+	</style>
+<?php endif; ?>
 </head>
