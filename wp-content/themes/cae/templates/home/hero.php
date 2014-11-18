@@ -3,12 +3,12 @@
 	<ul class="hero-nav">
 
 		<li class="hero-nav-intro">Building Healthy <br />Communities</li>
-		<li class="neighborhoods"><a href="/neighborhoods/">Neighborhoods. <span class="hero-nav-color-block">Neighborhoods.</span></a></li>
-		<li class="prevention"><a href="/prevention/">Prevention. <span class="hero-nav-color-block">Prevention.</span></a></li>
-		<li class="schools"><a href="/school/">School. <span class="hero-nav-color-block">School.</span></a></li>
-		<li class="places"><a href="/places/">Places. <span class="hero-nav-color-block">Places.</span></a></li>
-		<li class="grants"><a href="/grants/">Grants. <span class="hero-nav-color-block">Grants.</span></a></li>
-		<li class="action"><a href="/action/">Action. <span class="hero-nav-color-block">Action.</span></a></li>
+		<li class="neighborhoods"><a href="/neighborhoods/"><span>Neighborhoods.</span> <span class="hero-nav-color-block">Neighborhoods.</span></a></li>
+		<li class="prevention"><a href="/prevention/"><span>Prevention.</span> <span class="hero-nav-color-block">Prevention.</span></a></li>
+		<li class="schools"><a href="/school/"><span>School.</span> <span class="hero-nav-color-block">School.</span></a></li>
+		<li class="places"><a href="/places/"><span>Places.</span> <span class="hero-nav-color-block">Places.</span></a></li>
+		<li class="grants"><a href="/grants/"><span>Grants.</span> <span class="hero-nav-color-block">Grants.</span></a></li>
+		<li class="action"><a href="/action/"><span>Action.</span> <span class="hero-nav-color-block">Action.</span></a></li>
 
 	</ul>
 
