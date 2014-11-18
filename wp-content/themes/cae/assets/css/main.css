@@ -3196,13 +3196,13 @@ button, .btn, input[type="submit"] {
     padding: 0 13px;
     line-height: 47px;
     color: #fff;
-    -webkit-transition: all 0.75s ease;
-            transition: all 0.75s ease; }
+    -webkit-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out; }
   .hero-nav li a:hover .hero-nav-color-block {
     left: -100%;
     right: 0;
-    -webkit-transition: all 0.75s ease;
-            transition: all 0.75s ease; }
+    -webkit-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out; }
   .hero-nav li.neighborhoods a {
     color: #d9673e; }
   .hero-nav li.neighborhoods .hero-nav-color-block {
