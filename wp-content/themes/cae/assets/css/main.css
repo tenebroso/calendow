@@ -3406,7 +3406,8 @@ button, .btn, input[type="submit"] {
   .sub-filter li {
     display: block;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    border-bottom: 1px solid #ddd; }
   .sub-filter li a {
     background: #fff;
     color: #272A3F; }
