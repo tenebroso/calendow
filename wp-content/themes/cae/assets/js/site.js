@@ -139,6 +139,20 @@ var CE = CE || {};
 
 ;(function() {
 
+  CE.legacy = function() {
+
+  	if (!Modernizr.csscalc) {
+  		$('.hero-nav .hero-nav-color-block').css('color','white');
+  	}
+
+  };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
   CE.navTrigger = function() {
 
   	var $openTrigger = $('.js-nav-open-trigger'),
@@ -156,8 +170,8 @@ var CE = CE || {};
       $('.main, .footer').css('z-index','2').transit({opacity:0.2});
     	$closeTrigger.addClass('active');
       $('html, body').animate({scrollTop : 0},200);
-      $('.main.active a,.footer.active a').on('click',function(e){
-        e.preventDefault();
+      $('.main a,.footer a').click(function(e){
+        //e.preventDefault();
       });
     });
 
@@ -168,7 +182,7 @@ var CE = CE || {};
       $('.main, .footer').css('z-index','').transit({opacity:1});
     	//$body.removeClass('faded').css('min-height','').css('overflow','');
       $page.css('min-height','');
-      $('.main.active a,.footer.active a').unbind('click');
+      //$('.main a,.footer a').unbind('click');
     });
 
 
@@ -793,6 +807,7 @@ CE.Site = {
       if (!Modernizr.touch) { 
          CE.headerParallax();
       }
+      CE.legacy();
     }
   },
   page_template_page_campaign_overview_php: {

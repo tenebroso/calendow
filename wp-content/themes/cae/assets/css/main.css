@@ -3190,8 +3190,8 @@ button, .btn, input[type="submit"] {
             backface-visibility: hidden; }
     .hero-nav li a > span:first-child {
       opacity: 1;
-      -webkit-transition: opacity 0.5s;
-              transition: opacity 0.5s; }
+      -webkit-transition: opacity 0.35s ease-in-out;
+              transition: opacity 0.35s ease-in-out; }
   .hero-nav .hero-nav-color-block {
     position: absolute;
     top: 2px;
@@ -3199,18 +3199,18 @@ button, .btn, input[type="submit"] {
     left: calc(100% - 7px);
     padding: 0 13px;
     line-height: 47px;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out; }
+    -webkit-transition: all 0.35s ease-in-out;
+            transition: all 0.35s ease-in-out; }
   .hero-nav li a:hover .hero-nav-color-block {
     left: -100%;
     right: 0;
-    -webkit-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+            transition: all 0.35s ease-in-out;
     color: #fff; }
   .hero-nav li a:hover > span:first-child {
     opacity: 0;
-    -webkit-transition: opacity 0.5s;
-            transition: opacity 0.5s; }
+    -webkit-transition: opacity 0.35s ease-in-out;
+            transition: opacity 0.35s ease-in-out; }
   .hero-nav li.neighborhoods a {
     color: #d9673e; }
   .hero-nav li.neighborhoods .hero-nav-color-block {

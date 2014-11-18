@@ -19,6 +19,7 @@ CE.Site = {
       if (!Modernizr.touch) { 
          CE.headerParallax();
       }
+      CE.legacy();
     }
   },
   page_template_page_campaign_overview_php: {
