@@ -7,6 +7,8 @@
 <?php if(!is_404()): ?>
   <?php $workSlug = wp_get_post_terms($post->ID,'work', array("fields" => "slugs")); ?>
   <?php $template = get_page_template_slug( $post->ID ); ?>
+<?php else: ?>
+  <?php $workSlug = ''; ?>
 <?php endif; ?>
 
   <?php do_action('get_header'); ?>
