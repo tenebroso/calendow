@@ -1,6 +1,6 @@
 <?php 	$template = get_page_template_slug( $post->ID ); 
 		$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-		$custom_image = get_field('full_width_image'); ?>
+		$custom_image = get_sub_field('full_width_image'); ?>
 
 <?php if(($template == 'page-campaign-detail.php') && $large_image_url): ?>
 <div class="stripe bg-image">
