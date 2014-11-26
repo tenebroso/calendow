@@ -2391,7 +2391,8 @@ b, strong {
   font-weight: 600; }
 
 h3 strong, h3 b {
-  font-family: "azo-sans-web", sans-serif; }
+  font-family: "azo-sans-web", sans-serif;
+  font-weight: 800; }
   @media (min-width: 768px) {
     h3 strong, h3 b {
       line-height: 34px;
