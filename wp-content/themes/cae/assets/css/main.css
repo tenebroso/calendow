@@ -2358,7 +2358,7 @@ body {
 body {
   font-family: "source-sans-pro", sans-serif;
   font-size: 20px;
-  line-height: 1.8; }
+  line-height: 1.6; }
 
 h1, h2, h3, h4, h5, h6, .heading-font {
   -webkit-font-feature-settings: "kern";
@@ -2388,7 +2388,7 @@ h1, h2, h3, h4, h5, h6, .heading-font {
   margin: 0; }
 
 b, strong {
-  font-weight: 800; }
+  font-weight: 600; }
 
 h3 strong, h3 b {
   font-family: "azo-sans-web", sans-serif; }
