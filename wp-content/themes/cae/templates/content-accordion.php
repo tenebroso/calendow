@@ -12,12 +12,12 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse<?php echo $i; ?>" class="collapsed">
+        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse<?php echo $i; ?>" class="collapsed" aria-expanded="false" aria-controls="collapse<?php echo $i; ?>">
           <span><?php echo $title; ?><?php if($sub): ?><br /><i><?php echo $sub; ?></i><?php endif; ?></span>
         </a>
       </h4>
     </div>
-    <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse in">
+    <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse">
       <div class="panel-body">
         <div class="container text-content">
         <?php if($aImage): ?>
