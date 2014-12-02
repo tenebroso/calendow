@@ -28,6 +28,17 @@ define('GOOGLE_ANALYTICS_ID', '');
 define('TYPEKIT_ID', 'ibb1lji');
 
 /* =============================================================================
+   Transients
+   ========================================================================== */
+
+function delete_transients() {
+     delete_transient( 'places' );
+}
+
+add_action( 'edit_post', 'delete_transients' );
+
+
+/* =============================================================================
    Define pages that do not have a sidebar
    ========================================================================== */
 

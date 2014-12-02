@@ -8,22 +8,24 @@
 			<div class="icon-places-placemarker"></div>
 		</div>
 	</a>	
-</li><?php
-	$args = array('hide_empty' => false);
-	$terms = get_terms('place', $args);
-	 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-	     foreach ( $terms as $term ) { 
-			$abbr = get_field('name_abbreviation', $term);
-		?><li>
-		<a class="center-block" href="/places/<?php echo $term->slug; ?>">
+</li><?php if ( false === ( $places = get_transient( 'places' ) ) ) {
+		$args = array(
+			'post_type' => 'page',
+			'posts_per_page' => -1,
+			'orderby' => 'title',
+			'order' => 'ASC',
+			'post_parent' => 109
+		);
+		$places = new WP_Query($args);
+		set_transient( 'team_members', $places, 12 * HOUR_IN_SECONDS );
+	} if ( $places->have_posts() ) : while ( $places->have_posts() ) : $places->the_post(); $abbr = get_field('name_abbreviation', $term); ?><li>
+		<a class="center-block" href="<?php the_permalink(); ?>">
 			<div class="place-grid-spacer">
 				<h2><strong><?php echo $abbr; ?></strong></h2>
-				<p><?php echo $term->name; ?></p>
+				<p><?php the_title(); ?></p>
 				<p class="temperature light-thin-text" id="<?php echo strtolower($abbr); ?>"></p>
 			</div>
 		</a>
-	</li><?php }
-}  
-?>
+	</li><?php endwhile; endif; wp_reset_postdata(); ?>
 
 </ul>
