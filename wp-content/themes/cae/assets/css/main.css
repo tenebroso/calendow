@@ -2318,6 +2318,8 @@ body {
   position: relative; }
   .home .main, .page-template-page-campaign-detail-php .main {
     background: none; }
+  .page-id-368 .main {
+    background: #2f2f2f; }
 
 .v-centered {
   top: 50%;

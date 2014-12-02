@@ -16,7 +16,7 @@
       <p class="footer-copyright">&copy; Copyright <?php echo date('Y'); ?> <?php bloginfo('title'); ?></p>
     </div>
     <div class="col-md-8 footer-nav text-right">
-		  <p class="ui-group"><a href="/contact">Contact</a> <a href="/site-map">Site Map</a> /</p>
+		  <p class="ui-group"><a href="/contact/">Contact</a> <a href="/sitemap/">Site Map</a> /</p>
       <?php get_template_part('templates/footer/icons'); ?>
     </div>
   </div>
