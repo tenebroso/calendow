@@ -49,15 +49,15 @@ var CE = CE || {};
     unit: 'f',
     success: function(weather) {
       html = weather.temp+'&deg;';
-      $("#dn").html(html);
+      $("#dnatl").html(html);
     },
     error: function(error) {
-      $("#dn").html('78&deg;');
+      $("#dnatl").html('78&deg;');
     }
   });
 
   $.simpleWeather({
-    location: 'East Oakland, CA',
+    location: 'Oakland, CA',
     woeid: '',
     unit: 'f',
     success: function(weather) {
