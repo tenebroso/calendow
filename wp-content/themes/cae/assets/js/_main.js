@@ -50,6 +50,7 @@ CE.Site = {
       }
       if($('.newsletter-wrapper').length) {
          $('#ajax-load-more .alm-btn-wrap .more').trigger('click');
+         CE.desktopFilter();
       }
     }
   },

@@ -1,8 +1,8 @@
-<div class="newsletter-wrapper">
 
-	<ul class="filters" id="filters">
+
+	<ul class="filters newsletter-filters" id="filters">
 		<li class="selector-group">
-			<a data-filter-group="color">Filter by <span>Neighborhood</span></a>
+			<a data-filter-group="color" class="filter-key">Filter by <span>Neighborhood</span></a>
 			<ul class="sub-filter">
 				<li><a class="selector" data-filter="">Any</a></li>
 				<li><a class="selector" data-filter=".red">Red</a></li>
@@ -10,9 +10,9 @@
 			</ul>
 
 		</li>
-		<li><a data-filter-group="campaigns">Filter by <span>Prevention</span></a></li>
-		<li><a data-filter-group="campaigns">Filter by <span>Schools</span></a></li>
-		<li><a data-filter-group="places">Filter by <span>Communities</span></a>
+		<li><a data-filter-group="campaigns" class="filter-key">Filter by <span>Prevention</span></a></li>
+		<li><a data-filter-group="campaigns" class="filter-key">Filter by <span>Schools</span></a></li>
+		<li><a data-filter-group="places" class="filter-key">Filter by <span>Communities</span></a>
 			<ul class="sub-filter">
 				<?php
 					$args = array(
@@ -25,6 +25,9 @@
 		</li>
 	</ul>
 
-	<?php get_template_part('templates/newsletter/newsletters', 'archive'); ?>
+	
 
+
+<div class="newsletter-wrapper">
+<?php get_template_part('templates/newsletter/newsletters', 'archive'); ?>
 </div>
