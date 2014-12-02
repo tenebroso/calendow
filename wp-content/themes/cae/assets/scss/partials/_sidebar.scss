@@ -146,16 +146,14 @@ nav.affix {
 .single-post, .single-newsletter {
   .side-nav-share.side-nav-container {
     .sidenav-title {
-      color:#828282;
-      background: none;
-      border: none;
+      color:$white;
+      background: #5f6062;
+      border-color:#acadae;
     }
     li {
     	a {
 			background-color:#5f6062;
 			border-color:lighten(#5f6062,30%);
-			font-weight:100;
-			font-size:16px;
 			&:hover {
 				background-color:$black;
 			}
@@ -174,6 +172,17 @@ nav.affix {
     	}
     }
   }
+}
+
+body[class*="single-"] {
+	.side-nav-share.side-nav-container {
+		li {
+			&:not(.cta) a {
+				font-weight:100;
+				font-size:16px;
+			}
+		}
+	}
 }
 
 @media (min-width:$screen-md-min) {

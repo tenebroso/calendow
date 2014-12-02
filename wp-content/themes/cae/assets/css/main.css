@@ -4086,14 +4086,12 @@ nav.affix {
   border-bottom: 1px solid #e18769; }
 
 .single-post .side-nav-share.side-nav-container .sidenav-title, .single-newsletter .side-nav-share.side-nav-container .sidenav-title {
-  color: #828282;
-  background: none;
-  border: none; }
+  color: #fff;
+  background: #5f6062;
+  border-color: #acadae; }
 .single-post .side-nav-share.side-nav-container li a, .single-newsletter .side-nav-share.side-nav-container li a {
   background-color: #5f6062;
-  border-color: #acadae;
-  font-weight: 100;
-  font-size: 16px; }
+  border-color: #acadae; }
   .single-post .side-nav-share.side-nav-container li a:hover, .single-newsletter .side-nav-share.side-nav-container li a:hover {
     background-color: #333333; }
 .single-post .side-nav-share.side-nav-container li.cta a, .single-newsletter .side-nav-share.side-nav-container li.cta a {
@@ -4104,6 +4102,10 @@ nav.affix {
   .single-post .side-nav-share.side-nav-container li.cta a:hover, .single-newsletter .side-nav-share.side-nav-container li.cta a:hover {
     color: #fff;
     background: #333333; }
+
+body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
+  font-weight: 100;
+  font-size: 16px; }
 
 @media (min-width: 992px) {
   .side-nav, .section-title {
