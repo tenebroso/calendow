@@ -29,6 +29,10 @@
 				margin-right:0;
 			}
 		}
+		&.grid-item {
+			opacity:1;
+			transform:scale(1);
+		}
 	}
 	.bg-color {
 		border-top:11px solid rgba(255,255,255,.5);

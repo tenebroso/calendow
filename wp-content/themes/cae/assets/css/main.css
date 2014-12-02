@@ -3811,6 +3811,11 @@ article[class*="entry-single"] {
     height: 360px; }
     .newsletter-archives li:nth-child(3n+3) {
       margin-right: 0; } }
+.newsletter-archives li.grid-item {
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1); }
 .newsletter-archives .bg-color {
   border-top: 11px solid rgba(255, 255, 255, 0.5); }
   .newsletter-archives .bg-color:hover {
