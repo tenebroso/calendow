@@ -127,6 +127,12 @@ function ajax_filter_get_posts( $taxonomy ) {
   if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
     die('Sorry! There was a server error. Please try again.');
  
+
+  // Change these to three taxonomies? 
+  // Run the query 3 times with 3 different variables
+  // Change to For loop
+  // POST['taxonomy_o','taxonomy_1']
+
   $taxonomy = $_POST['taxonomy'];
   $tax = $_POST['tax'];
   $name = $_POST['name'];
