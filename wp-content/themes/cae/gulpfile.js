@@ -52,7 +52,10 @@ gulp.task( 'sass', function () {
   gulp.src(input.sass)
     .pipe(sass({outputStyle: 'expanded'}))
     .pipe(rename('main.css'))
-    .pipe(prefix("last 4 versions", "> 1%", "ie 8"))
+    .pipe(prefix({
+            browsers: ['last 5 versions'],
+            cascade: false
+        }))
     .pipe(gulp.dest(output.css))
     .pipe(livereload())
     .pipe(minifyCSS())
