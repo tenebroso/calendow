@@ -4088,7 +4088,7 @@ nav.affix {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAPCAQAAACCCB01AAAAYElEQVQY02P4zwCGnP/t/vv8N4Nw7P+//g8CR0Ecxv+PgMx//9/93wbiSoNlMkDqQFw5MNcbwg35XwHmTv6f9j+E4f+l/whwmOH/kf8fwMzPQKPWYOilKpfrfygQSoK4AAR0ltdDC5VLAAAAAElFTkSuQmCC); }
   .parent-pageid-118 .side-nav li.share {
     display: none; }
-.side-nav-share .side-nav li:nth-of-type(3) a {
+.side-nav-share .side-nav li:nth-of-type(2) a {
   border: none; }
 .side-nav-share .side-nav li a {
   background-repeat: no-repeat; }
