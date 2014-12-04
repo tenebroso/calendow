@@ -27,10 +27,12 @@
 			color:$white;
 			padding:24px;
 			@media (max-width:$screen-xs-max) {
-				top:50%;
-				position: relative;
-				transform:translate3d(0,-50%,0);
-				height: auto;
+				h2 {
+					top:50%;
+					position: relative;
+					transform:translate3d(0,-50%,0);
+					height: auto;
+				}
 			}
 		}
 	}
