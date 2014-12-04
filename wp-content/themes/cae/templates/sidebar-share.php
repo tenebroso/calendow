@@ -7,9 +7,9 @@
 		<li>
 			<a class="popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">Facebook</a>
 		</li>
-		<li>
+		<!--<li>
 			<a href="sms:body=<?php the_title(); ?>">SMS</a>
-		</li>
+		</li>-->
 		<li class="cta"><a href="#">Take Action.</a></li>
 	</ul>
 </nav>
