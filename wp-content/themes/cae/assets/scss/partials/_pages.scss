@@ -4,6 +4,9 @@
 		height: 110px;
 		background-repeat: no-repeat;
 		background-position: top center;
+		.stripe & {
+			height: 168px;
+		}
 	}
 	width: 100%;
 	background-size:cover;

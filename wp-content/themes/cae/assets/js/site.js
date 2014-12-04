@@ -816,7 +816,7 @@ CE.Site = {
       $('.js-popover').click(function () {
          $('.js-popover').not(this).popover('hide');
       });
-      if (!Modernizr.touch) { 
+      if (!$('html.touch').length) {
          CE.headerParallax();
       }
       CE.legacy();
@@ -845,7 +845,7 @@ CE.Site = {
     init: function() {
       CE.sidebarNav();
       CE.socialPopup();
-      if (!Modernizr.touch) { 
+      if (!$('html.touch').length) {
          CE.stripeParallax();
       }
       if($('.newsletter-wrapper').length) {

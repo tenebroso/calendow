@@ -43,7 +43,10 @@
 		color:$black;
 		padding:25px 35px;
 		height: 100%;
-		min-height:315px;
+		min-height: 200px;
+		@media (min-width:$screen-sm-min) {
+			min-height:315px;
+		}
 		transition:all .25s;
 		position: relative;
 		.date {
@@ -73,6 +76,7 @@
 	background-repeat:no-repeat;
 	background-size:cover;
 	position: relative;
+	background-position: center center;
 	&:after {
 		width: 100%;
 		height: 100%;
