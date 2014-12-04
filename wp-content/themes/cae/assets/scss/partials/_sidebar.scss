@@ -112,21 +112,41 @@ nav.affix {
 			a {
 				background-repeat:no-repeat;
 				&:hover {
-					background-color:$black;
+					//background-color:$black;
 				}
 				&:after {
 					display: none;
+				}
+			}
+			&.share-icon {
+				position: relative;
+				a {
+					&:hover {
+						background-repeat: repeat;
+						transition: all .3s;
+					}
+				}
+				&:after {
+					position: absolute;
+					content: "";
+					display: block;
+					right: 5px;
+					top: 10px;
+					background-repeat: no-repeat;
+					background-position: center center !important;
+					height: 20px;
+					width: 20px;
 				}
 			}
 			/* a[href*=sms] {
 				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAXCAQAAADADIVqAAABEUlEQVQ4y6WUMU/CQBiGPwxxIU7aMBhGF5IuRMMCIRomRlc2BxdhBQ2zE/8BBmY2GIwj0eBM2PgPOppA+ziUJs3Zu7bX993u7n0ud/m+TxCNS1Rp0abNNVeUdOf+L1XoMWeHR1QeO+b0qJgARbqs8THJZ02XYhygzpa02lJXAQP2ZNGeYRTwjI1eQkADWzUDwMoasEIEhzxyBDcXwBUucsR9zgXhwxrwGXziXUL16e+/DetgaAUYRSvxiUOm8C99tRdqfGV4ey2uGwt0eFPaWJXHOx3zPHB4YMZGaa4DGyY8cpk8UEIvj9EpLmVO0k+kwNXjU8YUEJN1Gwvgm3tzWA8Y8cMrTnI8HnDGDadpwgjyB8l4iV8+nlrLAAAAAElFTkSuQmCC);
 				background-position:110px center;
 			} */
-			a[href*=twitter] {
+			&.share-icon-twitter:after {
 				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAASCAQAAAD1LOamAAABEUlEQVQ4T4XRvyvEcRzH8ddiOF2cWRnOlWQy6EoWbPIfXJJJBmE4xUAWUhKLTBa7ge8s0e3+AMs3UrdRV3rivA2f+3x9f7i7ntPn06P3+1MfoTblqXJNwDYFk4kRkxAVZjJ0mCes1TO71NhzOKDBXAo/RNR1ywJFIe4wmuyTi+hoihrGgZt82jqGrDKAEPMZemRyuEQjuvzknhPOMrji8QqHNP9ZHG/W48su0DCKHk/y04W+mDwW63x3xMdx3Mcar23pF6U4zhF2mHvuqMdignobGtKfxqLAFo8Z+sa4p3Gcpxr7HFed8h81iSGW2eEmA42AQZTEYowL3hPsgyum3cY0FqKHMotssMkSU/RGj0vgX4DSXFoXQRflAAAAAElFTkSuQmCC);
 				background-position:117px center;
 			}
-			a[href*=facebook] {
+			&.share-icon-facebook:after {
 				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAVCAQAAADVu7d4AAAAbUlEQVQoU2P4zwCFPP9d/oeCoRFMKPf/1/8wMA0i5Pj/H1wILjgHSQguuAXK3fBf7b/SfxFUwUyIDTgEW/7v/v8aKngdyN79PwGhCgHysQkGM/yv+L/q/zMo9yyQveq/Cg6LhpIgyFcg6AYRBABAxzx+IYyJzwAAAABJRU5ErkJggg==);
 				background-position:122px center;
 			}
@@ -180,6 +200,9 @@ body[class*="single-"] {
 			&:not(.cta) a {
 				font-weight:100;
 				font-size:16px;
+				&:hover {
+					background-color: #333333;
+				}
 			}
 		}
 	}

@@ -39,6 +39,9 @@ border-color:$variable;
 		background-color:$variable;
 		border-color: lighten($variable, 10%);
 	}
+	.side-nav-share .side-nav li a:hover {
+		background-color:darken($variable, 10%);
+	}
 	.side-nav li.cta a {
 		background: $white;
 		color:$variable;

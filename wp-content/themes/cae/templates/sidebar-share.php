@@ -1,10 +1,10 @@
 <nav class="side-nav-container side-nav-share affix">
 	<h3 class="sidenav-title bg-color">Share This.</h3>
 		<ul class="side-nav">
-		<li>
+		<li class="share-icon share-icon-twitter">
 			<a class="popup" href="http://twitter.com/home?status=Currently reading <?php the_permalink();?>">Twitter</a>
 		</li>
-		<li>
+		<li class="share-icon share-icon-facebook">
 			<a class="popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">Facebook</a>
 		</li>
 		<!--<li>
