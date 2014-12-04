@@ -69,13 +69,13 @@ border-color:$variable;
 			background-color:$variable;
 			transition:background-color .25s;
 		}
+		&.grid-item:hover .hover-white  {
+			color:$white;
+		}
 	}
 	.campaign-grid li a:hover {
 		transition:background-color .25s;
 		background-color:rgba($variable, .9);
-	}
-	&.grid-item:hover .hover-white  {
-		color:$white;
 	}
 	.bg-color.show-on-hover {
 		background-color:rgba($variable,.7);

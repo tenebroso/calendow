@@ -4360,7 +4360,7 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     text-align: right !important;
     border-top: 1px solid #3A406D;
     margin-top: 1em;
-    padding: 0.5em 15px; }
+    padding: 0.5em 15px !important; }
     .footer-post-nav-next h2 {
       font-size: 26px; } }
 
@@ -4568,12 +4568,12 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     background-color: #15c6a7;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
+  .no-touch .prevention.grid-item:hover .hover-white {
+    color: #fff; }
   .prevention .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s;
     background-color: rgba(21, 198, 167, 0.9); }
-  .prevention.grid-item:hover .hover-white {
-    color: #fff; }
   .prevention .bg-color.show-on-hover {
     background-color: rgba(21, 198, 167, 0.7); }
 
@@ -4623,12 +4623,12 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     background-color: #07a8c6;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
+  .no-touch .schools.grid-item:hover .hover-white {
+    color: #fff; }
   .schools .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s;
     background-color: rgba(7, 168, 198, 0.9); }
-  .schools.grid-item:hover .hover-white {
-    color: #fff; }
   .schools .bg-color.show-on-hover {
     background-color: rgba(7, 168, 198, 0.7); }
 
@@ -4678,12 +4678,12 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     background-color: #C10512;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
+  .no-touch .places.grid-item:hover .hover-white {
+    color: #fff; }
   .places .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s;
     background-color: rgba(193, 5, 18, 0.9); }
-  .places.grid-item:hover .hover-white {
-    color: #fff; }
   .places .bg-color.show-on-hover {
     background-color: rgba(193, 5, 18, 0.7); }
 
@@ -4733,12 +4733,12 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     background-color: #5d0770;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
+  .no-touch .grants-and-funding.grid-item:hover .hover-white {
+    color: #fff; }
   .grants-and-funding .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s;
     background-color: rgba(93, 7, 112, 0.9); }
-  .grants-and-funding.grid-item:hover .hover-white {
-    color: #fff; }
   .grants-and-funding .bg-color.show-on-hover {
     background-color: rgba(93, 7, 112, 0.7); }
 
@@ -4788,12 +4788,12 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     background-color: #ff0078;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
+  .no-touch .youth-in-action.grid-item:hover .hover-white {
+    color: #fff; }
   .youth-in-action .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s;
     background-color: rgba(255, 0, 120, 0.9); }
-  .youth-in-action.grid-item:hover .hover-white {
-    color: #fff; }
   .youth-in-action .bg-color.show-on-hover {
     background-color: rgba(255, 0, 120, 0.7); }
 
@@ -4843,12 +4843,12 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     background-color: #d9673e;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
+  .no-touch .neighborhoods.grid-item:hover .hover-white {
+    color: #fff; }
   .neighborhoods .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s;
     background-color: rgba(217, 103, 62, 0.9); }
-  .neighborhoods.grid-item:hover .hover-white {
-    color: #fff; }
   .neighborhoods .bg-color.show-on-hover {
     background-color: rgba(217, 103, 62, 0.7); }
 
@@ -4898,11 +4898,11 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     background-color: #c5b634;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
+  .no-touch .secondary.grid-item:hover .hover-white {
+    color: #fff; }
   .secondary .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s;
     background-color: rgba(197, 182, 52, 0.9); }
-  .secondary.grid-item:hover .hover-white {
-    color: #fff; }
   .secondary .bg-color.show-on-hover {
     background-color: rgba(197, 182, 52, 0.7); }
