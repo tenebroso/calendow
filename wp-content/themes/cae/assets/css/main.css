@@ -2530,7 +2530,8 @@ blockquote {
   color: #333333; }
   .text-content .grid-title {
     font-family: "azo-sans-web", sans-serif;
-    font-weight: 700; }
+    font-weight: 700;
+    font-size: 32px; }
   .grid-title.v-centered {
     margin: 0;
     -webkit-transform: translate(0, -50%);
@@ -2800,11 +2801,13 @@ button, .btn, input[type="submit"] {
   background: #272a40 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAQAAADSmGXeAAAAOElEQVQY02P4zwCGmf/bISwI1+//n///gYJQAfP/X/+DwB+gBFBA5f+r/zDw9b85w3/h/0pIUBwA9Ic3G59hEKgAAAAASUVORK5CAII=) no-repeat calc(100% - 10px) center;
   padding: 5px 25px 5px 10px;
   font-size: 13px;
-  color: #f9f9f9;
-  display: inline-block;
-  clear: both;
-  float: right;
-  margin: 5em 0 0; }
+  color: #f9f9f9; }
+  @media (min-width: 768px) {
+    #accordion .btn {
+      float: right;
+      margin: 5em 0 0;
+      display: inline-block;
+      clear: both; } }
 
 .panel-title {
   font-size: 30px;
@@ -2815,6 +2818,9 @@ button, .btn, input[type="submit"] {
   cursor: pointer; }
   .panel-title > a {
     padding: 2em 0; }
+    @media (max-width: 991px) {
+      .panel-title > a {
+        padding: 1.5em 0; } }
   .panel-title:hover a, .panel-title a {
     color: #fff;
     display: block; }

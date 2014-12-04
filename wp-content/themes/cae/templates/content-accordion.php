@@ -24,10 +24,11 @@
           <div class="row">
             <div class="col-sm-3">
               <img src="<?php echo $aImage; ?>">
-              <a href="#top" class="btn btn-default">Back to Top</a>
+              <a href="#top" class="btn btn-default hidden-xs">Back to Top</a>
             </div>
             <div class="col-sm-9">
               <?php echo $aContent; ?>
+              <a href="#top" class="btn btn-default visible-xs-inline-block">Back to Top</a>
             </div>
           </div>
         <?php else: ?>
