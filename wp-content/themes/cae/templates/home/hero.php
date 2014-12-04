@@ -2,7 +2,7 @@
 
 	<ul class="hero-nav">
 
-		<li class="hero-nav-intro">Building Healthy <br />Communities</li>
+		<li class="hero-nav-intro"><a href="/building-healthy-communities/">Building Healthy <br />Communities</a></li>
 		<li class="neighborhoods"><a href="/neighborhoods/"><span>Neighborhoods.</span> <span class="hero-nav-color-block">Neighborhoods.</span></a></li>
 		<li class="prevention"><a href="/prevention/"><span>Prevention.</span> <span class="hero-nav-color-block">Prevention.</span></a></li>
 		<li class="schools"><a href="/school/"><span>School.</span> <span class="hero-nav-color-block">School.</span></a></li>

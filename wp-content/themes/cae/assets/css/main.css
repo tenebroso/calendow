@@ -3219,7 +3219,7 @@ button, .btn, input[type="submit"] {
     line-height: 1; }
     .hero-nav li.hero-nav-intro {
       margin: 40px 0 21px; }
-  .hero-nav li a {
+  .hero-nav li:not(.hero-nav-intro) a {
     padding: 13px 20px 13px 7px;
     display: inline-block;
     position: relative;
@@ -3229,10 +3229,12 @@ button, .btn, input[type="submit"] {
     transform: translate(0, 0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
-    .hero-nav li a > span:first-child {
+    .hero-nav li:not(.hero-nav-intro) a > span:first-child {
       opacity: 1;
       -webkit-transition: opacity 0.35s ease-in-out;
       transition: opacity 0.35s ease-in-out; }
+  .hero-nav li.hero-nav-intro a:hover {
+    color: black; }
   .hero-nav .hero-nav-color-block {
     position: absolute;
     top: 2px;
