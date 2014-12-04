@@ -650,17 +650,9 @@ var CE = CE || {};
 
 
     var $container = $('.single-report .main');
-    var $report = $('.report-single');
+    var $report = $('.report-single.current').height() + 210;
 
-
-    // Get an array of all element heights
-    var elementHeights = $report.map(function() {
-      return $(this).height();
-    }).get();
-
-    var maxHeight = Math.max.apply(null, elementHeights);
-
-    $container.height(maxHeight);
+    $container.height($report).css('overflow','hidden');
 
 
   };
@@ -679,6 +671,10 @@ var CE = CE || {};
   	var $reportPanelFirst = $('#report-panel-1');
   	var $reportNav = $('.report-nav > li');
   	var $targetSection = window.location.hash;
+  	var $container = $('.report-container');
+    var $report = $('.report-single');
+
+    $container.height($report).css('overflow','hidden');
   	
   	if($targetSection.length) {
   		$id = $targetSection.substr(1);
@@ -696,6 +692,8 @@ var CE = CE || {};
   					.not($(this))
 					.transit({x:'100%',opacity:0}, 800, 'ease')
 					.removeClass('current');
+				var $height = $(this).height();
+				$container.height($height) + 210;
   			}
 	    });
   	} else {
@@ -709,6 +707,7 @@ var CE = CE || {};
 		var $href = $(this).attr('href');
 		var $parent = $(this).parents('.report-single');
 		var $theID  = $(this).parents('.report-single').data("id");
+		var $height = $($href).height();
 		$parent.transit({x:'-100%',opacity:0}, 800, 'ease').removeClass('current');
 		$($href).transit({x:0,opacity:1}, 800, 'ease').addClass('current');
 		$reportNav.removeClass('active');
@@ -717,12 +716,14 @@ var CE = CE || {};
 		}).addClass('active');
 		window.location.hash = $theID + 1;
 		e.preventDefault();
+		$container.height($height) + 210;
 	});
 
 	$prev.click(function(e) {
 		var $href = $(this).attr('href');
 		var $parent = $(this).parents('.report-single');
 		var $theID  = $(this).parents('.report-single').data("id");
+		var $height = $($href).height();
 		$parent.transit({x:'100%',opacity:0}, 800, 'ease').removeClass('current');
 		$($href).transit({x:0,opacity:1}, 800, 'ease').addClass('current');
 		$reportNav.removeClass('active');
@@ -731,12 +732,14 @@ var CE = CE || {};
 		}).addClass('active');
 		window.location.hash = $theID - 1;
 		e.preventDefault();
+		$container.height($height) + 210;
 	});
 
 	$('.report-nav li:not(.full-report) a').click(function(e){
 		var $href = $(this).attr('href');
 		var $theID  = $($href).data("id");
 		var $parent = $(this).parent('li');
+		var $height = $($href).height();
 		var $cur = window.location.hash;
 		window.location.hash = $theID;
 		
@@ -774,7 +777,7 @@ var CE = CE || {};
 		}*/
 
 
-
+		$container.height($height) + 210;
 		e.preventDefault();
 	});
 
@@ -869,7 +872,7 @@ CE.Site = {
   },
   single_report: {
     init: function() {
-      CE.reportPageHeight();
+      //CE.reportPageHeight();
       CE.reportSectionSwitcher();
     }
   }
