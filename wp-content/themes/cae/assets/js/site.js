@@ -586,8 +586,8 @@ $childFilters.click( function(e) {
             var selected_taxonomy = $(this).attr('title');
             var taxonomy_type = $(this).parents('ul').data('tax');
             var taxonomy_name = $(this).children('span').html();
-            $('.filter-main').removeClass('selected');
-            $('.filter-key').css('background-image','none');
+            //$('.filter-main').removeClass('selected');
+            //$('.filter-key').css('background-image','none');
             $(this).parents('li').removeClass('open').addClass('selected');
         }
 

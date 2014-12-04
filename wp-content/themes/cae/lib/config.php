@@ -121,18 +121,25 @@ add_shortcode("campaigns", "custom_query_shortcode");
 
 $result = array();
 
+function do_the_query($result, $args) {
+  $query = new WP_Query( $args );
+ 
+  if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+
+    $result['response'] = get_template_part('templates/home/grid');
+
+  endwhile; else: endif;
+
+  wp_reset_postdata(); // need to reset on each query
+}
+
+
 function ajax_filter_get_posts( $taxonomy ) {
  
   // Verify nonce
   if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
     die('Sorry! There was a server error. Please try again.');
  
-
-  // Change these to three taxonomies? 
-  // Run the query 3 times with 3 different variables
-  // Change to For loop
-  // POST['taxonomy_o','taxonomy_1']
-
   $taxonomy = $_POST['taxonomy'];
   $tax = $_POST['tax'];
   $name = $_POST['name'];
@@ -162,20 +169,41 @@ function ajax_filter_get_posts( $taxonomy ) {
   </div>
 
   <?php }
- 
-  $query = new WP_Query( $args );
- 
-if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+  
+  if(is_array($taxonomy)){
+    // if array we need to query multiple taxonomies...
+    // post variables would need to be arrays like taxonomy[0] and tax[0]
+    foreach($taxonomy as $key=>$val) {
 
-    $result['response'] = get_template_part('templates/home/grid');
-    //$result['status']   = 'success';
+      // WP Query
+      $args = array(
+        $tax[$key] => $taxonomy[$key],
+        'post_type' => $postTypes,
+        'posts_per_page' => -1,
+        'orderby' => 'date'
+      );
 
-  endwhile; else: endif;
- 
-  //$result = json_encode($result);
-  foreach ($result as $item) {
-    echo $item;
+      //print_r($args); // can see what args are being passed...
+
+      do_the_query($result, $args); // run the query function
+
+    };
+
+    foreach ($result as $item) {
+      echo $item;
+    } 
+
+
+  } else {
+    do_the_query($result, $args);
+   
+    //$result = json_encode($result);
+    foreach ($result as $item) {
+      echo $item;
+    }    
   }
+
+
 
   die();
 }
