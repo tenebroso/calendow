@@ -122,91 +122,85 @@ add_shortcode("campaigns", "custom_query_shortcode");
 $result = array();
 
 function do_the_query($result, $args) {
-  $query = new WP_Query( $args );
- 
-  if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
+        $query = new WP_Query($args);
 
-    $result['response'] = get_template_part('templates/home/grid');
+        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
 
-  endwhile; else: endif;
+                        $result['response'] = get_template_part('templates/home/grid');
 
-  wp_reset_postdata(); // need to reset on each query
+                endwhile;
+        else: endif;
+
+        wp_reset_postdata(); // need to reset on each query
 }
 
+function ajax_filter_get_posts($taxonomy) {
 
-function ajax_filter_get_posts( $taxonomy ) {
- 
-  // Verify nonce
-  if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
-    die('Sorry! There was a server error. Please try again.');
- 
-  $taxonomy = $_POST['taxonomy'];
-  $tax = $_POST['tax'];
-  $name = $_POST['name'];
-  $postTypes = array('post', 'video', 'infographic', 'action', 'event', 'grant', 'newsletter', 'report', 'news');
-  
-  // WP Query
-  $args = array(
-    $tax => $taxonomy,
-    'post_type' => $postTypes,
-    'posts_per_page' => -1,
-    'orderby' => 'date'
-  );
- 
-  // If taxonomy is not set, remove key from array and get all posts
-  if( !$taxonomy ) {
-    unset($args['posts_per_page']);
-  } else { ?>
+        // Verify nonce
+        if (!isset($_POST['afp_nonce']) || !wp_verify_nonce($_POST['afp_nonce'], 'afp_nonce'))
+                die('Sorry! There was a server error. Please try again.');
 
-  <div class="grid-item hero-item">
-    <a href="/<?php echo $taxonomy; ?>">
-      <div class="v-centered reset-margins">
-        <p>Learn About</p>
-        <h2 class="grid-title page-subtext caps"><?php echo $name; ?></h2>
-        <img src="<?php echo img_dir(); ?>/health-happens-here-pin.png" >
-      </div>
-    </a>
-  </div>
+        $tax_details = $_POST['tax_details'];
 
-  <?php }
-  
-  if(is_array($taxonomy)){
-    // if array we need to query multiple taxonomies...
-    // post variables would need to be arrays like taxonomy[0] and tax[0]
-    foreach($taxonomy as $key=>$val) {
+        $count = $tax_details.length;
+        
+        $html = '';
+        
+        foreach ($tax_details as $tax){
+                
+                $tax_query[] = array(
+                    'taxonomy'  => $tax['taxonomy'],
+                    'field'     => 'slug',
+                    'terms'     => array($tax['term'])
+                );
+                
+                ob_start();
+                ?>
+                <div class="grid-item hero-item">
+                        <a href="/<?php echo $tax['taxonomy']; ?>">
+                                <div class="v-centered reset-margins">
+                                        <p>Learn About</p>
+                                        <h2 class="grid-title page-subtext caps"><?php echo $tax['name']; ?></h2>
+                                        <img src="<?php echo img_dir(); ?>/health-happens-here-pin.png" >
+                                </div>
+                        </a>
+                </div>
+                <?php
+                $html .= ob_get_clean();
+        }
+        
+        
+        if ($count>1){
+                $tax_query['relation'] = 'AND';
+        }
+        
+        $postTypes = array('post', 'video', 'infographic', 'action', 'event', 'grant', 'newsletter', 'report', 'news');
 
-      // WP Query
-      $args = array(
-        $tax[$key] => $taxonomy[$key],
-        'post_type' => $postTypes,
-        'posts_per_page' => -1,
-        'orderby' => 'date'
-      );
+        // WP Query
+        $args = array(
+            'post_type' => $postTypes,
+            'posts_per_page' => -1,
+            'tax_query' => $tax_query
+        );
 
-      //print_r($args); // can see what args are being passed...
+        // If taxonomy is not set, remove key from array and get all posts
+        if (empty($tax_details)) {
+                unset($args['posts_per_page']);
+        } else {
+                echo $html;
+        }
+        
+        $result = array();
+        
+        do_the_query($result, $args);
 
-      do_the_query($result, $args); // run the query function
-
-    };
-
-    foreach ($result as $item) {
-      echo $item;
-    } 
-
-
-  } else {
-    do_the_query($result, $args);
-   
-    //$result = json_encode($result);
-    foreach ($result as $item) {
-      echo $item;
-    }    
-  }
-
-
-
-  die();
+        //$result = json_encode($result);
+        foreach ($result as $item) {
+                echo $item;
+        }
+        
+        die();
 }
- 
+
 add_action('wp_ajax_filter_posts', 'ajax_filter_get_posts');
 add_action('wp_ajax_nopriv_filter_posts', 'ajax_filter_get_posts');
