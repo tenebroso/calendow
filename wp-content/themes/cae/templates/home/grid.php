@@ -8,7 +8,7 @@
 		$className = 'grid-'.get_post_type().""; ?>
 
 
-<div class="grid-item <?php echo $className; ?> <?php if($workSlug): echo strtolower($workSlug[0]); else: echo 'default'; endif; ?>"<?php if($image_url):?>style="height:<?php echo $height; endif; ?>">
+<div class="grid-item <?php echo $className; ?> <?php if($workSlug): echo strtolower($workSlug[0]); else: echo 'default'; endif; ?>"<?php if($image_url):?>style="height:<?php echo $height; ?>px;" <?php endif; ?>">
 	<a href="<?php the_permalink(); ?>"<?php if($image_url): ?> class="bg-color hover-trigger" style="background-image:url(<?php echo $image_url; ?>);"<?php endif; ?>>
 		<?php if($className !== 'grid-video'): ?>
 
