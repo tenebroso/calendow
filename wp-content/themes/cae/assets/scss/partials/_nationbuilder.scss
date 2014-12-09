@@ -1,0 +1,63 @@
+.pc {
+	display: none;
+}
+
+.name {
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.byline {
+	line-height: 1.2;
+	font-size: 14px;
+	br {
+		display: none;
+	}
+}
+
+.checkbox {
+	margin-left: 1em;
+}
+
+.text {
+	clear: both;
+	display: block;
+}
+
+h2 + .byline {
+	margin-top: -1.5em;
+	margin-bottom: 1em;
+}
+
+.supporter-pic-left {
+	float: left;
+	width: 80px;
+}
+
+.supporter-pic-right {
+	float: right;
+	width: calc(100% - 90px);
+	font-size: 12px;
+	p {
+		margin: 0;
+	}
+}
+
+.hentry .supporter-nav {
+	font-size: 16px;
+	line-height: 1.5;
+	li {
+		margin: 0;
+		padding: 0 0 5px 0;
+		a {
+			border-bottom:1px solid $accentDarker;
+			color: $blueLight;
+			padding: 2px 5px;
+			display: block;
+			text-transform: uppercase;
+			&:hover {
+				color: $accentDarker;
+			}
+		}
+	}
+}

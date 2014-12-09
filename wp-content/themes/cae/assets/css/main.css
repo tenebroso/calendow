@@ -2457,7 +2457,7 @@ h3 strong, h3 b {
     color: #fff;
     border-bottom: 1px solid transparent; }
 
-.page-subtext {
+.page-subtext, .subhead, .form h4 {
   display: block;
   font-size: 27px;
   padding: 0.5em 0 0;
@@ -2465,7 +2465,7 @@ h3 strong, h3 b {
   font-weight: 100;
   font-family: "source-sans-pro", sans-serif; }
   @media (max-width: 767px) {
-    .page-subtext {
+    .page-subtext, .subhead, .form h4 {
       font-size: 21px; } }
 
 .light-thin-text {
@@ -2524,10 +2524,18 @@ blockquote {
       font-size: 34px;
       padding-bottom: 0; } }
 
-.section-title {
+.section-title, .subtext {
   font-size: 19px;
   border-top: 1px solid transparent;
   padding: 5px 0 0; }
+
+.submit-button {
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease; }
+  .submit-button:hover {
+    background: black;
+    -webkit-transition: background 0.3s ease;
+    transition: background 0.3s ease; }
 
 .grid-title {
   font-size: 38px;
@@ -4541,6 +4549,57 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     right: auto; }
   .footer-post-nav .bx-controls-direction a.disabled {
     opacity: 0; }
+
+.pc {
+  display: none; }
+
+.name {
+  font-weight: bold;
+  font-size: 17px; }
+
+.byline {
+  line-height: 1.2;
+  font-size: 14px; }
+  .byline br {
+    display: none; }
+
+.checkbox {
+  margin-left: 1em; }
+
+.text {
+  clear: both;
+  display: block; }
+
+h2 + .byline {
+  margin-top: -1.5em;
+  margin-bottom: 1em; }
+
+.supporter-pic-left {
+  float: left;
+  width: 80px; }
+
+.supporter-pic-right {
+  float: right;
+  width: -webkit-calc(100% - 90px);
+  width: calc(100% - 90px);
+  font-size: 12px; }
+  .supporter-pic-right p {
+    margin: 0; }
+
+.hentry .supporter-nav {
+  font-size: 16px;
+  line-height: 1.5; }
+  .hentry .supporter-nav li {
+    margin: 0;
+    padding: 0 0 5px 0; }
+    .hentry .supporter-nav li a {
+      border-bottom: 1px solid #1f2233;
+      color: #07a8c6;
+      padding: 2px 5px;
+      display: block;
+      text-transform: uppercase; }
+      .hentry .supporter-nav li a:hover {
+        color: #1f2233; }
 
 .prevention {
   border-color: #15c6a7; }
