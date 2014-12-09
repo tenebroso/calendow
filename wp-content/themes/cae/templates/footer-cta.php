@@ -23,10 +23,12 @@
                 <label for "email_address">Optional email code</label>
                 <br/>
                 <input name="email_address" type="text" class="text" id="email_address" autocomplete="off"/>
+                <input name="zip" type="text" class="text" id="zip" autocomplete="off"/>
               </p>
             </div> 
           <div class="form-errors"></div>
-          <input required=""  class="text" id="signup_email" name="signup[email]" placeholder="Email address" type="email" />  
+          <input required=""  class="text" id="signup_email" name="signup[email]" placeholder="Email address" type="email" />
+          <input required="" class="text" id="signup_zip" name="signup[zip]" placeholder="Zip" type="text" />
           <input class="button" type="submit" name="commit" value="Submit" />
           <div class="form-submit"></div>
           </form>
