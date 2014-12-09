@@ -1,0 +1,211 @@
+.footer {
+	background: $accentDarker;
+	color:$white;
+	padding:35px 0 42px 0;
+	position: relative;
+	@media (max-width:$screen-xs-max) {
+		text-align: center;
+		.text-right,
+		.text-right .social-icons {
+			text-align: center;
+			padding:0;
+			//max-height: 40px;
+		}
+	}
+	.home & {
+		padding-top:0;
+	}
+	input {
+		color:$white;
+		padding: 12px 10px;
+		font-size: 1.2em;
+		letter-spacing: 1px;
+		&[type=email],
+		&[type=text] {
+			background: $accentDarker;
+			border: none;
+			margin-right:17px;
+		}
+		&[type=text] {
+			width:181px;
+		}
+		&[type=email] {
+			width:394px;
+		}
+		&[type=submit] {
+			background: none;
+			border:2px solid $white;
+			border-radius:3px;
+			padding:9px 21px;
+			transition:all .25s;
+			&:hover {
+				background: $accentDarker;
+				border-color:$accentDarker;
+				transition:all .25s;
+			}
+			@media (max-width:$screen-xs-max) {
+				margin: 10px 0;
+			}
+		}
+		&[type=email],
+		&[type=text] {
+			@media (max-width:$screen-xs-max) {
+				display: block;
+				width: 100%;
+				margin: 10px 0;
+			}
+		}
+	}
+	a {
+		color:$white;
+	}
+	.ui-group {
+		display: inline-block;
+		vertical-align: middle;
+		line-height:3.5;
+	}
+	&.footer-posts {
+		padding: 0;
+	}
+}
+
+.footer-cta-wrap {
+	margin:0 0 35px 0;
+	.nb-cta-text, input {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.nb-cta-text {
+		margin:0;
+		line-height: 46px;
+	}
+}
+
+.footer-add-padding {
+	margin-top: 21em;
+	padding-top: 8em;
+	.page-template-page-campaign-detail-php & {
+		margin-top:29em;
+		&.short {
+			margin-top:19em;
+		}
+	}
+}
+
+.footer-light-blue-wrap {
+	background: $accentDark;
+	padding:1em 0;
+	@media (min-width:$screen-sm-min) {
+		padding:48px 0 60px;
+	}
+	
+}
+
+.footer-nav {
+	font-size:17px;
+	color:$grey3;
+	font-weight:100;
+	a {
+		color:$grey4;
+		font-weight:500;
+		padding:0 .75em 0 0;
+		&:hover {
+			color:$white;
+		}
+	}
+	.social-icons {
+		margin-left:1em;
+	}
+}
+
+.footer-post-nav-prev {
+	a {
+		margin-left:0;
+		@media (min-width:$screen-sm-min) {
+			background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAvCAMAAADKIyriAAAAP1BMVEXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fEXeu2AAAAFHRSTlMAAQMGChETFR0yX3CQn62uutTc3UrWfzIAAABESURBVDjL7cm3AcAgEANAgcEBjBPaf1YWeBXU/msPMC0lQMzFM6hhX825yb7/ZT4fMagkD3OQHvLd/PwmLstrEeJqxABK8A6m0yE+JwAAAABJRU5ErkJggg==) no-repeat center left;
+			padding:0 0 0 46px;
+			margin:0 0 0 -10px;
+			transform:translate3d(0,0,0);
+			&:hover {
+				padding:0 0 0 50px;
+				margin:0 0 0 -50px;
+			}
+		}
+		
+		display: block;
+	}
+	@media (max-width:$screen-sm-max) {
+		text-align: left;
+		h2 {
+			font-size:26px;
+		}
+	}
+}
+
+.footer-post-nav-next {
+	a {
+		margin-left:0;
+		@media (min-width:$screen-sm-min) {
+			background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAvBAMAAAAP08fjAAAAKlBMVEXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fVjvTfAAAADXRSTlMAAQknLi9IWWqTlLjqfI9HvQAAAEBJREFUKJFjYGpkQALaNwWQeDZ3JyLxWM+iSMaMSqJLst+9hsTzubsQwWE5e0tgEEpNRJa6SUsp1LSEms5Q0iAA9YNOXf2vFqAAAAAASUVORK5CAII=) no-repeat center right;
+			padding:0 46px 0 0;
+			margin:0 -10px 0 0;
+			transform:translate3d(0,0,0);
+			&:hover {
+				padding:0 50px 0 0;
+				margin:0 -50px 0 0;
+			}
+		}
+		@media (min-width:$screen-md-min) {
+			float: right;
+		}
+		
+		display: block;
+	}
+	@media (max-width:$screen-xs-max) {
+		text-align: right !important;
+		border-top:1px solid $accentLight;
+		margin-top: 1em;
+		padding: .5em 15px !important;
+		h2 {
+			font-size:26px;
+		}
+	}
+}
+
+.footer-post-nav-item a {
+	transition:all .3s;
+	@media (min-width:$screen-md-min) {
+		max-width: 75%;
+	}
+	&:hover {
+		opacity:.7;
+	}
+}
+
+.footer-post-nav-item {
+	h2 {
+		font-size:30px;
+	}
+}
+
+.footer-post-nav {
+	h3 strong {
+		text-transform:capitalize;
+	}
+}
+
+.footer-logo {
+	position: relative;
+}
+
+.footer-copyright {
+	text-transform: uppercase;
+	opacity: 0.5;
+	font-size: 12px;
+	letter-spacing: 1px;
+	@media (min-width:$screen-sm-min) {
+		position: absolute;
+		top: 50px;
+		left: 55px;
+	}
+}

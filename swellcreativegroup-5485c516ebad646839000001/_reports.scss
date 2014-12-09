@@ -1,0 +1,203 @@
+.single-report {
+	width: 100%;
+	overflow-x: hidden;
+	background: $white;
+	@media (min-width:$screen-lg-min) {
+		background: url(../img/bg-reports-detail.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	
+	.main {
+		background: none;
+		padding:150px 0 60px;
+		@media (max-width:$screen-md-max) {
+			padding-top:120px;
+		}
+	}
+	.breadcrumbs {
+		display: none;
+	}
+	.hentry,
+	.sidebar {
+		padding:0;
+	}
+}
+
+.report-sidebar,
+.report-container,
+.report-single {
+	background: $white;
+	color:$grey1;
+	float: left;
+	line-height: 30px;
+}
+
+.report-container {
+	position: relative;
+	background: none;
+	@media (max-width:$screen-md-max) {
+		width: 100%;
+	}
+}
+
+.report-sidebar {
+	font-size:18px;
+	position: relative;
+	z-index:20;
+	display: block;
+	@media (max-width:$screen-md-max) {
+		width: 100%;
+	}
+}
+
+@media (max-width:$screen-md-max) {
+	.report-nav {
+		display: none;
+	}
+	.report-content {
+		padding:15px 0;
+	}
+}
+
+@media (min-width:$screen-lg-min) {
+	.report-sidebar {
+		width: 300px;
+		margin: 0 35px 0 0;
+	}
+	.report-content {
+		width: 670px;
+		padding:0 60px;
+	}
+
+}
+
+
+
+.report-nav {
+	a {
+		display: block;
+		padding:10px 20px;
+		border-bottom:1px solid $offWhite;
+		cursor: pointer;
+	}
+	li.active a, li a:hover {
+		background: $offWhite url(../img/svg/pattern.svg) repeat;
+		color:$green;
+	}
+	li:last-child {
+		a {
+			border: none;
+		}
+	}
+}
+
+.report-sidebar-title {
+	display: block;
+	padding:20px;
+	color:$white;
+	background: $green;
+	cursor: default;
+	&:hover {
+		color:$white;
+		background: $green;
+	}
+}
+
+.report-lr-nav {
+	border-bottom:2px solid $offWhite;
+	height:47px;
+	line-height: 47px;
+	&:last-of-type {
+		border-top: 2px solid $offWhite;
+		border-bottom: none;
+		padding: 5px 0;
+		overflow: hidden;
+		height: 60px;
+	}
+	li {
+		display: inline-block;
+		vertical-align: top;
+		width: 33%;
+		&.report-prev {
+			padding: 10px 0 0 20px;
+			.icon-sm-arrow {
+				transform:rotate(180deg);
+			}
+		}
+		&.report-current {
+			text-align: center;
+			font-size:14px;
+			color:$green;
+			font-weight:700;
+			span {
+				font-size:18px;
+				font-weight:800;
+			}
+		}
+		&.report-next {
+			padding:10px 10px 0 0;
+			.icon-sm-arrow {
+				float: right;
+			}
+		}
+		&.report-share {
+			text-transform:uppercase;
+			color:$blackLighter;
+			font-size:12px;
+			font-weight:bold;
+			width: 40%;
+			a {
+				transition:all .3s;
+				&:hover {
+					opacity:.7;
+					transition:all .3s;
+				}
+			}
+			.popup {
+				font-size:0;
+				line-height:0;
+				width:32px;
+				height: 32px;
+				&[href*='twitter.com'] {
+					background: url(../img/twitter.png) no-repeat;
+				}
+				&[href*='facebook.com'] {
+					background: url(../img/facebook.png) no-repeat;
+				}
+			}
+			+ .report-next {
+				width: 26%;
+			}
+			.inline-block {
+				margin:0 5px 0 0;
+			}
+		}
+		a:not(.inline-block) {
+			display: block;
+		}
+	}
+	.icon-sm-arrow {
+		width: 13px;
+		height: 24px;
+		background-size:13px 24px;
+	}
+}
+
+.report-container .report-single:first-child {
+	.report-prev a {
+		display: none;
+	}
+}
+
+.report-container .report-single:last-child {
+	.report-next a {
+		display: none;
+	}
+}
+
+.report-single:not(#report-panel-1) {
+	transform: translate3d(1000%,0,0);
+	position: absolute;
+	top: 0;
+	left: 0;
+}

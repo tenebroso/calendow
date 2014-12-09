@@ -1,28 +1,47 @@
-//* theme style specific variables *//
+// Layout Specifics
 
-// headline font
-$headline-font: "chaparral-pro", Helvetica, sans-serif;
+$headerHeight: 99px;
 
-// main font
-$font: "proxima-nova", sans-serif;
+// Primary Categories
 
-// orange
-$theme-color-1: #b85812;
+$neighborhoods: #d9673e;
+$prevention: #15c6a7;
+$schools: #07a8c6;
+$places: #C10512;
+$grants: #5d0770;
+$action: #ff0078;
 
-// off white orange
-$theme-color-2: #e0d6c8;
+// Accent Colors
 
-// light green
-$theme-color-3: #7ba329;
+$accentDarker: #1f2233;
+$accentDark: #272A3F;
+$accentLight: #3A406D;
+$accentLighter: #777987;
 
-// dark green
-$theme-color-4: #516e16;
+// Typography Colors
 
-// general success and error colors
-$red: #b94a48;
-$green: #619114;
+$white: #fff;
+$black: #333333;
+$blackLighter: #2f2f2f;
+$grey1: #383838;
+$grey2: #bdbdbd;
+$grey3: #7f7f7f;
+$grey4: #acacac;
+$offWhite: #f9f9f9;
+$yellow: #c5b634;
+$blueLight: #07a8c6;
+$orange: #d9673e;
+$red: #d51f2c;
+$green: #15c7a7;
 
-// background images
+// Typography
 
-$background-texture: "paper.jpg";
-$header-texture: "header-green.jpg";
+$font-family-base: "source-sans-pro", sans-serif;
+$headings-font-family: "azo-sans-web", sans-serif;
+
+$font-size-base: 20px;
+
+$body-bg:darken($white,5%);
+
+$linkColor: $grey3;
+$linkHover: $grey1;

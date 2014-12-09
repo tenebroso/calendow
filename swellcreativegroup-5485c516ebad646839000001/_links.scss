@@ -1,0 +1,15 @@
+a {
+	text-decoration:none;
+	color:$linkColor;
+	transition:color .35s;
+	&:hover {
+		color:$linkHover;
+		transition:color .25s;
+	}
+}
+
+.hentry a {
+	.single-post & {
+		color:$orange;
+	}
+}

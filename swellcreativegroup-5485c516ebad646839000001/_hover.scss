@@ -1,0 +1,23 @@
+.show-on-hover {
+	opacity:0;
+	transition:opacity .35s;
+}
+
+.hover-trigger {
+	&:hover {
+		.show-on-hover {
+			opacity:1;
+			transition:opacity .25s;
+		}
+	}
+}
+
+.grid-item {
+	.show-on-hover {
+		margin: -15px -22px;
+		display: block;
+		height:330px;
+		height: calc(100% + 30px);
+		padding: 15px 22px;
+	}
+}

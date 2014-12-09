@@ -25,45 +25,34 @@
   </script>
 
 </head>
-<body class="cae-theme v2-theme {{ page.page_class_name }} js">
-  <div id="pattern" class="pattern">
-    <div class="wrap" id="wrap">
-      <div id="body" class="page-{{ request.template | replace: '_', '-' }}">
+<body class="{{ page.page_class_name }} js">
 
-        <div class="header-container clearfix {% if site.has_background_image? %}no-background{% endif %}">
-          <div class="width-container clearfix">
+<div id="page" class="wrapper " role="document">
 
-            {% include "nav" %}
+      <header id="fixed" class="banner" role="banner">
+  
+        <div class="container">
+  
+          <a class="brand" href="/"><img src="logo.png"></a>
 
-            {% if site.has_meta_image? %}
-              <div class="site-logo">
-                <header><a href="/"><img src="{{ site.meta_image_url }}"></a></header>
-              </div>
-            {% else %}
-              <header>
-                <h1 class="title"><a href="/">{{ site.long_name }}</a></h1>
-              </header>
-            {% endif %}
+  </div>
+</header>
+  
+  <div class="page-header">
 
-          </div>
-          <!-- .width-container -->
-        </div>
-        <!-- .header-container -->
+    <div class="container v-centered">
+      {% if page.headline.size > 0 %}
+        <h1 class="page-title"><strong>{{ page.headline }}</strong></h1>
+      {% else %}
+        <h1 class="page-title"><strong>{{ page_title }}</strong></h1>
+      {% endif %}
+    </div>
 
-        {% if site.has_header_image? %}
-        <div class="width-container">
-         <img src="{{ site.header_image_url_1026 }}" class="header-image" border="0" />
-        </div>
-        {% endif %}
+  </div>
 
-        {% if page.features_count > 0 %}
-          <div class="width-container">
-           {% include "features" %}
-          </div>
-        {% endif %}
-
-        <div class="main-container" id="middle">
-          <div class="main width-container clearfix">
+  <main class="main" role="main">
+          <div class="container">
+              <article class="hentry content-page">
 
             {% if request.is_sidebar? %}
             {% include "columns_2" %}
@@ -71,71 +60,35 @@
             {% include "columns_1" %}
             {% endif %}
 
-          </div>
-          <!-- .main -->
-        </div>
-        <!-- .main-container -->
-
-        <div class="width-container">
-          <footer class="clearfix">
-
-            {{ content_for_footer }}
-
-            {% if site.footer_content.size > 0 %}
-            <div class="footer-text">{{ site.footer_content }}</div>
-            <hr/>
-            {% endif %}
-
-            <div class="row-fluid">
-
-              <div class="span7 footer-left">
-                {% if request.logged_in? %}
-                  Hi <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>. View your
-                  {% if site.show_public_profiles? %}
-                    <a href="{{ request.current_signup.profile_url }}">public profile</a>,
-                  {% endif %}
-                  <a href="{{ request.current_signup.settings_url }}">account settings</a>, or
-                  <a href="{{ request.current_signup.logout_url }}">sign out</a>.
-                {% else %}
-                  Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a
-                      href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.
-                {% endif %}
-              </div>
-              <div class="span5 footer-right">
-                <!-- The NationBuilder link below is required. If it is removed, we may add it back ourselves.
-                     You can style it or move it in different ways, but please leave it in the footer. -->
-                Created with <a href="http://nationbuilder.com/">NationBuilder</a>
-              </div>
-
-            </div>
-          </footer>
-        </div>
-        <!-- .width-container -->
-
+        </article>
       </div>
-      <!-- #body -->
-    </div>
-    <!-- #wrap -->
-  </div>
-  <!-- #pattern -->
+    </main>
 
-{% if site.has_background_image? %}
-  <!--[if lt IE 9]>
-  <script type="text/javascript" src="/javascripts/jquery.backstretch.min.js"></script>
-  <script type="text/javascript">
-    jQuery.backstretch("{{ site.background_image_url }}", {speed: 0});
-  </script>
-  <![endif]-->
-  <style>
-    body {
-      background: url('{{ site.background_image_url }}') no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-</style>
-{% endif %}
+        <footer class="footer" role="contentinfo">
+
+  
+  <div class="container">
+    <div class="col-md-4 footer-logo">
+      <img src="logo-footer.png">
+      <p class="footer-copyright">&copy; Copyright 2014 California Endowment</p>
+    </div>
+    <div class="col-md-8 footer-nav text-right">
+      <p class="ui-group">{{content_for_footer}}</p>
+      <ul class="nav social-icons ui-group">
+  <li class="icon-twitter js-popover" data-placement="bottom"><span><a href="https://twitter.com/calendow" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @calendow</a></span></li>
+  <li class="icon-facebook js-popover" data-placement="bottom"><span><iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FCalEndow&amp;width=80&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=540281932739279" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe></span> </li>
+  <li class="icon-youtube js-popover" data-placement="bottom"><span><div class="g-ytsubscribe" data-channel="TCEVideo"></div></span> </li>
+  <li class="icon-instagram js-popover" data-placement="bottom"><span><a href="http://instagram.com/CalEndow?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a></span> </li>
+</ul>    </div>
+  </div>
+
+</footer>
+
+  
+
+  </div>
+  <!-- #page -->
+
 </body>
 </html>
 

@@ -1,0 +1,94 @@
+@mixin colors($variable) {
+border-color:$variable;
+  &.nav-list li {
+		border-color:darken($variable,30%);
+		&.heading {
+			border-color:$variable;
+		}
+		&:not(.heading) a:hover {
+			background: $variable;
+			color:$white;
+			.no-touch & {
+				transition:all .3s;
+			}
+		}
+	}
+	> li.heading a, 
+	.color, 
+	blockquote,
+	.footer-post-nav .section-name {
+		color:$variable;
+	}
+	.bg-color {
+		background-color:$variable;
+		a {
+			color:$black;
+		}
+		.breadcrumbs .color {
+			color:$white;
+		}
+		.breadcrumbs strong {
+			color:$black;
+		}
+	}
+	.sub-nav {
+		border-top:2px solid $variable;
+	}
+	.side-nav li a,
+	.side-nav-share .sidenav-title {
+		background-color:$variable;
+		border-color: lighten($variable, 10%);
+	}
+	.side-nav-share .side-nav li a:hover {
+		background-color:darken($variable, 10%);
+	}
+	.side-nav li.cta a {
+		background: $white;
+		color:$variable;
+		border-color:$variable;
+		&:hover {
+			background: $variable;
+			color:$white;
+		}
+	}
+	.section-title,
+	.footer-post-nav li {
+		border-color:$variable;
+	}
+	.nav.newsletters.sub-nav {
+		.active:after,
+		li:not(.pull-left):not(.pull-right):hover:after {
+			border-top-color:$variable;
+		}
+	}
+	.footer-post-nav a:hover,
+	.page-header,
+	.campaign-grid li a:hover {
+		background-color:$variable;
+		transition:background-color .25s;
+	}
+	.no-touch & {
+		&.grid-item:hover {
+			background-color:$variable;
+			transition:background-color .25s;
+		}
+		&.grid-item:hover .hover-white  {
+			color:$white;
+		}
+	}
+	.campaign-grid li a:hover {
+		transition:background-color .25s;
+		background-color:rgba($variable, .9);
+	}
+	.bg-color.show-on-hover {
+		background-color:rgba($variable,.7);
+	}
+}
+
+.prevention { @include colors($prevention) }
+.schools { @include colors($schools) }
+.places { @include colors($places) }
+.grants-and-funding { @include colors($grants) }
+.youth-in-action { @include colors($action) }
+.neighborhoods { @include colors($neighborhoods) }
+.secondary { @include colors($yellow) }
