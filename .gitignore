@@ -2,3 +2,7 @@
 node_modules
 
 /000 CAE alias
+
+config.codekit
+
+/wp-content/themes/cae/assets/scss/bootstrap/.sass-cache/
