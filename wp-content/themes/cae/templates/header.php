@@ -47,7 +47,7 @@
           <?php wp_nav_menu( array('menu' => 'Grants and Funding','menu_class' => 'nav-list grants-and-funding' )); ?>
       </div>
       <div class="col-sm-4">
-          <?php wp_nav_menu( array('menu' => 'Action','menu_class' => 'nav-list youth-in-action' )); ?>
+          <?php wp_nav_menu( array('menu' => 'Learning','menu_class' => 'nav-list youth-in-action' )); ?>
       </div>
     </div><!-- .row -->
 
