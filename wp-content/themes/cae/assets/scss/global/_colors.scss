@@ -21,6 +21,9 @@ border-color:$variable;
 	}
 	.bg-color {
 		background-color:$variable;
+		&.section-intro-title {
+			background: $variable;
+		}
 		a {
 			color:$black;
 		}

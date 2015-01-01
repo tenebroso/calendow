@@ -4616,6 +4616,8 @@ h2 + .byline {
     color: #15c6a7; }
   .prevention .bg-color {
     background-color: #15c6a7; }
+    .prevention .bg-color.section-intro-title {
+      background: #15c6a7; }
     .prevention .bg-color a {
       color: #7B7B7B; }
     .prevention .bg-color .breadcrumbs .color {
@@ -4673,6 +4675,8 @@ h2 + .byline {
     color: #07a8c6; }
   .schools .bg-color {
     background-color: #07a8c6; }
+    .schools .bg-color.section-intro-title {
+      background: #07a8c6; }
     .schools .bg-color a {
       color: #7B7B7B; }
     .schools .bg-color .breadcrumbs .color {
@@ -4730,6 +4734,8 @@ h2 + .byline {
     color: #C10512; }
   .places .bg-color {
     background-color: #C10512; }
+    .places .bg-color.section-intro-title {
+      background: #C10512; }
     .places .bg-color a {
       color: #7B7B7B; }
     .places .bg-color .breadcrumbs .color {
@@ -4787,6 +4793,8 @@ h2 + .byline {
     color: #79358a; }
   .grants-and-funding .bg-color {
     background-color: #79358a; }
+    .grants-and-funding .bg-color.section-intro-title {
+      background: #79358a; }
     .grants-and-funding .bg-color a {
       color: #7B7B7B; }
     .grants-and-funding .bg-color .breadcrumbs .color {
@@ -4844,6 +4852,8 @@ h2 + .byline {
     color: #ff0078; }
   .youth-in-action .bg-color {
     background-color: #ff0078; }
+    .youth-in-action .bg-color.section-intro-title {
+      background: #ff0078; }
     .youth-in-action .bg-color a {
       color: #7B7B7B; }
     .youth-in-action .bg-color .breadcrumbs .color {
@@ -4901,6 +4911,8 @@ h2 + .byline {
     color: #d9673e; }
   .neighborhoods .bg-color {
     background-color: #d9673e; }
+    .neighborhoods .bg-color.section-intro-title {
+      background: #d9673e; }
     .neighborhoods .bg-color a {
       color: #7B7B7B; }
     .neighborhoods .bg-color .breadcrumbs .color {
@@ -4958,6 +4970,8 @@ h2 + .byline {
     color: #c5b634; }
   .secondary .bg-color {
     background-color: #c5b634; }
+    .secondary .bg-color.section-intro-title {
+      background: #c5b634; }
     .secondary .bg-color a {
       color: #7B7B7B; }
     .secondary .bg-color .breadcrumbs .color {
