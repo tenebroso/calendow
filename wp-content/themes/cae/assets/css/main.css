@@ -3280,9 +3280,9 @@ button, .btn, input[type="submit"] {
   .hero-nav li.places .hero-nav-color-block {
     background: #C10512; }
   .hero-nav li.grants a {
-    color: #5d0770; }
+    color: #79358a; }
   .hero-nav li.grants .hero-nav-color-block {
-    background: #5d0770; }
+    background: #79358a; }
   .hero-nav li.action a {
     color: #ff0078; }
   .hero-nav li.action .hero-nav-color-block {
@@ -4772,21 +4772,21 @@ h2 + .byline {
     background-color: rgba(193, 5, 18, 0.7); }
 
 .grants-and-funding {
-  border-color: #5d0770; }
+  border-color: #79358a; }
   .grants-and-funding.nav-list li {
-    border-color: black; }
+    border-color: #180b1b; }
     .grants-and-funding.nav-list li.heading {
-      border-color: #5d0770; }
+      border-color: #79358a; }
     .grants-and-funding.nav-list li:not(.heading) a:hover {
-      background: #5d0770;
+      background: #79358a;
       color: #fff; }
       .no-touch .grants-and-funding.nav-list li:not(.heading) a:hover {
         -webkit-transition: all 0.3s;
         transition: all 0.3s; }
   .grants-and-funding > li.heading a, .grants-and-funding .color, .grants-and-funding blockquote, .grants-and-funding .footer-post-nav .section-name {
-    color: #5d0770; }
+    color: #79358a; }
   .grants-and-funding .bg-color {
-    background-color: #5d0770; }
+    background-color: #79358a; }
     .grants-and-funding .bg-color a {
       color: #7B7B7B; }
     .grants-and-funding .bg-color .breadcrumbs .color {
@@ -4794,29 +4794,29 @@ h2 + .byline {
     .grants-and-funding .bg-color .breadcrumbs strong {
       color: #7B7B7B; }
   .grants-and-funding .sub-nav {
-    border-top: 2px solid #5d0770; }
+    border-top: 2px solid #79358a; }
   .grants-and-funding .side-nav li a, .grants-and-funding .side-nav-share .sidenav-title {
-    background-color: #5d0770;
-    border-color: #840aa0; }
+    background-color: #79358a;
+    border-color: #9943af; }
   .grants-and-funding .side-nav-share .side-nav li a:hover {
-    background-color: #350440; }
+    background-color: #592765; }
   .grants-and-funding .side-nav li.cta a {
     background: #fff;
-    color: #5d0770;
-    border-color: #5d0770; }
+    color: #79358a;
+    border-color: #79358a; }
     .grants-and-funding .side-nav li.cta a:hover {
-      background: #5d0770;
+      background: #79358a;
       color: #fff; }
   .grants-and-funding .section-title, .grants-and-funding .footer-post-nav li {
-    border-color: #5d0770; }
+    border-color: #79358a; }
   .grants-and-funding .nav.newsletters.sub-nav .active:after, .grants-and-funding .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
-    border-top-color: #5d0770; }
+    border-top-color: #79358a; }
   .grants-and-funding .footer-post-nav a:hover, .grants-and-funding .page-header, .grants-and-funding .campaign-grid li a:hover {
-    background-color: #5d0770;
+    background-color: #79358a;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
   .no-touch .grants-and-funding.grid-item:hover {
-    background-color: #5d0770;
+    background-color: #79358a;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
   .no-touch .grants-and-funding.grid-item:hover .hover-white {
@@ -4824,9 +4824,9 @@ h2 + .byline {
   .grants-and-funding .campaign-grid li a:hover {
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s;
-    background-color: rgba(93, 7, 112, 0.9); }
+    background-color: rgba(121, 53, 138, 0.9); }
   .grants-and-funding .bg-color.show-on-hover {
-    background-color: rgba(93, 7, 112, 0.7); }
+    background-color: rgba(121, 53, 138, 0.7); }
 
 .youth-in-action {
   border-color: #ff0078; }
