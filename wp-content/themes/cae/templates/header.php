@@ -65,7 +65,7 @@
             <?php wp_nav_menu( array('menu' => 'Youth in Action','menu_class' => 'nav-list secondary' )); ?>
         </div>
         <div class="col-sm-4">
-            <?php wp_nav_menu( array('menu' => 'Newsletters','menu_class' => 'nav-list secondary' )); ?>
+            <?php wp_nav_menu( array('menu' => 'Centers','menu_class' => 'nav-list secondary' )); ?>
         </div>
       </div><!-- .row -->
 
