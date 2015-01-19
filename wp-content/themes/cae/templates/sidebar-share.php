@@ -4,9 +4,9 @@
 		<li class="share-icon share-icon-twitter">
 			<?php $twitter = get_field('twitter_text'); ?>
 			<?php if($twitter): ?>
-			<a class="popup" href="http://twitter.com/home?status=<?php echo $twitter; ?> | <?php the_permalink();?>">Twitter</a>
+			<a class="popup" href="http://twitter.com/home?status=<?php echo $twitter; ?> <?php the_permalink();?>">Twitter</a>
 			<?php else: ?>
-			<a class="popup" href="http://twitter.com/home?status=<?php the_title(); ?> | <?php the_permalink();?>">Twitter</a>
+			<a class="popup" href="http://twitter.com/home?status=<?php the_title(); ?> <?php the_permalink();?>">Twitter</a>
 			<?php endif; ?>
 		</li>
 		<li class="share-icon share-icon-facebook">

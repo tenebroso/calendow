@@ -33,9 +33,9 @@
 
 			<?php $twitter = get_sub_field('section_twitter_text'); ?>
 			<?php if($twitter): ?>
-			<a class="inline-block popup" href="http://twitter.com/home?status=<?php echo $twitter; ?> | <?php the_permalink();?>#<?php echo $i; ?>">Twitter</a>
+			<a class="inline-block popup" href="http://twitter.com/home?status=<?php echo $twitter; ?> <?php the_permalink();?>#<?php echo $i; ?>">Twitter</a>
 			<?php else: ?>
-			<a class="inline-block popup" href="http://twitter.com/home?status=<?php the_title(); ?> | <?php the_permalink();?>#<?php echo $i; ?>">Twitter</a>
+			<a class="inline-block popup" href="http://twitter.com/home?status=<?php the_title(); ?> <?php the_permalink();?>#<?php echo $i; ?>">Twitter</a>
 			<?php endif; ?>
 
 			<a class="inline-block popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank"> Facebook </a>
