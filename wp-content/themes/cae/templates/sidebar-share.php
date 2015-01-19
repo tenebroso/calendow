@@ -2,7 +2,12 @@
 	<h3 class="sidenav-title bg-color">Share This.</h3>
 		<ul class="side-nav">
 		<li class="share-icon share-icon-twitter">
-			<a class="popup" href="http://twitter.com/home?status=Currently reading <?php the_permalink();?>">Twitter</a>
+			<?php $twitter = get_field('twitter_text'); ?>
+			<?php if($twitter): ?>
+			<a class="popup" href="http://twitter.com/home?status=<?php echo $twitter; ?> | <?php the_permalink();?>">Twitter</a>
+			<?php else: ?>
+			<a class="popup" href="http://twitter.com/home?status=<?php the_title(); ?> | <?php the_permalink();?>">Twitter</a>
+			<?php endif; ?>
 		</li>
 		<li class="share-icon share-icon-facebook">
 			<a class="popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">Facebook</a>
