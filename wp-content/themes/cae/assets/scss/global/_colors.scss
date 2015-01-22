@@ -23,6 +23,12 @@ border-color:$variable;
 		background-color:$variable;
 		&.section-intro-title {
 			background: $variable;
+			a {
+				color: $white;
+				&:hover {
+					color: lighten($variable, 20%);
+				}
+			}
 		}
 		a {
 			color:$black;

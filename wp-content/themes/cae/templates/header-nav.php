@@ -37,9 +37,12 @@ if ($workSlug[0] == 'places') { ?>
 				</a>
 		    </li><?php endif; endfor; ?> -->
 
-<?php } else { ?>
+<?php } else { 
 
-	<p class="sidenav-title bg-color section-intro-title"><?php echo $workSlug[0]; ?>.</p>
+	$permalink = get_permalink($post->post_parent);
+	?>
+
+	<p class="sidenav-title bg-color section-intro-title"><a href="<?php echo $permalink; ?>"><?php echo $workSlug[0]; ?>.</a></p>
 	<ul class="newsletters bg-color sub-nav nav"><?php previous_post_link('<li class="pull-left icon-lg-arrow text-hide">%link</li>', '', ''); ?>
 		<li class="active"><a class="resize-thumb"><img src="<?php echo $image; ?>"></a></li><?php
 		    $parent =  $post->post_parent;
