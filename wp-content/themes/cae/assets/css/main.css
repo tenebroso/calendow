@@ -3026,13 +3026,18 @@ button, .btn, input[type="submit"] {
 .nav-collapse {
   background-image: url(../img/svg/hamburger.svg);
   background-repeat: no-repeat;
-  background-position: center center;
-  width: 65px;
+  background-position: 13px center;
+  width: 91px;
   height: 54px;
   display: block;
   cursor: pointer;
   -webkit-transition: opacity 0.25s;
-  transition: opacity 0.25s; }
+  transition: opacity 0.25s;
+  text-align: right;
+  padding-right: 10px;
+  line-height: 52px;
+  color: #7B7B7B;
+  font-size: 15px; }
   .no-touch .nav-collapse:hover {
     opacity: 0.5;
     -webkit-transition: opacity 0.25s;
@@ -3140,9 +3145,9 @@ button, .btn, input[type="submit"] {
   @media (min-width: 1200px) {
     .nav-full-screen-branding {
       margin-bottom: 60px; }
-      .home .nav-full-screen-branding .text-right {
+      .nav-full-screen-branding .text-right {
         position: relative;
-        right: -8em; } }
+        right: -6em; } }
 
 .show-on-hover {
   opacity: 0;
@@ -4619,6 +4624,10 @@ h2 + .byline {
     background-color: #15c6a7; }
     .prevention .bg-color.section-intro-title {
       background: #15c6a7; }
+      .prevention .bg-color.section-intro-title a {
+        color: #fff; }
+        .prevention .bg-color.section-intro-title a:hover {
+          color: #54edd1; }
     .prevention .bg-color a {
       color: #7B7B7B; }
     .prevention .bg-color .breadcrumbs .color {
@@ -4678,6 +4687,10 @@ h2 + .byline {
     background-color: #07a8c6; }
     .schools .bg-color.section-intro-title {
       background: #07a8c6; }
+      .schools .bg-color.section-intro-title a {
+        color: #fff; }
+        .schools .bg-color.section-intro-title a:hover {
+          color: #3bdcf8; }
     .schools .bg-color a {
       color: #7B7B7B; }
     .schools .bg-color .breadcrumbs .color {
@@ -4737,6 +4750,10 @@ h2 + .byline {
     background-color: #C10512; }
     .places .bg-color.section-intro-title {
       background: #C10512; }
+      .places .bg-color.section-intro-title a {
+        color: #fff; }
+        .places .bg-color.section-intro-title a:hover {
+          color: #fa3243; }
     .places .bg-color a {
       color: #7B7B7B; }
     .places .bg-color .breadcrumbs .color {
@@ -4796,6 +4813,10 @@ h2 + .byline {
     background-color: #79358a; }
     .grants-and-funding .bg-color.section-intro-title {
       background: #79358a; }
+      .grants-and-funding .bg-color.section-intro-title a {
+        color: #fff; }
+        .grants-and-funding .bg-color.section-intro-title a:hover {
+          color: #af62c3; }
     .grants-and-funding .bg-color a {
       color: #7B7B7B; }
     .grants-and-funding .bg-color .breadcrumbs .color {
@@ -4855,6 +4876,10 @@ h2 + .byline {
     background-color: #ff0078; }
     .youth-in-action .bg-color.section-intro-title {
       background: #ff0078; }
+      .youth-in-action .bg-color.section-intro-title a {
+        color: #fff; }
+        .youth-in-action .bg-color.section-intro-title a:hover {
+          color: #ff66b0; }
     .youth-in-action .bg-color a {
       color: #7B7B7B; }
     .youth-in-action .bg-color .breadcrumbs .color {
@@ -4914,6 +4939,10 @@ h2 + .byline {
     background-color: #d9673e; }
     .neighborhoods .bg-color.section-intro-title {
       background: #d9673e; }
+      .neighborhoods .bg-color.section-intro-title a {
+        color: #fff; }
+        .neighborhoods .bg-color.section-intro-title a:hover {
+          color: #eaa993; }
     .neighborhoods .bg-color a {
       color: #7B7B7B; }
     .neighborhoods .bg-color .breadcrumbs .color {
@@ -4973,6 +5002,10 @@ h2 + .byline {
     background-color: #c5b634; }
     .secondary .bg-color.section-intro-title {
       background: #c5b634; }
+      .secondary .bg-color.section-intro-title a {
+        color: #fff; }
+        .secondary .bg-color.section-intro-title a:hover {
+          color: #ded381; }
     .secondary .bg-color a {
       color: #7B7B7B; }
     .secondary .bg-color .breadcrumbs .color {

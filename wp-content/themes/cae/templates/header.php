@@ -6,7 +6,7 @@
     <div class="pull-right">
       <?php get_search_form();?>
       <div class="nav-collapse-wrap">
-        <a class="js-nav-open-trigger nav-collapse"></a>
+        <a class="js-nav-open-trigger nav-collapse">menu</a>
       </div>
     </div>
 
