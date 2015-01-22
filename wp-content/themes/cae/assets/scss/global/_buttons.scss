@@ -6,7 +6,7 @@ button, .btn, input[type="submit"] {
 	line-height:20px;
   border-radius:3px;
   &:focus {
-    outline: 2px solid $grey2;
+    outline: none;
   }
 }
 

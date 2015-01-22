@@ -2649,7 +2649,7 @@ button, .btn, input[type="submit"] {
   line-height: 20px;
   border-radius: 3px; }
   button:focus, .btn:focus, input[type="submit"]:focus {
-    outline: 2px solid #bdbdbd; }
+    outline: none; }
 
 .btn-load-more {
   margin: 40px auto;
