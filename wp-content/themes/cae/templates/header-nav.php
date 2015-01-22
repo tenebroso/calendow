@@ -16,9 +16,11 @@ if ($workSlug[0] == 'places') { ?>
 		    		'post_type' => 'page',
 		    		'post_parent' => 109,
 		    		'posts_per_page' => -1,
+		    		'orderby' => 'title',
+		    		'order' => 'ASC',
 		    		'post__not_in' => array($current)
 		    	); 
-		    $the_query = new WP_Query( $args ); if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?><li>
+		    $the_query = new WP_Query( $args ); if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); $url = get_permalink(); ?><li>
 				<a href="<?php echo $url; ?>" class="resize-thumb">
 					<?php the_field('name_abbreviation'); ?>
 				</a>
