@@ -104,12 +104,16 @@ body {
 }
 
 @media (min-width:$screen-md-min) {
-	.container {
+	.main .container {
 		.home & {
 			max-width:1001px;
 			padding: 0;
 		}
 	}	
+	.banner .container {
+		max-width: 1001px;
+		padding: 0;
+	}
 }
 
 @media (max-width:782px) {

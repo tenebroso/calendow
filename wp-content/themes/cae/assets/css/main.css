@@ -2367,7 +2367,10 @@ body {
           height: 168px; } }
 
 @media (min-width: 992px) {
-  .home .container {
+  .home .main .container {
+    max-width: 1001px;
+    padding: 0; }
+  .banner .container {
     max-width: 1001px;
     padding: 0; } }
 
@@ -2688,7 +2691,7 @@ button, .btn, input[type="submit"] {
     display: inline-block;
     vertical-align: top; }
   @media (min-width: 1200px) {
-    .home .banner .pull-right {
+    .banner .pull-right {
       margin-right: -7em; } }
 
 #fixed {
