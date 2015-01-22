@@ -4025,9 +4025,6 @@ article[class*="entry-single"] {
   border: 2px solid white;
   height: 81px; }
 
-.places .sub-nav li:not(.pull-left):not(.pull-right):nth-child(n+5) {
-  display: none; }
-
 .places .sub-nav.newsletters.nav li.active:after, .places .sub-nav.newsletters.nav li:not(.pull-right):not(.pull-left):hover:after {
   bottom: 0; }
 
