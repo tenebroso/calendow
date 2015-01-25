@@ -29,6 +29,7 @@ CE.Site = {
         auto:false,
         pager:false,
         slideWidth:265,
+        slideMargin: 9,
         infiniteLoop:false,
         hideControlOnEnd:true
       });

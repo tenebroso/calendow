@@ -16,7 +16,7 @@
 		border-top:12px solid $red;
 		background: $white;
 		width:100%;
-		outline:1px solid #f1f1f1;
+		//outline:1px solid #f1f1f1;
 		@media (min-width:$screen-sm-min) {
 			width:265px;
 			max-width: 32%;
@@ -24,7 +24,7 @@
 		margin:0 9px 9px 0;
 		padding:0;
 		h3 {
-			font-size:30px;
+			font-size:28px;
 			margin-bottom:18px;
 		}
 	}
