@@ -2367,11 +2367,7 @@ body {
           height: 168px; } }
 
 @media (min-width: 992px) {
-  .home .main .container {
-    max-width: 1001px;
-    padding: 0; }
   .banner .container {
-    max-width: 1001px;
     padding: 0; } }
 
 @media (max-width: 782px) {
