@@ -2680,9 +2680,12 @@ button, .btn, input[type="submit"] {
   border-radius: 50%; }
 
 .brand {
-  margin: 10px 0 0;
+  margin: 5px 0 0;
   display: inline-block;
   width: 122px; }
+  .brand img {
+    max-width: 100%;
+    height: auto; }
 
 .banner {
   background: #f7f7f7;
