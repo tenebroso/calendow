@@ -59,5 +59,13 @@
         get_template_part('templates/footer'); ?>
   </div>
 
+  <div class="splash-message">
+    <h2>Welcome to the new <br />California Endowment Site</h2>
+    <p>Come see what's new inside</p>
+    <p><a class="btn close">View New Site</a></p>
+    <p class="pull-right text-right"><a href="http://www.calendow.org/">Go to the Archived Site</a></p>
+    <p class="pull-left text-left"><a class="close-cookie">Hide this</a></p>
+</div>
+
 </body>
 </html>

@@ -35,6 +35,12 @@ body {
 		transform:translate3d(0,0,0);
 		transition: transform .75s;
 	}
+	&.dimmed:after {
+		display: block;
+		transform: translate3d(0,0,0);
+		background: rgba(0,0,0,.8);
+		z-index: 999;
+	}
 }
 
 

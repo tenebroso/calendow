@@ -20,6 +20,7 @@ CE.Site = {
          CE.headerParallax();
       }
       CE.legacy();
+      CE.splashMessage();
     }
   },
   page_template_page_campaign_overview_php: {
