@@ -38,7 +38,7 @@
 			<a class="inline-block popup" href="http://twitter.com/home?status=<?php the_title(); ?> <?php the_permalink();?>#<?php echo $i; ?>">Twitter</a>
 			<?php endif; ?>
 
-			<a class="inline-block popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank"> Facebook </a>
+			<a class="inline-block popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>#<?php echo $i; ?>" target="_blank"> Facebook </a>
 
 			</li><li class="report-next"><a class="icon-sm-arrow" href="#report-panel-<?php echo $i + 1; ?>"></a></li>
 		</ul>
