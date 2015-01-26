@@ -6,9 +6,17 @@ var CE = CE || {};
 
 
     var $container = $('.single-report .main');
-    var $report = $('.report-single.current').height() + 210;
+    var $report = $('.report-single');
 
-    $container.height($report).css('overflow','hidden');
+
+    // Get an array of all element heights
+    var elementHeights = $report.map(function() {
+      return $(this).height();
+    }).get();
+
+    var maxHeight = Math.max.apply(null, elementHeights);
+
+    $container.height(maxHeight);
 
 
   };

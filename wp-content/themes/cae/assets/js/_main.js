@@ -71,7 +71,7 @@ CE.Site = {
   },
   single_report: {
     init: function() {
-      //CE.reportPageHeight();
+      CE.reportPageHeight();
       CE.reportSectionSwitcher();
     }
   }
