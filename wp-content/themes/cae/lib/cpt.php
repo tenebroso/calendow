@@ -4,22 +4,22 @@
    Custom Post Type Loop
    ========================================================================== */
 
-function ce_register_post_type( $title, $args = array() ){
+function ce_register_post_type( $cptitle, $args = array() ){
      
-    $sanitizedTitle = sanitize_title( $title );
+    $sanitizedTitle = sanitize_title( $cptitle );
      
     $defaults = array(
             'labels' => array(
-                'name' => $title . 's',
-                'singular_name' => $title,
-                'add_new_item' => 'Add New ' . $title,
-                'edit_item' => 'Edit ' . $title,
-                'new_item' => 'New ' . $title,
-                'search_items' => 'Search ' . $title . 's',
-                'not_found' => 'No ' . $title . 's found',
-                'not_found_in_trash' => 'No ' . $title . 's found in trash'
+                'name' => $cptitle . 's',
+                'singular_name' => $cptitle,
+                'add_new_item' => 'Add New ' . $cptitle,
+                'edit_item' => 'Edit ' . $cptitle,
+                'new_item' => 'New ' . $cptitle,
+                'search_items' => 'Search ' . $cptitle . 's',
+                'not_found' => 'No ' . $cptitle . 's found',
+                'not_found_in_trash' => 'No ' . $cptitle . 's found in trash'
             ),
-            '_builtin' => false,
+            //'_builtin' => false,
             'public' => true,
             'hierarchical' => false,
             'taxonomies' => array( ),
@@ -52,8 +52,8 @@ $postTypes = array(
     'Infographic' => ''
 );
  
-foreach( $postTypes as $title => $args )
-    ce_register_post_type( $title, $args );
+foreach( $postTypes as $cptitle => $args )
+    ce_register_post_type( $cptitle, $args );
 
 /* =============================================================================
    Bump Media tab above post types
