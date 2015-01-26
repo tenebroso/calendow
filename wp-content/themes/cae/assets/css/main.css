@@ -2700,7 +2700,7 @@ button, .btn, input[type="submit"] {
     vertical-align: top; }
   @media (min-width: 1200px) {
     .banner .pull-right {
-      margin-right: -7em; } }
+      margin-right: -5em; } }
 
 #fixed {
   position: fixed;
@@ -3155,7 +3155,7 @@ button, .btn, input[type="submit"] {
       margin-bottom: 60px; }
       .nav-full-screen-branding .text-right {
         position: relative;
-        right: -6em; } }
+        right: -5em; } }
 
 .show-on-hover {
   opacity: 0;
