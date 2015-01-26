@@ -4209,11 +4209,23 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     border: 2px solid #565656;
     border-radius: 50%;
     margin: 0 2px;
-    position: relative; }
+    position: relative;
+    vertical-align: top; }
     .social-icons li[class*='icon'] span {
       display: none; }
     .social-icons li[class*='icon']:hover {
       border-color: #fff; }
+  .social-icons .icon-mail {
+    background-image: url(../img/svg/icon-mail.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    .social-icons .icon-mail a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 0;
+      line-height: 0; }
   @media (min-width: 768px) {
     .text-right .social-icons {
       text-align: right;

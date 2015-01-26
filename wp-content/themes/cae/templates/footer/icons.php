@@ -3,4 +3,5 @@
 	<li class="icon-facebook js-popover" data-placement="bottom"><span><iframe src="//www.facebook.com/plugins/like.php?href=<?php the_field('facebook_url','options'); ?>&amp;width=80&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=540281932739279" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe></span> </li>
 	<li class="icon-youtube js-popover" data-placement="bottom"><span><div class="g-ytsubscribe" data-channel="<?php the_field('youtube_channel_id','options'); ?>"></div></span> </li>
 	<li class="icon-instagram js-popover" data-placement="bottom"><span><a href="<?php the_field('instagram_url','options'); ?>" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a></span> </li>
+	<li class="icon-mail"><a href="<?php the_field('mailing_list_url','options'); ?>">Mailing List</a></li>
 </ul>
