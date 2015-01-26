@@ -18,7 +18,7 @@ var CE = CE || {};
 	  var panel = $(this).find('.in').prevAll('.panel-heading');
 	  
 	  $('html, body').animate({
-	        scrollTop: panel.offset().top
+	        scrollTop: panel.offset().top - 100
 	  }, 500);
 	  
 	});

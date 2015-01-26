@@ -19,6 +19,13 @@ CE.Site = {
       if (!$('html.touch').length) {
          CE.headerParallax();
       }
+
+      var $hash = window.location.hash;
+      var $panelGroup = $('.panel-group');
+
+      if ($panelGroup.length && $hash.length){
+        $($hash).find('.collapsed').trigger('click');
+      }
       CE.legacy();
       CE.splashMessage();
     }

@@ -7,9 +7,11 @@
       $title = get_sub_field('accordion_title');
       $sub = get_sub_field('accordion_sub-title');
       $aContent = get_sub_field('accordion_content'); 
-      $aImage = get_sub_field('accordion_image'); ?>
+      $aImage = get_sub_field('accordion_image'); 
+      $titleClean = str_replace(' ', '-', $title); 
+      $aLink = strtolower($titleClean); ?>
 
-  <div class="panel panel-default">
+  <div class="panel panel-default" id="<?php echo $aLink; ?>">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse<?php echo $i; ?>" class="collapsed" aria-expanded="false" aria-controls="collapse<?php echo $i; ?>">
