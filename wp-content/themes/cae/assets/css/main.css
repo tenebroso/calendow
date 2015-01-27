@@ -2966,7 +2966,6 @@ button, .btn, input[type="submit"] {
     display: block; }
 
 .nav.newsletters.sub-nav {
-  background-image: url(../img/svg/pattern.svg);
   max-height: 88px;
   padding: 2px 0;
   margin: 0 0 2em 0;
