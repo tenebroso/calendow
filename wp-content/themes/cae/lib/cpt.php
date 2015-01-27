@@ -42,7 +42,7 @@ function ce_register_post_type( $cptitle, $args = array() ){
    ========================================================================== */
 
 $postTypes = array(
-    'Report' => '',
+    'Report' => array('supports' => array( 'title') ),
     'Newsletter' => '',
     'News' => array( 'labels' => array('name' => 'News') ),
     'Action' => '',

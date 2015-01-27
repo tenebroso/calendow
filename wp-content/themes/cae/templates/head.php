@@ -25,4 +25,13 @@ caeicons( [ "/assets/icons.data.svg.css", "/assets/icons.data.png.css", "/assets
 		}
 	</style>
 <?php endif; ?>
+<?php $bgImage = get_field('background_images'); if(is_singular('report') && $bgImage):  ?>
+<style type="text/css">
+@media (min-width:1200px) {
+	.single-report {
+		background-image: url(<?php echo $bgImage; ?>);
+	}
+}
+</style>
+<?php endif; ?>
 </head>
