@@ -2716,7 +2716,7 @@ button, .btn, input[type="submit"] {
         top: 32px; } }
 
 .page-header {
-  background-color: #07a8c6;
+  background-color: #7f7f7f;
   background-position: bottom center;
   background-image: url(../img/svg/pattern.svg);
   background-repeat: repeat;
@@ -4061,7 +4061,7 @@ nav.affix {
 .side-nav li a {
   display: block;
   color: #fff;
-  background: #d9673e;
+  background: #7f7f7f;
   padding: 9px 25px 9px 15px;
   border-bottom: 1px solid transparent;
   font-size: 18px;
@@ -4581,6 +4581,21 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     right: auto; }
   .footer-post-nav .bx-controls-direction a.disabled {
     opacity: 0; }
+
+.resources-container {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: 15px; }
+  .resources-container img {
+    max-width: 100%;
+    height: auto; }
+  .resources-container ol, .resources-container ul {
+    list-style-type: disc;
+    padding-left: 1em;
+    padding-bottom: 1em; }
+  .resources-container a {
+    text-decoration: underline;
+    color: #272A3F; }
 
 .pc {
   display: none; }
