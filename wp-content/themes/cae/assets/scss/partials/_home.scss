@@ -110,6 +110,7 @@
 
 		padding:0 13px;
 		line-height:47px;
+		transform:translate(0,0);
 		transition:all .35s ease-in-out;
 	}
 	li a:hover {
@@ -171,6 +172,14 @@
 			}
 			.hero-nav-color-block {
 				background: $action;
+			}
+		}
+		&.default {
+			a {
+				color:$grey3;
+			}
+			.hero-nav-color-block {
+				background: $grey3;
 			}
 		}
 	}

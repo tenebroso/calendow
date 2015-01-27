@@ -3268,6 +3268,9 @@ button, .btn, input[type="submit"] {
     left: calc(100% - 7px);
     padding: 0 13px;
     line-height: 47px;
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
     -webkit-transition: all 0.35s ease-in-out;
     transition: all 0.35s ease-in-out; }
   .hero-nav li a:hover .hero-nav-color-block {
@@ -3304,6 +3307,10 @@ button, .btn, input[type="submit"] {
     color: #ff0078; }
   .hero-nav li.action .hero-nav-color-block {
     background: #ff0078; }
+  .hero-nav li.default a {
+    color: #7f7f7f; }
+  .hero-nav li.default .hero-nav-color-block {
+    background: #7f7f7f; }
 
 @media (min-width: 768px) {
   .hero-container-text, .hero-nav {
