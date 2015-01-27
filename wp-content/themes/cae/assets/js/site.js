@@ -878,6 +878,9 @@ CE.Site = {
       }
       CE.legacy();
       CE.splashMessage();
+      $('body').tweetHighlighted({
+        via: 'calendow'
+      });
     }
   },
   page_template_page_campaign_overview_php: {

@@ -8,6 +8,9 @@ button, .btn, input[type="submit"] {
   &:focus {
     outline: none;
   }
+  &.tweet-me {
+    z-index: 90;
+  }
 }
 
 .btn-load-more {
