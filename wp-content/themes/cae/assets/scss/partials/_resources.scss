@@ -14,5 +14,8 @@
 	a {
 		text-decoration: underline;
 		color: $accentDark;
+		&:hover {
+			color: $accentLighter;
+		}
 	}
 }

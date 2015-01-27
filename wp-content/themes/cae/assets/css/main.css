@@ -4596,6 +4596,8 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
   .resources-container a {
     text-decoration: underline;
     color: #272A3F; }
+    .resources-container a:hover {
+      color: #777987; }
 
 .pc {
   display: none; }
