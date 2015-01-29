@@ -6,3 +6,5 @@ node_modules
 config.codekit
 
 /wp-content/themes/cae/assets/scss/bootstrap/.sass-cache/
+
+/wp-content/cache/
