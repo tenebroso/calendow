@@ -18,7 +18,16 @@ jQuery(document).ready(function($) {
    */     
 
    _alm.buildShortcode = function(){
-      output = '[ajax_load_more';
+      output = '[ajax_load_more';    
+      
+      
+      // ---------------------------
+      // - SEO      
+      // ---------------------------
+      
+      var seo = $('.seo input[name=seo]:checked').val(); 
+      if(seo !== 'false' && seo != undefined)
+         output += ' seo="'+seo+'"';   
       
       // ---------------------------
       // - Repeater
@@ -114,6 +123,24 @@ jQuery(document).ready(function($) {
          output += ' tag="'+tag+'"';   
       
       // ---------------------------
+      // - Date      
+      // ---------------------------
+      var currentTime = new Date(),
+          currentYear = currentTime.getFullYear();
+      
+      var dateY = $('.date input#input-year').val(); // Year          
+      if(dateY  !== '' && dateY  !== undefined && dateY <= currentYear) 
+         output += ' year="'+dateY+'"';   
+      
+      var dateM = $('.date input#input-month').val(); // Month          
+      if(dateM  !== '' && dateM  !== undefined && dateM < 13) 
+         output += ' month="'+dateM+'"';   
+      
+      var dateD = $('.date input#input-day').val(); // Day          
+      if(dateD  !== '' && dateD  !== undefined && dateD < 32) 
+         output += ' day="'+dateD+'"';   
+      
+      // ---------------------------
       // - Authors      
       // ---------------------------
       
@@ -169,6 +196,14 @@ jQuery(document).ready(function($) {
       if(orderby !== 'date') 
          output += ' orderby="'+orderby+'"'; 
          
+          
+      // ---------------------------
+      // - Post Status      
+      // ---------------------------
+      var post_status = $('select#post-status').val();   
+      if(post_status !== 'publish') 
+         output += ' post_status="'+post_status+'"'; 
+         
          
       // ---------------------------
       // - Exclude posts      
@@ -189,7 +224,7 @@ jQuery(document).ready(function($) {
       // - Post Offset      
       // ---------------------------
       
-      var offset = $('.offset select').val();   
+      var offset = $('.offset input').val();   
       if(offset > 0) 
       	output += ' offset="'+offset+'"';  
       
@@ -198,9 +233,10 @@ jQuery(document).ready(function($) {
       // - Posts Per Page       
       // ---------------------------
       
-      var posts_per_page = $('.posts_per_page select').val();  
-      if(posts_per_page > 0 && posts_per_page !== 5 && $('.posts_per_page select').hasClass('changed'))
-         output += ' posts_per_page="'+posts_per_page+'"';            
+      var posts_per_page = $('.posts_per_page input').val();        
+      if(posts_per_page > 0 && posts_per_page != 5)
+         output += ' posts_per_page="'+posts_per_page+'"';     
+            
       
       
       // ---------------------------
@@ -214,9 +250,9 @@ jQuery(document).ready(function($) {
             output += ' scroll="false"';         
       }else{
          $('.row.max_pages').slideDown(100, 'alm_easeInOutQuad');
-         if($('.max_pages select').hasClass('changed'))           
-            output += ' max_pages="'+$('.max_pages select').val()+'"';
-         
+         var max_pages = $('.max_pages input').val();         
+         if(max_pages > 0 && max_pages != 5)           
+            output += ' max_pages="'+$('.max_pages input').val()+'"';         
       }   
       
       
@@ -245,7 +281,7 @@ jQuery(document).ready(function($) {
       var btn_lbl = $('.btn-label input').val();    
       btn_lbl = $.trim(btn_lbl);       
       if(btn_lbl !== '' && $('.btn-label input').hasClass('changed')) 
-         output += ' button_label="'+btn_lbl+'"';         
+         output += ' button_label="'+btn_lbl+'"';        
       
       
       output += ']';  //Close shortcode          
@@ -261,46 +297,66 @@ jQuery(document).ready(function($) {
    
    //Select 'post' by default
    $('.post_types input[type=checkbox]#chk-post').prop('checked', true).addClass('changed'); 
+   //Select SEO 'false' by default
+   $('.seo input[type=radio]#seo-false').prop('checked', true).addClass('changed'); 
    
    
-   $('.alm_element').on('change keyup', function() {
+   $(document).on('change keyup', '.alm_element', function() {      
       $(this).addClass('changed');      
 
       // If post type is not selected, select 'post'.
       if(!$('.post_types input[type=checkbox]:checked').length > 0){
          $('.post_types input[type=checkbox]#chk-post').prop('checked', true);
       } 
+      
       // If Tax Term Operator is not selected, select 'IN'.
       if(!$('#tax-operator-select input[type=radio]:checked').length > 0){
          $('#tax-operator-select input[type=radio]#tax-in-radio').prop('checked', true);
-      }      
+      }     
       
       _alm.buildShortcode();
    });
    
    
-   $('.search-term input, .exclude input, .btn-label input').keyup(function() {  
-      $(this).addClass('changed'); 
-      _alm.buildShortcode();
+   $("input.numbers-only").keydown(function (e) {
+      if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+          // Allow: Ctrl+A
+         (e.keyCode == 65 && e.ctrlKey === true) || 
+          // Allow: home, end, left, right, down, up
+         (e.keyCode >= 35 && e.keyCode <= 40)) {
+              // let it happen, don't do anything
+              return;
+     }
+     // Ensure that it is a number and stop the keypress
+     if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+         e.preventDefault();
+     } 
    });
    
    
    
    /*
-   *  Jump to section
+   *  Jump to section, Table of contents
    *
    *  @since 2.0.0
+   *  Updated v2.4
    */ 
    
    var jumpOptions = '';
+   var toc = '';
 	$('.row').each(function(){
-		var id = $(this).attr('id');
-		var title = $(this).find('h3.heading').text();
-		jumpOptions += '<option value="'+id+'">'+title+'</option>';
+	   if(!$(this).hasClass('no-brd')){ // Special case for back 2 top on shortcode builder landing
+   		var id = $(this).attr('id');
+   		var title = $(this).find('h3.heading').text();
+   		jumpOptions += '<option value="'+id+'">'+title+'</option>';
+		}
 	});
 	
-	$('select.jump-menu').append(jumpOptions);
 	
+	
+	/* Jump Menu */
+	
+	$('select.jump-menu').append(jumpOptions);
 	$('select.jump-menu').change(function() {
 		var pos = $(this).val();
 		if(pos !== 'null'){
@@ -309,7 +365,46 @@ jQuery(document).ready(function($) {
 			}, 200, 'alm_easeInOutQuad');
 		}
    });
-    
+   
+   
+	
+	/* Table of Contents */
+	$('.table-of-contents .toc').append('<option value="#">-- Jump to Option --</option>');
+	$('.table-of-contents .toc').append(jumpOptions).select2();	
+	
+	$('.table-of-contents .toc').change(function() {
+	   var pos = $(this).val();
+		if(pos !== 'null'){
+			$('html,body').animate({
+			   scrollTop: $('#'+pos).offset().top - 50
+			}, 500, 'alm_easeInOutQuad');
+		}
+   });
+   
+   function almResizeTOC(){      
+      var tocW = $('.cnkt-sidebar').width();
+      $('.table-of-contents').css('width', tocW + 'px'); 
+   }
+   almResizeTOC();
+   
+   $(window).resize(function() {
+      almResizeTOC();
+   });
+   
+   $(window).scroll(function(){
+      almSidebarAttach();
+   });
+   
+   function almSidebarAttach(){
+      var scrollT = $(window).scrollTop(),
+          target = 60;
+          
+      if(scrollT > target)
+         $('.table-of-contents').addClass('attached');
+      else
+         $('.table-of-contents').removeClass('attached');
+   }
+   almSidebarAttach();
     
    /*
    *  Expand/Collapse shortcode headings
@@ -317,7 +412,7 @@ jQuery(document).ready(function($) {
    *  @since 2.0.0
    */ 
    
-	$('h3.heading').click(function(){
+	$(document).on('click', 'h3.heading', function(){
 		var el = $(this);
 		if($(el).hasClass('open')){
 			$(el).next('.expand-wrap').slideDown(100, 'alm_easeInOutQuad', function(){
@@ -330,7 +425,7 @@ jQuery(document).ready(function($) {
 		}
 	});
 	
-    $('.toggle-all').click(function(e){ 
+	$(document).on('click', '.toggle-all', function(){
         var el = $(this);
 		if($(el).hasClass('closed')){
 		    $(el).removeClass('closed');
@@ -418,6 +513,7 @@ jQuery(document).ready(function($) {
    
    
    
+   
    /*
    *  _alm.copyToClipboard
    *  Copy shortcode to clipboard
@@ -433,6 +529,7 @@ jQuery(document).ready(function($) {
 		var c = $('#shortcode_output').html();
 		_alm.copyToClipboard(c);
 	});
+   
    
    
 

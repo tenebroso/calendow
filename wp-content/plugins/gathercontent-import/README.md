@@ -28,6 +28,18 @@ Contact us directly via email for support [support@gathercontent.com](mailto:sup
 
 ## Changelog ##
 
+### 2.6.3 ###
+* Better integration with yoast and ACF pro. Map to author. Added post format option
+
+### 2.6.2 ###
+* Remove inline comments from text content
+
+### 2.6.1 ###
+* Fix bug for multi site installs
+
+### 2.6.0 ###
+* Add support for custom tabs feature within GatherContent
+
 ### 2.5.0 ###
 * Import hierarchy from GatherContent. Added publish state dropdown to
 

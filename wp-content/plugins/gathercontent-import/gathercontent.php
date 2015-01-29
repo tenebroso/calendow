@@ -3,7 +3,7 @@
 Plugin Name: GatherContent Importer
 Plugin URI: http://www.gathercontent.com
 Description: Imports pages from GatherContent to your wordpress blog
-Version: 2.5.0
+Version: 2.6.33
 Author: Mathew Chapman
 Author URI: http://www.gathercontent.com
 License: GPL2
@@ -11,7 +11,7 @@ License: GPL2
 require_once 'curl.php';
 class GatherContent extends GatherContent_Curl {
 
-	var $version = '2.5'; // used for javascript versioning
+	var $version = '2.6.3'; // used for javascript versioning
 
 	function __construct() {
 		parent::__construct();
@@ -23,28 +23,71 @@ class GatherContent extends GatherContent_Curl {
 	}
 
 	function update_db_check() {
-		if ( get_site_option( 'gathercontent_version' ) != $this->version ) {
-			$this->install();
+		if ( get_option( 'gathercontent_version' ) != $this->version ) {
+			$this->install(true);
 		}
 	}
 
-	function install() {
+	function install($networkwide) {
+		global $wpdb;
+
+		if( function_exists( 'is_multisite' ) && is_multisite() ) {
+
+			if($networkwide) {
+				$old_blog = $wpdb->blogid;
+				$blogids = $wpdb->get_col( "SELECT blog_id FROM {$wpdb->blogs}" );
+				foreach ( $blogids as $blog_id ) {
+					switch_to_blog( $blog_id );
+					$this->_install();
+				}
+				switch_to_blog( $old_blog );
+				return;
+			}
+		}
+
+		$this->_install();
+	}
+
+	function _install() {
 		global $wpdb;
 
 		$table_name = $wpdb->prefix . 'gathercontent_pages';
 
-		$sql = "CREATE TABLE IF NOT EXISTS $table_name (
-		  `page_id` int(10) NOT NULL,
-		  `project_id` int(10) NOT NULL,
-		  `config` longblob NOT NULL,
-		  UNIQUE KEY `page_id` (`page_id`)
-		);";
-		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-		dbDelta( $sql );
-		update_site_option( 'gathercontent_version', $this->version );
+		if( $wpdb->get_var( "SHOW TABLES LIKE '{$table_name}'" ) != $table_name ) {
+
+			$sql = "CREATE TABLE IF NOT EXISTS $table_name (
+			  `page_id` int(10) NOT NULL,
+			  `project_id` int(10) NOT NULL,
+			  `config` longblob NOT NULL,
+			  UNIQUE KEY `page_id` (`page_id`)
+			);";
+			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+			dbDelta( $sql );
+			update_option( 'gathercontent_version', $this->version );
+		}
 	}
 
-	function uninstall() {
+	function uninstall($networkwide) {
+		global $wpdb;
+
+		if( function_exists( 'is_multisite' ) && is_multisite() ) {
+
+			if($networkwide) {
+				$old_blog = $wpdb->blogid;
+				$blogids = $wpdb->get_col( "SELECT blog_id FROM {$wpdb->blogs}" );
+				foreach ( $blogids as $blog_id ) {
+					switch_to_blog( $blog_id );
+					$this->_uninstall();
+				}
+				switch_to_blog( $old_blog );
+				return;
+			}
+		}
+
+		$this->_uninstall();
+	}
+
+	function _uninstall() {
 		global $wpdb;
 
 		$table_name = $wpdb->prefix . 'gathercontent_pages';
@@ -308,6 +351,7 @@ class GatherContent extends GatherContent_Curl {
 				$this->categories_dropdown();
 				$this->parent_dropdown();
 				$this->publish_dropdown();
+				$this->format_dropdown();
 				$cur_settings = $this->option( 'saved_settings' );
 				if ( ! is_array( $cur_settings ) ) {
 					$cur_settings = array();
@@ -353,6 +397,7 @@ class GatherContent extends GatherContent_Curl {
 				$project_id = $this->option( 'project_id' );
 				$page = $this->get_gc_page( $page_id );
 				$page = $page->config;
+				$post_format = '0';
 				$file_counter = 0;
 				$total_files = 0;
 				$files = array(
@@ -367,12 +412,10 @@ class GatherContent extends GatherContent_Curl {
 				if ( $page !== false ) {
 					$this->get_files( $page_id );
 
-					$post_fields = array('post_title', 'post_content', 'post_excerpt');
+					$post_fields = array( 'post_title', 'post_content', 'post_excerpt', 'post_author' );
 
 					$config = $this->get_field_config( $page, $this->val( $this->files, $page_id, array() ) );
 
-					$custom_fields = $this->val( $config, 'content', array() );
-					$meta_fields = $this->val( $config, 'meta', array() );
 					$fields = $this->val( $gc, 'fields', array() );
 
 					$parent_id = 0;
@@ -384,10 +427,13 @@ class GatherContent extends GatherContent_Curl {
 						'post_type' => $gc['post_type'],
 						'overwrite' => $gc['overwrite'],
 						'category' => $gc['category'],
+						'format' => $gc['format'],
 						'parent_id' => $parent_id,
 						'state' => $gc['state'],
 						'fields' => array(),
 					);
+
+					$post_format = $gc['format'];
 
 					$func = 'wp_insert_post';
 					$post = array(
@@ -429,10 +475,8 @@ class GatherContent extends GatherContent_Curl {
 						if ( $map_to == '_dont_import_' ) {
 							$save_settings['fields'][$tab . '_' . $field_name] = $map_to;
 							continue;
-						} elseif ( $tab == 'meta' ) {
-							$field = $meta_fields[$field_name];
-						} elseif ( $tab == 'content' ) {
-							$field = $custom_fields[$field_name];
+						} elseif ( isset( $config[$tab] ) && isset( $config[$tab]['elements'][$field_name] ) ) {
+							$field = $config[$tab]['elements'][$field_name];
 						} else {
 							continue;
 						}
@@ -519,16 +563,26 @@ class GatherContent extends GatherContent_Curl {
 							foreach ( $values as $value ) {
 								if ( $value['value'] != '' ) {
 									if ( $name == 'post_title' ) {
-										$value['value'] = strip_tags( $value['value'] );
+										$post[$name] .= strip_tags( $value['value'] );
 									}
-									$post[$name] .= $value['value']."\n\n";
+									elseif ( $name == 'post_author' ) {
+										$post[$name] = $this->get_author_id( strip_tags( $value['value'] ) );
+									}
+									else {
+										$post[$name] .= $value['value']."\n\n";
+									}
 								}
 							}
 						} else {
 							if ( $name == 'post_title' ) {
-								$values[0]['value'] = strip_tags( $values[0]['value'] );
+								$post[$name] = strip_tags( $values[0]['value'] );
 							}
-							$post[$name] = $values[0]['value'];
+							elseif ( $name == 'post_author' ) {
+								$post[$name] = $this->get_author_id( strip_tags( $values[0]['value'] ) );
+							}
+							else {
+								$post[$name] = $values[0]['value'];
+							}
 						}
 					}
 
@@ -566,6 +620,10 @@ class GatherContent extends GatherContent_Curl {
 
 					if ( $set_post_terms === true ) {
 						wp_set_post_terms( $post['ID'], $post['post_category'], $taxonomy );
+					}
+
+					if ( current_theme_supports( 'post-formats' ) && post_type_supports( $post['post_type'], 'post-formats' ) ) {
+						set_post_format( $post['ID'], $post_format );
 					}
 
 					foreach ( $new_meta_fields as $field => $values ) {

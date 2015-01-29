@@ -1,14 +1,40 @@
 <span class="toggle-all"><span class="inner-wrap"><em class="collapse"><?php _e('Collapse All', ALM_NAME); ?></em><em class="expand"><?php _e('Expand All', ALM_NAME); ?></em></span></span>
 
 
+<?php if(has_action('alm_seo_installed')){ ?>
+<!-- SEO -->
+<div class="row input seo" id="alm-seo">
+   <h3 class="heading"><?php _e('SEO (Search Engine Optimization)', ALM_NAME); ?></h3>
+   <div class="expand-wrap">
+      <div class="section-title">
+		 	<p><?php _e('Enable address bar URL rewrites as users page through ajax loaded content.', ALM_NAME); ?></p>
+		 </div>
+      <div class="wrap">
+         <div class="inner">	               
+            <ul>
+                <li>
+                 <input class="alm_element" type="radio" name="seo" value="true" id="seo-true" >
+                 <label for="seo-true"><?php _e('True', ALM_NAME); ?></label>
+                </li>
+                <li>
+                 <input class="alm_element" type="radio" name="seo" value="false" id="seo-false" checked>
+                 <label for="seo-false"><?php _e('False', ALM_NAME); ?></label>
+                </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div> 
+<?php } ?>   
+
 <?php
-	
+
  	// List available repeaters
 	echo '<div class="row repeater" id="alm-repeaters">';   		
 	echo '<h3 class="heading">'.__('Template', ALM_NAME). '</h3>';
 	echo '<div class="expand-wrap">';
 	echo '<div class="section-title">';
-	echo '<p>'.__('Select your <a href="admin.php?page=ajax-load-more-repeaters" target="_parent">repeater template</a>.', ALM_NAME). '</p>';
+	echo '<p>'.__('Select a <a href="admin.php?page=ajax-load-more-repeaters" target="_parent">repeater template</a>.', ALM_NAME). '</p>';
 	echo '</div>';
 	echo '<div class="wrap"><div class="inner">';
 	echo '<select name="repeater-select" id="repeater-select" class="alm_element">';
@@ -16,12 +42,26 @@
 	if (has_action('alm_get_custom_repeaters')) {
 	  do_action('alm_get_custom_repeaters');
 	}
+	if (has_action('alm_get_unlimited_repeaters')) {
+	  do_action('alm_get_unlimited_repeaters');
+	}
 	echo '</select>';
 	
 	echo '</div></div>';
+	
+	// Custom Repeaters - /cta/extend.php
+	// Removed in 2.2.8	
 	if (!has_action('alm_get_custom_repeaters')) {
-	  include( ALM_PATH . 'admin/includes/cta/extend.php');
+	  //include( ALM_PATH . 'admin/includes/cta/extend.php');
 	}
+	
+	// Custom Repeaters v2 - /cta/extend.php
+	if (!has_action('alm_get_unlimited_repeaters')) {
+	   if (!has_action('alm_get_custom_repeaters')) {
+         include( ALM_PATH . 'admin/includes/cta/extend.php');
+	  }
+	}
+	
 	echo '</div>';
 	echo '</div>';
  	
@@ -50,6 +90,7 @@
 	    echo '</div>';
 	    echo '</div>';
    }
+   
    
    // List Post Formats
    if ( current_theme_supports( 'post-formats' ) ) {
@@ -81,7 +122,7 @@
 		echo '<h3 class="heading">' . __('Category', ALM_NAME) . '</h3>';
 		echo '<div class="expand-wrap">';
 		echo '<div class="section-title">';
-		echo '<p>' . __('Select a Category to query(by slug).', ALM_NAME) . '</p>';
+		echo '<p>' . __('Select a Category to query(by slug).', ALM_NAME) . '<br/>&raquo; <a href="admin.php?page=ajax-load-more-examples#example-catgory">view example</a></p>';
 		echo '</div>';
 		echo '<div class="wrap"><div class="inner"><select class="alm_element" name="category-select" id="category-select">';
 		echo '<option value="" selected="selected">-- ' . __('Select Category', ALM_NAME) . ' --</option>';
@@ -93,14 +134,14 @@
 	    echo '</div>';
     }
     
-    // List Categories	    
+    // Tags	    
 	$tags = get_tags();
 	if($tags){
 		echo '<div class="row checkboxes tags" id="alm-tags">';
 		echo '<h3 class="heading">' . __('Tag', ALM_NAME) . '</h3>';
 		echo '<div class="expand-wrap">';
 		echo '<div class="section-title">';
-		echo '<p>' . __('Select a Tag to query(by slug).', ALM_NAME) . '</p>';
+		echo '<p>' . __('Select a Tag to query(by slug).', ALM_NAME) . '<br/>&raquo; <a href="admin.php?page=ajax-load-more-examples#example-tag">view example</a></p>';
 		echo '</div>';
 		echo '<div class="wrap"><div class="inner"><select class="alm_element" name="tag-select" id="tag-select">';
 		echo '<option value="" selected="selected">-- ' . __('Select Tag', ALM_NAME) . ' --</option>';
@@ -113,7 +154,7 @@
     }
     
     
-	// List Taxonomies
+	// Taxonomies
 	$tax_args = array(
 		'public'   => true,
 		'_builtin' => false	
@@ -158,6 +199,35 @@
 	    echo '</div>';
 	    echo '</div>';
 	}?>
+	
+	
+   <!-- Date -->
+   <div class="row input date" id="alm-date">
+      <h3 class="heading"><?php _e('Date', ALM_NAME); ?></h3>
+      <div class="expand-wrap">
+         <div class="section-title">
+   		 	<p><?php _e('Enter a year, month(number) and day to query by date archive.<br/>&raquo; <a href="admin.php?page=ajax-load-more-examples#example-date">view example</a>', ALM_NAME); ?></p>
+   		 </div>
+         <div class="wrap">
+            <div class="inner">
+               <div class="wrap-30">
+                  <?php $today = getdate(); ?>
+                  <label for="input-year" class="full"><?php _e('Year:', ALM_NAME); ?></label>
+                  <input name="input-year" class="alm_element sm numbers-only" type="text" id="input-year" maxlength="4" placeholder="<?php echo $today['year']; ?>">
+               </div>
+               <div class="wrap-30">
+                  <label for="input-month" class="full"><?php _e('Month:', ALM_NAME); ?></label>
+                  <input name="input-month" class="alm_element sm numbers-only" type="text" id="input-month" maxlength="2" placeholder="<?php echo $today['mon']; ?>">
+               </div>
+               <div class="wrap-30">
+                  <label for="input-day" class="full"><?php _e('Day:', ALM_NAME); ?></label>
+                  <input name="input-day" class="alm_element sm numbers-only" type="text" id="input-day" maxlength="2" placeholder="<?php echo $today['mday']; ?>">
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+        
    
    <?php // Custom Fields ?>
    <div class="row input meta-key" id="alm-meta-key">
@@ -168,11 +238,9 @@
          </div>
          <div class="wrap">
             <div class="inner">
-               <div class="inner">
-                  <label for="meta-key" class="full"><?php _e('Field Key (Name):', ALM_NAME); ?></label>
-                  <input class="alm_element" name="meta-key" type="text" id="meta-key" value="" placeholder="<?php _e('Enter custom field key(name)', ALM_NAME); ?>">   
-               </div>            
-            </div>
+               <label for="meta-key" class="full"><?php _e('Field Key (Name):', ALM_NAME); ?></label>
+               <input class="alm_element" name="meta-key" type="text" id="meta-key" value="" placeholder="<?php _e('Enter custom field key(name)', ALM_NAME); ?>">   
+            </div> 
             <div id="meta-query-extended">
                <?php // Meta Value ?>
                <div class="inner border-top">
@@ -203,16 +271,16 @@
          </div>         
       </div>
    </div>
-    
-    
+   
+   
    <?php // List Authors	   
 	$authors = get_users();
 	if($authors){
-		echo '<div class="row checkboxes authors" id="alm-tags">';
+		echo '<div class="row checkboxes authors" id="alm-authors">';
 		echo '<h3 class="heading">' . __('Author', ALM_NAME) . '</h3>';
 		echo '<div class="expand-wrap">';
 		echo '<div class="section-title">';
-		echo '<p>' . __('Select an Author to query(by ID).', ALM_NAME) . '</p>';
+		echo '<p>' . __('Select an Author to query(by ID).', ALM_NAME) . '<br/>&raquo; <a href="admin.php?page=ajax-load-more-examples#example-author">view example</a></p>';
 		echo '</div>';
 		echo '<div class="wrap"><div class="inner"><select class="alm_element" name="author-select" id="author-select">';
 		echo '<option value="" selected="selected">-- ' . __('Select Author', ALM_NAME) . ' --</option>';
@@ -223,7 +291,8 @@
 	    echo '</div>';
 	    echo '</div>';
     }
-    ?>
+   ?>
+    
     
    <!-- Search term -->
    <div class="row input search-term" id="alm-search">
@@ -238,7 +307,29 @@
             </div>
          </div>
       </div>
-   </div>
+   </div>   
+   
+   <!-- Post Status -->
+   <div class="row input post-status" id="alm-post-status">
+      <h3 class="heading"><?php _e('Post Status', ALM_NAME); ?></h3>
+      <div class="expand-wrap">
+         <div class="section-title">
+   		 	<p><?php _e('Query by post status.', ALM_NAME); ?></p>
+   		 </div>
+         <div class="wrap">
+            <div class="inner">               
+               <select class="alm_element" name="post-status" id="post-status">
+                   <option value="publish" selected="selected">Published</option>
+                   <option value="future">Future</option>
+                   <option value="draft">Draft</option>
+                   <option value="pending">Pending</option>
+                   <option value="private">Private</option>
+                   <option value="trash">Trash</option>
+               </select>
+            </div>
+         </div>
+      </div>
+   </div>   
     
    <!-- Ordering -->
    <div class="row ordering" id="alm-order">
@@ -262,7 +353,7 @@
                    <option value="title">Title</option>
                    <option value="name">Name (slug)</option>
                    <option value="menu_order">Menu Order</option>
-                   <option value="rand">Random</option>
+                   <!-- <option value="rand">Random</option> -->
                    <option value="author">Author</option>
                    <option value="ID">ID</option>
                    <option value="comment_count">Comment Count</option>
@@ -277,7 +368,7 @@
       <h3 class="heading"><?php _e('Exclude', ALM_NAME); ?></h3>
       <div class="expand-wrap">
          <div class="section-title">
-   		 	<p><?php _e('A comma separated list of post ID\'s to exclude from query.', ALM_NAME); ?></p>
+   		 	<p><?php _e('A comma separated list of post ID\'s to exclude from query.', ALM_NAME); ?><br/>&raquo; <a href="admin.php?page=ajax-load-more-examples#example-exclude">view example</a></p>
    		 </div>
          <div class="wrap">
             <div class="inner">
@@ -295,17 +386,8 @@
    		 	<p><?php _e('Offset the initial WordPress query by <em>\'n\'</em> number of posts', ALM_NAME); ?></p>
    		 </div>
          <div class="wrap">
-            <div class="inner">               
-               <select class="alm_element" name="offset-select" id="offset-select">
-                  <script>
-                     var length = 21,
-                         value = '';
-                     for(var i = 0; i < length; i++){
-                        value += '<option value="'+i+'">'+i+'</option>';
-                     }
-                     jQuery('#offset-select').append(value);
-                  </script>
-               </select>
+            <div class="inner"> 
+               <input type="number" class="alm_element numbers-only" name="offset-select" id="offset-select" step="1" min="0">
             </div>
          </div>
       </div>
@@ -320,20 +402,7 @@
    		 </div>
          <div class="wrap">
             <div class="inner">
-               <select class="alm_element" name="display_posts-select" id="display_posts-select">
-                  <script>
-                     var length = 31,
-                         value = '';
-                     for(var i = 1; i < length; i++){
-                        if(i == 5){
-                           value += '<option value="'+i+'" selected="selected">'+i+'</option>';
-                        }else{
-                           value += '<option value="'+i+'">'+i+'</option>';   
-                        }                        
-                     }
-                     jQuery('#display_posts-select').append(value);
-                  </script>
-               </select>
+               <input type="number" class="alm_element numbers-only" name="display_posts-select" id="display_posts-select" step="1" min="0" value="5">               
             </div>
          </div>
       </div>
@@ -374,21 +443,8 @@
    		 </div>
          <div class="wrap">
             <div class="inner">
-               <select class="alm_element" name="max-select" id="max-select">
-                  <script>
-                     var length = 11,
-                         value = '';
-                     for(var i = 1; i < length; i++){
-                        if(i == 5){
-                           value += '<option value="'+i+'" selected="selected">'+i+'</option>';
-                        }else{
-                           value += '<option value="'+i+'">'+i+'</option>';   
-                        }                        
-                     }
-                     value += '<option value="none"><?php _e('Unlimited', ALM_NAME); ?></option>';
-                     jQuery('#max-select').append(value);
-                  </script>
-               </select>
+            
+               <input type="number" class="alm_element numbers-only" name="max-select" id="max-select" step="1" min="0" value="5">  
             </div>
          </div>
       </div>
@@ -459,7 +515,6 @@
          </div>
       </div>
    </div>
+   
    <div class="clear"></div>  
-   
-   
    
