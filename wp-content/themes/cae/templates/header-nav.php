@@ -43,7 +43,7 @@ if ($workSlug[0] == 'places') { ?>
 	?>
 
 	<p class="sidenav-title bg-color section-intro-title"><a href="<?php echo $permalink; ?>"><?php echo $workSlug[0]; ?>.</a></p>
-	<ul class="newsletters bg-color sub-nav nav"><?php previous_post_link('<li class="pull-left icon-lg-arrow text-hide">%link</li>', '', ''); ?>
+	<ul class="newsletters bg-color sub-nav nav"><?php previous_post_link('<li class="pull-left icon-lg-arrow text-hide">%link</li>', '', TRUE, '', 'work'); ?>
 		<li class="active"><a class="resize-thumb"><img src="<?php echo $image; ?>"></a></li><?php
 		    $parent =  $post->post_parent;
 		    $mypages = get_pages( array( 'child_of' => $parent, 'exclude' => $post->ID, 'sort_order' => 'desc' ) );
@@ -63,7 +63,7 @@ if ($workSlug[0] == 'places') { ?>
 	
 	$post = $current_post; 
 
-	?><?php next_post_link('<li class="pull-right icon-lg-arrow text-hide">%link</li>', '', ''); ?>
+	?><?php next_post_link('<li class="pull-right icon-lg-arrow text-hide">%link</li>', '', TRUE, '', 'work'); ?>
 </ul>
 
 <h1 class="text-center heading-font page-secondary-title caps"><strong><?php the_title(); ?></strong></h1>

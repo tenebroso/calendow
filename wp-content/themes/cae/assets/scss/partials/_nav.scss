@@ -76,7 +76,10 @@
 }
 
 .nav.newsletters.sub-nav {
-	//background-image:url(../img/svg/pattern.svg);
+	background-image:url(../img/svg/pattern.svg);
+	.places & {
+		background-image: none;
+	}
 	max-height: 88px;
 	padding: 2px 0;
 	margin:0 0 2em 0;
