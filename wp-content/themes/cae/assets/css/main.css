@@ -2726,7 +2726,8 @@ body .animsition-loading {
   animation-name: bounce;
   -webkit-animation: 1s bounce 1s infinite;
   animation: 1s bounce 1s infinite;
-  opacity: 1; }
+  opacity: 1;
+  margin-top: -100px; }
 
 .brand {
   margin: 5px 0 0;
