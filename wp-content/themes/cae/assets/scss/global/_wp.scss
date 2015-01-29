@@ -16,3 +16,25 @@
 .img-circle, .avatar {
 	border-radius:50%;
 }
+
+@keyframes bounce { 
+    0% {transform: translateY(0);} 
+    50% {transform: translateY(4px);} 
+    100%  {transform: translateY(0);}
+}
+
+body .animsition-loading:after {
+	content: "";
+	background: url(../img/svg/pin.svg) no-repeat;
+	width: 82px;
+	height: 135px;
+	display: block;
+	margin: 0 auto;
+}
+
+body .animsition-loading {
+	transform:translate(0,0);
+	animation-name: bounce;
+	animation: 1s bounce 1s infinite;
+	opacity: 1;
+}
