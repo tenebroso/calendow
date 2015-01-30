@@ -1,13 +1,13 @@
 <div class="panel-group" id="accordion">
 
-<?php $i = 1; if( have_rows('accordion_builder') ):
+<?php $i = 1; 
 
+    if( have_rows('accordion_builder') ):
     while ( have_rows('accordion_builder') ) : the_row(); 
     
       $title = get_sub_field('accordion_title');
       $sub = get_sub_field('accordion_sub-title');
-      $aContent = get_sub_field('accordion_content'); 
-      $aImage = get_sub_field('accordion_image'); 
+      $aRow = get_sub_field('accordion_repeater_content');
       $titleClean = str_replace(' ', '-', $title); 
       $aLink = strtolower($titleClean); ?>
 
@@ -22,6 +22,12 @@
     <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse">
       <div class="panel-body">
         <div class="container text-content">
+        <?php 
+          if( have_rows('accordion_repeater_content') ): 
+          while ( have_rows('accordion_repeater_content') ) : the_row();
+          $aContent = get_sub_field('accordion_content'); 
+          $aImage = get_sub_field('accordion_image');  ?>
+
         <?php if($aImage): ?>
           <div class="row">
             <div class="col-sm-3">
@@ -36,6 +42,8 @@
         <?php else: ?>
           <?php echo $aContent; ?>
         <?php endif; ?>
+
+      <?php endwhile; endif; ?>
         </div>
       </div>
     </div>
