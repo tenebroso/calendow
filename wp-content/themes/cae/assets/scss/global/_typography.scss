@@ -134,14 +134,18 @@ ul, ol {
   }
 }
 
-.hentry {
+.hentry, .text-content {
   li {
-    margin:0 0 .5em 1em;
+    margin:0 0 .25em 1em;
     list-style-type: disc;
   .single & {
       background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAQAAADY4iz3AAAAcklEQ…UgiUyudOUODu0y79wGd4Hx2xCwwIB3KVbA37DkIwCSxGH1AAodzpKkjv8XAAAAAElFTkSuQmCC) no-repeat left center;
       list-style-type: none;
     }
+  }
+  a {
+    color: $accentDarker;
+    text-decoration: underline;
   }
 }
 

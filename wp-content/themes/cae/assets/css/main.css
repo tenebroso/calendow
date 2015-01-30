@@ -2494,12 +2494,15 @@ h3 strong, h3 b {
   text-transform: uppercase;
   margin: 0 0 1em 40px; }
 
-.hentry li {
-  margin: 0 0 0.5em 1em;
+.hentry li, .text-content li {
+  margin: 0 0 0.25em 1em;
   list-style-type: disc; }
-  .single .hentry li {
+  .single .hentry li, .single .text-content li {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAQAAADY4iz3AAAAcklEQ…UgiUyudOUODu0y79wGd4Hx2xCwwIB3KVbA37DkIwCSxGH1AAodzpKkjv8XAAAAAElFTkSuQmCC) no-repeat left center;
     list-style-type: none; }
+.hentry a, .text-content a {
+  color: #1f2233;
+  text-decoration: underline; }
 
 .hentry ol, .intro-text {
   font-size: 22px; }
@@ -4225,7 +4228,7 @@ nav.affix {
   display: none; }
 
 .parent-pageid-118 .side-nav li a {
-  border-bottom: 1px solid #e18769; }
+  border-bottom: 1px solid white; }
 
 .single-post .side-nav-share.side-nav-container .sidenav-title, .single-newsletter .side-nav-share.side-nav-container .sidenav-title {
   color: #fff;
