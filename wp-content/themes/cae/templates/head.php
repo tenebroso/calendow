@@ -33,30 +33,6 @@ caeicons( [ "/assets/icons.data.svg.css", "/assets/icons.data.png.css", "/assets
 	}
 }
 </style>
-<?php endif; ?>
-<?php if(is_singular('report')): ?>
-	<?php
-
-	$params = array();
-	if(count($_GET) > 0) {
-	    $params = $_GET;
-	} else {
-	    $params = $_POST;
-	}
-	// defaults
-	if($params['type'] == "") $params['type'] = "restaurant";
-	if($params['locale'] == "") $params['locale'] = "en_US";
-	if($params['title'] == "") $params['title'] = "default title";
-	if($params['image'] == "") $params['image'] = "thumb";
-	if($params['description'] == "") $params['description'] = "default description";
-
-	?>
-
-	<!-- Open Graph meta tags -->
-    <meta property="fb:app_id" content="1414124658880561" />
-    <meta property="og:url" content="http://mysite.com/index.php?type=<?php echo $params['type']; ?>&locale=<?php echo $params['locale']; ?>&title=<?php echo $params['title']; ?>&image=<?php echo $params['image']; ?>&description=<?php echo $params['description']; ?>"/>
-    <meta property="og:title" content="<?php echo $params['title']; ?>"/>
-    <meta property="og:image" content="http://caendow.herokuapp.com/assets/<?php echo $params['image']; ?>.png"/>
-    <meta property="og:description" content="<?php echo $params['description']; ?>"/>
+<meta property="og:image" content="<?php the_field('background_images'); ?>"/>
 <?php endif; ?>
 </head>
