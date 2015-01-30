@@ -19,6 +19,9 @@
 	}
 	h2,h3 {
 		color: #b3a532;
+		@media (max-width:$screen-xs-max) {
+			font-size: 1.25em;
+		}
 	}
 	.btn {
 		background: #59b498;
