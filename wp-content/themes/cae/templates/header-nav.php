@@ -44,22 +44,22 @@ if ($workSlug[0] == 'places') { ?>
 
 	<p class="sidenav-title bg-color section-intro-title"><a href="<?php echo $permalink; ?>"><?php echo $workSlug[0]; ?>.</a></p>
 	<ul class="newsletters bg-color sub-nav nav"><?php previous_post_link('<li class="pull-left icon-lg-arrow text-hide">%link</li>', '', TRUE, '', 'work'); ?>
-		<li class="active"><a class="resize-thumb"><img src="<?php echo $image; ?>"></a></li><?php
-		    $parent =  $post->post_parent;
-		    $mypages = get_pages( array( 'child_of' => $parent, 'exclude' => $post->ID, 'sort_order' => 'desc' ) );
-		    $i = 1;
-		    foreach( $mypages as $page ) {
+		<li class="active"><a class="resize-thumb"><img src="<?php echo $image; ?>"></a></li><?php global $post;
+		    $current_post = $post;
 
-				$content = $page->post_content;
-				if ( $i <= 4 ):
-				 	
-					$image = get_field('header_thumbnail_nav_image', $page->ID); if(!$image): $image = 'http://placehold.it/86x81'; endif; ?><li>
-						<a href="<?php echo get_page_link( $page->ID ); ?>" class="resize-thumb">
+		    for($i = 1; $i <= 3; $i++):
+			    $post = get_next_post(TRUE,'','work');
+				if($post):
+			    setup_postdata($post); 
+			    $image = get_field('header_thumbnail_nav_image'); if(!$image): $image = 'http://placehold.it/86x81'; endif; ?><li>
+						<a href="<?php the_permalink(); ?>" class="resize-thumb">
 							<img src="<?php echo $image; ?>">
 						</a>
-					</li><?php endif; $i++;
-			}
-	}
+					</li><?php endif; endfor;
+		    $post = $current_post; ?>
+	
+
+	<?php }
 	
 	$post = $current_post; 
 
