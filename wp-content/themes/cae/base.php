@@ -42,6 +42,9 @@
         // If there is a page builder dictating the layout, we need the full-width. No wrapper
       else: ?>
         <main class="main" role="main">
+        <?php if($template = 'template-places.php'): ?>
+          <?php get_template_part('templates/header','nav'); ?>
+        <?php endif; ?>
           <?php include roots_template_path(); ?>
         </main>
       <?php endif; ?>
