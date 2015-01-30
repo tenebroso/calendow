@@ -2486,6 +2486,11 @@ h3 strong, h3 b {
 .caps {
   text-transform: uppercase; }
 
+.pullquote {
+  background: #dfdfdf;
+  padding: 1em;
+  margin: 1em; }
+
 .reset-margins p, .reset-margins h1, .reset-margins h2, .reset-margins h4, .reset-margins h5, .reset-margins h6 {
   margin: 0; }
 

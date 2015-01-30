@@ -116,6 +116,18 @@ function custom_query_shortcode($atts) {
 add_shortcode("campaigns", "custom_query_shortcode");
 
 /* =============================================================================
+   Add Pullquote
+   ========================================================================== */
+
+function pullquote_shortcode_pullquote( $atts, $content = null ) {
+
+  return '<div class="pullquote">' . esc_html( $content ) . '</div>';
+
+}
+
+add_shortcode( 'pullquote', 'pullquote_shortcode_pullquote' );
+
+/* =============================================================================
    Homepage AJAX filtering
    ========================================================================== */
 

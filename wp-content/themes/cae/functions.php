@@ -23,7 +23,8 @@ $roots_includes = array(
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
   'lib/cpt.php',             // Custom post types
-  'lib/taxonomies.php'       // Taxonomies
+  'lib/taxonomies.php',       // Taxonomies
+  'lib/mce.php'              // Tiny MCE Buttons
 );
 
 foreach ($roots_includes as $file) {

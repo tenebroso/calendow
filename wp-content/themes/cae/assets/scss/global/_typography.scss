@@ -120,6 +120,13 @@ h3 {
   text-transform:uppercase;
 }
 
+.pullquote {
+  background: lighten($grey4, 20%);
+  padding: 1em;
+  margin: 1em;
+  //color: black;
+}
+
 .reset-margins {
   p,h1,h2,h4,h5,h6 {
     margin:0;
