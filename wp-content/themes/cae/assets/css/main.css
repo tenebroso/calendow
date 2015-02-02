@@ -3732,7 +3732,8 @@ body .animsition-loading {
   height: 600px;
   width: 100%;
   background-size: cover;
-  background-position: center center; }
+  background-position: center center;
+  background-repeat: no-repeat; }
   @media (min-width: 992px) {
     .parallax-image {
       height: 770px; } }
