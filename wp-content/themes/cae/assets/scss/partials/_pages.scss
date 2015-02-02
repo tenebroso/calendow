@@ -1,5 +1,8 @@
 .parallax-image {
 	height:600px;
+	@media (min-width:$screen-md-min) {
+		height: 770px;
+	}
 	@media (max-width:$screen-xs-max) {
 		height: 110px;
 		background-repeat: no-repeat;
