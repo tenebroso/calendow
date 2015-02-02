@@ -4,7 +4,7 @@ var CE = CE || {};
 
   CE.splashMessage = function() {
 
-  	var $signUpForm = $('.splash-message')
+  	var $signUpForm = $('.splash-message');
   	var $close = $('.splash-message .close');
   	var $closeCookie = $('.close-cookie');
   	var $body = $('body');

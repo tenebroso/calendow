@@ -2,136 +2,6 @@ var CE = CE || {};
 
 ;(function() {
 
-CE.desktopFilter = function () {
-
-    var $parentFilters = $('.filters > li > a');
-    var $childFilters = $('.sub-filter li a');
-    var $ajaxLoadMore = $('#ajax-load-more .alm-btn-wrap .more');
-    var $gridContainer = $('.grid-container');
-    var $gridItem = $('.grid-item');
-
-    var masOptions = {
-            itemSelector: '.grid-item',
-            gutter: 5,
-    };
-
-    $ajaxLoadMore.trigger('click');
-
-    $parentFilters.click(function (e) {
-            e.preventDefault();
-            $parentFilters.not(this).parent('li').removeClass('open');
-            $(this).parent('.filter-main').toggleClass('open').removeClass('selected');
-    });
-
-    $('.filters > li').hover(function () {
-            $('.filters > li').not(this).children('.filter-key').css('background-image', 'none');
-    }, function () {
-            $('.filter-key').css('background-image', '');
-    });
-
-    $(document).mouseup(function (e)
-    {
-            var container = $(".main");
-
-            if (!container.is(e.target) && container.has(e.target).length === 0)
-                    ; // ... nor a descendant of the container
-            {
-                    $('.filters li').removeClass('open');
-            }
-    });
-    
-    var $container = $gridContainer.imagesLoaded(function () {
-            $container.masonry(masOptions);
-            $('.grid-item').addClass('loaded');
-    });
-
-    $filter_ya_container = $('ul.filters');
-
-    $filter_ya_container.on('click', '.sub-filter li a', function (e) {
-            $container.fadeOut();
-
-            $('.filter-key.reset').hide();
-            $('.filter-key:last-of-type').show();
-
-            e.preventDefault();
-
-            $tax = [];
-
-            if ($(this).parents('li').hasClass('selected')) {
-                    $('.filter-key').css('background-image', '');
-                    $(this).parents('li').removeClass('selected');
-
-            } else {
-                    
-                    $(this).parents('li').removeClass('open').addClass('selected');
-
-            }
-
-            $current = $filter_ya_container.find('.sub-filter li.selected');
-
-            $current.each(function () {
-                    
-                    $curr = {
-                            'term': $(this).find('a').attr('title'),
-                            'taxonomy': $(this).closest('ul.sub-filter').data('tax'),
-                            'name': $(this).find('a span').html()
-                    };
-
-                    $tax.push($curr);
-            });
-
-            
-            data = {
-                    action: 'filter_posts',
-                    afp_nonce: afp_vars.afp_nonce,
-                    tax_details: $tax
-            };
-
-            $.ajax({
-                    type: 'post',
-                    dataType: 'html',
-                    url: afp_vars.afp_ajax_url,
-                    data: data,
-                    timeout: 5000,
-                    success: function (data, textStatus, XMLHttpRequest) {
-                            $container.html(data);
-                            $container.fadeIn();
-                            $('#ajax-load-more .alm-btn-wrap .more').hide();
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                            console.log(XMLHttpRequest);
-                            console.log(textStatus);
-                            console.log(errorThrown);
-                            console.log('error');
-                            $container.html(data);
-                            //$container.fadeIn();
-                    }
-            });
-
-            $(document).ajaxComplete(function () {
-                    $container.masonry('destroy');
-                    $container.masonry(masOptions);
-                    $('.grid-item').addClass('loaded');
-            });
-
-    });
-
-    var masonryInit = true;
-    $.fn.almComplete = function (alm) {
-
-            $container.append(alm.el).masonry('appended', alm.el).masonry('layout', masOptions);
-            $('.grid-item').addClass('loaded');
-    };
-
-
-};
-
-
-})();
-var CE = CE || {};
-
-;(function() {
-
   CE.collapse = function() {
 
   	$headerHeight = $('.banner');
@@ -300,9 +170,9 @@ var CE = CE || {};
   	var $openTrigger = $('.js-nav-open-trigger'),
   		$closeTrigger = $('.js-nav-close-trigger, .main, .footer'),
   		$menu = $('.nav-full-screen'),
-      $menuHeight = $menu.height();
+      $menuHeight = $menu.height(),
       $page = $('html'),
-      $intViewportHeight = window.innerHeight;
+      $intViewportHeight = (window.innerHeight),
   		$body = $('body');
 
     $openTrigger.click(function(){
@@ -433,7 +303,7 @@ var CE = CE || {};
 
   CE.splashMessage = function() {
 
-  	var $signUpForm = $('.splash-message')
+  	var $signUpForm = $('.splash-message');
   	var $close = $('.splash-message .close');
   	var $closeCookie = $('.close-cookie');
   	var $body = $('body');
@@ -685,6 +555,136 @@ var CE = CE || {};
 
 ;(function() {
 
+CE.desktopFilter = function () {
+
+    var $parentFilters = $('.filters > li > a');
+    var $childFilters = $('.sub-filter li a');
+    var $ajaxLoadMore = $('#ajax-load-more .alm-btn-wrap .more');
+    var $gridContainer = $('.grid-container');
+    var $gridItem = $('.grid-item');
+
+    var masOptions = {
+            itemSelector: '.grid-item',
+            gutter: 5,
+    };
+
+    $ajaxLoadMore.trigger('click');
+
+    $parentFilters.click(function (e) {
+            e.preventDefault();
+            $parentFilters.not(this).parent('li').removeClass('open');
+            $(this).parent('.filter-main').toggleClass('open').removeClass('selected');
+    });
+
+    $('.filters > li').hover(function () {
+            $('.filters > li').not(this).children('.filter-key').css('background-image', 'none');
+    }, function () {
+            $('.filter-key').css('background-image', '');
+    });
+
+    $(document).mouseup(function (e)
+    {
+            var container = $(".main");
+
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+                    ; // ... nor a descendant of the container
+            {
+                    $('.filters li').removeClass('open');
+            }
+    });
+    
+    var $container = $gridContainer.imagesLoaded(function () {
+            $container.masonry(masOptions);
+            $('.grid-item').addClass('loaded');
+    });
+
+    $filter_ya_container = $('ul.filters');
+
+    $filter_ya_container.on('click', '.sub-filter li a', function (e) {
+            $container.fadeOut();
+
+            $('.filter-key.reset').hide();
+            $('.filter-key:last-of-type').show();
+
+            e.preventDefault();
+
+            $tax = [];
+
+            if ($(this).parents('li').hasClass('selected')) {
+                    $('.filter-key').css('background-image', '');
+                    $(this).parents('li').removeClass('selected');
+
+            } else {
+                    
+                    $(this).parents('li').removeClass('open').addClass('selected');
+
+            }
+
+            $current = $filter_ya_container.find('.sub-filter li.selected');
+
+            $current.each(function () {
+                    
+                    $curr = {
+                            'term': $(this).find('a').attr('title'),
+                            'taxonomy': $(this).closest('ul.sub-filter').data('tax'),
+                            'name': $(this).find('a span').html()
+                    };
+
+                    $tax.push($curr);
+            });
+
+            
+            data = {
+                    action: 'filter_posts',
+                    afp_nonce: afp_vars.afp_nonce,
+                    tax_details: $tax
+            };
+
+            $.ajax({
+                    type: 'post',
+                    dataType: 'html',
+                    url: afp_vars.afp_ajax_url,
+                    data: data,
+                    timeout: 5000,
+                    success: function (data, textStatus, XMLHttpRequest) {
+                            $container.html(data);
+                            $container.fadeIn();
+                            $('#ajax-load-more .alm-btn-wrap .more').hide();
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            console.log(XMLHttpRequest);
+                            console.log(textStatus);
+                            console.log(errorThrown);
+                            console.log('error');
+                            $container.html(data);
+                            //$container.fadeIn();
+                    }
+            });
+
+            $(document).ajaxComplete(function () {
+                    $container.masonry('destroy');
+                    $container.masonry(masOptions);
+                    $('.grid-item').addClass('loaded');
+            });
+
+    });
+
+    var masonryInit = true;
+    $.fn.almComplete = function (alm) {
+
+            $container.append(alm.el).masonry('appended', alm.el).masonry('layout', masOptions);
+            $('.grid-item').addClass('loaded');
+    };
+
+
+};
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
   CE.reportPageHeight = function() {
 
 
@@ -740,7 +740,7 @@ var CE = CE || {};
 					.transit({x:'100%',opacity:0}, 800, 'ease')
 					.removeClass('current');
 				var $height = $(this).height();
-				$container.height($height) + 210;
+				$container.height($height + 210);
   			}
 	    });
   	} else {
@@ -763,7 +763,7 @@ var CE = CE || {};
 		}).addClass('active');
 		window.location.hash = $theID + 1;
 		e.preventDefault();
-		$container.height($height) + 210;
+		$container.height($height + 210);
 	});
 
 	$prev.click(function(e) {
@@ -779,7 +779,7 @@ var CE = CE || {};
 		}).addClass('active');
 		window.location.hash = $theID - 1;
 		e.preventDefault();
-		$container.height($height) + 210;
+		$container.height($height + 210);
 	});
 
 	$('.report-nav li:not(.full-report) a').click(function(e){
@@ -824,7 +824,7 @@ var CE = CE || {};
 		}*/
 
 
-		$container.height($height) + 210;
+		$container.height($height + 210);
 		e.preventDefault();
 	});
 

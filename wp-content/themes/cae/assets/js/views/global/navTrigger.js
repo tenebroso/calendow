@@ -7,9 +7,9 @@ var CE = CE || {};
   	var $openTrigger = $('.js-nav-open-trigger'),
   		$closeTrigger = $('.js-nav-close-trigger, .main, .footer'),
   		$menu = $('.nav-full-screen'),
-      $menuHeight = $menu.height();
+      $menuHeight = $menu.height(),
       $page = $('html'),
-      $intViewportHeight = window.innerHeight;
+      $intViewportHeight = (window.innerHeight),
   		$body = $('body');
 
     $openTrigger.click(function(){
