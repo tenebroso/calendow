@@ -6,7 +6,7 @@
 	@media (max-width:$screen-xs-max) {
 		height: 110px;
 		background-repeat: no-repeat;
-		background-position: top center;
+		background-position: top center !important;
 		.stripe & {
 			height: 168px;
 		}

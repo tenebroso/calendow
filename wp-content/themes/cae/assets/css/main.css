@@ -2754,6 +2754,9 @@ body .animsition-loading {
   text-align: center;
   margin: 0;
   padding: 100px 0 0; }
+  @media (max-width: 991px) {
+    .page-header {
+      height: 415px; } }
   .page-header.has-image {
     background: none;
     overflow: hidden;
@@ -3741,7 +3744,7 @@ body .animsition-loading {
     .parallax-image {
       height: 110px;
       background-repeat: no-repeat;
-      background-position: top center; }
+      background-position: top center !important; }
       .stripe .parallax-image {
         height: 168px; } }
 
