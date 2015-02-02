@@ -3975,7 +3975,8 @@ article[class*="entry-single"] {
     width: 100%;
     height: 100%;
     color: #fff;
-    padding: 24px; }
+    padding: 24px;
+    text-decoration: none; }
     @media (max-width: 767px) {
       .campaign-grid li a h2 {
         top: 50%;
