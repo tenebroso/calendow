@@ -901,6 +901,10 @@ CE.Site = {
       if($('.footer-post-nav li').length < 4) {
         $('.footer-post-nav,.footer-add-padding').addClass('short');
       }
+      var $previous = $('.nav.newsletters li:nth-of-type(5) a').attr('href');
+      var $next = $('.nav.newsletters li:nth-of-type(3) a').attr('href');
+      $('.nav.newsletters li.pull-left a').attr('href',$previous);
+      $('.nav.newsletters li.pull-right a').attr('href',$next);
     }
   },
   page: {
