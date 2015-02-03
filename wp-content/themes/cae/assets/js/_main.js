@@ -61,13 +61,20 @@ CE.Site = {
       var $next = $currentParent.nextAll('li').children('a').attr('href');
 
       var $first = $('.nav.newsletters li.sub-nav-thumbnail a').attr('href');
+      var $last = $('.nav.newsletters li:nth-of-type(5) a').attr('href');
 
       if($next !== '#') {
         $('.nav.newsletters li.pull-right a').attr('href',$next);
       } else {
         $('.nav.newsletters li.pull-right a').attr('href',$first);
       }
-      $('.nav.newsletters li.pull-left a').attr('href',$previous);
+
+      if($previous !== '#') {
+        $('.nav.newsletters li.pull-left a').attr('href',$previous);
+      } else {
+        $('.nav.newsletters li.pull-left a').attr('href',$last);
+      }
+      
       
     }
   },
