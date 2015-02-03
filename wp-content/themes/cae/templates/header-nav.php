@@ -40,14 +40,13 @@ if ($workSlug[0] == 'places') { ?>
 	?>
 
 	<p class="sidenav-title bg-color section-intro-title"><a href="<?php echo $permalink; ?>"><?php echo $workSlug[0]; ?>.</a></p>
-	<ul class="newsletters bg-color sub-nav nav"><li class="pull-left icon-lg-arrow text-hide"><a href="#">Previous Campaign Detail</a></li><li class="active">
-		<a class="resize-thumb"><img src="<?php echo $image; ?>"></a></li><?php 
-		    $parent = wp_get_post_parent_id( $post_ID );
-		    $current = $post->ID;
-		    $args = array('post_parent' => $parent, 'post_type' => 'page', 'post__not_in' => array($current)); 
+	<ul class="newsletters bg-color sub-nav nav"><li class="pull-left icon-lg-arrow text-hide"><a href="#">Previous Campaign Detail</a></li><?php 
+		    $parent = wp_get_post_parent_id( $post->ID );
+		    //$current = $post->ID;
+		    $args = array('post_parent' => $parent, 'post_type' => 'page'); 
 					$the_query = new WP_Query( $args ); 
 						if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
-					$image = get_field('header_thumbnail_nav_image'); if(!$image): $image = 'http://placehold.it/86x81'; endif; ?><li>
+					$image = get_field('header_thumbnail_nav_image'); if(!$image): $image = 'http://placehold.it/86x81'; endif; ?><li class="sub-nav-thumbnail">
 						<a href="<?php the_permalink(); ?>" class="resize-thumb">
 							<img src="<?php echo $image; ?>">
 						</a>

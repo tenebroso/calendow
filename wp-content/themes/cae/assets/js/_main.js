@@ -51,10 +51,24 @@ CE.Site = {
       if($('.footer-post-nav li').length < 4) {
         $('.footer-post-nav,.footer-add-padding').addClass('short');
       }
-      var $previous = $('.nav.newsletters li:nth-of-type(5) a').attr('href');
-      var $next = $('.nav.newsletters li:nth-of-type(3) a').attr('href');
+      
+      var url = window.location.href;
+      var $current = $('.sub-nav-thumbnail a[href="'+url+'"]');
+      var $currentParent = $current.parent('li');
+      $currentParent.addClass('active');
+
+      var $previous = $currentParent.prevAll('li').children('a').attr('href');
+      var $next = $currentParent.nextAll('li').children('a').attr('href');
+
+      var $first = $('.nav.newsletters li.sub-nav-thumbnail a').attr('href');
+
+      if($next !== '#') {
+        $('.nav.newsletters li.pull-right a').attr('href',$next);
+      } else {
+        $('.nav.newsletters li.pull-right a').attr('href',$first);
+      }
       $('.nav.newsletters li.pull-left a').attr('href',$previous);
-      $('.nav.newsletters li.pull-right a').attr('href',$next);
+      
     }
   },
   page: {
