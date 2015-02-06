@@ -5,6 +5,7 @@ button, .btn, input[type="submit"] {
 	padding:15px 50px;
 	line-height:20px;
   border-radius:3px;
+  text-decoration: none;
   &:focus {
     outline: none;
   }

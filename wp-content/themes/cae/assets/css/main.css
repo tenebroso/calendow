@@ -2671,7 +2671,8 @@ button, .btn, input[type="submit"] {
   color: #fff;
   padding: 15px 50px;
   line-height: 20px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  text-decoration: none; }
   button:focus, .btn:focus, input[type="submit"]:focus {
     outline: none; }
   button.tweet-me, .btn.tweet-me, input[type="submit"].tweet-me {
@@ -2910,7 +2911,8 @@ body .animsition-loading {
   padding: 5px 25px 5px 10px;
   font-size: 13px;
   color: #f9f9f9;
-  display: none; }
+  display: none;
+  border-bottom: none; }
   @media (min-width: 768px) {
     #accordion .btn {
       float: right;
@@ -2980,7 +2982,11 @@ body .animsition-loading {
     max-width: 1000px;
     margin: 0 auto; }
   .panel-body a {
-    color: white; }
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7); }
+    .panel-body a:hover {
+      color: #acacac; }
 
 .nav li a {
   text-transform: uppercase;

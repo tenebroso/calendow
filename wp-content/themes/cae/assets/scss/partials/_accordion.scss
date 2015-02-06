@@ -13,6 +13,7 @@
 		font-size:13px;
 		color:$offWhite;
 		display: none;
+		border-bottom: none;
 		@media (min-width:$screen-sm-min) {
 			float: right;
 			margin:5em 0 0;
@@ -95,5 +96,10 @@
 	}
 	a {
 		color: white;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(255,255,255,.7);
+		&:hover {
+			color: $grey4;
+		}
 	}
 }
