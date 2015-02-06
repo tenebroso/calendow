@@ -5,6 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?php wp_title('|', true, 'right'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php $ogImage = get_field('facebook_og_image'); 
+  		$bgImage = get_field('background_images'); ?>
+	<?php if($ogImage): ?>
+		<meta property="og:image" content="<?php echo $ogImage; ?>"/>
+	<?php elseif($bgImage): ?>
+		<meta property="og:image" content="<?php echo $bgImage; ?>"/>
+  <?php endif; ?>
 
   <?php wp_head(); ?>
   
@@ -25,7 +32,7 @@ caeicons( [ "/assets/icons.data.svg.css", "/assets/icons.data.png.css", "/assets
 		}
 	</style>
 <?php endif; ?>
-<?php $bgImage = get_field('background_images'); if(is_singular('report') && $bgImage):  ?>
+<?php if(is_singular('report') && $bgImage):  ?>
 <style type="text/css">
 @media (min-width:1200px) {
 	.single-report {
@@ -33,6 +40,6 @@ caeicons( [ "/assets/icons.data.svg.css", "/assets/icons.data.png.css", "/assets
 	}
 }
 </style>
-<meta property="og:image" content="<?php the_field('background_images'); ?>"/>
+
 <?php endif; ?>
 </head>
