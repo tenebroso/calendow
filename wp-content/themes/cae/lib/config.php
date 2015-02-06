@@ -37,7 +37,18 @@ function delete_transients() {
 
 add_action( 'edit_post', 'delete_transients' );
 
+/* =============================================================================
+   Add Menu Options page to Options
+   ========================================================================== */
 
+if( function_exists('acf_add_options_sub_page') )
+{
+    acf_add_options_sub_page(array(
+        'title' => 'Menu Options',
+        'parent' => 'options-general.php',
+        'capability' => 'manage_options'
+    ));
+}
 /* =============================================================================
    Define pages that do not have a sidebar
    ========================================================================== */
