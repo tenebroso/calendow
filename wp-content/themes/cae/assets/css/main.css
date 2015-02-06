@@ -2753,7 +2753,7 @@ body .animsition-loading {
   .banner .search-form, .banner .nav-collapse-wrap {
     display: inline-block;
     vertical-align: top; }
-  @media (min-width: 1200px) {
+  @media (min-width: 1300px) {
     .banner .pull-right {
       margin-right: -5em; } }
 
