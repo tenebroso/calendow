@@ -3633,7 +3633,7 @@ body .animsition-loading {
       -webkit-transition: all 0.3s;
       transition: all 0.3s; }
       #ajax-load-more .alm-btn-wrap .more:hover {
-        background-color: #7B7B7B;
+        background-color: #333;
         -webkit-transition: all 0.3s;
         transition: all 0.3s; }
     #ajax-load-more .alm-btn-wrap .done {
