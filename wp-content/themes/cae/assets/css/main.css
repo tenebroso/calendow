@@ -2323,6 +2323,14 @@ body {
     background: rgba(0, 0, 0, 0.8);
     z-index: 999; }
 
+::-moz-selection {
+  background: #EFC518;
+  color: #333; }
+
+::selection {
+  background: #EFC518;
+  color: #333; }
+
 .hentry, .sidebar {
   padding: 35px 0 0; }
 
@@ -2667,7 +2675,17 @@ button, .btn, input[type="submit"] {
   button:focus, .btn:focus, input[type="submit"]:focus {
     outline: none; }
   button.tweet-me, .btn.tweet-me, input[type="submit"].tweet-me {
-    z-index: 90; }
+    z-index: 90;
+    font-size: 0;
+    line-height: 0;
+    background: none;
+    padding: 0;
+    background: url(../img/svg/icon-tweet.svg) no-repeat center center;
+    background-size: contain;
+    width: 34px;
+    height: 32px; }
+    button.tweet-me:hover, .btn.tweet-me:hover, input[type="submit"].tweet-me:hover {
+      background: url(../img/svg/icon-tweet-hover.svg) no-repeat center center; }
 
 .btn-load-more {
   margin: 40px auto;

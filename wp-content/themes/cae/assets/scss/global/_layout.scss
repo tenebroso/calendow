@@ -43,7 +43,8 @@ body {
 	}
 }
 
-
+::-moz-selection { background: #EFC518; color:#333; }
+::selection { background: #EFC518; color:#333; }
 
 .hentry,
 .sidebar {
