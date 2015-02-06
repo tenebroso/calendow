@@ -2683,9 +2683,13 @@ button, .btn, input[type="submit"] {
     background: url(../img/svg/icon-tweet.svg) no-repeat center center;
     background-size: contain;
     width: 34px;
-    height: 32px; }
+    height: 32px;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
     button.tweet-me:hover, .btn.tweet-me:hover, input[type="submit"].tweet-me:hover {
-      background: url(../img/svg/icon-tweet-hover.svg) no-repeat center center; }
+      opacity: 0.7;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
 
 .btn-load-more {
   margin: 40px auto;
@@ -2975,6 +2979,8 @@ body .animsition-loading {
   .panel-body .container {
     max-width: 1000px;
     margin: 0 auto; }
+  .panel-body a {
+    color: white; }
 
 .nav li a {
   text-transform: uppercase;

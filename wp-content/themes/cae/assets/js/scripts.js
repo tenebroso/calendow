@@ -4925,7 +4925,7 @@ if (typeof jQuery === 'undefined') {
 
             url = getTweetURL(text, settings.extra, settings.via);
             $(settings.node).addClass(settings.cssClass
-             ).offset({top: e.pageY,
+             ).offset({top: e.pageY - 50,
                        left: e.pageX}
              ).css({position: 'absolute',
                     cursor: 'pointer'}
