@@ -59,13 +59,13 @@
 
       <div class="row">
         <div class="col-sm-4">
-            <?php wp_nav_menu( array('menu' => 'Our Story','menu_class' => 'nav-list secondary' )); ?>
+            <?php wp_nav_menu( array('menu' => 'Grey Left','menu_class' => 'nav-list secondary' )); ?>
         </div>
         <div class="col-sm-4">
-            <?php wp_nav_menu( array('menu' => 'Youth in Action','menu_class' => 'nav-list secondary' )); ?>
+            <?php wp_nav_menu( array('menu' => 'Grey Center','menu_class' => 'nav-list secondary' )); ?>
         </div>
         <div class="col-sm-4">
-            <?php wp_nav_menu( array('menu' => 'Centers','menu_class' => 'nav-list secondary' )); ?>
+            <?php wp_nav_menu( array('menu' => 'Grey Right','menu_class' => 'nav-list secondary' )); ?>
         </div>
       </div><!-- .row -->
 
@@ -79,11 +79,11 @@
 
         <div class="row">
           <div class="col-sm-4">
-              <?php wp_nav_menu( array('menu' => 'Careers','menu_class' => 'nav-list' )); ?>
+              <?php wp_nav_menu( array('menu' => 'Green Left','menu_class' => 'nav-list' )); ?>
           </div>
           <div class="col-sm-4">
 
-            <?php wp_nav_menu( array('menu' => 'Conferences','menu_class' => 'nav-list' )); ?>
+            <?php wp_nav_menu( array('menu' => 'Green Center','menu_class' => 'nav-list' )); ?>
 
           </div>
           <div class="col-sm-4">
