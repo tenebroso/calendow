@@ -20,7 +20,7 @@ caeicons( [ "/assets/icons.data.svg.css", "/assets/icons.data.png.css", "/assets
 <noscript><link href="/assets/icons.fallback.css" rel="stylesheet"></noscript>
 <?php if(is_front_page()): ?>
 	<style type="text/css">
-		.animsition {
+		.home {
 			background-image:url(<?php the_field('hero_image'); ?>);
 		}
 	</style>
