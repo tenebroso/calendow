@@ -8,8 +8,8 @@
 		<li class="schools"><a href="/school/"><span>Schools.</span> <span class="hero-nav-color-block">Schools.</span></a></li>
 		<li class="places"><a href="/places/"><span>Places.</span> <span class="hero-nav-color-block">Places.</span></a></li>
 		<li class="grants"><a href="/grants/"><span>Grants.</span> <span class="hero-nav-color-block">Grants.</span></a></li>
-		<li class="action"><a href="/action/"><span>Youth in Action.</span> <span class="hero-nav-color-block">Youth in Action.</span></a></li>
-		<li class="default"><a href="/conferences/"><span>Conferences.</span> <span class="hero-nav-color-block">Conferences.</span></a></li>
+		<li class="action"><a href="/youth-in-action/"><span>Youth in Action.</span> <span class="hero-nav-color-block">Youth in Action.</span></a></li>
+		<li class="default"><a href="/centers/"><span>Centers.</span> <span class="hero-nav-color-block">Centers.</span></a></li>
 
 	</ul>
 
