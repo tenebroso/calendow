@@ -1,6 +1,6 @@
 <?php get_template_part('templates/head'); ?>
 <body <?php body_class(); ?>>
-
+  
 <?php // Find variables that are used, per-page ?>
 <?php $accordion = get_field('accordion_content'); ?>
 <?php $builder = get_field('cae_content_builder'); ?>
@@ -9,6 +9,10 @@
   <?php $template = get_page_template_slug( $post->ID ); ?>
 <?php else: ?>
   <?php $workSlug = ''; ?>
+<?php endif; ?>
+
+<?php if($template == 'page-campaign-detail.php'): ?>
+   <div class="animsition">
 <?php endif; ?>
 
   <?php do_action('get_header'); ?>
@@ -70,5 +74,8 @@
     <p class="pull-left text-left"><a class="close-cookie">Hide this</a></p>
 </div>
 
+<?php if($template == 'page-campaign-detail.php'): ?>
+   </div>
+<?php endif; ?>
 </body>
 </html>
