@@ -2995,13 +2995,13 @@ button, .btn, input[type="submit"] {
   -webkit-transition: opacity 0.25s;
   transition: opacity 0.25s; }
   @media (max-width: 1199px) {
-    .newsletters.nav li:nth-child(n+12) {
+    .newsletters.nav li:nth-child(n+12):not(.active) {
       display: none; } }
   @media (max-width: 991px) {
-    .newsletters.nav li:nth-child(n+9) {
+    .newsletters.nav li:nth-child(n+9):not(.active) {
       display: none; } }
   @media (max-width: 767px) {
-    .newsletters.nav li:nth-child(n+5) {
+    .newsletters.nav li:nth-child(n+5):not(.active) {
       display: none; } }
 
 .newsletters.nav .active, .newsletters.nav li:not(.pull-left):not(.pull-right):hover {
