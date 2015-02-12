@@ -54,7 +54,17 @@
 	opacity:.6;
 	transform:translate3d(0,0,0);
 	transition:opacity .25s;
+	@media (max-width:$screen-md-max) {
+		&:nth-child(n+12) {
+			display: none;
+		}
+	}
 	@media (max-width:$screen-sm-max) {
+		&:nth-child(n+9) {
+			display: none;
+		}
+	}
+	@media (max-width:$screen-xs-max) {
 		&:nth-child(n+5) {
 			display: none;
 		}
