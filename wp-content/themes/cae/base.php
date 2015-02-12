@@ -67,12 +67,11 @@
   </div>
 
   <div class="splash-message">
-    <h2>Welcome to the new <br />California Endowment Site</h2>
+    <h2>Welcome to the new <br /><span>California Endowment Site</span></h2>
     <p>Come see what's new inside</p>
-    <p><a class="btn close">View New Site</a></p>
-    <p class="pull-right text-right"><a href="http://www.calendow.org/">Go to the Archived Site</a></p>
-    <p class="pull-left text-left"><a class="close-cookie">Hide this</a></p>
-</div>
+    <p class="splash-cta"><a class="btn close">View New Site</a></p>
+    <p><a href="http://www.calendow.org/">Go to the Archived Site</a> <a class="close-cookie">Hide this</a></p>
+  </div>
 
 <?php if($template == 'page-campaign-detail.php'): ?>
    </div>

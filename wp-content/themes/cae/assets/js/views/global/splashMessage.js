@@ -10,8 +10,9 @@ var CE = CE || {};
   	var $body = $('body');
 
 
-	if (!$.cookie('cae_splash_v4')) {
+	if (!$.cookie('cae_splash_v41')) {
 		$body.addClass('dimmed');
+		$.cookie('cae_splash_v41', 'true', { expires: 30 });
 	} else {
 		$signUpForm.remove();
 		$body.removeClass('dimmed');
@@ -25,7 +26,7 @@ var CE = CE || {};
 	$closeCookie.click(function() {
 		$signUpForm.remove();
 		$body.removeClass('dimmed');
-		$.cookie('cae_splash_v4', 'true', { expires: 30 });
+		$.cookie('cae_splash_v41', 'true', { expires: 30 });
 	});
 
   };

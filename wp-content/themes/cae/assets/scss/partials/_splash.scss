@@ -1,14 +1,17 @@
 .splash-message {
 	width: 80%;
 	
-	background: #2f2f2f;
+	background: #f3c500 url(../img/tce_modal.png) no-repeat right bottom;
 	position: fixed;
 	left: 10%;
 	top: 10%;
 	z-index: 1000;
 	color: white;
-	padding: 20px;
-	text-align: center;
+	padding: 0 20px 0 20px;
+	text-align: left;
+	color: #383838;
+
+	border-radius: 3px;
 
 	@media (min-width:$screen-sm-min) {
 		width: 700px;
@@ -18,13 +21,22 @@
 		margin-top: -200px;
 	}
 	h2,h3 {
-		color: #b3a532;
+		font-weight: normal;
+		color: #383838;
 		@media (max-width:$screen-xs-max) {
 			font-size: 1.25em;
 		}
+		span {
+			font-weight: bold;
+		}
 	}
 	.btn {
-		background: #59b498;
+		background: white;
+		border: 3px solid #383838;
+		&:hover {
+			background: #383838;
+			color: white;
+		}
 	}
 	
 	&.closed {
@@ -32,16 +44,16 @@
 		max-height: 0;
 		overflow: hidden;
 	}
-	.pull-right,
-	.pull-left {
-		margin: 2em 0 0;
-		font-size: 12px;
+	p.splash-cta {
+		margin: 20px 0 35px;
 	}
 	a:not(.btn) {
-		color: white;
 		text-decoration: underline;
+		font-size: 12px;
 	}
 	a {
 		cursor: pointer;
+		color: #383838;
+		
 	}
 }

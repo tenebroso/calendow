@@ -6341,14 +6341,16 @@ h2 + .byline {
 
 .splash-message {
   width: 80%;
-  background: #2f2f2f;
+  background: #f3c500 url(../img/tce_modal.png) no-repeat right bottom;
   position: fixed;
   left: 10%;
   top: 10%;
   z-index: 1000;
   color: white;
-  padding: 20px;
-  text-align: center; }
+  padding: 0 20px 0 20px;
+  text-align: left;
+  color: #383838;
+  border-radius: 3px; }
   @media (min-width: 768px) {
     .splash-message {
       width: 700px;
@@ -6357,24 +6359,31 @@ h2 + .byline {
       top: 50vh;
       margin-top: -200px; } }
   .splash-message h2, .splash-message h3 {
-    color: #b3a532; }
+    font-weight: normal;
+    color: #383838; }
     @media (max-width: 767px) {
       .splash-message h2, .splash-message h3 {
         font-size: 1.25em; } }
+    .splash-message h2 span, .splash-message h3 span {
+      font-weight: bold; }
   .splash-message .btn {
-    background: #59b498; }
+    background: white;
+    border: 3px solid #383838; }
+    .splash-message .btn:hover {
+      background: #383838;
+      color: white; }
   .splash-message.closed {
     z-index: -1;
     max-height: 0;
     overflow: hidden; }
-  .splash-message .pull-right, .splash-message .pull-left {
-    margin: 2em 0 0;
-    font-size: 12px; }
+  .splash-message p.splash-cta {
+    margin: 20px 0 35px; }
   .splash-message a:not(.btn) {
-    color: white;
-    text-decoration: underline; }
+    text-decoration: underline;
+    font-size: 12px; }
   .splash-message a {
-    cursor: pointer; }
+    cursor: pointer;
+    color: #383838; }
 
 .prevention {
   border-color: #15c6a7; }
