@@ -35,8 +35,20 @@
 									<p class="small date"><?php the_time('F j, Y'); ?></p>
 								</a>
 								<?php endif; ?>
-							</li><?php else: ?>test<li><a class="bg-color center-block"><h3 class="white-text"><strong>Lorem Ipsum.</strong></h3></a>
-							</li><?php endif; $x++; endwhile; endif; wp_reset_postdata(); ?>
+							</li><?php else: ?><li><a class="bg-color center-block"><h3 class="white-text"><strong>Lorem Ipsum.</strong></h3></a>
+							</li><?php endif; $x++; endwhile; ?>
+
+						<?php else: ?>
+<li>
+
+
+								<a class="center-block" href="<?php the_permalink(); ?>">
+									<p class="section-name">No Posts Found</p>
+									<h3><strong>Please categorize content as <?php echo $workSlug[0]; ?></strong></h3>
+									<p class="small date"><?php //the_time('F j, Y'); ?></p>
+								</a>
+							</li>
+					<?php endif; wp_reset_postdata(); ?>
 
 						</ul>
 
