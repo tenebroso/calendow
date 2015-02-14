@@ -2,6 +2,8 @@
 		$template = get_page_template_slug( $post->ID ); 
 		$workSlug = wp_get_post_terms($post->ID,'work', array("fields" => "slugs"));
 		$campaignSlug = wp_get_post_terms($post->ID,'campaign', array("fields" => "name"));
+		$slugID = $campaignSlug->ID;
+		echo $slugID;
 		$postTypes = array('post', 'video', 'infographic', 'action', 'event', 'grant', 'newsletter', 'report', 'news');
 ?>
 
@@ -24,7 +26,10 @@
 						<?php $the_query = new WP_Query( $args ); 
 								if ( $the_query->have_posts() ) : 
 									while ( $the_query->have_posts() ) : 
-										$the_query->the_post(); $img = get_field('read_this_thumbnail_image'); if($x != 4): ?><li>
+										$the_query->the_post(); 
+										$terms = get_the_terms( $post->ID , 'work' );
+										
+										$img = get_field('read_this_thumbnail_image'); if($x != 4): ?><li>
 
 								<?php if($img): ?>
 								<a class="center-block center-block-bg-img" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo $img; ?>);"></a>
@@ -35,7 +40,9 @@
 									<p class="small date"><?php the_time('F j, Y'); ?></p>
 								</a>
 								<?php endif; ?>
-							</li><?php else: ?><li><a class="bg-color center-block"><h3 class="white-text"><strong>Lorem Ipsum.</strong></h3></a>
+							</li><?php else: ?><li><a class="bg-color center-block"><h3 class="white-text"><?php  foreach ($terms as $term) {
+											echo $term->description;
+										} ?></h3></a>
 							</li><?php endif; $x++; endwhile; ?>
 
 						<?php else: ?>
