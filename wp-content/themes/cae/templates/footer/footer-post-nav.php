@@ -40,9 +40,11 @@
 									<p class="small date"><?php the_time('F j, Y'); ?></p>
 								</a>
 								<?php endif; ?>
-							</li><?php else: ?><li><a class="bg-color center-block"><h3 class="white-text"><?php  foreach ($terms as $term) {
+							</li><?php else: ?><li class="hhh-pin"><a class="bg-color center-block" href="<?php  foreach ($terms as $term) {
+											the_field('link_for_hhh_pin', $term);
+										} ?>"><div class="white-text v-centered"><?php  foreach ($terms as $term) {
 											echo $term->description;
-										} ?></h3></a>
+										} ?></div></a>
 							</li><?php endif; $x++; endwhile; ?>
 
 						<?php else: ?>
