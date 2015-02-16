@@ -3345,7 +3345,9 @@ button, .btn, input[type="submit"] {
   .hero-nav li.prevention a {
     color: #15c6a7; }
   .hero-nav li.prevention .hero-nav-color-block {
-    background: #15c6a7; }
+    background: #15c6a7;
+    left: -webkit-calc(100% - 6px);
+    left: calc(100% - 6px); }
   .hero-nav li.schools a {
     color: #07a8c6; }
   .hero-nav li.schools .hero-nav-color-block {
@@ -3353,7 +3355,9 @@ button, .btn, input[type="submit"] {
   .hero-nav li.places a {
     color: #C10512; }
   .hero-nav li.places .hero-nav-color-block {
-    background: #C10512; }
+    background: #C10512;
+    left: -webkit-calc(100% - 6px);
+    left: calc(100% - 6px); }
   .hero-nav li.grants a {
     color: #79358a; }
   .hero-nav li.grants .hero-nav-color-block {
