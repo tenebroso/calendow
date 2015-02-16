@@ -85,6 +85,25 @@ CE.Site = {
   page_template_template_places_php: {
     init: function() {
       CE.thumbnailNav();
+
+      var $width = $(window).width();
+
+      if($width > 992) {
+
+        var $title = $('.side-nav-container .sidenav-title');
+
+        $title.addClass('white-text');
+
+        $(window).on("scroll", function(){
+          if($("body").scrollTop() > 500){
+            $title.removeClass('white-text');
+          } else {
+            $title.addClass('white-text');
+          }
+        });
+        
+      }
+
     }
   },
   page: {

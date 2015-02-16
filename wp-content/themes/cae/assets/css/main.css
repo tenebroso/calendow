@@ -6413,6 +6413,8 @@ h2 + .byline {
         transition: all 0.3s; }
   .prevention > li.heading a, .prevention .color, .prevention blockquote, .prevention .footer-post-nav .section-name {
     color: #15c6a7; }
+  .prevention .sidenav-title.white-text {
+    color: white; }
   .prevention .bg-color {
     background-color: #15c6a7; }
     .prevention .bg-color.section-intro-title {
@@ -6476,6 +6478,8 @@ h2 + .byline {
         transition: all 0.3s; }
   .schools > li.heading a, .schools .color, .schools blockquote, .schools .footer-post-nav .section-name {
     color: #07a8c6; }
+  .schools .sidenav-title.white-text {
+    color: white; }
   .schools .bg-color {
     background-color: #07a8c6; }
     .schools .bg-color.section-intro-title {
@@ -6539,6 +6543,8 @@ h2 + .byline {
         transition: all 0.3s; }
   .places > li.heading a, .places .color, .places blockquote, .places .footer-post-nav .section-name {
     color: #C10512; }
+  .places .sidenav-title.white-text {
+    color: white; }
   .places .bg-color {
     background-color: #C10512; }
     .places .bg-color.section-intro-title {
@@ -6602,6 +6608,8 @@ h2 + .byline {
         transition: all 0.3s; }
   .grants-and-funding > li.heading a, .grants-and-funding .color, .grants-and-funding blockquote, .grants-and-funding .footer-post-nav .section-name {
     color: #79358a; }
+  .grants-and-funding .sidenav-title.white-text {
+    color: white; }
   .grants-and-funding .bg-color {
     background-color: #79358a; }
     .grants-and-funding .bg-color.section-intro-title {
@@ -6665,6 +6673,8 @@ h2 + .byline {
         transition: all 0.3s; }
   .youth-in-action > li.heading a, .youth-in-action .color, .youth-in-action blockquote, .youth-in-action .footer-post-nav .section-name {
     color: #ff0078; }
+  .youth-in-action .sidenav-title.white-text {
+    color: white; }
   .youth-in-action .bg-color {
     background-color: #ff0078; }
     .youth-in-action .bg-color.section-intro-title {
@@ -6728,6 +6738,8 @@ h2 + .byline {
         transition: all 0.3s; }
   .neighborhoods > li.heading a, .neighborhoods .color, .neighborhoods blockquote, .neighborhoods .footer-post-nav .section-name {
     color: #d9673e; }
+  .neighborhoods .sidenav-title.white-text {
+    color: white; }
   .neighborhoods .bg-color {
     background-color: #d9673e; }
     .neighborhoods .bg-color.section-intro-title {
@@ -6791,6 +6803,8 @@ h2 + .byline {
         transition: all 0.3s; }
   .secondary > li.heading a, .secondary .color, .secondary blockquote, .secondary .footer-post-nav .section-name {
     color: #c5b634; }
+  .secondary .sidenav-title.white-text {
+    color: white; }
   .secondary .bg-color {
     background-color: #c5b634; }
     .secondary .bg-color.section-intro-title {
