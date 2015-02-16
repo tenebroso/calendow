@@ -2733,7 +2733,7 @@ button, .btn, input[type="submit"] {
     vertical-align: top; }
   @media (min-width: 1300px) {
     .banner .pull-right {
-      margin-right: -5em; } }
+      margin-right: -3em; } }
 
 #fixed {
   position: fixed;
