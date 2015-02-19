@@ -2507,13 +2507,13 @@ h3 strong, h3 b {
   text-transform: uppercase;
   margin: 0 0 1em 40px; }
 
-.hentry li, .text-content li {
+.hentry li, .text-content li, .report-content li {
   margin: 0 0 0.25em 1em;
   list-style-type: disc; }
-  .single .hentry li, .single .text-content li {
+  .single:not(.single-report) .hentry li, .single:not(.single-report) .text-content li, .single:not(.single-report) .report-content li {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAQAAADY4iz3AAAAcklEQ…UgiUyudOUODu0y79wGd4Hx2xCwwIB3KVbA37DkIwCSxGH1AAodzpKkjv8XAAAAAElFTkSuQmCC) no-repeat left center;
     list-style-type: none; }
-.hentry a, .text-content a {
+.hentry a, .text-content a, .report-content a {
   color: #1f2233;
   text-decoration: underline; }
 
