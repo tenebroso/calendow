@@ -3757,6 +3757,9 @@ button, .btn, input[type="submit"] {
   background-repeat: no-repeat; }
   @media (min-width: 992px) {
     .parallax-image {
+      height: 520px; } }
+  @media (min-width: 2200px) {
+    .parallax-image {
       height: 770px; } }
   @media (max-width: 767px) {
     .parallax-image {
