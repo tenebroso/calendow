@@ -1,13 +1,49 @@
 jQuery(document).ready(function($) {
-   "use strict"; 
-   
-   $(".row select, .cnkt-main select").select2();    
+   "use strict";    
    
    var _alm = {},
        output_div = $('#shortcode_output'),
-       output = '[ajax_load_more]';    
+       output = '[ajax_load_more]'; 
+   
+   output_div.text(output); //Init the shortcode output 
        
-   output_div.text(output); //Init the shortcode output        
+       
+      
+   /*
+   *  _alm.select2
+   *  Init Select2 select replacement
+   *
+   *  @since 2.5.0
+   */  
+   _alm.select2 = function(){
+      // Default Select2
+      $('.row select, .cnkt-main select, select.jump-menu').not('.multiple').select2({});   
+      
+      // multiple
+      $('.ajax-load-more .categories select.multiple').select2({
+         placeholder : 'Select Categories',
+      });     
+      $('.ajax-load-more .tags select.multiple').select2({
+         placeholder : 'Select Tags'         
+      });    
+      $('.ajax-load-more.settings select.multiple.post-types').select2({
+         placeholder : 'Select Post Types'         
+      });
+   };
+   _alm.select2();
+   
+   
+   
+   // Reset all selects
+   _alm.reset_select2 = function(){
+      // Default Select2
+      $('.row select, .cnkt-main select, select.jump-menu').not('.multiple').select2();   
+      
+      // multiple
+      $('.ajax-load-more .categories select.multiple').select2();     
+      $('.ajax-load-more .tags select.multiple').select2();
+   };   
+              
    
    
    /*
@@ -22,12 +58,53 @@ jQuery(document).ready(function($) {
       
       
       // ---------------------------
-      // - SEO      
+      // - Cache      
       // ---------------------------
       
-      var seo = $('.seo input[name=seo]:checked').val(); 
-      if(seo !== 'false' && seo != undefined)
-         output += ' seo="'+seo+'"';   
+      var cache = $('#alm-cache input[name=cache]:checked').val(); 
+      if(cache !== 'false' && cache != undefined){
+         if($('input#cache-id').val() === '')
+            _alm.generateUniqueID(10); // Generate unique ID on first load
+            
+         $('.cache_id').slideDown(100, 'alm_easeInOutQuad');
+         output += ' cache="'+cache+'"';
+         var cache_id = $('input#cache-id').val();        
+         if(cache_id)
+            output += ' cache_id="'+cache_id+'"';  
+      }else{
+         $('.cache_id').slideUp(100, 'alm_easeInOutQuad')
+      } 
+      
+      
+      // ---------------------------
+      // - Preload      
+      // ---------------------------
+      var seo = $('.seo input[name=seo]:checked').val();
+      var preload = $('.preload input[name=preload]:checked').val(); 
+      if(preload !== 'false' && preload != undefined){
+         
+         if(seo !== 'true')
+            $('.preload_amount').slideDown(100, 'alm_easeInOutQuad');
+         
+         output += ' preloaded="'+preload+'"';
+         var preload_amount = $('.preload input#preload-amount').val();        
+         if(preload_amount > 0 && preload_amount != 5)
+            output += ' preloaded_amount="'+preload_amount+'"';  
+      }else{
+         $('.preload_amount').slideUp(100, 'alm_easeInOutQuad');
+      }    
+      
+      
+      // ---------------------------
+      // - SEO      
+      // ---------------------------      
+       
+      if(seo !== 'false' && seo != undefined){
+	      if(preload === 'true')
+		      $('.preload_amount').slideUp(100, 'alm_easeInOutQuad');
+	      
+         output += ' seo="'+seo+'"';                   
+      }
       
       // ---------------------------
       // - Repeater
@@ -66,8 +143,36 @@ jQuery(document).ready(function($) {
       if(post_format != '' && post_format != undefined) 
          output += ' post_format="'+post_format+'"';
       
- 
-        
+                 
+      // ---------------------------
+      // - Categories      
+      // ---------------------------
+      
+      // IN
+      var cat = $('.categories #category-select').val();              
+      if(cat !== '' && cat !== undefined && cat !== null) 
+         output += ' category="'+cat+'"';         
+         
+      // NOT_IN
+      var cat_not_in = $('.categories #category-exclude-select').val();              
+      if(cat_not_in !== '' && cat_not_in !== undefined && cat_not_in !== null) 
+         output += ' category__not_in="'+cat_not_in+'"';
+      
+      
+      // ---------------------------
+      // - Tags      
+      // ---------------------------
+      
+      var tag = $('.tags #tag-select').val();
+      if(tag !== '' && tag !== undefined && tag !== null) 
+         output += ' tag="'+tag+'"';   
+         
+      // NOT_IN
+      var tag_not_in = $('.tags #tag-exclude-select').val();              
+      if(tag_not_in !== '' && tag_not_in !== undefined && tag_not_in !== null) 
+         output += ' tag__not_in="'+tag_not_in+'"';
+         
+         
       // ---------------------------
       // - Taxonomy Query     
       // ---------------------------
@@ -105,22 +210,7 @@ jQuery(document).ready(function($) {
       }else{
 	      $('#taxonomy-extended').slideUp(200, 'alm_easeInOutQuad');
       }
-         
-      // ---------------------------
-      // - Categories      
-      // ---------------------------
-      
-      var cat = $('.categories select').val();              
-      if(cat !== '' && cat !== undefined) 
-         output += ' category="'+cat+'"';
-      
-      // ---------------------------
-      // - Tags      
-      // ---------------------------
-      
-      var tag = $('.tags select').val();              
-      if(tag !== '' && tag !== undefined) 
-         output += ' tag="'+tag+'"';   
+
       
       // ---------------------------
       // - Date      
@@ -140,11 +230,12 @@ jQuery(document).ready(function($) {
       if(dateD  !== '' && dateD  !== undefined && dateD < 32) 
          output += ' day="'+dateD+'"';   
       
+      
       // ---------------------------
       // - Authors      
       // ---------------------------
       
-      var author = $('.authors select').val();              
+      var author = $('.authors #author-select').val();              
       if(author !== '' && author !== undefined) 
          output += ' author="'+author+'"';   
       
@@ -235,7 +326,16 @@ jQuery(document).ready(function($) {
       
       var posts_per_page = $('.posts_per_page input').val();        
       if(posts_per_page > 0 && posts_per_page != 5)
-         output += ' posts_per_page="'+posts_per_page+'"';     
+         output += ' posts_per_page="'+posts_per_page+'"';  
+      
+      
+      // ---------------------------
+      // - Pause Loading      
+      // ---------------------------
+      
+      var pause_load = $('.pause_load input[name=pause]:checked').val();     
+      if(pause_load === 't')          
+            output += ' pause="true"';       
             
       
       
@@ -245,24 +345,18 @@ jQuery(document).ready(function($) {
       
       var scroll_load = $('.scroll_load input[name=scroll]:checked').val();     
       if(scroll_load === 'f'){
-         $('.row.max_pages').slideUp(100, 'alm_easeInOutQuad');
+         $('.max_pages, .scroll_distance').slideUp(100, 'alm_easeInOutQuad');
          if($('.scroll_load input').hasClass('changed'))          
             output += ' scroll="false"';         
       }else{
-         $('.row.max_pages').slideDown(100, 'alm_easeInOutQuad');
-         var max_pages = $('.max_pages input').val();         
-         if(max_pages > 0 && max_pages != 5)           
-            output += ' max_pages="'+$('.max_pages input').val()+'"';         
-      }   
-      
-      
-      // ---------------------------
-      // - Pause Loading      
-      // ---------------------------
-      
-      var pause_load = $('.pause_load input[name=pause]:checked').val();     
-      if(pause_load === 't')          
-            output += ' pause="true"';         
+         $('.max_pages, .scroll_distance').slideDown(100, 'alm_easeInOutQuad');
+         var scroll_distance = $('.scroll_distance input').val();      
+         if(scroll_distance != 150)           
+            output += ' scroll_distance="'+$('.scroll_distance input').val()+'"';   
+         var max_pages = $('.max_pages input').val();   
+         if(max_pages != 5)           
+            output += ' max_pages="'+$('.max_pages input').val()+'"';            
+      }        
 
       
       // ---------------------------
@@ -272,6 +366,15 @@ jQuery(document).ready(function($) {
       var transition = $('.transition input[name=transition]:checked').val(); 
       if(transition !== 'slide')
          output += ' transition="'+transition+'"';
+
+      
+      // ---------------------------
+      // - disbale after       
+      // ---------------------------
+      
+      var destroy_after = $('.destroy-after input[name=destroy-after]').val(); 
+      if(destroy_after !== '' && destroy_after !== undefined && destroy_after !== '0')
+         output += ' destroy_after="'+destroy_after+'"';
       
       
       // ---------------------------
@@ -285,7 +388,12 @@ jQuery(document).ready(function($) {
       
       
       output += ']';  //Close shortcode          
-      output_div.text(output);      
+      output_div.text(output); 
+      
+      if(output  != '[ajax_load_more]') 
+      	$('.reset-shortcode-builder').show();
+      else	
+      	$('.reset-shortcode-builder').hide();
    }  
    
     
@@ -319,7 +427,7 @@ jQuery(document).ready(function($) {
    
    
    $("input.numbers-only").keydown(function (e) {
-      if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+      if ($.inArray(e.keyCode, [188, 46, 8, 9, 27, 13, 110, 190]) !== -1 ||
           // Allow: Ctrl+A
          (e.keyCode == 65 && e.ctrlKey === true) || 
           // Allow: home, end, left, right, down, up
@@ -329,7 +437,9 @@ jQuery(document).ready(function($) {
      }
      // Ensure that it is a number and stop the keypress
      if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-         e.preventDefault();
+         if(e.keyCode !== 188){ // If keycode is not a comma
+            e.preventDefault();
+         }
      } 
    });
    
@@ -376,7 +486,7 @@ jQuery(document).ready(function($) {
 	   var pos = $(this).val();
 		if(pos !== 'null'){
 			$('html,body').animate({
-			   scrollTop: $('#'+pos).offset().top - 50
+			   scrollTop: $('#'+pos).offset().top - 46
 			}, 500, 'alm_easeInOutQuad');
 		}
    });
@@ -388,8 +498,9 @@ jQuery(document).ready(function($) {
    almResizeTOC();
    
    $(window).resize(function() {
-      almResizeTOC();
+      almResizeTOC() 
    });
+   
    
    $(window).scroll(function(){
       almSidebarAttach();
@@ -405,39 +516,8 @@ jQuery(document).ready(function($) {
          $('.table-of-contents').removeClass('attached');
    }
    almSidebarAttach();
-    
-   /*
-   *  Expand/Collapse shortcode headings
-   *
-   *  @since 2.0.0
-   */ 
    
-	$(document).on('click', 'h3.heading', function(){
-		var el = $(this);
-		if($(el).hasClass('open')){
-			$(el).next('.expand-wrap').slideDown(100, 'alm_easeInOutQuad', function(){
-				$(el).removeClass('open');
-			});
-		}else{
-			$(el).next('.expand-wrap').slideUp(100, 'alm_easeInOutQuad', function(){
-				$(el).addClass('open');
-			});
-		}
-	});
-	
-	$(document).on('click', '.toggle-all', function(){
-        var el = $(this);
-		if($(el).hasClass('closed')){
-		    $(el).removeClass('closed');
-            $('h3.heading').removeClass('open');
-			$('.expand-wrap').slideDown(100, 'alm_easeInOutQuad');
-		}else{
-		    $(el).addClass('closed');
-            $('h3.heading').addClass('open');
-			$('.expand-wrap').slideUp(100, 'alm_easeInOutQuad');
-		}
-    });
-	
+     	
 	
    /*
    *  get_tax_terms
@@ -513,24 +593,44 @@ jQuery(document).ready(function($) {
    
    
    
+   /*
+   *  Reset shortcode builder
+   *
+   *  @since 2.5.0
+   */    
+   
+   $(document).on('click', '.reset-shortcode-builder a', function(){
+      $('#alm-shortcode-builder-form').trigger("reset");
+      _alm.reset_select2();
+      _alm.buildShortcode();
+   }); 
+   
+   
    
    /*
-   *  _alm.copyToClipboard
-   *  Copy shortcode to clipboard
+   *  _alm.generateUniqueID
+   *  Generate Unique Cache ID
    *
-   *  @since 2.0.0
-   */     
-	
-	_alm.copyToClipboard = function(text) {
-		window.prompt ("Copy link to your clipboard: Press Ctrl + C then hit Enter to copy.", text);
-	}
-	
-	$('.output-wrap .copy').click(function(){
-		var c = $('#shortcode_output').html();
-		_alm.copyToClipboard(c);
-	});
+   *  @since 2.6.0
+   */  
+   
+   _alm.generateUniqueID = function(length) {
+       var id = Math.floor(Math.pow(10, length-1) + Math.random() * 9 * Math.pow(10, length-1));
+       $('#cache-id').val(id);
+       
+   }
    
    
+   
+   /*
+   *  Generate Unique Cache ID Click
+   *
+   *  @since 2.6.0
+   */    
+   
+   $(document).on('click', '.generate-cache-id', function(){
+      _alm.generateUniqueID(10);
+   }); 
    
 
   

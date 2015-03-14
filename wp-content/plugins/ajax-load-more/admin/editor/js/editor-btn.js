@@ -23,7 +23,7 @@
         title: 'Insert Ajax load More',
         cmd: 'mcebutton',
         classes: 'widget btn ajax-load-more-btn',
-        image: url + '/../img/add.png'
+        image: url + '/../../img/add.png'
       });
 
     }
