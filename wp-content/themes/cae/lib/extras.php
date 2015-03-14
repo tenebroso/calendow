@@ -86,3 +86,38 @@ function yoasttobottom() {
 }
 
 add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+
+/* =============================================================================
+   Change Post to Blog
+   ========================================================================== */
+
+function cae_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Blog';
+    $menu[5][0] = 'Blog';
+    $menu[10][0] = 'Images';
+    $submenu['edit.php'][5][0] = 'Blog';
+    $submenu['edit.php'][10][0] = 'Add Blog Post';
+    echo '';
+}
+function cae_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Blog';
+    $labels->singular_name = 'Blog';
+    $labels->add_new = 'Add New';
+    $labels->add_new_item = 'Add New';
+    $labels->edit_item = 'Edit Blog Post';
+    $labels->new_item = 'Blog';
+    $labels->view_item = 'View Blog Post';
+    $labels->search_items = 'Search Blog Posts';
+    $labels->not_found = 'No Blog Posts found';
+    $labels->not_found_in_trash = 'No Blog Posts found in Trash';
+    $labels->all_items = 'All Blog Posts';
+    $labels->menu_name = 'Blog';
+    $labels->name_admin_bar = 'Blog';
+}
+ 
+add_action( 'admin_menu', 'cae_change_post_label' );
+add_action( 'init', 'cae_change_post_object' );
