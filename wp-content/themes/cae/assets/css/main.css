@@ -6459,7 +6459,7 @@ h2 + .byline {
     background-color: #15c6a7;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
-  .no-touch .prevention.grid-item:hover {
+  .no-touch .prevention.grid-item:hover, .no-touch .prevention .hover-trigger:hover .show-on-hover {
     background-color: #15c6a7;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
@@ -6524,7 +6524,7 @@ h2 + .byline {
     background-color: #07a8c6;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
-  .no-touch .schools.grid-item:hover {
+  .no-touch .schools.grid-item:hover, .no-touch .schools .hover-trigger:hover .show-on-hover {
     background-color: #07a8c6;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
@@ -6589,7 +6589,7 @@ h2 + .byline {
     background-color: #C10512;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
-  .no-touch .places.grid-item:hover {
+  .no-touch .places.grid-item:hover, .no-touch .places .hover-trigger:hover .show-on-hover {
     background-color: #C10512;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
@@ -6654,7 +6654,7 @@ h2 + .byline {
     background-color: #79358a;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
-  .no-touch .grants-and-funding.grid-item:hover {
+  .no-touch .grants-and-funding.grid-item:hover, .no-touch .grants-and-funding .hover-trigger:hover .show-on-hover {
     background-color: #79358a;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
@@ -6719,7 +6719,7 @@ h2 + .byline {
     background-color: #ff0078;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
-  .no-touch .youth-in-action.grid-item:hover {
+  .no-touch .youth-in-action.grid-item:hover, .no-touch .youth-in-action .hover-trigger:hover .show-on-hover {
     background-color: #ff0078;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
@@ -6784,7 +6784,7 @@ h2 + .byline {
     background-color: #d9673e;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
-  .no-touch .neighborhoods.grid-item:hover {
+  .no-touch .neighborhoods.grid-item:hover, .no-touch .neighborhoods .hover-trigger:hover .show-on-hover {
     background-color: #d9673e;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
@@ -6849,7 +6849,7 @@ h2 + .byline {
     background-color: #c5b634;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
-  .no-touch .secondary.grid-item:hover {
+  .no-touch .secondary.grid-item:hover, .no-touch .secondary .hover-trigger:hover .show-on-hover {
     background-color: #c5b634;
     -webkit-transition: background-color 0.25s;
     transition: background-color 0.25s; }
@@ -6861,3 +6861,133 @@ h2 + .byline {
     background-color: rgba(197, 182, 52, 0.9); }
   .secondary .bg-color.show-on-hover {
     background-color: rgba(197, 182, 52, 0.7); }
+
+.default {
+  border-color: #7f7f7f; }
+  .default.nav-list li {
+    border-color: #333333; }
+    .default.nav-list li.heading {
+      border-color: #7f7f7f; }
+    .default.nav-list li:not(.heading) a:hover {
+      background: #7f7f7f;
+      color: #fff; }
+      .no-touch .default.nav-list li:not(.heading) a:hover {
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; }
+  .default > li.heading a, .default .color, .default blockquote, .default .footer-post-nav .section-name {
+    color: #7f7f7f; }
+  .default .sidenav-title.white-text {
+    color: white; }
+  .default .bg-color {
+    background-color: #7f7f7f; }
+    .default .bg-color.section-intro-title {
+      background: #7f7f7f; }
+      .default .bg-color.section-intro-title a {
+        color: #fff; }
+        .default .bg-color.section-intro-title a:hover {
+          color: #b2b2b2; }
+    .default .bg-color a {
+      color: #7B7B7B; }
+    .default .bg-color .breadcrumbs .color {
+      color: #fff; }
+    .default .bg-color .breadcrumbs strong {
+      color: #7B7B7B; }
+  .default .sub-nav {
+    border-top: 2px solid #7f7f7f; }
+  .default .side-nav li a, .default .side-nav-share .sidenav-title {
+    background-color: #7f7f7f;
+    border-color: #999999; }
+  .default .side-nav-share .side-nav li a:hover {
+    background-color: #666666; }
+  .default .side-nav li.cta a {
+    background: #fff;
+    color: #7f7f7f;
+    border-color: #7f7f7f; }
+    .default .side-nav li.cta a:hover {
+      background: #7f7f7f;
+      color: #fff; }
+  .default .section-title, .default .footer-post-nav li {
+    border-color: #7f7f7f; }
+  .default .nav.newsletters.sub-nav .active:after, .default .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top-color: #7f7f7f; }
+  .default .footer-post-nav a:hover, .default .page-header, .default .campaign-grid li a:hover {
+    background-color: #7f7f7f;
+    -webkit-transition: background-color 0.25s;
+    transition: background-color 0.25s; }
+  .no-touch .default.grid-item:hover, .no-touch .default .hover-trigger:hover .show-on-hover {
+    background-color: #7f7f7f;
+    -webkit-transition: background-color 0.25s;
+    transition: background-color 0.25s; }
+  .no-touch .default.grid-item:hover .hover-white {
+    color: #fff; }
+  .default .campaign-grid li a:hover {
+    -webkit-transition: background-color 0.25s;
+    transition: background-color 0.25s;
+    background-color: rgba(127, 127, 127, 0.9); }
+  .default .bg-color.show-on-hover {
+    background-color: rgba(127, 127, 127, 0.7); }
+
+.bhc {
+  border-color: #7f7f7f; }
+  .bhc.nav-list li {
+    border-color: #333333; }
+    .bhc.nav-list li.heading {
+      border-color: #7f7f7f; }
+    .bhc.nav-list li:not(.heading) a:hover {
+      background: #7f7f7f;
+      color: #fff; }
+      .no-touch .bhc.nav-list li:not(.heading) a:hover {
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; }
+  .bhc > li.heading a, .bhc .color, .bhc blockquote, .bhc .footer-post-nav .section-name {
+    color: #7f7f7f; }
+  .bhc .sidenav-title.white-text {
+    color: white; }
+  .bhc .bg-color {
+    background-color: #7f7f7f; }
+    .bhc .bg-color.section-intro-title {
+      background: #7f7f7f; }
+      .bhc .bg-color.section-intro-title a {
+        color: #fff; }
+        .bhc .bg-color.section-intro-title a:hover {
+          color: #b2b2b2; }
+    .bhc .bg-color a {
+      color: #7B7B7B; }
+    .bhc .bg-color .breadcrumbs .color {
+      color: #fff; }
+    .bhc .bg-color .breadcrumbs strong {
+      color: #7B7B7B; }
+  .bhc .sub-nav {
+    border-top: 2px solid #7f7f7f; }
+  .bhc .side-nav li a, .bhc .side-nav-share .sidenav-title {
+    background-color: #7f7f7f;
+    border-color: #999999; }
+  .bhc .side-nav-share .side-nav li a:hover {
+    background-color: #666666; }
+  .bhc .side-nav li.cta a {
+    background: #fff;
+    color: #7f7f7f;
+    border-color: #7f7f7f; }
+    .bhc .side-nav li.cta a:hover {
+      background: #7f7f7f;
+      color: #fff; }
+  .bhc .section-title, .bhc .footer-post-nav li {
+    border-color: #7f7f7f; }
+  .bhc .nav.newsletters.sub-nav .active:after, .bhc .nav.newsletters.sub-nav li:not(.pull-left):not(.pull-right):hover:after {
+    border-top-color: #7f7f7f; }
+  .bhc .footer-post-nav a:hover, .bhc .page-header, .bhc .campaign-grid li a:hover {
+    background-color: #7f7f7f;
+    -webkit-transition: background-color 0.25s;
+    transition: background-color 0.25s; }
+  .no-touch .bhc.grid-item:hover, .no-touch .bhc .hover-trigger:hover .show-on-hover {
+    background-color: #7f7f7f;
+    -webkit-transition: background-color 0.25s;
+    transition: background-color 0.25s; }
+  .no-touch .bhc.grid-item:hover .hover-white {
+    color: #fff; }
+  .bhc .campaign-grid li a:hover {
+    -webkit-transition: background-color 0.25s;
+    transition: background-color 0.25s;
+    background-color: rgba(127, 127, 127, 0.9); }
+  .bhc .bg-color.show-on-hover {
+    background-color: rgba(127, 127, 127, 0.7); }
