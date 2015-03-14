@@ -5646,9 +5646,10 @@ body .animsition-loading {
       padding: 0 0 0 9px; } }
   .place-grid h2 {
     font-size: 32px; }
-  .place-grid h2 + p {
-    margin: 0 0 1em 0;
+  .place-grid p {
     line-height: 1.2; }
+  .place-grid h2 + p {
+    margin: 0; }
   .place-grid li {
     vertical-align: top;
     width: 50%;

@@ -8,9 +8,13 @@
 	h2 {
 		font-size:32px;
 	}
+    p {
+        line-height: 1.2;
+    }
 	h2 + p {
-		margin: 0 0 1em 0;
-		line-height: 1.2;
+		//margin: 0 0 1em 0;
+        margin: 0;
+		//line-height: 1.2;
 	}
 	li {
 		vertical-align: top;
