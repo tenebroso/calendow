@@ -3298,7 +3298,8 @@ button, .btn, input[type="submit"] {
   .hero-nav li {
     line-height: 1; }
     .hero-nav li.hero-nav-intro {
-      margin: 40px 0 21px; }
+      margin: 40px 0 21px;
+      font-size: 26px; }
   .hero-nav li:not(.hero-nav-intro) a {
     padding: 13px 20px 13px 7px;
     display: inline-block;
