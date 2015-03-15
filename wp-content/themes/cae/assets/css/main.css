@@ -3308,9 +3308,6 @@ button, .btn, input[type="submit"] {
     display: inline-block;
     position: relative;
     overflow: hidden;
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
     .hero-nav li:not(.hero-nav-intro) a > span:first-child {
