@@ -1,7 +1,5 @@
 <?php get_template_part('templates/home/hero'); ?>
 
-<?php //get_template_part('templates/home/filters'); ?>
-
 <ul class="filters">
 	<li class="filter-main">
 		<a class="filter-key">Filter by <span>Our Work</span></a>
@@ -43,7 +41,7 @@
 
 <div class="clearfix"></div>
 
-	<?php echo do_shortcode('[ajax_load_more post_type="post, report, newsletter, news, action, event, grant, video, infographic" scroll="false" pause="true" button_label="Load More" offset="0" posts_per_page="9" orderby="date"]'); ?>
+	<?php echo do_shortcode('[ajax_load_more preloaded="true" preloaded_amount="9" post_type="post, report, newsletter, news, action, event, grant, video, infographic" scroll="false" pause="true" button_label="Load More" offset="0" posts_per_page="9" orderby="date"]'); ?>
 
 
 
