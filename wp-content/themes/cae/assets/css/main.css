@@ -2420,6 +2420,9 @@ h1, h2, h3, h4, h5, h6, .heading-font {
     font-family: "source-sans-pro", sans-serif;
     font-weight: 600; }
 
+h1 {
+  color: #3b3b3b; }
+
 .footer p {
   margin: 0; }
 
@@ -3346,9 +3349,7 @@ button, .btn, input[type="submit"] {
   .hero-nav li.prevention a {
     color: #15c6a7; }
   .hero-nav li.prevention .hero-nav-color-block {
-    background: #15c6a7;
-    left: -webkit-calc(100% - 6px);
-    left: calc(100% - 6px); }
+    background: #15c6a7; }
   .hero-nav li.schools a {
     color: #07a8c6; }
   .hero-nav li.schools .hero-nav-color-block {
@@ -3356,20 +3357,18 @@ button, .btn, input[type="submit"] {
   .hero-nav li.places a {
     color: #C10512; }
   .hero-nav li.places .hero-nav-color-block {
-    background: #C10512;
-    left: -webkit-calc(100% - 6px);
-    left: calc(100% - 6px); }
-  .hero-nav li.grants a {
+    background: #C10512; }
+  .hero-nav li.grants-and-funding a {
     color: #79358a; }
-  .hero-nav li.grants .hero-nav-color-block {
+  .hero-nav li.grants-and-funding .hero-nav-color-block {
     background: #79358a; }
-  .hero-nav li.action a {
+  .hero-nav li.youth-in-action a {
     color: #ff0078; }
-  .hero-nav li.action .hero-nav-color-block {
+  .hero-nav li.youth-in-action .hero-nav-color-block {
     background: #ff0078; }
-  .hero-nav li.default a {
+  .hero-nav li.default a, .hero-nav li.grey-center a {
     color: #7f7f7f; }
-  .hero-nav li.default .hero-nav-color-block {
+  .hero-nav li.default .hero-nav-color-block, .hero-nav li.grey-center .hero-nav-color-block {
     background: #7f7f7f; }
 
 @media (min-width: 768px) {

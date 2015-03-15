@@ -27,6 +27,10 @@ h1,h2,h3,h4,h5,h6, .heading-font {
   }
 }
 
+h1 {
+    color:$blackDarker;   
+}
+
 p {
   .footer & {
     margin:0;

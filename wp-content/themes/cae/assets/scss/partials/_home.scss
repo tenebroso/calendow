@@ -142,7 +142,7 @@
 			}
 			.hero-nav-color-block {
 				background: $prevention;
-				left: calc(100% - 6px);
+				//left: calc(100% - 6px);
 			}
 		}
 		&.schools {
@@ -159,10 +159,10 @@
 			}
 			.hero-nav-color-block {
 				background: $places;
-				left: calc(100% - 6px);
+				//left: calc(100% - 6px);
 			}
 		}
-		&.grants {
+		&.grants-and-funding {
 			a {
 				color:$grants;
 			}
@@ -170,7 +170,7 @@
 				background: $grants;
 			}
 		}
-		&.action {
+		&.youth-in-action {
 			a {
 				color:$action;
 			}
@@ -178,7 +178,7 @@
 				background: $action;
 			}
 		}
-		&.default {
+		&.default, &.grey-center {
 			a {
 				color:$grey3;
 			}
