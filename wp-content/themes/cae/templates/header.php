@@ -1,7 +1,7 @@
 <header id="fixed" class="banner" role="banner">
   <div class="container">
   
-    <a class="brand" href="<?php echo home_url(); ?>/"><img src="<?php echo img_dir(); ?>/svg/logo-v2.svg"></a>
+    <a class="brand" href="<?php echo home_url(); ?>/"><img alt="<?php echo bloginfo('title'); ?>" src="<?php echo img_dir(); ?>/svg/logo-v2.svg"></a>
 
     <div class="pull-right">
       <?php get_search_form();?>
@@ -17,7 +17,7 @@
   <div class="container">
     <div class="row nav-full-screen-branding">
         <div class="col-xs-3">
-          <a class="brand" href="<?php echo home_url(); ?>/"><img src="<?php echo img_dir(); ?>/svg/logo-v2-white.svg"></a>
+          <a class="brand" href="<?php echo home_url(); ?>/"><img alt="<?php echo bloginfo('title'); ?>" src="<?php echo img_dir(); ?>/svg/logo-v2-white.svg"></a>
         </div>
         <div class="col-xs-7 text-right">
           <?php get_template_part('templates/footer/icons'); ?>

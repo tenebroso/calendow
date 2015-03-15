@@ -10,7 +10,7 @@
 
 if ($workSlug[0] == 'places') { ?>
 
-	<ul class="newsletters bg-color sub-nav nav"><li class="pull-left icon-lg-arrow text-hide"><a href="#">Previous Location</a></li></li><?php 
+	<ul class="newsletters bg-color sub-nav nav"><li class="pull-left icon-lg-arrow text-hide"><a href="#">Previous Location</a></li><?php 
 		    $parent = wp_get_post_parent_id( $post->ID );
 		    //$current = $post->ID;
 		    $args = array('post_parent' => $parent, 'post_type' => 'page'); 
