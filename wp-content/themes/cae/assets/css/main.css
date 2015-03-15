@@ -2350,8 +2350,19 @@ body {
   position: relative; }
   .home .main, .page-template-page-campaign-detail-php .main {
     background: none; }
-  .page-id-368 .main {
-    background: #2f2f2f; }
+  .page-id-368 .main .hentry li, .page-id-368 .main .text-content li, .page-id-368 .main .report-content li {
+    list-style-type: none;
+    padding: 0; }
+  .page-id-368 .main .nav-list li a {
+    text-decoration: none; }
+  .page-id-368 .main .nav-list li:first-child a {
+    font-weight: bold; }
+  .page-id-368 .main .nav-list li:not(:first-child) {
+    border: none; }
+  .page-id-368 .main .nav-list li:not(:first-child) a:hover {
+    background: none;
+    opacity: 0.7;
+    color: black; }
 
 .v-centered {
   top: 50%;

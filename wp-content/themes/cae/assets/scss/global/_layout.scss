@@ -74,7 +74,25 @@ body {
 		background: none;
 	}
 	.page-id-368 & {
-		background: $blackLighter;
+		//background: $blackLighter;
+        .hentry li, .text-content li, .report-content li {
+            list-style-type:none;
+            padding:0;
+        }
+        .nav-list li a {
+            text-decoration:none;
+        }
+        .nav-list li:first-child a {
+            font-weight:bold;
+        }
+        .nav-list li:not(:first-child) {
+            border: none;
+        }
+        .nav-list li:not(:first-child) a:hover {
+            background:none;
+            opacity:.7;
+            color:black;
+        }
 	}
 }
 
