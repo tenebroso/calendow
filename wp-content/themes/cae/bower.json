@@ -1,9 +1,9 @@
 {
-  "name": "bln-framework",
+  "name": "CAE",
   "version": "1.0.0",
-  "homepage": "http://bluelikeneon.com",
+  "homepage": "http://wcst.com",
   "authors": [
-    "Jon Bukiewicz <jonathan@tenebroso.net>"
+    "Jon Bukiewicz <jon@wcst.com>"
   ],
   "private": true,
   "ignore": [
