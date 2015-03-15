@@ -10,7 +10,7 @@
 			<li data-id="<?php echo $i; ?>"><a href="#report-panel-<?php echo $i; ?>"><?php echo $title; ?></a></li>
 
 		<?php $i++; endwhile; $total = count( get_field('section_builder') ); else : endif; ?>
-		<li class="full-report"><a href="<?php the_field('full_report_download'); ?>">Get Full Report</a></li>
+		<li class="full-report"><?php the_field('full_report_download'); ?></li>
 	</ul>
 </div>
 

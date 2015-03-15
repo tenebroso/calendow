@@ -3846,6 +3846,8 @@ article[class*="entry-single"] {
 .report-nav li.active a, .report-nav li a:hover {
   background: #f9f9f9 url(../img/svg/pattern.svg) repeat;
   color: #15c7a7; }
+.report-nav li:last-child p {
+  margin: 0; }
 .report-nav li:last-child a {
   border: none; }
 
