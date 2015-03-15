@@ -12,7 +12,7 @@
 
   <div class="container">
     <div class="col-md-4 footer-logo">
-      <img src="<?php echo img_dir(); ?>/svg/logo-footer.svg">
+      <img src="<?php echo img_dir(); ?>/svg/logo-footer.svg" alt="<?php echo bloginfo('title'); ?>">
       <p class="footer-copyright">&copy; Copyright <?php echo date('Y'); ?> <?php bloginfo('title'); ?></p>
     </div>
     <div class="col-md-8 footer-nav text-right">
