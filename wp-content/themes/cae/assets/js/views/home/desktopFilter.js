@@ -6,7 +6,6 @@ CE.desktopFilter = function () {
 
     var $parentFilters = $('.filters > li > a');
     var $childFilters = $('.sub-filter li a');
-    var $ajaxLoadMore = $('#ajax-load-more .alm-btn-wrap .more');
     var $gridContainer = $('.grid-container');
     var $gridItem = $('.grid-item');
 
@@ -14,8 +13,6 @@ CE.desktopFilter = function () {
             itemSelector: '.grid-item',
             gutter: 5,
     };
-
-    $ajaxLoadMore.trigger('click');
 
     $parentFilters.click(function (e) {
             e.preventDefault();
