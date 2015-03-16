@@ -7,9 +7,7 @@
 			<div class="col-sm-2">
 				<h3 class="section-title color"><?php echo $sectionTitle; ?></h3>
 				<?php if($sectionTitle == 'Solutions'): ?>
-					<div class="health-block icon-health-placemarker-neighborhoods">
-						<p class="placemarker-block caps">Health <br />Happens <br />Here <br /><span class="color">in Neighborhoods</p>
-					</div>
+					<?php get_template_part('templates/content/sidebar','pin'); ?>
 				<?php endif; ?>
 			</div>
 			<div class="col-sm-9 text-content">

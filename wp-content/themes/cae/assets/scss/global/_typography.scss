@@ -301,6 +301,8 @@ blockquote {
     height: 140px;
     margin: 90px 0 0 -90px;
     background-position:center left;
+    background-size:contain;
+    background-repeat:no-repeat;
     .page-template-page-campaign-detail-php & {
       position: absolute;
       bottom:7em;

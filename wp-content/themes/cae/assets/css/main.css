@@ -2644,7 +2644,9 @@ blockquote {
     width: 240px;
     height: 140px;
     margin: 90px 0 0 -90px;
-    background-position: center left; }
+    background-position: center left;
+    background-size: contain;
+    background-repeat: no-repeat; }
     .page-template-page-campaign-detail-php .health-block {
       position: absolute;
       bottom: 7em;
