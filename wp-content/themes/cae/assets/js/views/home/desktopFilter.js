@@ -6,7 +6,7 @@ CE.desktopFilter = function () {
 
     var $parentFilters = $('.filters > li > a');
     var $childFilters = $('.sub-filter li a');
-    var $gridContainer = $('.grid-container');
+    var $gridContainer = $('#ajax-load-more');
     var $gridItem = $('.grid-item');
 
     var masOptions = {

@@ -467,7 +467,13 @@
 		transform:translate3d(0,0,0);
 		transition:all .25s;
 		padding:2em 0 0;
+        position: absolute;
+        left:0;
+        bottom:0;
+        width:100%;
 		.more {
+            top:3em;
+            position: relative;
 			transform:translate3d(0,0,0);
 			font-weight: 700;
 			text-transform: uppercase;
