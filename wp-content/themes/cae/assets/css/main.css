@@ -2378,7 +2378,7 @@ body {
   width: 100%;
   padding: 40px 0; }
   .stripe.bg-image {
-    height: 300px;
+    height: 500px;
     overflow: hidden;
     position: relative; }
     @media (max-width: 767px) {
@@ -3775,7 +3775,7 @@ button, .btn, input[type="submit"] {
   background-attachment: fixed; }
   @media (min-width: 992px) {
     .parallax-image {
-      height: 320px; } }
+      height: 520px; } }
   @media (min-width: 2200px) {
     .parallax-image {
       height: 770px; } }
