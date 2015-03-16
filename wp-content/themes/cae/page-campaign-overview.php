@@ -28,9 +28,23 @@
 
 				<?php get_template_part('templates/content','accordion'); ?>
 
-	        <?php endif; endwhile;
+	        <?php endif; endwhile; ?>
+	        
+	            <div class="container">
+	            
+	                <div class="row">
+	                    
+	                    <div class="col-sm-9 text-content col-sm-offset-2">
+	                        
+	                        <?php get_template_part('templates/content/author','byline'); ?>
+	                        
+	                    </div>
+	                    
+	                </div>
 
-	else :
+	            </div>
+
+	<?php else :
 
 		get_template_part('templates/content', 'page');
 

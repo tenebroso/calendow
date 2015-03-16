@@ -1,0 +1,39 @@
+.author_byline, 
+.single-post .hentry a.author_byline, 
+.hentry a.author_byline, 
+.text-content a.author_byline {
+    clear:both;
+    color:$black;
+    text-decoration:none;
+    display: block;
+    padding:1em 0 0;
+}
+
+a.author_byline:hover, .single-post .hentry a.author_byline:hover {
+    color:$blackDarker;
+    img {
+        opacity:.6;   
+    }
+}
+
+.author_byline--name {
+    margin:0;
+    font-weight:700;
+    font-size:16px;
+}
+
+.author_byline--title {
+    margin:0;
+    font-size: 14px;;
+}
+
+.author_byline--details,
+.author_byline--photo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.author_byline--photo {
+    border:2px solid white;
+    margin-right:.5em;
+}

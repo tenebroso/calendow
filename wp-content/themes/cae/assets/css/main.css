@@ -6416,6 +6416,35 @@ h2 + .byline {
     cursor: pointer;
     color: #383838; }
 
+.author_byline, .single-post .hentry a.author_byline, .hentry a.author_byline, .text-content a.author_byline {
+  clear: both;
+  color: #7B7B7B;
+  text-decoration: none;
+  display: block;
+  padding: 1em 0 0; }
+
+a.author_byline:hover, .single-post .hentry a.author_byline:hover {
+  color: #3b3b3b; }
+  a.author_byline:hover img, .single-post .hentry a.author_byline:hover img {
+    opacity: 0.6; }
+
+.author_byline--name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px; }
+
+.author_byline--title {
+  margin: 0;
+  font-size: 14px; }
+
+.author_byline--details, .author_byline--photo {
+  display: inline-block;
+  vertical-align: middle; }
+
+.author_byline--photo {
+  border: 2px solid white;
+  margin-right: 0.5em; }
+
 .prevention {
   border-color: #15c6a7; }
   .prevention.nav-list li {
