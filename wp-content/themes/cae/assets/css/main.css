@@ -3770,11 +3770,12 @@ button, .btn, input[type="submit"] {
   height: 600px;
   width: 100%;
   background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat; }
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
   @media (min-width: 992px) {
     .parallax-image {
-      height: 520px; } }
+      height: 320px; } }
   @media (min-width: 2200px) {
     .parallax-image {
       height: 770px; } }

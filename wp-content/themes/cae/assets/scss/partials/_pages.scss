@@ -1,7 +1,7 @@
 .parallax-image {
 	height:600px;
 	@media (min-width:$screen-md-min) {
-		height: 520px;
+		height: 320px;
 	}
 	@media (min-width:2200px) {
 		height: 770px;
@@ -16,8 +16,9 @@
 	}
 	width: 100%;
 	background-size:cover;
-	background-position:center center;
+	background-position:center top;
 	background-repeat: no-repeat;
+    background-attachment:fixed;
 }
 
 .hentry, .report-container, .panel-group {
