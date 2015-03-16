@@ -1,3 +1,4 @@
+<?php $takeAction = get_field('take_action_url'); ?>
 <nav class="side-nav-container side-nav-share affix">
 	<h3 class="sidenav-title bg-color">Share This.</h3>
 		<ul class="side-nav">
@@ -15,6 +16,8 @@
 		<!--<li>
 			<a href="sms:body=<?php the_title(); ?>">SMS</a>
 		</li>-->
-		<li class="cta"><a href="#">Take Action.</a></li>
+		<?php if($takeAction): ?>
+		    <li class="cta"><a href="<?php echo $takeAction; ?>">Take Action.</a></li>
+        <?php endif; ?>
 	</ul>
 </nav>
