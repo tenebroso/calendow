@@ -2379,7 +2379,8 @@ body {
   padding: 40px 0; }
   .stripe.bg-image {
     height: 300px;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
     @media (max-width: 767px) {
       .stripe.bg-image {
         height: auto;
@@ -6444,6 +6445,24 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
 .author_byline--photo {
   border: 2px solid white;
   margin-right: 0.5em; }
+
+.photo_credit {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  background: white url(../img/icon-camera.png) no-repeat 9px center;
+  line-height: 1;
+  border-radius: 16px;
+  padding: 1px 12px 5px 37px; }
+
+.stripe .photo_credit--header {
+  display: none; }
+
+.photo_credit--author, .photo_credit--link {
+  color: #282828;
+  font-size: 12px; }
+  .photo_credit--author:hover, .photo_credit--link:hover {
+    color: #282828; }
 
 .prevention {
   border-color: #15c6a7; }

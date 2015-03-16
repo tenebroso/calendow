@@ -114,6 +114,7 @@ body {
 	&.bg-image {
 		height: 300px;
 		overflow: hidden;
+        position: relative;
 		@media (max-width:$screen-xs-max) {
 			height:auto;
 			padding: 0;

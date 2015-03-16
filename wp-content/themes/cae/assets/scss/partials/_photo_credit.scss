@@ -1,0 +1,27 @@
+.photo_credit {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    
+    background:white url(../img/icon-camera.png) no-repeat 9px center;
+    
+    line-height: 1;
+    
+    border-radius:16px;
+    padding:1px 12px 5px 37px;
+}
+
+.photo_credit--header {
+    .stripe & {
+         display: none;   
+    }
+}
+
+.photo_credit--author,
+.photo_credit--link {
+    color:#282828;
+    font-size:12px;
+    &:hover {
+        color:#282828;
+    }
+}

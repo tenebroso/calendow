@@ -31,6 +31,7 @@
 		<?php if($right): echo '</div></div>'; endif; ?>
 	</div>
 
+<?php get_template_part('templates/content/full-image','credit'); ?>
 </div><?php // End the .page-header div ?>
 
 <?php if(is_singular('newsletter')): get_template_part('templates/newsletter/header-nav'); endif; ?>
