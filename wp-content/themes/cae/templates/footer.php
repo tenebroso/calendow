@@ -2,7 +2,7 @@
 	// On certain pages, we show a grid navigation that is directly attached to the footer
 	// The variable below is a check for that general grid
   if(!is_404()): $template = get_page_template_slug( $post->ID ); else: $template = '404'; endif; 
-	$hasNav = ($template == 'page-campaign-overview.php' || $template == 'page-campaign-detail.php'); ?>
+	$hasNav = ($template == 'page-campaign-overview.php' || $template == 'page-campaign-detail.php' || $template == 'template-places.php'); ?>
 
 <footer class="footer<?php if($hasNav): echo ' footer-add-padding'; endif; ?>" role="contentinfo">
 

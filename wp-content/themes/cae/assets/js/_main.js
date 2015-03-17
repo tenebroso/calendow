@@ -35,15 +35,7 @@ CE.Site = {
   },
   page_template_page_campaign_overview_php: {
     init: function() {
-      $('.bx-slider').bxSlider({
-        maxSlides:3,
-        auto:false,
-        pager:false,
-        slideWidth:265,
-        slideMargin: 9,
-        infiniteLoop:false,
-        hideControlOnEnd:true
-      });
+      CE.readThisSlider();
     }
   },
   page_template_page_campaign_detail_php: {
@@ -85,6 +77,7 @@ CE.Site = {
   page_template_template_places_php: {
     init: function() {
       CE.thumbnailNav();
+      CE.readThisSlider();
 
       var $width = $(window).width();
 
