@@ -41,14 +41,53 @@ add_action( 'edit_post', 'delete_transients' );
    Add Menu Options page to Options
    ========================================================================== */
 
+
 if( function_exists('acf_add_options_sub_page') )
 {
-    acf_add_options_sub_page(array(
+    acf_add_options_sub_page(
+      array(
         'title' => 'Menu Options',
-        'parent' => 'options-general.php',
-        'capability' => 'manage_options'
-    ));
+       //'parent' => 'acf-options-cae-options',
+        'capability' => 'manage_options',
+        'position' => 7
+      )
+    );
+
+    acf_add_options_sub_page(
+      array(
+        'title' => 'Drivers of Change',
+        'capability' => 'edit_posts'
+      )
+    );
 }
+
+if( function_exists('acf_set_options_page_title') )
+{
+    acf_set_options_page_title( __('CAE Options') );
+}
+
+function options_css(){ ?>
+
+  <style>
+    li.toplevel_page_acf-options-menu-options .wp-menu-image:before {
+      content: '';
+      background: url(../wp-content/themes/cae/assets/img/svg/pin.svg);
+      background-size: 14px;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    li.toplevel_page_acf-options-menu-options .menu-top {
+      background: #272A3F;
+    }
+    li.toplevel_page_ajax-load-more,
+    li.menu-icon-comments {
+      display: none;
+    }
+    </style>
+
+<?php } 
+
+add_action('admin_head', 'options_css');
 /* =============================================================================
    Define pages that do not have a sidebar
    ========================================================================== */
