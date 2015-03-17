@@ -17,18 +17,20 @@ add_action('admin_head', 'cae_add_mce_button');
 
 function cae_add_tinymce_plugin( $plugin_array ) // script for the new button
 {
-	$plugin_array['cae_mce_button'] =  get_stylesheet_directory_uri() .'/assets/vendor/pullQuote.js';
+	$plugin_array['cae_mce_button'] =  get_stylesheet_directory_uri() .'/assets/vendor/customButtons.js';
+	$plugin_array['cae_button'] =  get_stylesheet_directory_uri() .'/assets/vendor/customButtons.js';
 	return $plugin_array;
 }
 
 function cae_register_mce_button( $buttons ) // register the new button
 {
 	array_push( $buttons, 'cae_mce_button' );
+	array_push( $buttons, 'cae_button' );
 	return $buttons;
 }
 
 function cae_mce_css() { 
-	wp_enqueue_style('gavickpro-tc', get_stylesheet_directory_uri() .'/assets/vendor/pullQuote.css' ); 
+	wp_enqueue_style('gavickpro-tc', get_stylesheet_directory_uri() .'/assets/vendor/customButtons.css' ); 
 }  
 
 add_action('admin_enqueue_scripts', 'cae_mce_css');

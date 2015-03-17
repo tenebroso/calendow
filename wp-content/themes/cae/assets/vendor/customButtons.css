@@ -1,4 +1,4 @@
-i.mce-i-cae-icon { 
+/*i.mce-i-cae-icon { 
 	font: 400 20px/1 dashicons; 
 	padding: 0; 
 	vertical-align: top; 
@@ -11,4 +11,13 @@ i.mce-i-cae-icon {
 
 i.mce-i-cae-icon:before {
 	content: "\f130";
+}*/
+
+.mce-toolbar .mce-i-fa {
+  background: #1f2233;
+  background: rgba(230,196,13,1);
+}
+
+.mce-toolbar .mce-i-fa:before {
+  color: white;
 }

@@ -121,3 +121,14 @@ function cae_change_post_object() {
  
 add_action( 'admin_menu', 'cae_change_post_label' );
 add_action( 'init', 'cae_change_post_object' );
+
+
+/* =============================================================================
+   Add Font Awesome to Dashboard
+   ========================================================================== */
+
+function fontawesome_dashboard() {
+   wp_enqueue_style('fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css', '', '4.2.0', 'all');
+}
+
+add_action('admin_init', 'fontawesome_dashboard');
