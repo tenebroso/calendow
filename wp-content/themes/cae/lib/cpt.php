@@ -50,7 +50,8 @@ $postTypes = array(
     'Event' => '',
     'Grant' => '',
     'Video' => '',
-    'Infographic' => ''
+    'Infographic' => '',
+    'Read This Tile' => array('public' => false, 'publicly_queryable' => true, 'show_ui' => true, 'supports' => array( 'title'))
 );
  
 foreach( $postTypes as $cptitle => $args )
