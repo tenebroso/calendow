@@ -3,3 +3,18 @@ ul, ol {
 	margin:0;
 	padding:0;
 }
+
+ul.search-results {
+  line-height:1.2;
+  li {
+    padding:0 0 0 1em;
+    border-left-width: 5px;
+    border-left-style: solid;
+    list-style-type: none;
+    margin-left: 0;
+    a {
+      padding: .75em 0;
+      display: block;
+    }
+  }
+}

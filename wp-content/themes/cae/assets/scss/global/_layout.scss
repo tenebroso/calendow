@@ -55,8 +55,14 @@ body {
 	padding:50px 0 35px;
 	max-width:1000px;
 	margin:0 auto;
-	.search-results & {
+	.search & {
 		padding-top:120px;
+	}
+}
+
+.search {
+	.footer {
+		opacity: 0;
 	}
 }
 

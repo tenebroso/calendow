@@ -3,9 +3,11 @@
 <p class="grid-title heading-font">Search results for <span class="search-term">&lsquo;<?php the_search_query(); ?>&rsquo;</span></p>
 
 <ul class="search-results">
-	<?php while (have_posts()) : the_post(); ?>
+	<?php if(have_posts()): while (have_posts()) : the_post(); ?>
 	  <?php get_template_part('templates/content', 'search'); ?>
-	<?php endwhile; ?>
+	<?php endwhile; else: ?>
+		<li>Sorry, there were no results for <?php the_search_query(); ?></li>
+	<?php endif; ?>
 </ul>
 
 <?php if ($wp_query->max_num_pages > 1) : ?>

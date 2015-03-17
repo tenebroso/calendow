@@ -130,6 +130,16 @@ CE.Site = {
       CE.reportPageHeight();
       CE.reportSectionSwitcher();
     }
+  },
+  search: {
+    init: function() {
+      var $height = window.screen.height;
+      var $main = $('.main');
+      var $footer = $('.footer');
+
+      $main.css('min-height', $height - 308);
+      $footer.css('opacity','1');
+    }
   }
 };
 

@@ -164,20 +164,6 @@ ul, ol {
   font-size:22px;
 }
 
-ul.search-results {
-  line-height:1.2;
-  li {
-    padding:0 0 0 1em;
-    border-left-width: 5px;
-    border-left-style: solid;
-    //list-style-type: circle;
-    a {
-      padding: .75em 0;
-      display: block;
-    }
-  }
-}
-
 .grey-text {
   color:$grey3;
   a {
