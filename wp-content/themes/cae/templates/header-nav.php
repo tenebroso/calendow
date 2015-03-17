@@ -9,17 +9,19 @@
 
 
 if ($workSlug[0] == 'places') { ?>
-
-	<ul class="newsletters bg-color sub-nav nav"><li class="pull-left icon-lg-arrow text-hide"><a href="#">Previous Location</a></li><?php 
+	<ul class="newsletters bg-color sub-nav nav places__sub-nav"><li class="pull-left icon-lg-arrow text-hide"><a href="#">Previous Location</a></li><?php 
 		    $parent = wp_get_post_parent_id( $post->ID );
 		    //$current = $post->ID;
 		    $args = array('post_parent' => $parent, 'post_type' => 'page'); 
 					$the_query = new WP_Query( $args ); 
-						if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); 
+						if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); $tooltip = get_field('tooltip_text');
 					$image = get_field('header_thumbnail_nav_image'); if(!$image): $image = 'http://placehold.it/86x81'; endif; ?><li class="sub-nav-thumbnail">
 						<a href="<?php the_permalink(); ?>" class="resize-thumb animsition-link">
 							<?php the_field('name_abbreviation'); ?>
 						</a>
+						<div class="places__sub-nav--tooltip">
+							<?php if($tooltip): echo $tooltip; else: the_title(); endif; ?>
+						</div>
 					</li><?php endwhile; endif; wp_reset_postdata(); ?>
 
 <?php } else { 

@@ -110,7 +110,7 @@
 .places .sub-nav li:not(.pull-left):not(.pull-right) {
 	opacity: 1;
 	vertical-align: top;
-	overflow: hidden;
+	//overflow: hidden;
 	padding-bottom:20px;
 }
 
@@ -132,4 +132,55 @@
 .places .sub-nav.newsletters.nav li.active:after,
 .places .sub-nav.newsletters.nav li:not(.pull-right):not(.pull-left):hover:after {
 	bottom:0;
+}
+
+.places__sub-nav--tooltip {
+  background: $places;
+  color: white;
+  padding: 1em .5em;
+  position: absolute;
+  line-height: 1.2;
+  width: 200%;
+  left: -50%;
+  top:100%;
+  border: 2px solid #f7f7f7;
+  opacity: 0;
+  transition:opacity .15s;
+  font-size: .75em;
+  * {
+  	margin: 0;
+  }
+  &:before {
+	border-bottom: 20px solid transparent;
+	border-left: 42px solid transparent;
+	border-right: 42px solid transparent;
+	width: 46px;
+	bottom: 5px;
+	background: none;
+	border-bottom-color: #C10512;
+	content: "";
+	position: absolute;
+	height: 20px;
+	top: -14px;
+	left: 23%;
+  }
+}
+
+.newsletters.bg-color.sub-nav.nav.places__sub-nav li:hover {
+	.places__sub-nav--tooltip {
+		opacity: 1;
+	}
+	&:after {
+		display: none;
+	}
+}
+
+.newsletters.bg-color.sub-nav.nav.places__sub-nav li.active:after {
+	opacity: 1;
+	transition:opacity .15s;
+}
+
+.newsletters.bg-color.sub-nav.nav.places__sub-nav li.active:hover:after {
+	opacity: 0;
+	//transition:opacity .15s;
 }
