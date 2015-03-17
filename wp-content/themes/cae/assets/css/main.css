@@ -2842,7 +2842,9 @@ button, .btn, input[type="submit"] {
   height: 54px;
   padding: 1em 1em 1em 2em;
   font-size: 16px;
-  width: 170px; }
+  min-width: 170px;
+  -webkit-transition: all .25s;
+  transition: all .25s; }
   .search-field::-webkit-input-placeholder {
     color: #bdbdbd; }
   .search-field:-moz-placeholder {

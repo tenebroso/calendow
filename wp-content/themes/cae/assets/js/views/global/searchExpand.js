@@ -4,9 +4,19 @@ var CE = CE || {};
 
   CE.searchExpand = function() {
 
-    $('.js-expand-on-click').click(function(){
-    	$(this).toggleClass('expanded');
-    });
+    var $searchInput = $('.js-expand-on-click');
+
+    function resizeInput() {
+    	if($(this).val().length > 15) {
+    		$(this).css('min-width', ($(this).val().length * 5) + 207);
+    	}
+	}
+
+	$searchInput
+	    // event handler
+	    .keyup(resizeInput)
+	    // resize on page load
+	    .each(resizeInput);
 
 
   };
