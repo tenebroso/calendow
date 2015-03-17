@@ -20,12 +20,15 @@
 		top: 50vh;
 		margin-top: -200px;
 		background-position: 460px bottom;
+		line-height: 1.2;
+		text-align: center;
+		background-size: 16%;
 	}
 	h2,h3 {
 		font-weight: normal;
 		color: #383838;
 		@media (max-width:$screen-xs-max) {
-			font-size: 1.25em;
+			font-size: 1em;
 		}
 		span {
 			font-weight: bold;
@@ -47,6 +50,9 @@
 	}
 	p.splash-cta {
 		margin: 20px 0 35px;
+		@media (max-width:$screen-xs-max) {
+			font-size: .75em;
+		}
 	}
 	a:not(.btn) {
 		text-decoration: underline;

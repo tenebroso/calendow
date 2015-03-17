@@ -65,7 +65,7 @@
 		}
 	}
 	@media (max-width:$screen-xs-max) {
-		&:nth-child(n+5):not(.active) {
+		&:nth-child(n+4):not(.active) {
 			display: none;
 		}
 	}

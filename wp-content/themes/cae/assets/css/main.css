@@ -2756,7 +2756,7 @@ button, .btn, input[type="submit"] {
   padding: 100px 0 0; }
   @media (max-width: 991px) {
     .page-header {
-      height: 415px; } }
+      height: 315px; } }
   .page-header.has-image {
     background: none;
     overflow: hidden;
@@ -3002,7 +3002,7 @@ button, .btn, input[type="submit"] {
     .newsletters.nav li:nth-child(n+9):not(.active) {
       display: none; } }
   @media (max-width: 767px) {
-    .newsletters.nav li:nth-child(n+5):not(.active) {
+    .newsletters.nav li:nth-child(n+4):not(.active) {
       display: none; } }
 
 .newsletters.nav .active, .newsletters.nav li:not(.pull-left):not(.pull-right):hover {
@@ -3768,9 +3768,12 @@ button, .btn, input[type="submit"] {
       .stripe .parallax-image {
         height: 168px; } }
 
-.hentry img, .report-container img, .panel-group img {
+.hentry img, .hentry iframe, .report-container img, .report-container iframe, .panel-group img, .panel-group iframe, .stripe img, .stripe iframe {
   max-width: 100%;
   height: auto; }
+@media (max-width: 767px) {
+  .hentry, .report-container, .panel-group, .stripe {
+    word-wrap: break-word; } }
 
 article[class*="entry-single"] {
   padding: 3em 0; }
@@ -6420,13 +6423,16 @@ h2 + .byline {
       margin-left: -350px;
       top: 50vh;
       margin-top: -200px;
-      background-position: 460px bottom; } }
+      background-position: 460px bottom;
+      line-height: 1.2;
+      text-align: center;
+      background-size: 16%; } }
   .splash-message h2, .splash-message h3 {
     font-weight: normal;
     color: #383838; }
     @media (max-width: 767px) {
       .splash-message h2, .splash-message h3 {
-        font-size: 1.25em; } }
+        font-size: 1em; } }
     .splash-message h2 span, .splash-message h3 span {
       font-weight: bold; }
   .splash-message .btn {
@@ -6441,6 +6447,9 @@ h2 + .byline {
     overflow: hidden; }
   .splash-message p.splash-cta {
     margin: 20px 0 35px; }
+    @media (max-width: 767px) {
+      .splash-message p.splash-cta {
+        font-size: .75em; } }
   .splash-message a:not(.btn) {
     text-decoration: underline;
     font-size: 12px;

@@ -21,9 +21,12 @@
     background-attachment:fixed;
 }
 
-.hentry, .report-container, .panel-group {
-	img {
+.hentry, .report-container, .panel-group, .stripe {
+	img, iframe {
 		max-width:100%;
 		height: auto;
+	}
+	@media (max-width:$screen-xs-max) {
+		word-wrap:break-word;
 	}
 }
