@@ -46,7 +46,7 @@
 				            label: 'Link Destination'
 				        }],
 				        onsubmit: function( e ) {
-				            editor.insertContent( '[button text="' + e.data.textcolor + ' " bg="' + e.data.color + '" bghover="' + e.data.hovercolor + '" value="' + e.data.text + '" link="' + e.data.link + '" /]');
+				            editor.insertContent( '[button textcolor="' + e.data.textcolor + ' " bgcolor="' + e.data.color + '" bghovercolor="' + e.data.hovercolor + '" text="' + e.data.text + '" link="' + e.data.link + '" /]');
 				        }
 				    });
 				}

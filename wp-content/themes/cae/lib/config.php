@@ -139,6 +139,31 @@ function pullquote_shortcode_pullquote( $atts, $content = null ) {
 add_shortcode( 'pullquote', 'pullquote_shortcode_pullquote' );
 
 /* =============================================================================
+   Add Button Shortcode
+   ========================================================================== */
+
+function button_shortcode( $atts, $content = null ) {
+
+  $a = shortcode_atts( array(
+    'textcolor' => 'button',
+    'bgcolor' => 'button',
+    'bghovercolor' => 'button',
+    'text' => 'button',
+    'link' => 'button'
+  ), $atts );
+
+  $btnClass = rand();
+
+  $btn = '<a class="btn btn-' . $btnClass . '" style="text-decoration:none;color:' . esc_attr($a['textcolor']) .';background-color:' . esc_attr($a['bgcolor']) .';" href="' . esc_attr($a['link']) .'">' . esc_attr( $a['text'] ) . '</a>';
+  $btn .= '<style type="text/css">.btn-'.$btnClass.':hover { background-color:' . esc_attr($a['bghovercolor']) .' !important; }</style>';
+
+  return $btn;
+
+}
+
+add_shortcode( 'button', 'button_shortcode' );
+
+/* =============================================================================
    Homepage AJAX filtering
    ========================================================================== */
 
