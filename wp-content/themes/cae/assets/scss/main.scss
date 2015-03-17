@@ -5,14 +5,12 @@
 @import "global/_links";
 @import "global/_lists";
 @import "global/_buttons";
-//@import "global/_stickyfooter";
 @import "global/_wp";
 @import "partials/_header";
 @import "partials/_searchbar";
 @import "partials/_accordion";
 @import "partials/_nav"; 
 @import "partials/_hover";
-//@import "partials/_select-box";
 @import "partials/_home";
 @import "partials/_pages";
 @import "partials/_posts";
@@ -31,4 +29,5 @@
 @import "partials/splash";
 @import "partials/author_byline";
 @import "partials/photo_credit";
+@import "partials/font_awesome";
 @import "global/_colors";
