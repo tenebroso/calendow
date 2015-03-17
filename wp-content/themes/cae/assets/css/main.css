@@ -2412,7 +2412,7 @@ h1, h2, h3, h4, h5, h6, .heading-font {
     font-family: "source-sans-pro", sans-serif;
     font-weight: 600; }
 
-h1 {
+h1, h2, h3, h4, h5, h6, .heading-font {
   color: #3b3b3b; }
 
 .footer p {
@@ -3036,6 +3036,9 @@ button, .btn, input[type="submit"] {
 .nav.sub-nav.newsletters li[class*="pull-"] {
   position: relative;
   top: 86px; }
+
+.newsletters.sub-nav + .heading-font {
+  margin-bottom: 1em; }
 
 .resize-thumb img {
   width: auto;
