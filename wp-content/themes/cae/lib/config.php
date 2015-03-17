@@ -88,6 +88,7 @@ function options_css(){ ?>
 <?php } 
 
 add_action('admin_head', 'options_css');
+
 /* =============================================================================
    Define pages that do not have a sidebar
    ========================================================================== */
@@ -106,6 +107,23 @@ function root_display_sidebar() {
 
   return apply_filters('roots/display_sidebar', $sidebar_config->display);
 }
+
+/* =============================================================================
+   Customize Login Logo
+   ========================================================================== */
+
+function cae_login_logo() { ?>
+    <style type="text/css">
+        body.login div#login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/svg/logo-v2.svg);
+            padding-bottom: 30px;
+            background-size: contain;
+            width: 320px;
+            height: 70px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'cae_login_logo' );
 
 /* =============================================================================
    Add Campaigns Shortcode
