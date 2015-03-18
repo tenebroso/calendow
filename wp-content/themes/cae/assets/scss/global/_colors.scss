@@ -80,8 +80,7 @@ border-color:$variable;
 		transition:background-color .25s;
 	}
 	.no-touch & {
-		&.grid-item:hover,
-        .hover-trigger:hover .show-on-hover {
+		&.grid-item:hover {
 			background-color:$variable;
 			transition:background-color .25s;
 		}
@@ -98,6 +97,9 @@ border-color:$variable;
 	}
 }
 
+.default { @include colors($grey3) }
+.bhc { @include colors($grey3) }
+
 .prevention { @include colors($prevention) }
 .schools { @include colors($schools) }
 .places { @include colors($places) }
@@ -106,5 +108,3 @@ border-color:$variable;
 .neighborhoods { @include colors($neighborhoods) }
 .secondary { @include colors($yellow) }
 
-.default { @include colors($grey3) }
-.bhc { @include colors($grey3) }
