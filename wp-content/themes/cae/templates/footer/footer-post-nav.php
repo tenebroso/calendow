@@ -3,7 +3,8 @@
 		$workSlug = wp_get_post_terms($post->ID,'work', array("fields" => "slugs"));
 		$campaignSlug = wp_get_post_terms($post->ID,'campaign', array("fields" => "name"));
 		$slugID = $campaignSlug->ID;
-		echo $slugID;
+		$current = get_the_ID();
+		//echo $slugID;
 		$postTypes = array('post', 'video', 'infographic', 'action', 'event', 'grant', 'newsletter', 'report', 'news');
 ?>
 
@@ -27,7 +28,8 @@
 								if ( $the_query->have_posts() ) : 
 									while ( $the_query->have_posts() ) : 
 										$the_query->the_post(); 
-										$terms = get_the_terms( $post->ID , 'work' );
+
+										$terms = get_the_terms( $current , 'work' );
 										
 										$img = get_field('read_this_thumbnail_image'); if($x != 4): ?><li>
 
