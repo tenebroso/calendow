@@ -64,6 +64,25 @@
 
 					<?php else:
 
+						$posts = get_field('read_this_tile_selection');
+
+						if( $posts ): ?>
+						    <ul class="list-inline grid-3-up bx-slider">
+						    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+						        <?php setup_postdata($post); $pid = get_the_id(); $tileUrl = get_field('tile_link'); $tileType = get_field('tile_post_type', $pid); ?><li>
+								<a class="center-block" href="<?php the_field('tile_link', $pid) ?>">
+									<p class="section-name"><?php echo $tileType; ?></p>
+									<h3><strong><?php the_title(); ?></strong></h3>
+									<p class="small date"><?php the_time('F j, Y'); ?></p>
+								</a>
+							</li><?php endforeach; ?>
+						    
+						    </ul>
+						    <?php wp_reset_postdata();
+
+						else:
+						
+
 						$args = array(
 							'posts_per_page' => -1,
 							'work' => $workSlug[0],
@@ -85,7 +104,7 @@
 
 						</ul>
 
-					<?php endif; ?>
+					<?php endif; endif; ?>
 				
 			</div>
 		</div>
