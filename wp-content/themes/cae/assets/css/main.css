@@ -2437,7 +2437,7 @@ h1, h2, h3, h4, h5, h6, .heading-font {
 
 h1, h2, h3, h4, h5, h6, .heading-font {
   color: #3b3b3b; }
-  .panel-body h1, .panel-body h2, .panel-body h3, .panel-body h4, .panel-body h5, .panel-body h6, .panel-body .heading-font {
+  .panel-body h1, .report-sidebar-title h1, .panel-body h2, .report-sidebar-title h2, .panel-body h3, .report-sidebar-title h3, .panel-body h4, .report-sidebar-title h4, .panel-body h5, .report-sidebar-title h5, .panel-body h6, .report-sidebar-title h6, .panel-body .heading-font, .report-sidebar-title .heading-font {
     color: white; }
 
 .footer p {
@@ -8256,6 +8256,59 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
 
 .fa-medium:before {
   content: "\f23a"; }
+
+.doc__module {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  border: 2px solid #C10512;
+  margin: 72px 0 0;
+  position: relative;
+  border-radius: 4px; }
+  @media (min-width: 768px) {
+    .doc__module {
+      padding: 11px 5px; } }
+  .doc__module:before {
+    width: 15px;
+    height: 59px;
+    background: url(../img/doc--antenna.png) no-repeat center center;
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -7px;
+    top: -59px; }
+
+.hentry li.doc__module--item, .text-content li.doc__module--item, .report-content li.doc__module--item {
+  display: table;
+  float: left;
+  list-style-type: none;
+  margin: 1%;
+  height: 150px;
+  margin: 1%;
+  width: 48%; }
+  @media (min-width: 768px) {
+    .hentry li.doc__module--item, .text-content li.doc__module--item, .report-content li.doc__module--item {
+      margin: 0 0.7%;
+      width: 18.65%;
+      height: 116px; } }
+.hentry li.clearfix, .text-content li.clearfix, .report-content li.clearfix {
+  margin: 0;
+  list-style-type: none; }
+
+.hentry a.doc__module--item-link, .text-content a.doc__module--item-link, .report-content a.doc__module--item-link {
+  text-align: center;
+  background: #C10512;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-decoration: none;
+  line-height: 1.2;
+  font-size: 15px;
+  padding: 0 10px;
+  -webkit-transition: background 0.25s ease;
+  transition: background 0.25s ease; }
+  .hentry a.doc__module--item-link:hover, .text-content a.doc__module--item-link:hover, .report-content a.doc__module--item-link:hover {
+    background: #15c7a7; }
 
 .default {
   border-color: #7f7f7f; }

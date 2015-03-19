@@ -191,7 +191,7 @@ function custom_query_shortcode($atts) {
 add_shortcode("campaigns", "custom_query_shortcode");
 
 /* =============================================================================
-   Add Pullquote
+   Add Pullquote Shortcode
    ========================================================================== */
 
 function pullquote_shortcode_pullquote( $atts, $content = null ) {
@@ -226,6 +226,41 @@ function button_shortcode( $atts, $content = null ) {
 }
 
 add_shortcode( 'button', 'button_shortcode' );
+
+/* =============================================================================
+   Add Drivers of Change Shortcode
+   ========================================================================== */
+
+function drivers_shortcode($atts) {
+
+   
+   // Reset and setup variables
+   $output = '';
+   $temp_title = '';
+   $temp_link = '';
+   $large_image_url = '';
+
+   $output .= "<ul class='doc__module'>";
+
+   if( have_rows('drivers_of_change_builder','options') ):
+
+    while ( have_rows('drivers_of_change_builder','options') ) : the_row();
+
+      $docUrl = get_sub_field('drivers_url');
+      $docTitle = get_sub_field('drivers_text_block');
+
+        $output .= "<li class='doc__module--item'><a class='doc__module--item-link' href='$docUrl'>$docTitle</a></li>";
+
+    endwhile; else : endif;
+
+  $output .= "<li class='clearfix'></li>";
+  $output .= "</ul>";
+   
+   wp_reset_query();
+   return $output;
+   
+}
+add_shortcode("drivers", "drivers_shortcode");
 
 /* =============================================================================
    Homepage AJAX filtering

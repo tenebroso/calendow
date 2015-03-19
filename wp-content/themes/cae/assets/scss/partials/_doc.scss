@@ -1,0 +1,75 @@
+.doc__module {
+	list-style-type:none;
+	margin: 0;
+	padding: 5px;
+	border: 2px solid $places;
+	margin: 72px 0 0;
+
+	position: relative;
+
+	border-radius:4px;
+
+	@media (min-width:$screen-sm-min){
+		padding: 11px 5px;
+	}
+	&:before {
+		width: 15px;
+		height: 59px;
+
+		background: url(../img/doc--antenna.png) no-repeat center center;
+
+		content:"";
+
+		position:absolute;
+		left:50%;
+		margin-left:-7px;
+		top:-59px;
+	}
+}
+
+.hentry li,
+.text-content li,
+.report-content li {
+	&.doc__module--item {
+		display: table;
+		float: left;
+		list-style-type: none;
+
+		margin:1%;
+		height: 150px;
+
+		margin: 1%;
+  		width: 48%;
+
+		@media (min-width:$screen-sm-min) {
+			
+			margin:0 .7%;
+			width: 18.65%;
+			height: 116px;
+		}
+
+
+	}
+	&.clearfix {
+		margin: 0;
+		list-style-type:none;
+	}
+}
+
+.hentry a, .text-content a, .report-content a {
+	&.doc__module--item-link {
+		text-align: center;
+		background: $places;
+		color: white;
+		display: table-cell;
+		vertical-align: middle;
+		text-decoration: none;
+		line-height: 1.2;
+		font-size: 15px;
+		padding: 0 10px;
+		transition: background .25s ease;
+		&:hover {
+			background:$green;
+		}
+	}
+}
