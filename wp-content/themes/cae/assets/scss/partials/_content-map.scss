@@ -133,6 +133,7 @@
 	line-height: 1.2;
 	strong {
 		font-size: 21px;
+		font-family:$headings-font-family;
 	}
 	.schools & {
 		border-color:lighten($schools,20%);
@@ -160,4 +161,9 @@
 			transition:opacity .25s ease;
 		}
 	}
+}
+
+.mfp-close-btn-in .mfp-close {
+	color: white;
+	opacity: 1;
 }

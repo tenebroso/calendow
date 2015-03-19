@@ -286,7 +286,7 @@ function content_map_shortcode($atts) {
    $output .= "<div class='content-map--container' id='cm-modal'>";
    
    
-   if (have_posts()) : while (have_posts()) : the_post();
+   $i = 0; if (have_posts()) : while (have_posts()) : the_post();
 
     // schools
       if( have_rows('cm_schools') ): 
@@ -303,14 +303,14 @@ function content_map_shortcode($atts) {
           $buttonTitle = get_sub_field('cm_button_title');
           $buttonModal = get_sub_field('cm_modal_content');
 
-          $output .= "<a class='content-map--container-column-cell schools' href='#cm-modal'>$buttonTitle</a>";
+          $output .= "<a class='content-map--container-column-cell schools' href='#cm-modal' data-id='$i'>$buttonTitle</a>";
           $output .= "<div class='mfp-hide content-map--modal schools'>";
           $output .= "<div class='content-map--modal-heading'><strong>Health Happens in Schools</strong><br />$buttonTitle</div>";
           $output .= "<div class='content-map--modal-content'>";
           $output .= $buttonModal;
           $output .= "</div></div>";
 
-        endwhile;
+        $i++; endwhile;
 
         $output .= "</div></div>";
 
@@ -332,14 +332,14 @@ function content_map_shortcode($atts) {
           $buttonTitle = get_sub_field('cm_button_title');
           $buttonModal = get_sub_field('cm_modal_content');
 
-          $output .= "<a class='content-map--container-column-cell neighborhoods' href='#cm-modal'>$buttonTitle</a>";
+          $output .= "<a class='content-map--container-column-cell neighborhoods' href='#cm-modal' data-id='$i'>$buttonTitle</a>";
           $output .= "<div class='mfp-hide content-map--modal neighborhoods'>";
-          $output .= "<div class='content-map--modal-heading'><strong>Health Happens in Neighborhoods</strong><br />$buttonTitle</div>";
+          $output .= "<div class='content-map--modal-heading'><strong>Health Happens in Neighborhoods</strong><br />$buttonTitle <span class='modal-prev'></span><span class='modal-next'></div></div>";
           $output .= "<div class='content-map--modal-content'>";
           $output .= $buttonModal;
           $output .= "</div></div>";
 
-        endwhile;
+        $i++; endwhile;
 
         $output .= "</div></div>";
 
@@ -361,14 +361,14 @@ function content_map_shortcode($atts) {
           $buttonTitle = get_sub_field('cm_button_title');
           $buttonModal = get_sub_field('cm_modal_content');
 
-          $output .= "<a class='content-map--container-column-cell prevention' href='#cm-modal'>$buttonTitle</a>";
+          $output .= "<a class='content-map--container-column-cell prevention' href='#cm-modal' data-id='$i'>$buttonTitle</a>";
           $output .= "<div class='mfp-hide content-map--modal prevention'>";
           $output .= "<div class='content-map--modal-heading'><strong>Health Happens in Prevention</strong><br />$buttonTitle</div>";
           $output .= "<div class='content-map--modal-content'>";
           $output .= $buttonModal;
           $output .= "</div></div>";
 
-        endwhile;
+        $i++; endwhile;
 
         $output .= "</div></div>";
 

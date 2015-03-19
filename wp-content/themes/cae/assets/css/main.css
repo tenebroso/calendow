@@ -8408,7 +8408,8 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
   border-bottom: 1px solid transparent;
   line-height: 1.2; }
   .content-map--modal-heading strong {
-    font-size: 21px; }
+    font-size: 21px;
+    font-family: "azo-sans-web", sans-serif; }
   .schools .content-map--modal-heading {
     border-color: #3bdcf8; }
   .neighborhoods .content-map--modal-heading {
@@ -8430,6 +8431,10 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
       opacity: 0.7;
       -webkit-transition: opacity 0.25s ease;
       transition: opacity 0.25s ease; }
+
+.mfp-close-btn-in .mfp-close {
+  color: white;
+  opacity: 1; }
 
 /* Magnific Popup CSS */
 .mfp-bg {
