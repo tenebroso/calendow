@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 5px;
 	border: 2px solid $places;
-	margin: 72px 0 0;
+	margin: 72px 0 1em 0;
 
 	position: relative;
 
@@ -38,13 +38,12 @@
 		margin:1%;
 		height: 150px;
 
-		margin: 1%;
   		width: 48%;
 
 		@media (min-width:$screen-sm-min) {
 			
-			margin:0 .7%;
-			width: 18.65%;
+			margin:0 1%;
+			width: 17.5%;
 			height: 116px;
 		}
 
@@ -65,7 +64,7 @@
 		vertical-align: middle;
 		text-decoration: none;
 		line-height: 1.2;
-		font-size: 15px;
+		font-size: 14px;
 		padding: 0 10px;
 		transition: background .25s ease;
 		&:hover {

@@ -8262,7 +8262,7 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
   margin: 0;
   padding: 5px;
   border: 2px solid #C10512;
-  margin: 72px 0 0;
+  margin: 72px 0 1em 0;
   position: relative;
   border-radius: 4px; }
   @media (min-width: 768px) {
@@ -8284,12 +8284,11 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
   list-style-type: none;
   margin: 1%;
   height: 150px;
-  margin: 1%;
   width: 48%; }
   @media (min-width: 768px) {
     .hentry li.doc__module--item, .text-content li.doc__module--item, .report-content li.doc__module--item {
-      margin: 0 0.7%;
-      width: 18.65%;
+      margin: 0 1%;
+      width: 17.5%;
       height: 116px; } }
 .hentry li.clearfix, .text-content li.clearfix, .report-content li.clearfix {
   margin: 0;
@@ -8303,7 +8302,7 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
   vertical-align: middle;
   text-decoration: none;
   line-height: 1.2;
-  font-size: 15px;
+  font-size: 14px;
   padding: 0 10px;
   -webkit-transition: background 0.25s ease;
   transition: background 0.25s ease; }

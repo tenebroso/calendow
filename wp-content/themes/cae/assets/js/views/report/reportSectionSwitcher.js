@@ -120,6 +120,44 @@ var CE = CE || {};
 		e.preventDefault();
 	});
 
+	$('.doc__module--item-link').click(function(e){
+			var $href = $(this).attr('href');
+
+			$($href)
+				.nextUntil('span')
+					.transit({x:'100%',opacity:0}, 800, 'ease')
+					.removeClass('current');
+			$($href)
+				.prevUntil('span')
+					.transit({x:'-100%',opacity:0}, 800, 'ease')
+					.removeClass('current');
+
+			$($href)
+				.transit({x:0,opacity:1}, 800, 'ease')
+				.addClass('current');
+
+			
+			/*if('#' + $parent.data("id") > $cur) {
+				$($href)
+					.next()
+					.transit({x:'100%',opacity:0}, 800, 'ease').removeClass('current');
+				$($href)
+					.transit({x:0,opacity:1}, 800, 'ease')
+					.addClass('current');
+			} else if ('#' + $parent.data("id") < $cur) {
+				$($href)
+					.next()
+					.transit({x:'-100%',opacity:0}, 800, 'ease').removeClass('current');
+				$($href)
+					.transit({x:0,opacity:1}, 800, 'ease')
+					.addClass('current');
+			}*/
+
+
+			$container.height($height + 210);
+			e.preventDefault();
+		});
+
 
 	$('body').on('keydown', function(e){
 		if(e.which == 37) { // left     
