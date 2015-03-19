@@ -59,13 +59,6 @@ if( function_exists('acf_add_options_sub_page') )
         'capability' => 'edit_posts'
       )
     );
-
-    acf_add_options_sub_page(
-      array(
-        'title' => 'Transformative Twelve',
-        'capability' => 'edit_posts'
-      )
-    );
 }
 
 if( function_exists('acf_set_options_page_title') )
@@ -261,6 +254,141 @@ function drivers_shortcode($atts) {
    
 }
 add_shortcode("drivers", "drivers_shortcode");
+
+/* =============================================================================
+   Add Content Map Shortcode
+   ========================================================================== */
+
+function content_map_shortcode($atts) {
+
+   global $post;
+   $thePost = $post->ID;
+
+   $a = shortcode_atts( array(
+      'id' => 'content-map',
+    ), $atts );
+
+   $mapId = $a['id'];
+
+   // de-funkify query
+   $the_query = array(
+      'posts_per_page' => 1,
+      'post_type' => 'content-map',
+      'p' => $mapId
+    );
+
+   // query is made               
+   query_posts($the_query);
+   
+   // Reset and setup variables
+   $output = '';
+
+   $output .= "<div class='content-map--container' id='cm-modal'>";
+   
+   
+   if (have_posts()) : while (have_posts()) : the_post();
+
+    // schools
+      if( have_rows('cm_schools') ): 
+
+        $output .= "<div class='content-map--container-column schools'>";
+        $output .= "<div class='content-map--container-column-title'><strong>Health Happens in Schools</strong></div>";
+
+        $output .= "<div class='content-map--container-column-outline'>";
+
+        while ( have_rows('cm_schools') ) : 
+
+        the_row();
+
+          $buttonTitle = get_sub_field('cm_button_title');
+          $buttonModal = get_sub_field('cm_modal_content');
+
+          $output .= "<a class='content-map--container-column-cell schools' href='#cm-modal'>$buttonTitle</a>";
+          $output .= "<div class='mfp-hide content-map--modal schools'>";
+          $output .= "<div class='content-map--modal-heading'><strong>Health Happens in Schools</strong><br />$buttonTitle</div>";
+          $output .= "<div class='content-map--modal-content'>";
+          $output .= $buttonModal;
+          $output .= "</div></div>";
+
+        endwhile;
+
+        $output .= "</div></div>";
+
+      else : endif;
+
+   // neighborhoods
+
+      if( have_rows('cm_neighborhoods') ): 
+
+        $output .= "<div class='content-map--container-column neighborhoods'>";
+        $output .= "<div class='content-map--container-column-title'><strong>Health Happens in Neighborhoods</strong></div>";
+
+        $output .= "<div class='content-map--container-column-outline'>";
+
+        while ( have_rows('cm_neighborhoods') ) : 
+
+        the_row();
+
+          $buttonTitle = get_sub_field('cm_button_title');
+          $buttonModal = get_sub_field('cm_modal_content');
+
+          $output .= "<a class='content-map--container-column-cell neighborhoods' href='#cm-modal'>$buttonTitle</a>";
+          $output .= "<div class='mfp-hide content-map--modal neighborhoods'>";
+          $output .= "<div class='content-map--modal-heading'><strong>Health Happens in Neighborhoods</strong><br />$buttonTitle</div>";
+          $output .= "<div class='content-map--modal-content'>";
+          $output .= $buttonModal;
+          $output .= "</div></div>";
+
+        endwhile;
+
+        $output .= "</div></div>";
+
+      else : endif;
+
+      // prevention
+
+      if( have_rows('cm_prevention') ): 
+
+        $output .= "<div class='content-map--container-column prevention'>";
+        $output .= "<div class='content-map--container-column-title'><strong>Health Happens in Prevention</strong></div>";
+
+        $output .= "<div class='content-map--container-column-outline'>";
+
+        while ( have_rows('cm_schools') ) : 
+
+        the_row();
+
+          $buttonTitle = get_sub_field('cm_button_title');
+          $buttonModal = get_sub_field('cm_modal_content');
+
+          $output .= "<a class='content-map--container-column-cell prevention' href='#cm-modal'>$buttonTitle</a>";
+          $output .= "<div class='mfp-hide content-map--modal prevention'>";
+          $output .= "<div class='content-map--modal-heading'><strong>Health Happens in Prevention</strong><br />$buttonTitle</div>";
+          $output .= "<div class='content-map--modal-content'>";
+          $output .= $buttonModal;
+          $output .= "</div></div>";
+
+        endwhile;
+
+        $output .= "</div></div>";
+
+      else : endif;
+
+     
+          
+  endwhile; else:
+   
+      $output .= "nothing found.";
+      
+  endif;
+
+  $output .= "</div>";
+   
+   wp_reset_query();
+   return $output;
+   
+}
+add_shortcode("content-map", "content_map_shortcode");
 
 /* =============================================================================
    Homepage AJAX filtering

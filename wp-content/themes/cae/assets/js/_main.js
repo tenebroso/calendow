@@ -31,6 +31,23 @@ CE.Site = {
       $('body').tweetHighlighted({
         via: 'calendow'
       });
+
+        $('.content-map--container-column-cell').click(function() {
+  
+            var cmitems = [];
+            $( $(this).attr('href') ).find('.content-map--modal').each(function() {
+              cmitems.push( {
+                src: $(this) 
+              } );
+            });
+            
+            $.magnificPopup.open({
+              items:cmitems,
+              gallery: {
+                enabled: true 
+              }
+            });
+          });
     }
   },
   page_template_page_campaign_overview_php: {

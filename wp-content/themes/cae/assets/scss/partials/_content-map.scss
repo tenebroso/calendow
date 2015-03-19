@@ -1,0 +1,163 @@
+.content-map--container-column {
+
+	display: block;
+
+	@media (min-width:$screen-sm-min) {
+		display: inline-block;
+		width: 31%;
+		margin: 0 1%;
+		vertical-align: top;
+	}
+
+}
+
+.content-map--container-column-title {
+	display: block;
+	position: relative;
+
+	padding: 10px 20px;
+	margin:0 0 35px 0;
+	border-radius: 4px;
+
+	display: table;
+	width: 100%;
+	min-height: 75px;
+
+	color: white;
+	text-align: center;
+	line-height: 1.2;
+	&:after {
+		content: "";
+		width: 2px;
+		height: 35px;
+		display: block;
+
+		position: absolute;
+		bottom: -35px;
+		left: 50%;
+	}
+	strong {
+		display: table-cell;
+  		vertical-align: middle;
+	}
+	.schools & {
+		background: $schools;
+		&:after {
+			background: $schools;
+		}
+	}
+	.neighborhoods & {
+		background: $neighborhoods;
+		&:after {
+			background: $neighborhoods;
+		}
+	}
+	.prevention & {
+		background: $prevention;
+		&:after {
+			background: $prevention;
+		}
+	}
+}
+
+.content-map--container-column-outline {
+	border: 2px solid transparent;
+	border-radius:4px;
+	padding: 5px 5px 0 5px;
+	.schools & {
+		border-color: $schools;
+	}
+	.neighborhoods & {
+		border-color: $neighborhoods;
+	}
+	.prevention & {
+		border-color: $prevention;
+	}
+}
+
+.hentry a,
+.text-content a,
+.report-content a {
+	&.content-map--container-column-cell {
+		text-decoration: none;
+		color: white;
+
+		margin: 0 0 5px 0;
+		padding: 1em 0;
+
+		display:block;
+		vertical-align: middle;
+
+		text-align: center;
+
+		transition:background .25s ease;
+		&.schools {
+			background: $schools;
+		}
+		&.neighborhoods {
+			background: $neighborhoods;
+		}
+		&.prevention {
+			background: $prevention;
+		}
+		&:hover,&:focus {
+			background: $black;
+			transition:background .25s ease;
+			outline: none;
+			box-shadow: 0 0 0;
+		}
+	}
+}
+
+.content-map--modal {
+	color: white;
+	text-align: left;
+	max-width: 760px;
+	margin: 40px auto;
+	position: relative;
+	font-size: 16px;
+	&.schools {
+		background: $schools;
+	}
+	&.neighborhoods {
+		background: $neighborhoods;
+	}
+	&.prevention {
+		background: $prevention;
+	}
+}
+
+.content-map--modal-heading {
+	padding: 15px 30px;
+	border-bottom: 1px solid transparent;
+	line-height: 1.2;
+	strong {
+		font-size: 21px;
+	}
+	.schools & {
+		border-color:lighten($schools,20%);
+	}
+	.neighborhoods & {
+		border-color:lighten($neighborhoods, 20%);
+	}
+	.prevention & {
+		border-color:lighten($prevention, 20%);
+	}
+}
+
+.content-map--modal-content {
+	padding: 30px;
+	ul {
+		list-style-type: disc;
+		margin: 0 0 0 1em;
+	}
+	a {
+		color: white;
+		border-bottom: 1px solid white;
+		transition:opacity .25s ease;
+		&:hover {
+			opacity: .7;
+			transition:opacity .25s ease;
+		}
+	}
+}
