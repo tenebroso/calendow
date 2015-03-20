@@ -22,9 +22,14 @@
 }
 
 .hentry, .report-container, .panel-group, .stripe {
-	img, iframe {
+	img {
 		max-width:100%;
 		height: auto;
+	}
+	iframe {
+		@media (max-width:$screen-sm-max) {
+			max-width: 100%;
+		}
 	}
 	@media (max-width:$screen-xs-max) {
 		word-wrap:break-word;
