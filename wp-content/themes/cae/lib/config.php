@@ -334,7 +334,7 @@ function content_map_shortcode($atts) {
 
           $output .= "<a class='content-map--container-column-cell neighborhoods' href='#cm-modal' data-id='$i'>$buttonTitle</a>";
           $output .= "<div class='mfp-hide content-map--modal neighborhoods'>";
-          $output .= "<div class='content-map--modal-heading'><strong>Health Happens in Neighborhoods</strong><br />$buttonTitle <span class='modal-prev'></span><span class='modal-next'></div></div>";
+          $output .= "<div class='content-map--modal-heading'><strong>Health Happens in Neighborhoods</strong><br />$buttonTitle</div>";
           $output .= "<div class='content-map--modal-content'>";
           $output .= $buttonModal;
           $output .= "</div></div>";
