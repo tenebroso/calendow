@@ -49,7 +49,7 @@ function our_work() {
 		'show_tagcloud'              => false,
 		'rewrite'                    => false,
 	);
-	register_taxonomy( 'work', array( 'page', 'report', 'newsletter', 'news', 'action', 'event', 'grant', 'video', 'infographic', 'post' ), $args );
+	register_taxonomy( 'work', array( 'page', 'report', 'newsletter', 'news', 'action', 'event', 'grant', 'video', 'infographic', 'post', 'press-release' ), $args );
 
 }
 
@@ -83,7 +83,7 @@ function campaigns() {
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
 	);
-	register_taxonomy( 'campaign', array( 'page', 'report', 'newsletter', 'news', 'action', 'event', 'grant', 'video', 'infographic', 'post' ), $args );
+	register_taxonomy( 'campaign', array( 'page', 'report', 'newsletter', 'news', 'action', 'event', 'grant', 'video', 'infographic', 'post', 'press-release' ), $args );
 
 }
 
@@ -119,7 +119,7 @@ function places() {
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
 	);
-	register_taxonomy( 'place', array( 'page', 'report', 'newsletter', 'news', 'action', 'event', 'grant', 'video', 'infographic', 'post' ), $args );
+	register_taxonomy( 'place', array( 'page', 'report', 'newsletter', 'news', 'action', 'event', 'grant', 'video', 'infographic', 'post', 'press-release' ), $args );
 
 }
 
