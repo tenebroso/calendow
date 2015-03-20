@@ -10,23 +10,24 @@ var CE = CE || {};
       var $body = $('body');
 
 
-    if (!$.cookie('cae_splash_modal_cookie')) {
+    if (!$.cookie('cae_splash_mod')) {
+        $signUpForm.addClass('active');
         $body.addClass('dimmed');
-        $.cookie('cae_splash_modal_cookie', 'true', { expires: 30 });
+        $.cookie('cae_splash_mod', 'true', { expires: 30 });
     } else {
-        $signUpForm.remove();
+        $signUpForm.removeClass('active');
         $body.removeClass('dimmed');
     }
 
     $close.click(function() {
-        $signUpForm.remove();
+        $signUpForm.removeClass('active');
         $body.removeClass('dimmed');
     });
 
     $closeCookie.click(function() {
-        $signUpForm.remove();
+        $signUpForm.removeClass('active');
         $body.removeClass('dimmed');
-        $.cookie('cae_splash_modal_cookie', 'true', { expires: 30 });
+        $.cookie('cae_splash_mod', 'true', { expires: 30 });
     });
 
   };
