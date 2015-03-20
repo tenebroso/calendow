@@ -7,7 +7,7 @@ CE.desktopFilter = function () {
     var $parentFilters = $('.filters > li > a');
                 var $childFilters = $('.sub-filter li a');
                 var $ajaxLoadMore = $('#ajax-load-more .alm-btn-wrap .more');
-                var $gridContainer = $('.grid-container');
+                var $gridContainer = $('#ajax-load-more');
                 var $gridItem = $('.grid-item');
 
                 var masOptions = {
@@ -15,7 +15,7 @@ CE.desktopFilter = function () {
                         gutter: 5,
                 };
 
-                $ajaxLoadMore.trigger('click');
+                //$ajaxLoadMore.trigger('click');
 
                 $parentFilters.click(function (e) {
                         e.preventDefault();
@@ -74,7 +74,8 @@ CE.desktopFilter = function () {
                                 $curr = {
                                         'term': $(this).find('a').attr('title'),
                                         'taxonomy': $(this).closest('ul.sub-filter').data('tax'),
-                                        'name': $(this).find('a span').html()
+                                        'name': $(this).find('a span').html(),
+                                        'title': $('.page-title').find('strong').html()
                                 };
 
                                 $tax.push($curr);
@@ -92,7 +93,7 @@ CE.desktopFilter = function () {
                                 dataType: 'html',
                                 url: afp_vars.afp_ajax_url,
                                 data: data,
-                                timeout: 5000,
+                                timeout: 15000,
                                 success: function (data, textStatus, XMLHttpRequest) {
                                         $container.html(data);
                                         $container.fadeIn();
