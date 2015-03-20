@@ -1,7 +1,9 @@
 <?php 	
 		$className = '';
 		$image_url = get_field('tile_image');
-		list($width, $height, $type, $attr) = getimagesize($image_url);
+		if($image_url):
+            list($width, $height, $type, $attr) = getimagesize($image_url);
+        endif;
 		$work = wp_get_post_terms($post->ID,'work', array("fields" => "names"));
 		$campaign = wp_get_post_terms($post->ID,'campaign', array("fields" => "names"));
 		$workSlug = wp_get_post_terms($post->ID,'work', array("fields" => "slugs"));

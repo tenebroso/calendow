@@ -410,7 +410,7 @@ function revealid_id_column_content( $column, $id ) {
 }
 
 /* =============================================================================
-   Homepage AJAX filtering
+   AJAX filtering
    ========================================================================== */
 
 $result = array();

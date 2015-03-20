@@ -42,7 +42,7 @@ function ajax_filter_posts_scripts() {
     )
   );
 }
-add_action('wp_enqueue_scripts', 'ajax_filter_posts_scripts', 100);
+add_action('wp_enqueue_scripts', 'ajax_filter_posts_scripts', 1000);
 
 /* =============================================================================
    jQuery Local Fallback from CDN
