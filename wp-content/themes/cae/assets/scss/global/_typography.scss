@@ -30,7 +30,8 @@ h1,h2,h3,h4,h5,h6, .heading-font {
 h1,h2,h3,h4,h5,h6,.heading-font {
     color:$blackDarker;
     .panel-body &,
-    .report-sidebar-title & {
+    .report-sidebar-title &,
+    &.nb-cta-text {
       color: white;
     }
 }
@@ -208,6 +209,9 @@ blockquote {
   font-size:38px;
   font-weight:800;
   color: #333333;
+  .newsletter-wrapper & {
+    font-size: 32px;
+  }
   .text-content & {
     font-family:$headings-font-family;
     font-weight:700;

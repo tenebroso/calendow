@@ -2437,7 +2437,7 @@ h1, h2, h3, h4, h5, h6, .heading-font {
 
 h1, h2, h3, h4, h5, h6, .heading-font {
   color: #3b3b3b; }
-  .panel-body h1, .report-sidebar-title h1, .panel-body h2, .report-sidebar-title h2, .panel-body h3, .report-sidebar-title h3, .panel-body h4, .report-sidebar-title h4, .panel-body h5, .report-sidebar-title h5, .panel-body h6, .report-sidebar-title h6, .panel-body .heading-font, .report-sidebar-title .heading-font {
+  .panel-body h1, .report-sidebar-title h1, h1.nb-cta-text, .panel-body h2, .report-sidebar-title h2, h2.nb-cta-text, .panel-body h3, .report-sidebar-title h3, h3.nb-cta-text, .panel-body h4, .report-sidebar-title h4, h4.nb-cta-text, .panel-body h5, .report-sidebar-title h5, h5.nb-cta-text, .panel-body h6, .report-sidebar-title h6, h6.nb-cta-text, .panel-body .heading-font, .report-sidebar-title .heading-font, .heading-font.nb-cta-text {
     color: white; }
 
 .footer p {
@@ -2576,6 +2576,8 @@ blockquote {
   font-size: 38px;
   font-weight: 800;
   color: #333333; }
+  .newsletter-wrapper .grid-title {
+    font-size: 32px; }
   .text-content .grid-title {
     font-family: "azo-sans-web", sans-serif;
     font-weight: 700;
@@ -3967,21 +3969,24 @@ article[class*="entry-single"] {
 
 .newsletter-wrapper {
   max-width: 1001px;
-  margin: 0 auto; }
+  margin: 0 auto 5em; }
   .newsletter-wrapper #ajax-load-more {
     margin-bottom: 0; }
 
 .newsletter-filters {
   margin: -4.25em auto 0;
   max-width: 1001px;
-  overflow: hidden; }
-  .newsletter-filters > li {
-    width: 25%; }
-    .newsletter-filters > li > a {
-      font-size: 15px;
-      height: 85px; }
-    .newsletter-filters > li a span {
-      font-size: 18px; }
+  /* overflow: hidden;
+	> li {
+		width:25%;
+		> a {
+			font-size:15px;
+			height:85px;
+		}
+		a span {
+			font-size:18px;
+		}
+	} */ }
 
 @media (min-width: 768px) {
   .newsletter-archives li:nth-child(3n+3) {

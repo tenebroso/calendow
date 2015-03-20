@@ -1,6 +1,6 @@
 .newsletter-wrapper {
 	max-width:1001px;
-	margin:0 auto;
+	margin:0 auto 5em;
 	#ajax-load-more {
 		margin-bottom:0;
 	}
@@ -9,7 +9,7 @@
 .newsletter-filters {
 	margin:-4.25em auto 0;
 	max-width: 1001px;
-	overflow: hidden;
+	/* overflow: hidden;
 	> li {
 		width:25%;
 		> a {
@@ -19,7 +19,7 @@
 		a span {
 			font-size:18px;
 		}
-	}
+	} */
 }
 
 .newsletter-archives {
