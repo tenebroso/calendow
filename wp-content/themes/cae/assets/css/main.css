@@ -6455,7 +6455,10 @@ h2 + .byline {
   padding: 0 20px 0 20px;
   text-align: left;
   color: #383838;
-  border-radius: 3px; }
+  border-radius: 3px;
+  display: none; }
+  .splash-message.active {
+    display: block; }
   @media (min-width: 768px) {
     .splash-message {
       width: 700px;
@@ -8317,6 +8320,9 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
   .hentry a.doc__module--item-link:hover, .text-content a.doc__module--item-link:hover, .report-content a.doc__module--item-link:hover {
     background: #15c7a7; }
 
+.content-map--container {
+  margin: 0 0 2em 0; }
+
 .content-map--container-column {
   display: block; }
   @media (min-width: 768px) {
@@ -8376,8 +8382,9 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
 .hentry a.content-map--container-column-cell, .text-content a.content-map--container-column-cell, .report-content a.content-map--container-column-cell {
   text-decoration: none;
   color: white;
+  line-height: 1.2;
   margin: 0 0 5px 0;
-  padding: 1em 0;
+  padding: 1em 0.5em;
   display: block;
   vertical-align: middle;
   text-align: center;
