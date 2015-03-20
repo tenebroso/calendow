@@ -8,10 +8,15 @@
 	if(!is_404()): $template = get_page_template_slug( $post->ID ); endif;
 	if(!$title): $title = get_the_title(); endif; ?>
 
-<?php if($large_image_url && ($template !== 'page-campaign-detail.php')): 
+<?php if($large_image_url && ($template !== 'page-campaign-detail.php') && !is_page('newsletters')): 
 	// If a Featured Image was Uploaded ?>
 	<div class="page-header has-image<?php if($right): echo ' text-right'; endif; ?>">
 		<div class="stellar-container" style="background-image:url(<?php echo $large_image_url[0]; ?>);" data-stellar-background-ratio="0.5"></div>
+
+<?php elseif(is_page('newsletters') || is_page('press-releases')): ?>
+
+	<div class="page-header has-image<?php if($right): echo ' text-right'; endif; ?>">
+		<div style="background-image:url(<?php echo $large_image_url[0]; ?>);" class="stellar-container"></div>
 
 <?php else: 
 	// Otherwise a CSS background color should be applied, along with the pattern overlay ?>
