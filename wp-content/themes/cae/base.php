@@ -59,7 +59,7 @@
 
         <?php 
           // Show the Newsletter Prev/Next navigation if on a newsletter
-        if(is_singular('newsletter')): get_template_part('templates/newsletter/footer-nav'); endif; ?>
+        if(is_singular('newsletter') || is_singular('press-release')): get_template_part('templates/newsletter/footer-nav'); endif; ?>
 
         <?php 
           // Always show the footer

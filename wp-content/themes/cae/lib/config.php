@@ -415,17 +415,30 @@ function revealid_id_column_content( $column, $id ) {
 
 $result = array();
 
-function do_the_query($result, $args) {
-        $query = new WP_Query($args);
+function home_query($result, $args) {
 
-        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+        $filterquery = new WP_Query($args);
 
-                        $result['response'] = get_template_part('templates/home/grid');
+        if ($filterquery->have_posts()) : while ($filterquery->have_posts()) : $filterquery->the_post();
 
-                endwhile;
-        else: endif;
+            $result['response'] = get_template_part('templates/home/grid');
 
-        wp_reset_postdata(); // need to reset on each query
+        endwhile; else: endif;
+
+        wp_reset_postdata();
+}
+
+function newsletter_query($result, $args) {
+
+        $filterquery = new WP_Query($args);
+
+        if ($filterquery->have_posts()) : while ($filterquery->have_posts()) : $filterquery->the_post();
+
+            $result['response'] = get_template_part('templates/newsletter/newsletters','grid');
+
+        endwhile; else: endif;
+
+        wp_reset_postdata();
 }
 
 function ajax_filter_get_posts($taxonomy) {
@@ -436,7 +449,7 @@ function ajax_filter_get_posts($taxonomy) {
 
         $tax_details = $_POST['tax_details'];
 
-        $count = $tax_details.length;
+        $count = count($tax_details);
         
         $html = '';
         
@@ -445,7 +458,8 @@ function ajax_filter_get_posts($taxonomy) {
                 $tax_query[] = array(
                     'taxonomy'  => $tax['taxonomy'],
                     'field'     => 'slug',
-                    'terms'     => array($tax['term'])
+                    'terms'     => array($tax['term']),
+                    'title'     => $tax['title']
                 );
                 
                 ob_start();
@@ -465,12 +479,24 @@ function ajax_filter_get_posts($taxonomy) {
         
         
         if ($count>1){
-                $tax_query['relation'] = 'AND';
+          $tax_query['relation'] = 'AND';
         }
-        
-        $postTypes = array('post', 'video', 'infographic', 'action', 'event', 'grant', 'newsletter', 'report', 'news');
 
-        // WP Query
+        if($tax['title'] == 'Newsletters'):
+
+          $postTypes = array('newsletter');
+
+        elseif($tax['title'] == 'Press Releases'):
+
+          $postTypes = array('press-release');
+
+        else:
+
+          $postTypes = array('post', 'video', 'infographic', 'action', 'event', 'grant', 'newsletter', 'report', 'news');
+
+        endif;
+
+       
         $args = array(
             'post_type' => $postTypes,
             'posts_per_page' => -1,
@@ -485,12 +511,20 @@ function ajax_filter_get_posts($taxonomy) {
         }
         
         $result = array();
+
+        if($tax['title'] == 'Newsletters' || $tax['title'] == 'Press Releases'):
+
+          newsletter_query($result, $args);
+
+        else:
         
-        do_the_query($result, $args);
+          home_query($result, $args);
+
+        endif;
 
         //$result = json_encode($result);
         foreach ($result as $item) {
-                echo $item;
+          echo $item;
         }
         
         die();
