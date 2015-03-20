@@ -1,32 +1,46 @@
 
 
-	<ul class="filters newsletter-filters" id="filters">
-		<li class="selector-group">
-			<a data-filter-group="color" class="filter-key">Filter by <span>Neighborhood</span></a>
-			<ul class="sub-filter">
-				<li><a class="selector" data-filter="">Any</a></li>
-				<li><a class="selector" data-filter=".red">Red</a></li>
-				<li><a class="selector" data-filter=".blue">Blue</a></li>
-			</ul>
-
-		</li>
-		<li><a data-filter-group="campaigns" class="filter-key">Filter by <span>Prevention</span></a></li>
-		<li><a data-filter-group="campaigns" class="filter-key">Filter by <span>Schools</span></a></li>
-		<li><a data-filter-group="places" class="filter-key">Filter by <span>Communities</span></a>
-			<ul class="sub-filter">
-				<?php
-					$args = array(
-					'post_type'=>'place',
-					'title_li'=> ''
-					);
-					wp_list_pages( $args );
-				?>
-			</ul>
-		</li>
-	</ul>
-
+<ul class="filters newsletter-filters">
+	<li class="filter-main">
+		<a class="filter-key">Filter by <span>Our Work</span></a>
+		<?php $terms = get_terms("work");
+		 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
+		     echo "<ul class='sub-filter' data-tax='work'>";
+		     foreach ( $terms as $term ) {
+		       echo '<li><a href="' . get_term_link( $term ) . '" title="' .$term->slug.'"><span>' . $term->name . '</span></a></li>';
+		        
+		     }
+		     echo "</ul>";
+		 } ?>
+	</li>
+	<li class="filter-main">
+		<a class="filter-key">Filter by <span>Our Campaigns</span></a>
+		<?php $terms = get_terms("campaign");
+		 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
+		     echo "<ul class='sub-filter' data-tax='campaign'>";
+		     foreach ( $terms as $term ) {
+		       echo '<li><a href="' . get_term_link( $term ) . '" title="' .$term->slug.'"><span>' . $term->name . '</span></a></li>';
+		        
+		     }
+		     echo "</ul>";
+		 } ?>
+	</li>
+	<li class="filter-main">
+		<a class="filter-key">Filter by <span>Our Places</span></a>
+		<?php $terms = get_terms("place");
+		 if ( !empty( $terms ) && !is_wp_error( $terms ) ){
+		     echo "<ul class='sub-filter' data-tax='place'>";
+		     foreach ( $terms as $term ) {
+		       echo '<li><a href="' . get_term_link( $term ) . '" title="' .$term->slug.'"><span>' . $term->name . '</span></a></li>';
+		        
+		     }
+		     echo "</ul>";
+		 } ?>
+	</li>
+</ul>
 	
 
+<div class="clearfix"></div>
 
 <div class="newsletter-wrapper">
 <?php get_template_part('templates/newsletter/newsletters', 'archive'); ?>
