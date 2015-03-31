@@ -234,6 +234,9 @@
 		@media (min-width:$screen-sm-min) {
 			width:33.333%;
 			width:calc(100% / 3);
+			.no-cssreflections & {
+				width:calc(100% / 3.01);
+			}
 		}
 		
 		position: relative;

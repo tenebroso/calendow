@@ -3438,7 +3438,10 @@ button, .btn, input[type="submit"] {
       .filters > li {
         width: 33.333%;
         width: -webkit-calc(100% / 3);
-        width: calc(100% / 3); } }
+        width: calc(100% / 3); }
+        .no-cssreflections .filters > li {
+          width: -webkit-calc(100% / 3.01);
+          width: calc(100% / 3.01); } }
     .filters > li.open {
       overflow: visible; }
     .filters > li.selected > a {
