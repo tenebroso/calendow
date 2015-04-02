@@ -8,7 +8,7 @@ var CE = CE || {};
 
   	//$('.collapse').collapse();
 
-  	$('.panel-body .btn').click(function(){
+  	$('.panel-body .btn[href="#top"]').click(function(){
   		$('html, body').animate({scrollTop : 0},800);
 		return false;
   	});
