@@ -4,7 +4,7 @@
 Plugin Name: Password Protected
 Plugin URI: https://wordpress.org/plugins/password-protected/
 Description: A very simple way to quickly password protect your WordPress site with a single password. Please note: This plugin does not restrict access to uploaded files and images and does not work on WP Engine or with some caching setups.
-Version: 1.9
+Version: 2.0
 Author: Ben Huson
 Text Domain: password-protected
 Author URI: http://github.com/benhuson/password-protected/
@@ -68,6 +68,9 @@ class Password_Protected {
 		add_filter( 'pre_option_password_protected_status', array( $this, 'allow_users' ) );
 		add_action( 'init', array( $this, 'compat' ) );
 		add_action( 'password_protected_login_messages', array( $this, 'login_messages' ) );
+		add_action( 'login_enqueue_scripts', array( $this, 'load_theme_stylesheet' ), 5 );
+
+		add_shortcode( 'password_protected_logout_link', array( $this, 'logout_link_shortcode' ) );
 
 		if ( is_admin() ) {
 			include_once( dirname( __FILE__ ) . '/admin/admin.php' );
@@ -116,7 +119,13 @@ class Password_Protected {
 			$is_active = false;
 		}
 
-		return apply_filters( 'password_protected_is_active', $is_active );
+		$is_active = apply_filters( 'password_protected_is_active', $is_active );
+
+		if ( isset( $_GET['password-protected'] ) ) {
+			$is_active = true;
+		}
+
+		return $is_active;
 
 	}
 
@@ -272,24 +281,30 @@ class Password_Protected {
 
 		// Log out
 		if ( isset( $_REQUEST['password-protected'] ) && $_REQUEST['password-protected'] == 'logout' ) {
+
 			$this->logout();
 
 			if ( isset( $_REQUEST['redirect_to'] ) ) {
 				$redirect_to = esc_url_raw( $_REQUEST['redirect_to'], array( 'http', 'https' ) );
-				wp_redirect( $redirect_to );
-				exit();
+			} else {
+				$redirect_to = home_url( '/' );
 			}
 
-			$redirect_to = remove_query_arg( array( 'password-protected', 'redirect_to' ), ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
-			$query = array(
-				'password-protected' => 'login',
-				'redirect_to' => urlencode( $redirect_to )
-			);
-
-			wp_redirect( add_query_arg( $query, home_url() ) );
+			wp_redirect( $redirect_to );
 			exit();
 
 		}
+
+	}
+
+	/**
+	 * Is User Logged In?
+	 *
+	 * @return  boolean
+	 */
+	function is_user_logged_in() {
+
+		return $this->is_active() && $this->validate_auth_cookie();
 
 	}
 
@@ -304,7 +319,7 @@ class Password_Protected {
 		}
 
 		// Logged in
-		if ( $this->validate_auth_cookie() ) {
+		if ( $this->is_user_logged_in() ) {
 			return;
 		}
 
@@ -354,12 +369,87 @@ class Password_Protected {
 	}
 
 	/**
+	 * Login URL
+	 *
+	 * @return  string  Login URL.
+	 */
+	function login_url() {
+
+		return add_query_arg( 'password-protected', 'login', home_url( '/' ) );
+
+	}
+
+	/**
 	 * Logout
 	 */
 	function logout() {
 
 		$this->clear_auth_cookie();
 		do_action( 'password_protected_logout' );
+
+	}
+
+	/**
+	 * Logout URL
+	 *
+	 * @param   string  $redirect_to  Optional. Redirect URL.
+	 * @return  string                Logout URL.
+	 */
+	function logout_url( $redirect_to = '' ) {
+
+		$query = array(
+			'password-protected' => 'logout',
+			'redirect_to'        => esc_url_raw( $redirect_to )
+		);
+
+		if ( empty( $query['redirect_to'] ) ) {
+			unset( $query['redirect_to'] );
+		}
+
+		return add_query_arg( $query, home_url() );
+
+	}
+
+	/**
+	 * Logout Link
+	 *
+	 * @param   array   $args  Link args.
+	 * @return  string         HTML link tag.
+	 */
+	function logout_link( $args = null ) {
+
+		// Only show if user is logged in
+		if ( ! $this->is_user_logged_in() ) {
+			return '';
+		}
+
+		$args = wp_parse_args( $args, array(
+			'redirect_to' => '',
+			'text'        => __( 'Logout', 'password-protected' )
+		) );
+
+		if ( empty( $args['text'] ) ) {
+			$args['text'] = __( 'Logout', 'password-protected' );
+		}
+
+		return sprintf( '<a href="%s">%s</a>', esc_url( $this->logout_url( $args['redirect_to'] ) ), esc_html( $args['text'] ) );
+
+	}
+
+	/**
+	 * Logout Link Shortcode
+	 *
+	 * @param   array   $args  Link args.
+	 * @return  string         HTML link tag.
+	 */
+	function logout_link_shortcode( $atts, $content = null ) {
+
+		$atts = shortcode_atts( array(
+			'redirect_to' => '',
+			'text'        => $content
+		), $atts, 'logout_link_shortcode' );
+
+		return $this->logout_link( $atts );
 
 	}
 
@@ -589,6 +679,38 @@ class Password_Protected {
 			}
 			if ( ! empty( $messages ) ) {
 				echo '<p class="message">' . apply_filters( 'password_protected_login_messages', $messages ) . "</p>\n";
+			}
+
+		}
+
+	}
+
+	/**
+	 * Load Theme Stylesheet
+	 *
+	 * Check wether a 'password-protected-login.css' stylesheet exists in your theme
+	 * and if so loads it.
+	 * 
+	 * Works with child themes.
+	 *
+	 * Possible to specify a different file in the theme folder via the
+	 * 'password_protected_stylesheet_file' filter (allows for theme subfolders).
+	 */
+	function load_theme_stylesheet() {
+
+		$filename = apply_filters( 'password_protected_stylesheet_file', 'password-protected-login.css' );
+
+		$located = locate_template( $filename );
+
+		if ( ! empty( $located ) ) {
+
+			$stylesheet_directory = trailingslashit( get_stylesheet_directory() );
+			$template_directory = trailingslashit( get_template_directory() );
+
+			if ( $stylesheet_directory == substr( $located, 0, strlen( $stylesheet_directory ) ) ) {
+				wp_enqueue_style( 'password-protected-login', get_stylesheet_directory_uri() . '/' . $filename );
+			} else if ( $template_directory == substr( $located, 0, strlen( $template_directory ) ) ) {
+				wp_enqueue_style( 'password-protected-login', get_template_directory_uri() . '/' . $filename );
 			}
 
 		}

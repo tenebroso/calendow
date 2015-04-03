@@ -68,6 +68,14 @@ if ( version_compare( $wp_version, '3.9-dev', '>=' ) ) {
 	wp_admin_css( 'colors-fresh', true );
 }
 
+?>
+
+<style type="text/css" media="screen">
+#login_error, .login .message, #loginform { margin-bottom: 20px; }
+</style>
+
+<?php
+
 if ( $is_iphone ) {
 	?>
 	<meta name="viewport" content="width=320; initial-scale=0.9; maximum-scale=1.0; user-scalable=0;" />
@@ -94,7 +102,7 @@ do_action( 'password_protected_login_head' );
 	<?php do_action( 'password_protected_login_messages' ); ?>
 	<?php do_action( 'password_protected_before_login_form' ); ?>
 
-	<form name="loginform" id="loginform" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="post">
+	<form name="loginform" id="loginform" action="<?php echo esc_url( $Password_Protected->login_url() ); ?>" method="post">
 		<p>
 			<label for="password_protected_pass"><?php _e( 'Password', 'password-protected' ) ?><br />
 			<input type="password" name="password_protected_pwd" id="password_protected_pass" class="input" value="" size="20" tabindex="20" /></label>
