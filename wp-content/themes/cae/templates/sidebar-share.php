@@ -3,7 +3,9 @@
 	<h3 class="sidenav-title bg-color">Share This.</h3>
 		<ul class="side-nav">
 		<li class="share-icon share-icon-twitter">
-			<?php $twitter = get_field('twitter_text'); ?>
+			<?php 
+			$twitterText = get_field('twitter_text');
+			$twitter = urlencode(html_entity_decode($twitterText, ENT_COMPAT, 'UTF-8')); ?>
 			<?php if($twitter): ?>
 			<a class="popup" href="http://twitter.com/home?status=<?php echo $twitter; ?> <?php the_permalink();?>">Twitter</a>
 			<?php else: ?>
