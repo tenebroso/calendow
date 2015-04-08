@@ -354,7 +354,7 @@ function content_map_shortcode($atts) {
 
         $output .= "<div class='content-map--container-column-outline'>";
 
-        while ( have_rows('cm_schools') ) : 
+        while ( have_rows('cm_prevention') ) : 
 
         the_row();
 
@@ -465,7 +465,7 @@ function ajax_filter_get_posts($taxonomy) {
                 ob_start();
                 ?>
                 <div class="grid-item hero-item">
-                        <a href="/<?php echo $tax['taxonomy']; ?>">
+                        <a href="/<?php echo $tax['term']; ?>">
                                 <div class="v-centered reset-margins">
                                         <p>Learn About</p>
                                         <h2 class="grid-title page-subtext caps"><?php echo $tax['name']; ?></h2>
