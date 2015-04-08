@@ -2537,8 +2537,7 @@ h3 strong, h3 b {
       list-style-type: none;
     }*/ }
 .hentry a, .text-content a, .report-content a {
-  color: #1f2233;
-  text-decoration: underline; }
+  color: #1f2233; }
 
 .hentry ol, .intro-text {
   font-size: 22px; }
