@@ -459,13 +459,14 @@ function ajax_filter_get_posts($taxonomy) {
                     'taxonomy'  => $tax['taxonomy'],
                     'field'     => 'slug',
                     'terms'     => array($tax['term']),
-                    'title'     => $tax['title']
+                    'title'     => $tax['title'],
+                    'custom'     => $tax['custom']
                 );
                 
                 ob_start();
                 ?>
                 <div class="grid-item hero-item">
-                        <a href="/<?php echo $tax['term']; ?>">
+                        <a href="<?php echo $tax['custom']; ?>">
                                 <div class="v-centered reset-margins">
                                         <p>Learn About</p>
                                         <h2 class="grid-title page-subtext caps"><?php echo $tax['name']; ?></h2>

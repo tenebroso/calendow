@@ -75,6 +75,7 @@ CE.desktopFilter = function () {
                                         'term': $(this).find('a').attr('title'),
                                         'taxonomy': $(this).closest('ul.sub-filter').data('tax'),
                                         'name': $(this).find('a span').html(),
+                                        'custom': $(this).find('a').data('url'),
                                         'title': $('.page-title').find('strong').html()
                                 };
 
