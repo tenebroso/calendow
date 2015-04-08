@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-9 nb-cta-form">
 
-        <form class="ajaxForm signup_form" method="POST" action="/forms/signups">
+        <form class="ajaxForm signup_form" method="POST" action="http://swellcreativegroup.nationbuilder.com/forms/signups">
           <input name="authenticity_token" type="hidden" value="sEZWZCd+9bdcK/CUYy+gSH7/YmJuA9zLcXZcFf9ZPE8="/><input name="page_id" type="hidden" value="1"/>
           <input name="return_to" type="hidden" value="http://swellcreativegroup.nationbuilder.com/"/>
             <div class="email_address_form" style="display:none;">
