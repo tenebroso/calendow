@@ -11,23 +11,8 @@
         </div>
         <div class="col-md-9 nb-cta-form">
 
-        <form class="ajaxForm signup_form" method="POST" action="http://swellcreativegroup.nationbuilder.com/forms/signups">
-          <input name="authenticity_token" type="hidden" value="sEZWZCd+9bdcK/CUYy+gSH7/YmJuA9zLcXZcFf9ZPE8="/><input name="page_id" type="hidden" value="1"/>
-          <input name="return_to" type="hidden" value="http://swellcreativegroup.nationbuilder.com/"/>
-            <div class="email_address_form" style="display:none;">
-              <p>
-                <label for="email_address">Optional email code</label>
-                <br/>
-                <input name="email_address" type="text" class="text" id="email_address" autocomplete="off"/>
-                <input name="zip" type="text" class="text" id="zip" autocomplete="off"/>
-              </p>
-            </div> 
-          <div class="form-errors"></div>
-          <input required=""  class="text" id="signup_email" name="signup[email]" placeholder="Email address" type="email" />
-          <input required="" class="text" id="signup_zip" name="signup[zip]" placeholder="Zip" type="text" />
-          <input class="button" type="submit" name="commit" value="Submit" />
-          <div class="form-submit"></div>
-          </form>
+
+        <?php get_template_part('templates/footer/footer-email-signup'); ?>
 
 
         </div>
