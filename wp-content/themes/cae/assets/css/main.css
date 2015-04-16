@@ -6233,6 +6233,9 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
 
 .footer-logo {
   position: relative; }
+  .footer-logo img {
+    max-width: 110px;
+    height: auto; }
 
 .footer-copyright {
   text-transform: uppercase;
@@ -6242,8 +6245,7 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
   @media (min-width: 768px) {
     .footer-copyright {
       position: absolute;
-      top: 50px;
-      left: 55px; } }
+      top: 50px; } }
 
 .footer-post-nav {
   margin-top: -12em;

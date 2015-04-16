@@ -196,6 +196,10 @@
 
 .footer-logo {
 	position: relative;
+	img {
+		max-width: 110px;
+		height: auto;
+	}
 }
 
 .footer-copyright {
@@ -206,6 +210,6 @@
 	@media (min-width:$screen-sm-min) {
 		position: absolute;
 		top: 50px;
-		left: 55px;
+		//left: 55px;
 	}
 }
