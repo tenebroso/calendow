@@ -50,9 +50,10 @@ h3 {
   strong, b {
     font-family:$headings-font-family;
     font-weight: 800;
+    text-transform: uppercase;
     @media (min-width:$screen-sm-min) {
       line-height:34px;
-      text-transform: uppercase;
+      
     }
   }
 }

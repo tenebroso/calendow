@@ -2448,11 +2448,11 @@ b, strong {
 
 h3 strong, h3 b {
   font-family: "azo-sans-web", sans-serif;
-  font-weight: 800; }
+  font-weight: 800;
+  text-transform: uppercase; }
   @media (min-width: 768px) {
     h3 strong, h3 b {
-      line-height: 34px;
-      text-transform: uppercase; } }
+      line-height: 34px; } }
 
 .lead {
   font-size: 30px;
