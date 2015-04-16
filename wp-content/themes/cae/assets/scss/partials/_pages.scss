@@ -11,7 +11,9 @@
 		background-repeat: no-repeat;
 		background-position: top center !important;
 		.stripe & {
-			height: 168px;
+			height: 171px;
+			background-size: contain;
+  			background-attachment: inherit;
 		}
 	}
 	width: 100%;

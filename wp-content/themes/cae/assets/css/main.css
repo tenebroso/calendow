@@ -3806,7 +3806,9 @@ button, .btn, input[type="submit"] {
       background-repeat: no-repeat;
       background-position: top center !important; }
       .stripe .parallax-image {
-        height: 168px; } }
+        height: 171px;
+        background-size: contain;
+        background-attachment: inherit; } }
 
 .hentry img, .report-container img, .panel-group img, .stripe img {
   max-width: 100%;
