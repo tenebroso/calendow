@@ -25,6 +25,12 @@ button, .btn, input[type="submit"] {
       transition: opacity .3s;
     }
   }
+  .hentry &, .text-content &, .report-content & {
+    @media (max-width:$screen-xs-max) {
+      display: block;
+      text-align: center;
+    }
+  }
 }
 
 .btn-load-more {

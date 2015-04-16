@@ -2719,6 +2719,10 @@ button, .btn, input[type="submit"] {
       opacity: 0.7;
       -webkit-transition: opacity 0.3s;
       transition: opacity 0.3s; }
+  @media (max-width: 767px) {
+    .hentry button, .text-content button, .report-content button, .hentry .btn, .text-content .btn, .report-content .btn, .hentry input[type="submit"], .text-content input[type="submit"], .report-content input[type="submit"] {
+      display: block;
+      text-align: center; } }
 
 .btn-load-more {
   margin: 40px auto;
@@ -6136,6 +6140,9 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a {
     display: inline-block;
     vertical-align: middle;
     line-height: 3.5; }
+    @media (max-width: 767px) {
+      .footer .ui-group {
+        font-size: 12px; } }
   .footer.footer-posts {
     padding: 0; }
 
@@ -8346,6 +8353,9 @@ a.author_byline:hover, .single-post .hentry a.author_byline:hover {
       width: 31%;
       margin: 0 1%;
       vertical-align: top; } }
+  @media (max-width: 991px) {
+    .content-map--container-column {
+      margin-bottom: 1em; } }
 
 .content-map--container-column-title {
   display: block;

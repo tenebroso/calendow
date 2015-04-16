@@ -12,6 +12,9 @@
 		margin: 0 1%;
 		vertical-align: top;
 	}
+	@media (max-width:$screen-sm-max) {
+		margin-bottom: 1em;
+	}
 
 }
 

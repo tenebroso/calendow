@@ -63,6 +63,9 @@
 		display: inline-block;
 		vertical-align: middle;
 		line-height:3.5;
+		@media (max-width:$screen-xs-max) {
+			font-size: 12px;
+		}
 	}
 	&.footer-posts {
 		padding: 0;
