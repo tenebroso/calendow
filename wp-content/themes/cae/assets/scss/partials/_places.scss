@@ -63,11 +63,13 @@
 		min-height:32px;
 		line-height: 1.7;
 		position: relative;
+		top:12px;
 		display: inline;
 		z-index:2;
 		transition:all .25s;
 		@media (min-width:$screen-sm-min) {
 			position: absolute;
+			top:auto;
 			bottom: 32px;
 			left: 50%;
 			margin-left: -15px;

@@ -5738,6 +5738,7 @@ body .animsition-loading {
     min-height: 32px;
     line-height: 1.7;
     position: relative;
+    top: 12px;
     display: inline;
     z-index: 2;
     -webkit-transition: all 0.25s;
@@ -5745,6 +5746,7 @@ body .animsition-loading {
     @media (min-width: 768px) {
       .place-grid .temperature {
         position: absolute;
+        top: auto;
         bottom: 32px;
         left: 50%;
         margin-left: -15px; } }
