@@ -18,16 +18,16 @@
 /** The name of the database for WordPress */
 //define('WP_CACHE', true); //Added by WP-Cache Manager
 define( 'WPCACHEHOME', '/Applications/MAMP/htdocs/cae/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
-define('DB_NAME', 'ca_endow');
+define('DB_NAME', 'cae');
 
 /** MySQL database username */
-define('DB_USER', 'ca_endow');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'PEUKMLmU');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
-define('DB_HOST', 'wcst-staging.cxvefgi4j12x.us-east-1.rds.amazonaws.com');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -75,6 +75,16 @@ define('WP_DEBUG', false);
 
 define( 'AWS_ACCESS_KEY_ID', 'AKIAIE3VANGH3O725CEA' );
 define( 'AWS_SECRET_ACCESS_KEY', '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' );
+
+/**
+ * Settings for Bit.ly Shortlinks Plugin
+ * https://yoast.com/wordpress/bitly-shortlinks/
+ **/
+define('BITLY_USERNAME', 'calendow');
+define('BITLY_APIKEY', 'R_491cc7427ea187800b8edfe3d3709cdd');
+
+// optional, if you want to use j.mp URLs instead of bit.ly URLs
+define('BITLY_JMP', true);
 
 /* That's all, stop editing! Happy blogging. */
 

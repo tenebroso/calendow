@@ -69,6 +69,8 @@ CE.desktopFilter = function () {
 
                         $current = $filter_ya_container.find('.sub-filter li.selected');
 
+                        console.log($current);
+
                         $current.each(function () {
                                 
                                 $curr = {
@@ -82,11 +84,19 @@ CE.desktopFilter = function () {
                                 $tax.push($curr);
                         });
 
+
+                            $title = $('.page-title').find('strong').html();
+
+                            if($title == undefined) {
+                                $title = 'Home';
+                            }
+
                         
                         data = {
                                 action: 'filter_posts',
                                 afp_nonce: afp_vars.afp_nonce,
-                                tax_details: $tax
+                                tax_details: $tax,
+                                page_title: $title
                         };
 
                         $.ajax({

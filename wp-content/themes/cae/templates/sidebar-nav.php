@@ -10,7 +10,7 @@
         </li>
     <?php endif; endwhile; ?>
     	<li class="share bg-color"><span class="caps">Share</span><?php $twitterText = get_field('twitter_text');
-            $twitter = urlencode(html_entity_decode($twitterText, ENT_COMPAT, 'UTF-8')); if($twitter): ?><a class="popup" href="http://twitter.com/home?status=<?php echo $twitter; ?> <?php the_permalink();?>">Twitter</a><?php else: ?><a class="popup" href="http://twitter.com/home?status=<?php the_title(); ?> <?php the_permalink();?>">Twitter</a><?php endif; ?><a class="popup" href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">Facebook</a></li>
+            $twitter = urlencode(html_entity_decode($twitterText, ENT_COMPAT, 'UTF-8')); if($twitter): ?><a class="popup" href="http://twitter.com/home?status=<?php echo $twitter; ?> <?php echo wp_get_shortlink(); ?>">Twitter</a><?php else: ?><a class="popup" href="http://twitter.com/home?status=<?php the_title(); ?> <?php echo wp_get_shortlink(); ?>">Twitter</a><?php endif; ?><a class="popup" href="http://www.facebook.com/sharer.php?u=<?php echo wp_get_shortlink(); ?>" target="_blank">Facebook</a></li>
 		</ul>
 	</nav>
 <?php else : endif; ?>
