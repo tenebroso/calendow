@@ -9,7 +9,7 @@ function roots_scripts() {
     $assets     = array(
       'scripts'       => '/assets/js/scripts.js',
       'js'       => '/assets/js/site.js',
-      'css'       => '/assets/css/main.css',
+      'css'       => '/assets/css/main.min.css',
       'modernizr' => '/assets/vendor/modernizr.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
     );
