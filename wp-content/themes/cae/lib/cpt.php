@@ -51,6 +51,7 @@ $postTypes = array(
     'Grant' => '',
     'Video' => '',
     'Infographic' => '',
+    'Custom Homepage Tile' => array('public' => false, 'publicly_queryable' => true, 'show_ui' => true, 'supports' => array( 'title')),
     'Read This Tile' => array('public' => false, 'publicly_queryable' => true, 'show_ui' => true, 'supports' => array( 'title')),
     'Content Map' => array('public' => false, 'publicly_queryable' => true, 'show_ui' => true, 'supports' => array( 'title'))
 );
