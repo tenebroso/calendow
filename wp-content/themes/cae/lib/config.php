@@ -410,6 +410,25 @@ function revealid_id_column_content( $column, $id ) {
 }
 
 /* =============================================================================
+   Add Contact ID to post column for using in shortcode
+   ========================================================================== */
+
+add_filter( 'manage_contact_posts_columns', 'revealid_add_id_contact_column', 5 );
+add_action( 'manage_contact_posts_custom_column', 'revealid_id_contact_column_content', 5, 2 );
+
+
+function revealid_add_id_contact_column( $columns2 ) {
+   $columns2['revealid_id'] = 'ID';
+   return $columns2;
+}
+
+function revealid_id_contact_column_content( $column2, $id2 ) {
+  if( 'revealid_id' == $column2 ) {
+    echo $id2;
+  }
+}
+
+/* =============================================================================
    AJAX filtering
    ========================================================================== */
 
@@ -612,3 +631,130 @@ function yoast_bitly_admin_bar_menu() {
   }
 }
 add_action( 'admin_bar_menu', 'yoast_bitly_admin_bar_menu', 95 );
+
+/* =============================================================================
+   Add Contact Module Shortcode
+   ========================================================================== */
+
+function contact_module_shortcode($atts) {
+
+   global $post;
+   $thePost = $post->ID;
+
+   $b = shortcode_atts( array(
+      'id' => 'contact',
+    ), $atts );
+
+   $contactId = $b['id'];
+
+   // de-funkify query
+   $the_query = array(
+      'posts_per_page' => 1,
+      'post_type' => 'contact',
+      'p' => $contactId
+    );
+
+   // query is made               
+   query_posts($the_query);
+   
+   // Reset and setup variables
+   $contactOutput = '';
+
+   $contactOutput .= "<div class='contact-module--container'>";
+   $contactOutput .= "<div class='contact-module--container-field'><strong class='form-title'>Contact</strong></div>";
+   
+   
+   $i = 0; if (have_posts()) : while (have_posts()) : the_post();
+
+          $name = get_field('name');
+          $title = get_field('title');
+          $address = get_field('address');
+          $phone = get_field('phone');
+          $twitter = get_field('twitter');
+          $facebook = get_field('facebook');
+          $instagram = get_field('instagram');
+          $youtube = get_field('youtube');
+          $optional = get_field('optional_open_field');
+          $form = get_field('form');
+
+          if($name):
+            $contactOutput .= "<div class='contact-module--container-field'><strong>Name</strong><br />";
+            $contactOutput .= $name;
+            $contactOutput .= "</div>";
+          endif;
+
+          if($title):
+            $contactOutput .= "<div class='contact-module--container-field'><strong>Title</strong><br />";
+            $contactOutput .= $title;
+            $contactOutput .= "</div>";
+          endif;
+
+          if($address):
+            $contactOutput .= "<div class='contact-module--container-field'><strong>Address</strong><br />";
+            $contactOutput .= $address;
+            $contactOutput .= "</div>";
+          endif;
+
+          if($phone):
+            $contactOutput .= "<div class='contact-module--container-field'><strong>Phone</strong><br />";
+            $contactOutput .= $phone;
+            $contactOutput .= "</div>";
+          endif;
+
+          if($twitter || $facebook || $instagram || $youtube):
+            $contactOutput .= "<div class='contact-module--container-field'><strong>Social</strong><br />";
+            
+            if($twitter):
+              $contactOutput .= '<a class="contact-module--container-field-social" href="'.$twitter.'">';
+              $contactOutput .= 'Twitter';
+              $contactOutput .= "</a>";
+            endif;
+
+            if($youtube):
+              $contactOutput .= '<a class="contact-module--container-field-social" href="'.$youtube.'">';
+              $contactOutput .= 'Youtube';
+              $contactOutput .= "</a>";
+            endif;
+
+            if($facebook):
+              $contactOutput .= '<a class="contact-module--container-field-social" href="'.$facebook.'">';
+              $contactOutput .= 'Facebook';
+              $contactOutput .= "</a>";
+            endif;
+
+            if($instagram):
+              $contactOutput .= '<a class="contact-module--container-field-social" href="'.$instagram.'">';
+              $contactOutput .= 'Instagram';
+              $contactOutput .= "</a>";
+            endif;
+
+          $contactOutput .= '</div>';
+
+          endif;
+
+          if($optional):
+            $contactOutput .= "<div class='contact-module--container-field'><strong>Optional Field</strong><br />";
+            $contactOutput .= $optional;
+            $contactOutput .= "</div>";
+          endif;
+
+          if($form):
+            $contactOutput .= "<div class='contact-module--container-field-form'><strong class='form-title'>Send Email</strong><br />";
+            $contactOutput .= do_shortcode('[gravityform id="' . $form['id'] . '" title="false" description="false" ajax="true"]');
+            $contactOutput .= "</div>";
+          endif;
+
+          
+  endwhile; else:
+   
+      $contactOutput .= "nothing found.";
+      
+  endif;
+
+  $contactOutput .= "</div>";
+   
+   wp_reset_query();
+   return $contactOutput;
+   
+}
+add_shortcode("contact", "contact_module_shortcode");
