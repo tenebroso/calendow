@@ -4510,6 +4510,7 @@ button.tweet-me:hover, .btn.tweet-me:hover, input[type="submit"].tweet-me:hover 
   width: 40px;
   background-position: center center;
   opacity: .4;
+  font-size: 0;
 }
 
 @media (max-width: 767px) {
@@ -8235,7 +8236,6 @@ nav.affix {
   text-transform: uppercase;
   padding: 9px 25px 9px 15px;
   color: #fff;
-  font-size: 700;
 }
 
 .side-nav li.share a {
