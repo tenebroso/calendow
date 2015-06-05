@@ -52,7 +52,8 @@ $postTypes = array(
     'Video' => '',
     'Infographic' => '',
     'Read This Tile' => array('public' => false, 'publicly_queryable' => true, 'show_ui' => true, 'supports' => array( 'title')),
-    'Content Map' => array('public' => false, 'publicly_queryable' => true, 'show_ui' => true, 'supports' => array( 'title'))
+    'Content Map' => array('public' => false, 'publicly_queryable' => true, 'show_ui' => true, 'supports' => array( 'title')),
+    'Contact' => array('public' => false, 'publicly_queryable' => false, 'show_ui' => true, 'supports' => array( 'title'))
 );
  
 foreach( $postTypes as $cptitle => $args )
