@@ -3228,7 +3228,7 @@ tbody.collapse.in {
 }
 
 .text-hide {
-  font: Infinity a;
+  font-size: 0;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -4888,6 +4888,11 @@ button.tweet-me:hover, .btn.tweet-me:hover, input[type="submit"].tweet-me:hover 
 .home .animsition {
   background-repeat: no-repeat;
   background-position: center top;
+}
+
+.home .mfp-auto-cursor .mfp-content {
+  max-width: 700px;
+  background: #272a3e;
 }
 
 .hero-container {
@@ -8398,7 +8403,8 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a:hover {
   }
 }
 
-.social-icons li[class*='icon'] {
+.social-icons li[class*='icon'],
+.social-icons div[class*='icon'] {
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -8410,11 +8416,13 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a:hover {
   vertical-align: top;
 }
 
-.social-icons li[class*='icon'] span {
+.social-icons li[class*='icon'] span,
+.social-icons div[class*='icon'] span {
   display: none;
 }
 
-.social-icons li[class*='icon']:hover {
+.social-icons li[class*='icon']:hover,
+.social-icons div[class*='icon']:hover {
   border-color: #fff;
 }
 
@@ -12406,6 +12414,137 @@ img.mfp-img {
   top: 0;
   right: 0;
   padding-top: 0;
+}
+
+.poll--heading,
+.poll--footer,
+.poll--share {
+  background: #3b3b3b;
+  color: white;
+  font-size: 24px;
+  font-family: "azo-sans-web", sans-serif;
+  text-align: center;
+}
+
+.poll--heading p,
+.poll--footer p,
+.poll--share p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+.wp-polls ul, .wp-polls-ul, .wp-polls-ans ul {
+  padding: 0;
+  margin: 0;
+}
+
+.wp-polls-ans ul li.poll--answer {
+  width: 50%;
+  float: left;
+  display: block;
+  background-color: #bc2913;
+  color: white;
+  text-align: center;
+  padding: 3em 0;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.wp-polls-ans ul li.poll--answer i {
+  font-style: normal;
+}
+
+.wp-polls-ans ul li.poll--answer small {
+  display: block;
+  font-style: normal;
+  color: white;
+  font-weight: 100;
+}
+
+.wp-polls-ans ul li.poll--answer:hover {
+  background: black;
+}
+
+.wp-polls-ans ul.poll--results li.poll--answer {
+  cursor: auto;
+  background: #272a3e !important;
+}
+
+.wp-polls-ans ul li.poll--answer label {
+  cursor: pointer;
+}
+
+.wp-polls-ans ul li.poll--answer:last-child {
+  background-color: #272a3e;
+}
+
+.wp-polls-ans ul li.poll--answer:last-child:hover {
+  background: black;
+}
+
+.wp-polls-ans ul li.poll--answer.active {
+  background: black;
+}
+
+.poll--footer-view-results,
+.wp-polls .pollbar {
+  display: none;
+}
+
+.poll--footer-vote {
+  padding: 0 !important;
+}
+
+.wp-polls .Buttons {
+  font-family: "azo-sans-web", sans-serif;
+  border: none;
+  background: none;
+  color: #fff;
+  padding: 20px 0;
+  text-transform: uppercase;
+  font-weight: 900;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+
+.wp-polls .Buttons:hover {
+  background: black;
+}
+
+.poll--answer input,
+.poll--hidden {
+  display: none !important;
+}
+
+.poll--share {
+  display: block;
+  clear: both;
+}
+
+.poll--share .popup {
+  text-indent: -2999px;
+  display: block;
+}
+
+.poll--icons {
+  text-align: center;
+  padding: 0 0 10px 0;
+}
+
+.poll--icons div {
+  border-color: white;
+  display: inline-block;
+}
+
+p.poll--share-title {
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+  font-weight: 900;
 }
 
 .default {

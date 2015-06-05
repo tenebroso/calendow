@@ -5,6 +5,13 @@
 	background-position:center top;
 }
 
+.home {
+	.mfp-auto-cursor .mfp-content {
+		max-width: 700px;
+		background: #272a3e;
+	}
+}
+
 .hero-container {
 	color:$accentDark;
 	a {

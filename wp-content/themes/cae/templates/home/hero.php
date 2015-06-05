@@ -7,6 +7,8 @@
         
         <?php $label = get_sub_field('label'); ?>
         <?php $url = get_sub_field('url'); ?>
+        <?php $modal = get_field('popup'); ?>
+        <?php $modalContent = get_field('modal_content'); ?>
         <?php $color = get_sub_field('color_scheme'); ?>
         <?php $term = get_term( $color, 'work' ); ?>
         <?php $slug = $term->slug; ?>
@@ -34,7 +36,7 @@
 
 	<div class="hero-container-text">
 
-		<a href="<?php the_field('hero_url'); ?>">
+		<a href="<?php the_field('hero_url'); ?>"<?php if($modal): ?> class="js-popup"<?php endif; ?>>
 
 			<h2 class="hero-lead"><?php the_field('hero_image_headline'); ?></h2>
 			<p class="hero-subtitle"><span class="hero-subtitle-text"><?php the_field('hero_image_text'); ?></span> <span class="hero-subtitle-arrow icon-lg-arrow"></span></p>
@@ -46,3 +48,9 @@
 	
 
 </div>
+
+<?php if($modalContent): ?>
+<div id="modal" class="mfp-hide white-popup">
+    <?php echo $modalContent; ?>
+</div>
+<?php endif; ?>

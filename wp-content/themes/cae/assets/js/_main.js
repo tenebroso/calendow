@@ -144,6 +144,15 @@ CE.Site = {
   home: {
     init: function() {
       CE.desktopFilter();
+      $('.js-popup').magnificPopup({type:'inline'});
+      $('.wp-polls-ans ul li.poll--answer').click(function(){
+
+        $('.wp-polls-ans ul li.poll--answer').removeClass('active');
+        $('.wp-polls-ans ul li.poll--answer').children('input').attr('checked',false);
+
+        $(this).children('input').attr('checked',true);
+        $(this).addClass('active');
+      });
       //CE.facetLoad();
     }
   },
