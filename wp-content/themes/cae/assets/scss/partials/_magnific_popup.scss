@@ -651,10 +651,21 @@ button {
   .mfp-close {
     color: black;
   }
+}
+
+.page-id-578 {
   .image-map {
-    @media (max-width:1199px) {
-      display: none;
-    }
+    width: 848px;
+    height: 628px;
+    max-width: 848px;
+  }
+}
+
+.page-id-124 {
+  .image-map {
+    width: 400px;
+    height: 594px;
+    max-width: 400px;
   }
 }
 

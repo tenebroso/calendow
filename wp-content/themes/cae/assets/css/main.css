@@ -12424,11 +12424,16 @@ img.mfp-img {
   color: black;
 }
 
-@media (max-width: 1199px) {
-  .page-id-124 .image-map,
-  .page-id-578 .image-map {
-    display: none;
-  }
+.page-id-578 .image-map {
+  width: 848px;
+  height: 628px;
+  max-width: 848px;
+}
+
+.page-id-124 .image-map {
+  width: 400px;
+  height: 594px;
+  max-width: 400px;
 }
 
 .conference-popup {
