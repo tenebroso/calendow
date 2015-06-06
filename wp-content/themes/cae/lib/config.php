@@ -62,7 +62,14 @@ if( function_exists('acf_add_options_sub_page') )
 
     acf_add_options_sub_page(
       array(
-        'title' => 'Conference Maps',
+        'title' => 'Oakland Map',
+        'capability' => 'edit_posts'
+      )
+    );
+
+    acf_add_options_sub_page(
+      array(
+        'title' => 'Los Angeles Map',
         'capability' => 'edit_posts'
       )
     );
