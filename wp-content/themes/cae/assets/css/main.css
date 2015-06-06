@@ -12414,6 +12414,23 @@ img.mfp-img {
   padding-top: 0;
 }
 
+.page-id-124 .mfp-content {
+  max-width: 700px;
+}
+
+.page-id-124 .mfp-close {
+  color: black;
+}
+
+.conference-popup {
+  padding: 1em;
+  background: white;
+  color: #333;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
 .poll--heading,
 .poll--footer,
 .poll--share {

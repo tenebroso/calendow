@@ -132,6 +132,9 @@ CE.Site = {
          $('#ajax-load-more .alm-btn-wrap .more').trigger('click');
          CE.desktopFilter();
       }
+      if($('.page-id-124').length) {
+        $('.js-popup').magnificPopup({type:'inline'});
+      }
     }
   },
   single: {
