@@ -643,12 +643,18 @@ button {
   }
 }
 
-.page-id-124 {
+.page-id-124,
+.page-id-578 {
   .mfp-content {
     max-width: 700px;
   }
   .mfp-close {
     color: black;
+  }
+  .image-map {
+    @media (max-width:1199px) {
+      display: none;
+    }
   }
 }
 

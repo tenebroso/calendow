@@ -132,7 +132,7 @@ CE.Site = {
          $('#ajax-load-more .alm-btn-wrap .more').trigger('click');
          CE.desktopFilter();
       }
-      if($('.page-id-124').length) {
+      if($('.page-id-124').length || $('.page-id-578').length) {
         $('.js-popup').magnificPopup({type:'inline'});
       }
     }

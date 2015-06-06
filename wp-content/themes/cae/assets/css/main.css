@@ -12414,12 +12414,21 @@ img.mfp-img {
   padding-top: 0;
 }
 
-.page-id-124 .mfp-content {
+.page-id-124 .mfp-content,
+.page-id-578 .mfp-content {
   max-width: 700px;
 }
 
-.page-id-124 .mfp-close {
+.page-id-124 .mfp-close,
+.page-id-578 .mfp-close {
   color: black;
+}
+
+@media (max-width: 1199px) {
+  .page-id-124 .image-map,
+  .page-id-578 .image-map {
+    display: none;
+  }
 }
 
 .conference-popup {

@@ -76,5 +76,7 @@
 <?php if($template == 'page-campaign-detail.php'): ?>
    </div>
 <?php endif; ?>
+<?php if(is_page(124)): get_template_part('templates/maps/oakland','map'); endif; ?>
+<?php if(is_page(578)): get_template_part('templates/maps/la','map'); endif; ?>
 </body>
 </html>
