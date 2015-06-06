@@ -10,8 +10,7 @@ class GFCommon {
 
 	public static $tab_index = 1;
 	public static $errors = array();
-
-	private static $messages = array();
+	public static $messages = array();
 
 	public static function get_selection_fields( $form, $selected_field_id ) {
 

@@ -930,7 +930,12 @@ class GFAPI {
 
 		$field = GFFormsModel::get_field( $form, $input_id );
 
-		$lead_detail_id = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$wpdb->prefix}rg_lead_detail WHERE lead_id=%d AND CAST(field_number as DECIMAL(4,2))=%s", $entry_id, $input_id ) );
+		$input_id_min = (float) $input_id - 0.0001;
+		$input_id_max = (float) $input_id + 0.0001;
+
+		$lead_details_table_name = GFFormsModel::get_lead_details_table_name();
+
+		$lead_detail_id = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$lead_details_table_name} WHERE lead_id=%d AND field_number BETWEEN %s AND %s", $entry_id, $input_id_min, $input_id_max ) );
 
 		$result = true;
 		if ( ! isset( $entry[ $input_id ] ) || $entry[ $input_id ] != $value ){

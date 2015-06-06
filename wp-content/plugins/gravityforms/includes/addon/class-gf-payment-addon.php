@@ -2188,6 +2188,7 @@ class GFPaymentStatsTable extends WP_List_Table {
 			$columns,
 			array(),
 			array(),
+			rgar( array_values( $columns ), 2 ),
 		);
 
 		parent::__construct(

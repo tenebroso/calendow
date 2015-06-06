@@ -1121,6 +1121,7 @@ class GFAddOnFeedsTable extends WP_List_Table {
 			$all_cols,
 			array(),
 			array(),
+			rgar( array_values( $all_cols ), 2 ),
 		);
 
 		parent::__construct(

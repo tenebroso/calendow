@@ -1173,6 +1173,7 @@ class GFNotificationTable extends WP_List_Table {
 			),
 			array(),
 			array(),
+			'name',
 		);
 
 		parent::__construct();
