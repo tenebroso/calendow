@@ -675,6 +675,7 @@ function contact_module_shortcode($atts) {
           $instagram = get_field('instagram');
           $youtube = get_field('youtube');
           $optional = get_field('optional_open_field');
+          $optionalTitle = get_field('optional_open_field_title');
           $form = get_field('form');
 
           if($name):
@@ -733,7 +734,9 @@ function contact_module_shortcode($atts) {
           endif;
 
           if($optional):
-            $contactOutput .= "<div class='contact-module--container-field'><strong>Optional Field</strong><br />";
+            $contactOutput .= "<div class='contact-module--container-field'><strong>";
+            $contactOutput .= $optionalTitle;
+            $contactOutput .= "</strong><br />";
             $contactOutput .= $optional;
             $contactOutput .= "</div>";
           endif;
