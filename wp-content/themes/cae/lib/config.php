@@ -59,6 +59,13 @@ if( function_exists('acf_add_options_sub_page') )
         'capability' => 'edit_posts'
       )
     );
+
+    acf_add_options_sub_page(
+      array(
+        'title' => 'Conference Maps',
+        'capability' => 'edit_posts'
+      )
+    );
 }
 
 if( function_exists('acf_set_options_page_title') )
