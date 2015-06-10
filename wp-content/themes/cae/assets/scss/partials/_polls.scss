@@ -21,7 +21,7 @@
   width: 50%;
   float: left;
   display: block;
-  background-color: #bc2913;
+  background-color: #272a3e;
   color: white;
   text-align: center;
   padding: 3em 0;
@@ -37,7 +37,7 @@
 	font-weight: 100;
   }
 	  &:hover {
-		background: black;
+		background: #C90A23;
 	}
 }
 
@@ -48,13 +48,6 @@
 
 .wp-polls-ans ul li.poll--answer label {
 	cursor: pointer;
-}
-
-.wp-polls-ans ul li.poll--answer:last-child {
-	background-color: #272a3e;
-	&:hover {
-		background: black;
-	}
 }
 
 .wp-polls-ans ul li.poll--answer.active {
