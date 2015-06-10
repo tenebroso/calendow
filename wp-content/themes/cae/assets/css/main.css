@@ -12494,6 +12494,10 @@ img.mfp-img {
   background: #C90A23;
 }
 
+.wp-polls-ans ul li.poll--answer:first-child {
+  border-right: 4px solid #3b3b3b;
+}
+
 .wp-polls-ans ul.poll--results li.poll--answer {
   cursor: auto;
   background: #272a3e !important;
