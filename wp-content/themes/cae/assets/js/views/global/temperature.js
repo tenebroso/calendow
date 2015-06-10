@@ -179,10 +179,10 @@ var CE = CE || {};
     unit: 'f',
     success: function(weather) {
       html = weather.temp+'&deg;';
-      $("#la").html(html);
+      $("#sla").html(html);
     },
     error: function(error) {
-      $("#la").html('78&deg;');
+      $("#sla").html('78&deg;');
     }
   });
 
