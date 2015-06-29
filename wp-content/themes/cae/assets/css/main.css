@@ -12453,6 +12453,7 @@ img.mfp-img {
   font-size: 24px;
   font-family: "azo-sans-web", sans-serif;
   text-align: center;
+  clear: both;
 }
 
 .poll--heading p,

@@ -151,9 +151,9 @@ CE.Site = {
       $('.wp-polls-ans ul li.poll--answer').click(function(){
 
         $('.wp-polls-ans ul li.poll--answer').removeClass('active');
-        $('.wp-polls-ans ul li.poll--answer').children('input').attr('checked',false);
+        //$('.wp-polls-ans ul li.poll--answer').children('input').prop('checked',false);
 
-        $(this).children('input').attr('checked',true);
+        $(this).children('input').prop('checked', true);
         $(this).addClass('active');
       });
       //CE.facetLoad();

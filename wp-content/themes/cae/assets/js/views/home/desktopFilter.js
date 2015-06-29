@@ -87,7 +87,7 @@ CE.desktopFilter = function () {
 
                             $title = $('.page-title').find('strong').html();
 
-                            if($title == undefined) {
+                            if($title === undefined) {
                                 $title = 'Home';
                             }
 
