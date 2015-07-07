@@ -7,6 +7,7 @@ CE.Site = {
       CE.navTrigger();
       CE.collapse();
       CE.temperature();
+      CE.footerValidation();
       $('.js-popover').popover({ 
         html : true,
         content: function() {

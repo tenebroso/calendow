@@ -149,11 +149,11 @@ js_cobject_arr[12000383]=0;
 <label class="class123-label class123-fieldname class123-labelAligned fontbold  requiredfield " id="id123-title12000369" style="position: relative;display:none;" for="id123-control12000369" >Email Address</label>
 
 <input type="hidden" id="errorflagrow1" value=""/>
-<input id="id123-control12000369" name="control12000369"    onclick=" InputActions(this,'row1');" onkeyup=" InputActions(this,'row1');   " onchange="InputRules(12000369); ; " type="email" value="" placeholder="Email address"  />
+<input id="id123-control12000369" name="control12000369" onclick=" InputActions(this,'row1');" onkeyup=" InputActions(this,'row1');   " onchange="InputRules(12000369); ; " type="email" value="" placeholder="Email address" required />
 
 <label class="class123-label class123-fieldname class123-labelAligned fontbold  requiredfield " id="id123-title12000383" style="position: relative;display:none;" for="id123-control12000383" >Zip</label>
 <input type="hidden" id="errorflagrow2" value=""/>
-<input id="id123-control12000383" name="control12000383"    onclick=" InputActions(this,'row2');" onkeyup=" InputActions(this,'row2');   " onchange="InputRules(12000383); ; " type="text" value="" placeholder="Zip" />
+<input id="id123-control12000383" name="control12000383"    onclick=" InputActions(this,'row2');" onkeyup=" InputActions(this,'row2');   " onchange="InputRules(12000383); ; " type="text" value="" placeholder="Zip" required />
 
 
 <script type="text/javascript"> var f_fixedamount='0';
@@ -164,7 +164,7 @@ js_cobject_arr[12000383]=0;
 	</script>
 
 <input type="hidden" name="go_back_and_edit" id="go_back_and_edit" value="0" />
-<input OnClick="  this.style.display='none'; insertPleaseWaitDiv(this,'Please wait...');  " type="submit" class="formdefaultbut" id="id123-button-send"  value="Submit"/> 
+<input type="submit" class="formdefaultbut" id="id123-button-send"  value="Submit"/> 
 
 <input type="hidden" name="PHPSESSID" value="d9m7131hfr55jijfesm5nipqc1"/>
 <div style="height:1px; display: none; visibility: hidden;">

@@ -173,6 +173,18 @@ var CE = CE || {};
 
 ;(function() {
 
+  CE.footerValidation = function() {
+
+  	
+
+  };
+
+
+})();
+var CE = CE || {};
+
+;(function() {
+
   CE.headerParallax = function() {
 
 
@@ -866,6 +878,7 @@ CE.Site = {
       CE.navTrigger();
       CE.collapse();
       CE.temperature();
+      CE.footerValidation();
       $('.js-popover').popover({ 
         html : true,
         content: function() {
