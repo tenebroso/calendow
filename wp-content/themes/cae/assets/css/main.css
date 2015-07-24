@@ -8587,6 +8587,10 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a:hover {
   }
 }
 
+.footer input.ui-state-error {
+  border: 1px solid red;
+}
+
 .footer a {
   color: #fff;
 }

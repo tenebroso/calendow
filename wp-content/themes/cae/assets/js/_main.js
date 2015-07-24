@@ -8,6 +8,7 @@ CE.Site = {
       CE.collapse();
       CE.temperature();
       CE.footerValidation();
+      $('form').h5Validate();
       $('.js-popover').popover({ 
         html : true,
         content: function() {

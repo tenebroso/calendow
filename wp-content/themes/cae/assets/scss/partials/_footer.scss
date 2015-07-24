@@ -55,6 +55,9 @@
 				margin: 10px 0;
 			}
 		}
+		&.ui-state-error {
+			border: 1px solid red;
+		}
 	}
 	a {
 		color:$white;
