@@ -17,7 +17,7 @@
 		background: $white;
 		width:100%;
 		//outline:1px solid #f1f1f1;
-		@media (min-width:$screen-sm-min) {
+		@media (min-width:1000px) {
 			width:265px;
 			max-width: 32%;
 		}
@@ -26,6 +26,9 @@
 		h3 {
 			font-size:28px;
 			margin-bottom:18px;
+			strong {
+				line-height:1.4;
+			}
 		}
 		&.hhh-pin {
 			height: 328px;

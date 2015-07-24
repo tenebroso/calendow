@@ -8803,7 +8803,7 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a:hover {
   padding: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .footer-post-nav li {
     width: 265px;
     max-width: 32%;
@@ -8813,6 +8813,10 @@ body[class*="single-"] .side-nav-share.side-nav-container li:not(.cta) a:hover {
 .footer-post-nav li h3 {
   font-size: 28px;
   margin-bottom: 18px;
+}
+
+.footer-post-nav li h3 strong {
+  line-height: 1.4;
 }
 
 .footer-post-nav li.hhh-pin {
