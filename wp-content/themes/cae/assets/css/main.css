@@ -4482,6 +4482,16 @@ button.tweet-me:hover, .btn.tweet-me:hover, input[type="submit"].tweet-me:hover 
   color: #acacac;
 }
 
+.panel-default .gform_fields li {
+  list-style-type: none;
+  margin: 0 0 1em 0;
+}
+
+.panel-default .gform_fields li input, .panel-default .gform_fields li textarea {
+  color: black;
+  padding: 5px;
+}
+
 .nav li a {
   text-transform: uppercase;
   font-family: "azo-sans-web", sans-serif;
