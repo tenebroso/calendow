@@ -19,7 +19,7 @@ function img_dir(){
    Google Analytics Universal ID
    ========================================================================== */
 
-define('GOOGLE_ANALYTICS_ID', '');
+define('GOOGLE_ANALYTICS_ID', 'UA-102979-9');
 
 /* =============================================================================
    Typekit ID
