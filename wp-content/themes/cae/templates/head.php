@@ -42,4 +42,16 @@ caeicons( [ "/assets/icons.data.svg.css", "/assets/icons.data.png.css", "/assets
 </style>
 
 <?php endif; ?>
+<style type="text/css">
+@media (max-width:481px) {
+	.footer .ui-group {
+		line-height: 1.2;
+		margin: 1em auto;
+		max-width: 80%;
+	}
+	.divider {
+		display: none;
+	}
+}
+</style>
 </head>
