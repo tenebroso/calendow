@@ -29,7 +29,7 @@ CE.Site = {
         $($hash).find('.collapsed').trigger('click');
       }
       CE.legacy();
-      CE.splashMessage();
+      //CE.splashMessage();
       $('body').tweetHighlighted({
         via: 'calendow'
       });
