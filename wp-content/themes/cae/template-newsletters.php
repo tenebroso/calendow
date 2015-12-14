@@ -1,4 +1,4 @@
-
+<?php /* Template Name: Newsletter Filters Page */ ?>
 
 <ul class="filters newsletter-filters">
 	<li class="filter-main">
